@@ -4,15 +4,15 @@
 
 # Safety in Embodied AI: Risks, Attacks, and Defenses
 
-[![Paper](https://img.shields.io/badge/Paper-PDF-b31b1b.svg)](https://github.com/x-zheng16/Embodied-AI-Safety/blob/main/paper.pdf)
+[![Paper](https://img.shields.io/badge/Paper-PDF-b31b1b.svg)](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/blob/main/paper.pdf)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![Papers](https://img.shields.io/badge/Papers-434%2B-blue.svg)](#surveyed-papers)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/x-zheng16/Embodied-AI-Safety/pulls)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/pulls)
 
 **A comprehensive survey and the first unified safety framework for embodied AI, distilled from 1000+ papers into 480+ key works across perception, cognition, planning, interaction, and agentic systems. 1.5 years in the making.**
 
-[[Paper]](https://github.com/x-zheng16/Embodied-AI-Safety/blob/main/paper.pdf)
+[[Paper]](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/blob/main/paper.pdf)
 
 </div>
 
@@ -688,7 +688,7 @@ We review **434+** papers across five capability layers of embodied AI.
 
 ## Missing Papers?
 
-If you find any relevant papers missing from our list, please open an [issue](https://github.com/x-zheng16/Embodied-AI-Safety/issues) or submit a [pull request](https://github.com/x-zheng16/Embodied-AI-Safety/pulls). We welcome community contributions!
+If you find any relevant papers missing from our list, please open an [issue](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/issues) or submit a [pull request](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/pulls). We welcome community contributions!
 
 ## Citation
 
@@ -716,4 +716,4 @@ From the same team:
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=x-zheng16/Embodied-AI-Safety&type=Date)](https://star-history.com/#x-zheng16/Embodied-AI-Safety&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=x-zheng16/Awesome-Embodied-AI-Safety&type=Date)](https://star-history.com/#x-zheng16/Awesome-Embodied-AI-Safety&Date)
