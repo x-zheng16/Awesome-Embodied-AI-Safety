@@ -48,7 +48,13 @@
 
     /* ── HERO ── */
     .hero { background: var(--navy); color: #fff; }
-    .hero-banner { display: block; width: 100%; max-height: 300px; object-fit: cover; opacity: 0.8; }
+    .hero-banner-wrap { position: relative; overflow: hidden; max-height: 300px; }
+    .hero-banner { display: block; width: 100%; max-height: 300px; object-fit: cover; opacity: 0.75; }
+    .hero-banner-wrap::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(6,16,31,0.1) 0%, rgba(6,16,31,0.7) 100%);
+      pointer-events: none;
+    }
     .hero-body {
       max-width: var(--w); margin: 0 auto;
       padding: 3.5rem 2rem 4.5rem;
@@ -118,6 +124,25 @@
       max-width: 740px; margin: 0 auto; line-height: 1.9;
     }
     .affils sup { color: rgba(245,166,35,0.6); }
+
+    /* ── STATS STRIP ── */
+    .stats-strip {
+      background: var(--navy-mid);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 0;
+    }
+    .stat-item {
+      display: flex; flex-direction: column; align-items: center;
+      padding: 1.1rem 2.5rem;
+      border-right: 1px solid rgba(255,255,255,0.07);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num { font-family: 'Crimson Pro', serif; font-size: 2rem; font-weight: 600; color: var(--amber-lt); line-height: 1; }
+    .stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.3rem; }
+    @media (max-width: 640px) {
+      .stat-item { padding: 0.85rem 1.5rem; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .stat-item:last-child { border-bottom: none; }
+    }
 
     /* ── SECTION SHELL ── */
     section { padding: 5rem 2rem; }
@@ -294,9 +319,20 @@
 
     /* ── PAPER LIST ── */
     .paper-list { list-style: none; padding: 0.25rem 0 0.5rem 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }
-    .paper-list li { font-size: 0.85rem; color: #374151; line-height: 1.55; border-left: 2px solid #e5e7eb; padding-left: 0.75rem; }
+    .paper-list li { font-size: 0.85rem; color: #374151; line-height: 1.55; border-left: 2px solid var(--layer-accent, #e5e7eb); padding-left: 0.75rem; }
     .paper-list li a { color: var(--navy); text-decoration: none; font-weight: 500; }
-    .paper-list li a:hover { color: var(--blue); text-decoration: underline; }
+    .paper-list li a:hover { color: var(--layer-accent, var(--blue)); text-decoration: underline; }
+
+    /* ── LAYER COLOR PROPAGATION ── */
+    #layer-perception { --layer-accent: #2563eb; }
+    #layer-cognition  { --layer-accent: #7c3aed; }
+    #layer-planning   { --layer-accent: #b45309; }
+    #layer-action     { --layer-accent: #0f766e; }
+    #layer-agentic    { --layer-accent: #be123c; }
+
+    /* Layer summary colored left border when open */
+    .layer-block[open] .layer-summary { border-left: 3px solid var(--layer-accent, var(--amber)); padding-left: calc(1.25rem - 3px); }
+    .layer-block[open] .layer-label   { color: var(--layer-accent, var(--navy)); }
 
 
     /* ── CONTRIBUTE ── */
@@ -354,7 +390,9 @@
 
 <!-- HERO -->
 <header class="hero">
-  <img src="https://raw.githubusercontent.com/x-zheng16/Awesome-Embodied-AI-Safety/main/assets/banner.png" alt="Safety in Embodied AI" class="hero-banner">
+  <div class="hero-banner-wrap">
+    <img src="https://raw.githubusercontent.com/x-zheng16/Awesome-Embodied-AI-Safety/main/assets/banner.png" alt="Safety in Embodied AI" class="hero-banner">
+  </div>
   <div class="hero-body">
 
     <h1 class="title">Safety in Embodied AI:<br>Risks, Attacks, and Defenses</h1>
@@ -362,7 +400,8 @@
     <div class="badges">
       <a href="https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/blob/main/paper.pdf" class="badge b-paper">&#128196;&nbsp;Paper PDF</a>
       <span class="badge b-license">CC BY-NC-SA 4.0</span>
-<span class="badge b-papers">480+ Papers</span>
+      <span class="badge b-awesome">Awesome</span>
+      <span class="badge b-papers">480+ Papers</span>
       <span class="badge b-maintain">Maintained</span>
     </div>
 
@@ -401,8 +440,8 @@
       <a href="#">Hanxun Huang</a><sup>10</sup>,
       <a href="#">Sarah Erfani</a><sup>10</sup>,
       <a href="#">James Bailey</a><sup>10</sup>,
-      <a href="#">Wei-Ying Ma</a><sup>3,11</sup>,
       <a href="#">Jianping Wang</a><sup>3</sup>,
+      <a href="#">Wei-Ying Ma</a><sup>3,11</sup>,
       <a href="#">Bo Li</a><sup>8</sup>,
       <a href="#">Xingjun Ma</a><sup>1,2,&#8224;</sup>,
       <a href="#">Yu-Gang Jiang</a><sup>1,&#8224;</sup>
@@ -427,6 +466,15 @@
 
   </div>
 </header>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stat-item"><span class="stat-num">500+</span><span class="stat-label">Papers Surveyed</span></div>
+  <div class="stat-item"><span class="stat-num">5</span><span class="stat-label">Taxonomy Layers</span></div>
+  <div class="stat-item"><span class="stat-num">19</span><span class="stat-label">Subcategories</span></div>
+  <div class="stat-item"><span class="stat-num">34</span><span class="stat-label">Authors</span></div>
+  <div class="stat-item"><span class="stat-num">11</span><span class="stat-label">Institutions</span></div>
+</div>
 
 <!-- ABSTRACT -->
 <section id="abstract">
