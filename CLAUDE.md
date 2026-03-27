@@ -43,7 +43,7 @@ Every paper in this repository maps to exactly one layer and one subcategory:
 | **Perception** | Visual, Auditory, Spatial, Motion, Cross-Modal                                |    191 |
 | **Cognition**  | Instruction Understanding, World Model, Reasoning                             |     32 |
 | **Planning**   | Task Planning, Trajectory Planning, Multi-Agent Planning                      |     51 |
-| **Action**     | Robot Control, Human-Agent Interaction, Multi-Agent Collaboration             |     92 |
+| **Action and Interaction** | Robot Control, Human-Agent Interaction, Multi-Agent Collaboration             |     92 |
 | **Agentic**    | Tool Use, Memory, Self-Evolving, Cascading Risks                              |     71 |
 
 **Taxonomy rationale**: each layer corresponds to a capability stage in the embodied

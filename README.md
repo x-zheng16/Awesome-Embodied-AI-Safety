@@ -101,7 +101,7 @@ We review **480+** papers across five capability layers of embodied AI.
 | **Perception** | Visual Perception, Auditory Perception, Spatial Perception, Motion Perception, Cross-Modal Perception | 191 |
 | **Cognition** | Instruction Understanding, World Model, Reasoning | 32 |
 | **Planning** | Task Planning, Trajectory Planning, Multi-Agent Planning | 51 |
-| **Action** | Robot Control, Human-Agent Interaction, Multi-Agent Collaboration | 92 |
+| **Action and Interaction** | Robot Control, Human-Agent Interaction, Multi-Agent Collaboration | 92 |
 | **Agentic** | Tool Use, Memory, Self-Evolving, Cascading Risks | 71 |
 
 <details open>
@@ -461,7 +461,7 @@ We review **480+** papers across five capability layers of embodied AI.
 </details>
 
 <details open>
-<summary><b>Action</b> (92 papers)</summary>
+<summary><b>Action and Interaction</b> (92 papers)</summary>
 
 <details>
 <summary>Robot Control (77)</summary>
