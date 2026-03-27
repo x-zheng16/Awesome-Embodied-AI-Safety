@@ -10,7 +10,7 @@
 [![Papers](https://img.shields.io/badge/Papers-480%2B-blue.svg)](#surveyed-papers)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/pulls)
 
-**A comprehensive survey and the first unified safety framework for embodied AI, distilled from 1000+ papers into 480+ key works across perception, cognition, planning, interaction, and agentic systems.**
+**A comprehensive survey and the first unified safety framework for embodied AI, covering 480+ key works across perception, cognition, planning, interaction, and agentic systems.**
 
 [[Paper]](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/blob/main/paper.pdf)
 
