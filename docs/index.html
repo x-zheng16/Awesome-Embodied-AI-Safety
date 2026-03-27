@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safety in Embodied AI: Risks, Attacks, and Defenses</title>
+  <meta name="description" content="A comprehensive survey on safety in embodied AI — attacks and defenses across perception, cognition, planning, interaction, and agentic systems. 480+ papers reviewed.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:       #06101f;
+      --navy-mid:   #0d1a35;
+      --navy-card:  #111c36;
+      --cream:      #f7f4ef;
+      --white:      #ffffff;
+      --text:       #1c2130;
+      --muted:      #6b7280;
+      --amber:      #c97d12;
+      --amber-lt:   #f5a623;
+      --red:        #c0392b;
+      --blue:       #2563eb;
+      --green:      #15803d;
+      --border:     rgba(0,0,0,0.09);
+      --w:          960px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--cream); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(6,16,31,0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      display: flex; justify-content: center; gap: 2.5rem;
+      padding: 0.7rem 2rem;
+    }
+    nav a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--amber-lt); }
+
+    /* ── HERO ── */
+    .hero { background: var(--navy); color: #fff; }
+    .hero-banner { display: block; width: 100%; max-height: 300px; object-fit: cover; opacity: 0.8; }
+    .hero-body {
+      max-width: var(--w); margin: 0 auto;
+      padding: 3.5rem 2rem 4.5rem;
+      text-align: center;
+    }
+    .hero-body > * { animation: fadeUp 0.55s ease both; opacity: 0; }
+    .hero-body > *:nth-child(1) { animation-delay: 0.08s; }
+    .hero-body > *:nth-child(2) { animation-delay: 0.18s; }
+    .hero-body > *:nth-child(3) { animation-delay: 0.28s; }
+    .hero-body > *:nth-child(4) { animation-delay: 0.38s; }
+    .hero-body > *:nth-child(5) { animation-delay: 0.48s; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .title {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      font-weight: 600; line-height: 1.15;
+      letter-spacing: -0.015em;
+      margin-bottom: 1.75rem;
+    }
+
+    /* ── BADGES ── */
+    .badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.45rem; margin-bottom: 1.75rem; }
+    .badge {
+      display: inline-flex; align-items: center;
+      padding: 0.28rem 0.75rem; border-radius: 4px;
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.02em;
+      text-decoration: none; transition: opacity 0.2s;
+    }
+    .badge:hover { opacity: 0.82; }
+    .b-paper    { background: #9b1c1c; color: #fff; }
+    .b-license  { background: #374151; color: #d1d5db; }
+    .b-awesome  { background: #92400e; color: #fde68a; }
+    .b-papers   { background: #1e3a8a; color: #bfdbfe; }
+    .b-maintain { background: #14532d; color: #bbf7d0; }
+
+    /* ── CTA BUTTONS ── */
+    .cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.7rem; margin-bottom: 2.75rem; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      padding: 0.6rem 1.5rem; border-radius: 6px;
+      font-size: 0.9rem; font-weight: 500; text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.35); }
+    .btn-gold   { background: var(--amber); color: #fff; }
+    .btn-ghost  { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); }
+
+    /* ── AUTHORS ── */
+    .authors {
+      font-size: 0.93rem; line-height: 2;
+      color: rgba(255,255,255,0.82);
+      max-width: 840px; margin: 0 auto 1.25rem;
+    }
+    .authors a { color: rgba(255,255,255,0.82); text-decoration: none; }
+    .authors a:hover { color: var(--amber-lt); text-decoration: underline; }
+    sup { font-size: 0.62em; color: var(--amber-lt); vertical-align: super; }
+    .author-note { display: inline-block; font-size: 0.78rem; color: rgba(255,255,255,0.42); margin: 0.2rem 0.6rem; }
+
+    /* ── AFFILIATIONS ── */
+    .affils {
+      font-size: 0.8rem; color: rgba(255,255,255,0.42);
+      max-width: 740px; margin: 0 auto; line-height: 1.9;
+    }
+    .affils sup { color: rgba(245,166,35,0.6); }
+
+    /* ── SECTION SHELL ── */
+    section { padding: 5rem 2rem; }
+    section:nth-child(even) { background: #fff; }
+    .inner { max-width: var(--w); margin: 0 auto; }
+
+    .sh {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.75rem; font-weight: 600;
+      color: var(--navy);
+      padding-bottom: 0.6rem;
+      border-bottom: 2.5px solid var(--amber);
+      display: inline-block;
+      margin-bottom: 1.75rem;
+    }
+
+    /* ── ABSTRACT ── */
+    .abstract p {
+      font-size: 1.02rem; line-height: 1.85;
+      color: #374151; max-width: 840px;
+    }
+    .abstract p + p { margin-top: 1rem; }
+
+    /* ── FIGURES ── */
+    .figures { display: flex; flex-direction: column; gap: 3.5rem; }
+    .fig { text-align: center; }
+    .fig img {
+      width: 100%; max-width: 880px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+    }
+    .fig-cap {
+      margin-top: 0.85rem;
+      font-size: 0.86rem; font-style: italic; color: var(--muted);
+      max-width: 720px; margin-left: auto; margin-right: auto;
+      line-height: 1.65;
+    }
+
+    /* ── SCOPE TABLE ── */
+    .scope-lead { font-size: 0.95rem; color: #4b5563; margin-bottom: 1.5rem; }
+    .scope-lead strong { color: var(--navy); }
+
+    table { width: 100%; border-collapse: collapse; }
+    thead tr { background: var(--navy); }
+    th {
+      padding: 0.85rem 1.25rem;
+      color: rgba(255,255,255,0.75); text-align: left;
+      font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    th:last-child { text-align: right; }
+    td {
+      padding: 0.85rem 1.25rem;
+      border-bottom: 1px solid rgba(0,0,0,0.055);
+      vertical-align: middle;
+    }
+    tr:last-child td { border-bottom: none; }
+    tbody tr:hover td { background: rgba(201,125,18,0.04); }
+    .lname { font-weight: 600; color: var(--navy); font-size: 0.95rem; }
+    .ltopics { font-size: 0.8rem; color: var(--muted); margin-top: 0.15rem; }
+    .cnt-cell { text-align: right; }
+    .bar-wrap { display: inline-flex; align-items: center; gap: 0.5rem; float: right; }
+    .bar { display: inline-block; height: 7px; border-radius: 3.5px; background: var(--amber); }
+    .cnt { font-weight: 700; color: var(--navy); font-size: 0.95rem; min-width: 2.2rem; text-align: right; }
+    .total-row td { background: var(--navy-card); color: #fff; }
+    .total-row td:first-child { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+    .total-count { font-weight: 700; font-size: 1rem; color: var(--amber-lt); float: right; }
+
+    /* ── NEWS ── */
+    .news-list { list-style: none; }
+    .ni {
+      display: flex; gap: 1.5rem; align-items: flex-start;
+      padding: 1.15rem 0; border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .ni:last-child { border-bottom: none; }
+    .ndate { font-size: 0.78rem; font-weight: 600; color: var(--muted); white-space: nowrap; min-width: 88px; padding-top: 0.15rem; letter-spacing: 0.04em; }
+    .ntext { font-size: 0.95rem; color: var(--text); line-height: 1.6; }
+    .ntext a { color: var(--blue); text-decoration: none; }
+    .ntext a:hover { text-decoration: underline; }
+
+    /* ── CITATION ── */
+    .cite-lead { font-size: 0.95rem; color: #4b5563; margin-bottom: 1.25rem; }
+    .bib {
+      position: relative;
+      background: #0b1120; color: #e2e8f0;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem; line-height: 1.75;
+      overflow-x: auto;
+    }
+    .copy {
+      position: absolute; top: 0.9rem; right: 0.9rem;
+      background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6);
+      border: 1px solid rgba(255,255,255,0.14); border-radius: 4px;
+      padding: 0.25rem 0.65rem; font-size: 0.72rem; cursor: pointer;
+      font-family: 'DM Sans', sans-serif; transition: background 0.2s;
+    }
+    .copy:hover { background: rgba(255,255,255,0.16); color: #fff; }
+    .k-at    { color: #79c0ff; }
+    .k-field { color: #d2a8ff; }
+    .k-str   { color: #a5d6ff; }
+    .k-key   { color: #ffa657; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.35);
+      text-align: center; padding: 2.25rem 2rem;
+      font-size: 0.8rem; line-height: 1.9;
+    }
+    footer a { color: rgba(255,255,255,0.45); text-decoration: none; }
+    footer a:hover { color: var(--amber-lt); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav { gap: 1.25rem; flex-wrap: wrap; padding: 0.6rem 1rem; }
+      .hero-body { padding: 2.5rem 1.25rem 3.5rem; }
+      section { padding: 3.25rem 1.25rem; }
+      .ni { flex-direction: column; gap: 0.25rem; }
+      .ndate { min-width: unset; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#abstract">Abstract</a>
+  <a href="#overview">Overview</a>
+  <a href="#scope">Scope</a>
+  <a href="#news">News</a>
+  <a href="#citation">Citation</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <img src="../assets/banner.png" alt="Safety in Embodied AI" class="hero-banner">
+  <div class="hero-body">
+
+    <h1 class="title">Safety in Embodied AI:<br>Risks, Attacks, and Defenses</h1>
+
+    <div class="badges">
+      <a href="../paper.pdf" class="badge b-paper">&#128196;&nbsp;Paper PDF</a>
+      <span class="badge b-license">CC BY-NC-SA 4.0</span>
+      <a href="https://awesome.re" class="badge b-awesome">&#9733;&nbsp;Awesome</a>
+      <span class="badge b-papers">480+ Papers</span>
+      <span class="badge b-maintain">Maintained</span>
+    </div>
+
+    <div class="cta">
+      <a href="../paper.pdf" class="btn btn-gold">&#128196;&nbsp;Read Paper</a>
+      <a href="https://github.com/x-zheng16/Awesome-Embodied-AI-Safety" class="btn btn-ghost">&#128279;&nbsp;GitHub</a>
+    </div>
+
+    <div class="authors">
+      <a href="#">Xiao Li</a><sup>1,&#42;</sup>,
+      <a href="#">Xiang Zheng</a><sup>3,&#42;</sup>,
+      <a href="#">Yifeng Gao</a><sup>1</sup>,
+      <a href="#">Xinyu Xia</a><sup>4</sup>,
+      <a href="#">Yixu Wang</a><sup>1</sup>,
+      <a href="#">Xin Wang</a><sup>1</sup>,
+      <a href="#">Ye Sun</a><sup>1</sup>,
+      <a href="#">Yunhan Zhao</a><sup>1</sup>,
+      <a href="#">Ming Wen</a><sup>1,2</sup>,
+      <a href="#">Jiayu Li</a><sup>1</sup>,
+      <a href="#">Xun Gong</a><sup>4</sup>,
+      <a href="#">Yi Liu</a><sup>3</sup>,
+      <a href="#">Yige Li</a><sup>5</sup>,
+      <a href="#">Yutao Wu</a><sup>6</sup>,
+      <a href="#">Cong Wang</a><sup>3</sup>,
+      <a href="#">Jun Sun</a><sup>5</sup>,
+      <a href="#">Yixin Cao</a><sup>1,2</sup>,
+      <a href="#">Zhineng Chen</a><sup>1</sup>,
+      <a href="#">Jingjing Chen</a><sup>1</sup>,
+      <a href="#">Tao Gui</a><sup>1,2</sup>,
+      <a href="#">Qi Zhang</a><sup>1</sup>,
+      <a href="#">Zuxuan Wu</a><sup>1,2</sup>,
+      <a href="#">Xipeng Qiu</a><sup>1,2</sup>,
+      <a href="#">Xuanjing Huang</a><sup>1</sup>,
+      <a href="#">Tiehua Zhang</a><sup>7</sup>,
+      <a href="#">Zhipeng Wei</a><sup>9</sup>,
+      <a href="#">Hanxun Huang</a><sup>10</sup>,
+      <a href="#">Sarah Erfani</a><sup>10</sup>,
+      <a href="#">James Bailey</a><sup>10</sup>,
+      <a href="#">Wei-Ying Ma</a><sup>3,11</sup>,
+      <a href="#">Jianping Wang</a><sup>3</sup>,
+      <a href="#">Bo Li</a><sup>8</sup>,
+      <a href="#">Xingjun Ma</a><sup>1,2,&#8224;</sup>,
+      <a href="#">Yu-Gang Jiang</a><sup>1,&#8224;</sup>
+      <br>
+      <span class="author-note">&#42;&nbsp;Equal Contribution</span>
+      <span class="author-note">&#8224;&nbsp;Corresponding Authors</span>
+    </div>
+
+    <div class="affils">
+      <sup>1</sup>&nbsp;Fudan University &nbsp;&nbsp;
+      <sup>2</sup>&nbsp;Shanghai Innovation Institute &nbsp;&nbsp;
+      <sup>3</sup>&nbsp;City University of Hong Kong &nbsp;&nbsp;
+      <sup>4</sup>&nbsp;Jilin University &nbsp;&nbsp;
+      <sup>5</sup>&nbsp;Singapore Management University &nbsp;&nbsp;
+      <sup>6</sup>&nbsp;Deakin University &nbsp;&nbsp;
+      <sup>7</sup>&nbsp;Tongji University &nbsp;&nbsp;
+      <sup>8</sup>&nbsp;UIUC &nbsp;&nbsp;
+      <sup>9</sup>&nbsp;UC Berkeley &nbsp;&nbsp;
+      <sup>10</sup>&nbsp;University of Melbourne &nbsp;&nbsp;
+      <sup>11</sup>&nbsp;Tsinghua University
+    </div>
+
+  </div>
+</header>
+
+<!-- ABSTRACT -->
+<section id="abstract">
+  <div class="inner abstract">
+    <h2 class="sh">Abstract</h2>
+    <p>Embodied Artificial Intelligence (Embodied AI) integrates perception, cognition, planning, and interaction into agents that operate in open-world, safety-critical environments. As these systems gain autonomy and enter domains such as transportation, healthcare, and industrial or assistive robotics, ensuring their safety becomes both technically challenging and socially indispensable. Unlike digital-only AI systems, embodied agents must act under uncertain sensing, incomplete knowledge, and dynamic human&ndash;robot interactions, where failures can directly lead to physical harm.</p>
+    <p>This survey provides a comprehensive and structured review of safety research in embodied AI, examining attacks and defenses across the full embodied pipeline, from perception and cognition to planning and interaction. We introduce a multi-level taxonomy that unifies fragmented lines of work and connects embodied-specific safety findings with broader advances in vision, language, and multimodal foundation models. Our review synthesizes insights from over 500 papers spanning adversarial, backdoor, jailbreak, and hardware-level attacks; attack detection, safe training and inference; and risk-aware human&ndash;agent interaction.</p>
+    <p>This analysis reveals several overlooked challenges, including the fragility of multimodal perception fusion, the instability of planning under jailbreak attacks, and the trustworthiness of human&ndash;agent interaction in open-ended scenarios. By organizing the field into a coherent framework and identifying critical research gaps, this survey provides a roadmap for building embodied agents that are not only capable and autonomous but also safe, robust, and reliable in real-world deployment.</p>
+  </div>
+</section>
+
+<!-- OVERVIEW FIGURES -->
+<section id="overview">
+  <div class="inner">
+    <h2 class="sh">Overview</h2>
+    <div class="figures">
+      <div class="fig">
+        <img src="../assets/fig_capability_risk.png" alt="Capability vs. Risk Duality">
+        <p class="fig-cap"><strong>Figure 1:</strong> Capability vs. risk duality in embodied AI systems. As capabilities expand outward from perception to agentic systems, the attack surface grows correspondingly &mdash; vulnerabilities at inner layers cascade to outer layers.</p>
+      </div>
+      <div class="fig">
+        <img src="../assets/structure.png" alt="Survey Structure">
+        <p class="fig-cap"><strong>Figure 2:</strong> Illustration of safety threats and attack surfaces across capability layers of embodied AI systems.</p>
+      </div>
+      <div class="fig">
+        <img src="../assets/overview.png" alt="Overview of Attack and Defense Methods">
+        <p class="fig-cap"><strong>Figure 3:</strong> Overview of representative attack and defense methods across perception, cognition, planning, action &amp; interaction, and agentic system layers. The width of the strips is proportional to the number of reviewed works.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SURVEY SCOPE -->
+<section id="scope">
+  <div class="inner">
+    <h2 class="sh">Survey Scope</h2>
+    <p class="scope-lead">We review <strong>480+ papers</strong> across five capability layers of embodied AI, covering adversarial, backdoor, jailbreak, and hardware-level attacks alongside detection, safe training, and risk-aware interaction defenses.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Layer</th>
+          <th>Topics Covered</th>
+          <th style="text-align:right">Papers</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="lname">Perception</div></td>
+          <td><div class="ltopics">Visual · Auditory · Spatial · Motion · Cross-Modal Perception</div></td>
+          <td class="cnt-cell">
+            <div class="bar-wrap">
+              <span class="bar" style="width:160px"></span>
+              <span class="cnt">191</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="lname">Cognition</div></td>
+          <td><div class="ltopics">Instruction Understanding · World Model · Reasoning</div></td>
+          <td class="cnt-cell">
+            <div class="bar-wrap">
+              <span class="bar" style="width:27px"></span>
+              <span class="cnt">32</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="lname">Planning</div></td>
+          <td><div class="ltopics">Task Planning · Trajectory Planning · Multi-Agent Planning</div></td>
+          <td class="cnt-cell">
+            <div class="bar-wrap">
+              <span class="bar" style="width:43px"></span>
+              <span class="cnt">51</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="lname">Action &amp; Interaction</div></td>
+          <td><div class="ltopics">Robot Control · Human-Agent Interaction · Multi-Agent Collaboration</div></td>
+          <td class="cnt-cell">
+            <div class="bar-wrap">
+              <span class="bar" style="width:77px"></span>
+              <span class="cnt">92</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="lname">Agentic System</div></td>
+          <td><div class="ltopics">Tool Use · Memory · Self-Evolving · Cascading Risks</div></td>
+          <td class="cnt-cell">
+            <div class="bar-wrap">
+              <span class="bar" style="width:60px"></span>
+              <span class="cnt">71</span>
+            </div>
+          </td>
+        </tr>
+        <tr class="total-row">
+          <td colspan="2">Total (unique papers in taxonomy)</td>
+          <td><span class="total-count">437</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section id="news">
+  <div class="inner">
+    <h2 class="sh">News</h2>
+    <ul class="news-list">
+      <li class="ni">
+        <span class="ndate">2026/03/27</span>
+        <span class="ntext">Repository and paper released. Welcome to star and contribute!</span>
+      </li>
+      <li class="ni">
+        <span class="ndate">2026/03/26</span>
+        <span class="ntext">
+          <a href="https://github.com/wuyoscar/ISC-Bench">ISC-Bench</a> paper on
+          <a href="https://arxiv.org/abs/2603.23509">arXiv</a> &mdash;
+          500+ stars in 48 hours!
+          Internal Safety Collapse benchmark for frontier LLMs.
+        </span>
+      </li>
+      <li class="ni">
+        <span class="ndate">2025/02/02</span>
+        <span class="ntext">
+          <a href="https://github.com/xingjunm/Awesome-Large-Model-Safety">Safety at Scale</a> survey on
+          <a href="https://arxiv.org/abs/2502.05206">arXiv</a> &mdash;
+          a complementary survey on large model &amp; agent safety.
+        </span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- CITATION -->
+<section id="citation">
+  <div class="inner">
+    <h2 class="sh">Citation</h2>
+    <p class="cite-lead">If you find this survey useful in your research, please cite:</p>
+    <div class="bib">
+      <button class="copy" onclick="
+        var t=document.getElementById('bt').innerText;
+        navigator.clipboard.writeText(t).then(()=>{this.textContent='Copied!';setTimeout(()=>{this.textContent='Copy'},2000)});
+      ">Copy</button>
+      <pre id="bt"><span class="k-at">@article</span>{<span class="k-key">li2026safety</span>,
+  <span class="k-field">title</span>   = {<span class="k-str">Safety in Embodied AI: Risks, Attacks, and Defenses</span>},
+  <span class="k-field">author</span>  = {<span class="k-str">Li, Xiao and Zheng, Xiang and Gao, Yifeng and others</span>},
+  <span class="k-field">year</span>    = {<span class="k-str">2026</span>},
+  <span class="k-field">url</span>     = {<span class="k-str">https://github.com/x-zheng16/Awesome-Embodied-AI-Safety</span>}
+}</pre>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>
+    <a href="https://github.com/x-zheng16/Awesome-Embodied-AI-Safety">GitHub</a>&nbsp;&middot;&nbsp;
+    <a href="../paper.pdf">Paper</a>&nbsp;&middot;&nbsp;
+    Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+  </p>
+  <p style="margin-top:0.4rem; opacity:0.6">Safety in Embodied AI &copy; 2026</p>
+</footer>
+
+</body>
+</html>
