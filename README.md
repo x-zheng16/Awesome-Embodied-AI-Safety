@@ -7,10 +7,10 @@
 [![Paper](https://img.shields.io/badge/Paper-PDF-b31b1b.svg)](https://github.com/x-zheng16/Embodied-AI-Safety/blob/main/paper.pdf)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![Papers](https://img.shields.io/badge/Papers-434%2B-blue.svg)](#paper-lists)
+[![Papers](https://img.shields.io/badge/Papers-434%2B-blue.svg)](#surveyed-papers)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/x-zheng16/Embodied-AI-Safety/pulls)
 
-**A comprehensive survey of safety research in embodied AI, covering 480+ papers across perception, cognition, planning, interaction, and agentic systems.**
+**A comprehensive survey and the first unified safety framework for embodied AI, distilled from 1000+ papers into 480+ key works across perception, cognition, planning, interaction, and agentic systems. 1.5 years in the making.**
 
 [[Paper]](https://github.com/x-zheng16/Embodied-AI-Safety/blob/main/paper.pdf)
 
@@ -62,10 +62,11 @@
 
 ## Recent News
 
-| Date | Update |
-|------|--------|
-| 2026/03/27 | Repository and paper list released. |
-| 2026/03/XX | Paper available on arXiv (coming soon). |
+| Date       | Update                                                                                                                                               |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2026/03/27 | Repository and paper released.                                                                                                                       |
+| 2026/03/25 | [ISC-Bench](https://github.com/wuyoscar/ISC-Bench) released -- 500+ stars in 48 hours!                                                              |
+| 2026/03/22 | [Safety at Scale](https://github.com/xingjunm/Awesome-Large-Model-Safety) survey released -- a comprehensive survey of large model and agent safety. |
 
 ## Overview
 
@@ -76,18 +77,20 @@ As these systems gain autonomy and enter domains such as autonomous driving, hea
 
 <div align="center">
 <img src="assets/fig_capability_risk.png" width="95%">
+<p><em>Capability vs. risk duality in embodied AI systems. As capabilities expand outward from perception to agentic systems, the attack surface grows correspondingly -- vulnerabilities at inner layers cascade to outer layers.</em></p>
 </div>
 
 <div align="center">
 <img src="assets/structure.png" width="95%">
+<p><em>Illustration of safety threats and attack surfaces across capability layers of embodied AI systems.</em></p>
 </div>
-
 
 <div align="center">
 <img src="assets/overview.png" width="80%">
+<p><em>Overview of representative attack and defense methods across perception, cognition, planning, action & interaction, and agentic system layers. The width of the strips is proportional to the number of reviewed works.</em></p>
 </div>
 
-## Paper Lists
+## Surveyed Papers
 
 We review **434+** papers across five capability layers of embodied AI.
 
@@ -1582,8 +1585,15 @@ If you find this survey useful, please cite our paper:
 
 ## Related Projects
 
-- [ISC-Bench](https://github.com/wuyoscar/ISC-Bench) - Internal Safety Collapse in Frontier LLMs
-- [Awesome-Large-Model-Safety](https://github.com/xingjunm/Awesome-Large-Model-Safety) - Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety
+From the same team:
+
+- [ISC-Bench](https://github.com/wuyoscar/ISC-Bench) -- Internal Safety Collapse in Frontier LLMs (500+ stars)
+- [Awesome-Large-Model-Safety](https://github.com/xingjunm/Awesome-Large-Model-Safety) -- Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety
+- [BackdoorLLM](https://github.com/bboylyg/BackdoorLLM) -- A Comprehensive Benchmark for Backdoor Attacks on LLMs (NeurIPS 2025)
+- [BackdoorAgent](https://github.com/Yunhao-Feng/BackdoorAgent) -- Backdoor Attacks on LLM-based Agent Workflows
+- [JustAsk](https://github.com/x-zheng16/JustAsk) -- Curious Code Agents Reveal System Prompts in Frontier LLMs
+- [Unlearnable-Examples](https://github.com/HanxunH/Unlearnable-Examples) -- Making Personal Data Unexploitable (ICLR 2021)
+- [XTransferBench](https://github.com/HanxunH/XTransferBench) -- Super Transferable Adversarial Attacks on CLIP (ICML 2025)
 
 ## Star History
 
