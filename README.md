@@ -7,7 +7,7 @@
 [![Paper](https://img.shields.io/badge/Paper-PDF-b31b1b.svg)](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/blob/main/paper.pdf)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![Papers](https://img.shields.io/badge/Papers-434%2B-blue.svg)](#surveyed-papers)
+[![Papers](https://img.shields.io/badge/Papers-480%2B-blue.svg)](#surveyed-papers)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/pulls)
 
 **A comprehensive survey and the first unified safety framework for embodied AI, distilled from 1000+ papers into 480+ key works across perception, cognition, planning, interaction, and agentic systems. 1.5 years in the making.**
@@ -94,7 +94,7 @@ As these systems gain autonomy and enter domains such as autonomous driving, hea
 
 ## Surveyed Papers
 
-We review **434+** papers across five capability layers of embodied AI.
+We review **480+** papers across five capability layers of embodied AI.
 
 | Layer | Topics | Papers |
 |-------|--------|-------:|
