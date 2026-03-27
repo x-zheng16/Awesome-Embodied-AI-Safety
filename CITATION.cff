@@ -74,13 +74,13 @@ authors:
   orcid: "https://orcid.org/0000-0003-2099-4973"
 - family-names: "Jiang"
   given-names: "Yu-Gang"
-title: "Safety in Embodied AI: Risks, Attacks, and Defenses"
+title: "Safety in Embodied AI: A Survey of Risks, Attacks, and Defenses"
 version: 1.0.0
 date-released: "2026-03-27"
 url: "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety"
 preferred-citation:
     type: article
-    title: "Safety in Embodied AI: Risks, Attacks, and Defenses"
+    title: "Safety in Embodied AI: A Survey of Risks, Attacks, and Defenses"
     authors:
       - family-names: "Li"
         given-names: "Xiao"

@@ -2,7 +2,7 @@
 
 <img src="assets/banner.png" width="100%">
 
-# Safety in Embodied AI: Risks, Attacks, and Defenses
+# Safety in Embodied AI: A Survey of Risks, Attacks, and Defenses
 
 [![Paper](https://img.shields.io/badge/Paper-PDF-b31b1b.svg)](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/blob/main/paper.pdf)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
@@ -696,7 +696,7 @@ If you find this survey useful, please cite our paper:
 
 ```bibtex
 @article{li2026embodied,
-  title={Safety in Embodied AI: Risks, Attacks, and Defenses},
+  title={Safety in Embodied AI: A Survey of Risks, Attacks, and Defenses},
   author={Li, Xiao and Zheng, Xiang and Gao, Yifeng and Xia, Xinyu and Wang, Yixu and Wang, Xin and Sun, Ye and Zhao, Yunhan and Wen, Ming and Li, Jiayu and Gong, Xun and Liu, Yi and Li, Yige and Wu, Yutao and Wang, Cong and Sun, Jun and Cao, Yixin and Chen, Zhineng and Chen, Jingjing and Gui, Tao and Zhang, Qi and Wu, Zuxuan and Qiu, Xipeng and Huang, Xuanjing and Zhang, Tiehua and Wei, Zhipeng and Huang, Hanxun and Erfani, Sarah and Bailey, James and Ma, Wei-Ying and Wang, Jianping and Li, Bo and Ma, Xingjun and Jiang, Yu-Gang},
   year={2026}
 }
