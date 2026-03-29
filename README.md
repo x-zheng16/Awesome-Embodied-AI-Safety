@@ -67,6 +67,7 @@
 | Date       | Update                                                                                                                                                      |
 | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 2026/03/27 | Repository and paper released.                                                                                                                              |
+| 2025/09/15 | [Safety at Scale](https://github.com/xingjunm/Awesome-Large-Model-Safety) survey published in [Foundations and Trends in Security](https://www.emerald.com/ftsec/article/8/3-4/1/1335095). |
 | 2026/03/26 | [ISC-Bench](https://github.com/wuyoscar/ISC-Bench) paper on [arXiv](https://arxiv.org/abs/2603.23509) -- 400+ stars in 48 hours!                           |
 | 2026/03/22 | [ISC-Bench](https://github.com/wuyoscar/ISC-Bench) repository released -- Internal Safety Collapse benchmark for frontier LLMs.                            |
 | 2025/02/02 | [Safety at Scale](https://github.com/xingjunm/Awesome-Large-Model-Safety) survey on [arXiv](https://arxiv.org/abs/2502.05206) -- large model & agent safety. |
