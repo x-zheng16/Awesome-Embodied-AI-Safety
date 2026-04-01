@@ -62,15 +62,29 @@
 
 </div>
 
-## Recent News
+## 🔥 News
 
-| Date       | Update                                                                                                                                                      |
-| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 2026/03/27 | Repository and paper released.                                                                                                                              |
-| 2026/03/26 | [ISC-Bench](https://github.com/wuyoscar/ISC-Bench) paper on [arXiv](https://arxiv.org/abs/2603.23509) -- 400+ stars in 48 hours!                           |
-| 2026/03/22 | [ISC-Bench](https://github.com/wuyoscar/ISC-Bench) repository released -- Internal Safety Collapse benchmark for frontier LLMs.                            |
-| 2025/09/15 | [Safety at Scale](https://github.com/xingjunm/Awesome-Large-Model-Safety) survey published in [Foundations and Trends in Security](https://www.emerald.com/ftsec/article/8/3-4/1/1335095). |
-| 2025/02/02 | [Safety at Scale](https://github.com/xingjunm/Awesome-Large-Model-Safety) survey on [arXiv](https://arxiv.org/abs/2502.05206) -- large model & agent safety. |
+- **[2026/04/01]** Beautified paper list with layer icons and visual separators.
+- **[2026/03/31]** Added `llms.txt` and SEO meta tags for AI discoverability.
+- **[2026/03/28]** Added 11 missing safety papers; unified paper counts to 400+.
+- **[2026/03/27]** Repository and paper released!
+- **[2026/03/27]** Launched [project website](https://x-zheng16.github.io/Awesome-Embodied-AI-Safety/) with GitHub Pages.
+- **[2026/03/27]** Added automated paper review [GitHub Action](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/actions) for community contributions.
+- **[2026/03/26]** [ISC-Bench](https://github.com/wuyoscar/ISC-Bench) paper on [arXiv](https://arxiv.org/abs/2603.23509) -- 400+ stars in 48 hours!
+- **[2026/03/22]** [ISC-Bench](https://github.com/wuyoscar/ISC-Bench) repository released -- Internal Safety Collapse benchmark for frontier LLMs.
+- **[2025/09/15]** [Safety at Scale](https://github.com/xingjunm/Awesome-Large-Model-Safety) survey published in [Foundations and Trends in Security](https://www.emerald.com/ftsec/article/8/3-4/1/1335095).
+- **[2025/02/02]** [Safety at Scale](https://github.com/xingjunm/Awesome-Large-Model-Safety) survey on [arXiv](https://arxiv.org/abs/2502.05206) -- large model & agent safety.
+
+## Table of Contents
+
+- [News](#-news)
+- [Overview](#overview)
+- [Surveyed Papers](#surveyed-papers) -- Perception, Cognition, Planning, Action & Interaction, Agentic
+- [Open Challenges](#open-challenges)
+- [Contributing](#contributing)
+- [Citation](#citation)
+- [Related Projects](#related-projects)
+- [Star History](#star-history)
 
 ## Overview
 
@@ -707,9 +721,15 @@ We review **400+** papers across five capability layers of embodied AI.
 - **Agentic Cascading Failures**: Self-evolving agents with persistent memory and tool use can propagate inner-layer compromises to system-wide failures.
 - **Benchmark Standardization**: Lack of unified safety benchmarks across the full embodied AI pipeline hinders reproducible evaluation.
 
-## Missing Papers?
+## Contributing
 
-If you find any relevant papers missing from our list, please open an [issue](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/issues) or submit a [pull request](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/pulls). We welcome community contributions!
+Contributions are welcome and encouraged! If you find relevant papers missing from our list or spot any errors:
+
+- **Add a paper**: Open a [pull request](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/pulls) with the paper title, authors, venue, year, and a Google Scholar link.
+- **Report an issue**: Open an [issue](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/issues) describing what needs to be corrected or added.
+- **Suggest a category**: If a paper does not fit existing subcategories, propose a new one in your PR description.
+
+Please follow the existing format: `[Paper Title](Google Scholar link). Authors. *Venue*, Year.`
 
 ## Citation
 
