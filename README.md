@@ -5,7 +5,6 @@
 # Safety in Embodied AI: A Survey of Risks, Attacks, and Defenses
 
 [![arXiv](https://img.shields.io/badge/arXiv-2605.02900-b31b1b.svg)](https://arxiv.org/abs/2605.02900)
-[![Paper](https://img.shields.io/badge/Paper-PDF-b31b1b.svg)](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/blob/main/paper.pdf)
 [![Website](https://img.shields.io/badge/Website-Project%20Page-blue.svg)](https://x-zheng16.github.io/Awesome-Embodied-AI-Safety/)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
@@ -16,7 +15,7 @@
 
 **A comprehensive survey and the first unified safety framework for embodied AI, covering 400+ key works across perception, cognition, planning, interaction, and agentic systems.**
 
-[[arXiv]](https://arxiv.org/abs/2605.02900) | [[Paper]](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/blob/main/paper.pdf) | [[Website]](https://x-zheng16.github.io/Awesome-Embodied-AI-Safety/)
+[[arXiv]](https://arxiv.org/abs/2605.02900) | [[Website]](https://x-zheng16.github.io/Awesome-Embodied-AI-Safety/)
 
 </div>
 
