@@ -4,6 +4,7 @@
 
 # Safety in Embodied AI: A Survey of Risks, Attacks, and Defenses
 
+[![arXiv](https://img.shields.io/badge/arXiv-2605.02900-b31b1b.svg)](https://arxiv.org/abs/2605.02900)
 [![Paper](https://img.shields.io/badge/Paper-PDF-b31b1b.svg)](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/blob/main/paper.pdf)
 [![Website](https://img.shields.io/badge/Website-Project%20Page-blue.svg)](https://x-zheng16.github.io/Awesome-Embodied-AI-Safety/)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
@@ -15,7 +16,7 @@
 
 **A comprehensive survey and the first unified safety framework for embodied AI, covering 400+ key works across perception, cognition, planning, interaction, and agentic systems.**
 
-[[Paper]](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/blob/main/paper.pdf) | [[Website]](https://x-zheng16.github.io/Awesome-Embodied-AI-Safety/)
+[[arXiv]](https://arxiv.org/abs/2605.02900) | [[Paper]](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/blob/main/paper.pdf) | [[Website]](https://x-zheng16.github.io/Awesome-Embodied-AI-Safety/)
 
 </div>
 
@@ -66,6 +67,7 @@
 
 ## 🔥 News
 
+- **[2026/05/09]** Paper posted on [arXiv](https://arxiv.org/abs/2605.02900).
 - **[2026/04/01]** Beautified paper list with layer icons and visual separators.
 - **[2026/03/31]** Added `llms.txt` and SEO meta tags for AI discoverability.
 - **[2026/03/28]** Added 11 missing safety papers; unified paper counts to 400+.
@@ -741,6 +743,7 @@ If you find this survey useful, please cite our paper:
 @article{li2026embodied,
   title={Safety in Embodied AI: A Survey of Risks, Attacks, and Defenses},
   author={Li, Xiao and Zheng, Xiang and Gao, Yifeng and Xia, Xinyu and Wang, Yixu and Wang, Xin and Sun, Ye and Zhao, Yunhan and Wen, Ming and Li, Jiayu and Gong, Xun and Liu, Yi and Li, Yige and Wu, Yutao and Wang, Cong and Sun, Jun and Cao, Yixin and Chen, Zhineng and Chen, Jingjing and Gui, Tao and Zhang, Qi and Wu, Zuxuan and Qiu, Xipeng and Huang, Xuanjing and Zhang, Tiehua and Wei, Zhipeng and Huang, Hanxun and Erfani, Sarah and Bailey, James and Ma, Wei-Ying and Wang, Jianping and Li, Bo and Ma, Xingjun and Jiang, Yu-Gang},
+  journal={arXiv preprint arXiv:2605.02900},
   year={2026}
 }
 ```

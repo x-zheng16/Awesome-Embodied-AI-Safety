@@ -156,4 +156,8 @@ preferred-citation:
       - family-names: "Jiang"
         given-names: "Yu-Gang"
     year: 2026
-    url: "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety"
+    url: "https://arxiv.org/abs/2605.02900"
+    identifiers:
+      - type: other
+        value: "arXiv:2605.02900"
+        description: "arXiv preprint"
