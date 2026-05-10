@@ -5,8 +5,8 @@ This file describes the repository structure and contribution workflow for AI ag
 
 ## Repository Overview
 
-**Safety in Embodied AI: Risks, Attacks, and Defenses**
-A curated Awesome list + survey paper covering 400+ papers on safety across the
+**Safety in Embodied AI: A Survey of Risks, Attacks, and Defenses**
+A curated Awesome list + survey paper covering 480+ papers on safety across the
 full embodied AI pipeline.
 GitHub: https://github.com/x-zheng16/Awesome-Embodied-AI-Safety
 Project page: https://x-zheng16.github.io/Awesome-Embodied-AI-Safety/
@@ -40,11 +40,11 @@ Every paper in this repository maps to exactly one layer and one subcategory:
 
 | Layer          | Subcategories                                                                 | Papers |
 | -------------- | ----------------------------------------------------------------------------- | -----: |
-| **Perception** | Visual, Auditory, Spatial, Motion, Cross-Modal                                |    191 |
-| **Cognition**  | Instruction Understanding, World Model, Reasoning                             |     32 |
-| **Planning**   | Task Planning, Trajectory Planning, Multi-Agent Planning                      |     51 |
-| **Action and Interaction** | Robot Control, Human-Agent Interaction, Multi-Agent Collaboration             |     92 |
-| **Agentic**    | Tool Use, Memory, Self-Evolving, Cascading Risks                              |     71 |
+| **Perception** | Visual, Auditory, Spatial, Motion, Cross-Modal                                |    192 |
+| **Cognition**  | Instruction Understanding, World Model, Reasoning                             |     38 |
+| **Planning**   | Task Planning, Trajectory Planning, Multi-Agent Planning                      |     59 |
+| **Action and Interaction** | Robot Control, Human-Agent Interaction, Multi-Agent Collaboration             |    105 |
+| **Agentic**    | Tool Use and Skill, Memory, Self-Evolving, Cascading Risks                    |     87 |
 
 **Taxonomy rationale**: each layer corresponds to a capability stage in the embodied
 AI pipeline where introducing new abilities also introduces new attack surfaces.
@@ -126,10 +126,11 @@ When helping a user contribute to this repository:
 ## Citation
 
 ```bibtex
-@article{li2026safety,
-  title={Safety in Embodied AI: Risks, Attacks, and Defenses},
+@article{li2026embodied,
+  title={Safety in Embodied AI: A Survey of Risks, Attacks, and Defenses},
   author={Li, Xiao and Zheng, Xiang and Gao, Yifeng and others},
+  journal={arXiv preprint arXiv:2605.02900},
   year={2026},
-  url={https://github.com/x-zheng16/Awesome-Embodied-AI-Safety}
+  url={https://arxiv.org/abs/2605.02900}
 }
 ```

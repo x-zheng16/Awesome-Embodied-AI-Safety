@@ -29,19 +29,19 @@ Embodied AI Safety Taxonomy (5 layers):
    - Trajectory Planning: motion planning adversarial attacks, path manipulation
    - Multi-Agent Planning: coordination attacks, goal conflicts in multi-agent systems
 
-4. ACTION
+4. ACTION AND INTERACTION
    - Robot Control: physical adversarial attacks, control policy backdoors
    - Human-Agent Interaction: social engineering, trust manipulation, HRI safety
    - Multi-Agent Collaboration: Byzantine agents, collusion, infection
 
 5. AGENTIC
-   - Tool Use: tool poisoning, malicious API calls, MCP attacks
+   - Tool Use and Skill: tool poisoning, malicious API calls, MCP attacks, skill extraction
    - Memory: memory poisoning, retrieval manipulation
    - Self-Evolving: fine-tuning attacks, knowledge editing attacks
    - Cascading Risks: supply chain attacks, emergent multi-agent risks
 """
 
-SYSTEM_PROMPT = f"""You are a senior researcher in embodied AI safety reviewing paper submissions for the survey "Safety in Embodied AI: Risks, Attacks, and Defenses."
+SYSTEM_PROMPT = f"""You are a senior researcher in embodied AI safety reviewing paper submissions for the survey "Safety in Embodied AI: A Survey of Risks, Attacks, and Defenses."
 
 The survey covers attacks and defenses across the full embodied AI pipeline. Here is the taxonomy:
 

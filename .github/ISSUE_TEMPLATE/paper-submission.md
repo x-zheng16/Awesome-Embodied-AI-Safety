@@ -20,8 +20,8 @@ Which layer does this paper belong to?
 - [ ] Perception (Visual, Auditory, Spatial, Motion, Cross-Modal)
 - [ ] Cognition (Instruction Understanding, World Model, Reasoning)
 - [ ] Planning (Task Planning, Trajectory Planning, Multi-Agent Planning)
-- [ ] Action (Robot Control, Human-Agent Interaction, Multi-Agent Collaboration)
-- [ ] Agentic (Tool Use, Memory, Self-Evolving, Cascading Risks)
+- [ ] Action and Interaction (Robot Control, Human-Agent Interaction, Multi-Agent Collaboration)
+- [ ] Agentic (Tool Use and Skill, Memory, Self-Evolving, Cascading Risks)
 
 ## Subcategory
 
