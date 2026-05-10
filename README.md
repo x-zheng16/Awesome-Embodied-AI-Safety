@@ -8,12 +8,12 @@
 [![Website](https://img.shields.io/badge/Website-Project%20Page-blue.svg)](https://x-zheng16.github.io/Awesome-Embodied-AI-Safety/)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![Papers](https://img.shields.io/badge/Papers-400%2B-blue.svg)](#surveyed-papers)
+[![Papers](https://img.shields.io/badge/Papers-480%2B-blue.svg)](#surveyed-papers)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/pulls)
 [![GitHub stars](https://img.shields.io/github/stars/x-zheng16/Awesome-Embodied-AI-Safety?style=social)](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety)
 [![GitHub forks](https://img.shields.io/github/forks/x-zheng16/Awesome-Embodied-AI-Safety?style=social)](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety)
 
-**A comprehensive survey and the first unified safety framework for embodied AI, covering 400+ key works across perception, cognition, planning, interaction, and agentic systems.**
+**A comprehensive survey and the first unified safety framework for embodied AI, covering 480+ key works across perception, cognition, planning, interaction, and agentic systems.**
 
 [[arXiv]](https://arxiv.org/abs/2605.02900) | [[Website]](https://x-zheng16.github.io/Awesome-Embodied-AI-Safety/)
 
@@ -66,6 +66,7 @@
 
 ## 🔥 News
 
+- **[2026/05/11]** Updated with 29 new arXiv papers (2026-04 / 2026-05) across all 5 layers, including HazardArena, RedVLA, JailWAM, DTap, IPI-in-Wild, MCP function-hijacking, and skill-safety literature; renamed `Tool Use` to `Tool Use and Skill` to track the agentic-skill threat surface.
 - **[2026/05/09]** Paper posted on [arXiv](https://arxiv.org/abs/2605.02900).
 - **[2026/04/01]** Beautified paper list with layer icons and visual separators.
 - **[2026/03/31]** Added `llms.txt` and SEO meta tags for AI discoverability.
@@ -113,22 +114,23 @@ As these systems gain autonomy and enter domains such as autonomous driving, hea
 
 ## Surveyed Papers
 
-We review **400+** papers across five capability layers of embodied AI.
+We review **480+** papers across five capability layers of embodied AI.
 
 |     | Layer                      | Subcategories                                                    | Papers |
 |:---:|----------------------------|------------------------------------------------------------------|-------:|
-| 👁️ | **Perception**             | Visual, Auditory, Spatial, Motion, Cross-Modal                   |    191 |
-| 🧠 | **Cognition**              | Instruction Understanding, World Model, Reasoning                |     32 |
-| 🗺️ | **Planning**               | Task, Trajectory, Multi-Agent                                    |     56 |
-| 🤖 | **Action and Interaction** | Robot Control, Human-Agent, Multi-Agent Collaboration             |     97 |
-| ⚡  | **Agentic**                | Tool Use, Memory, Self-Evolving, Cascading Risks                 |     76 |
+| 👁️ | **Perception**             | Visual, Auditory, Spatial, Motion, Cross-Modal                   |    192 |
+| 🧠 | **Cognition**              | Instruction Understanding, World Model, Reasoning                |     38 |
+| 🗺️ | **Planning**               | Task, Trajectory, Multi-Agent                                    |     59 |
+| 🤖 | **Action and Interaction** | Robot Control, Human-Agent, Multi-Agent Collaboration             |    105 |
+| ⚡  | **Agentic**                | Tool Use and Skill, Memory, Self-Evolving, Cascading Risks       |     87 |
 
 <details open>
-<summary>👁️ <b>Perception</b> (191 papers)</summary>
+<summary>👁️ <b>Perception</b> (192 papers)</summary>
 
 <details>
-<summary>Visual Perception (55)</summary>
+<summary>Visual Perception (56)</summary>
 
+- [Physical Adversarial Clothing Evades Visible-Thermal Detectors via Non-Overlapping RGB-T Pattern](https://arxiv.org/abs/2605.04675). Zhu et al.. *arXiv 2605.04675*, 2026.
 - [Securing the Lane: Defences Against Patch Attacks on Autonomous Vehicle's Lane Detection](https://scholar.google.com/scholar?q=Securing+the+Lane%3A+Defences+Against+Patch+Attacks+on+Autonomous+Vehicle%27s+Lane+Detection). Blazevic et al.. *EuroS&PW*, 2025.
 - [Detecting Adversarial Attacks Based on Tracking Differences in Frequency Bands](https://scholar.google.com/scholar?q=Detecting+Adversarial+Attacks+Based+on+Tracking+Differences+in+Frequency+Bands). Li, Li, Zhang. *IEEE Transactions on Multimedia (TMM)*, 2025.
 - [Multi-view Feature Discrepancy Attack for Single Object Tracking](https://scholar.google.com/scholar?q=Multi-view+Feature+Discrepancy+Attack+for+Single+Object+Tracking). Li, Zhimin, Wang. *ICASSP*, 2025.
@@ -352,11 +354,14 @@ We review **400+** papers across five capability layers of embodied AI.
 ---
 
 <details open>
-<summary>🧠 <b>Cognition</b> (32 papers)</summary>
+<summary>🧠 <b>Cognition</b> (38 papers)</summary>
 
 <details>
-<summary>Instruction Understanding (12)</summary>
+<summary>Instruction Understanding (15)</summary>
 
+- [Semantic Denial of Service in LLM-Controlled Robots](https://arxiv.org/abs/2604.24790). Steinberg, Gal. *arXiv 2604.24790*, 2026.
+- [Seeing No Evil: Blinding Large Vision-Language Models to Safety Instructions via Adversarial Attention Hijacking](https://arxiv.org/abs/2604.10299). Li, Ren, Zhu. *ACL*, 2026.
+- [Mitigating Trust Boundary Confusion from Visual Injections on Vision-Language Agentic Systems](https://arxiv.org/abs/2604.19844). Chang et al.. *arXiv 2604.19844*, 2026.
 - [Safe LLM-Controlled Robots with Formal Guarantees via Reachability Analysis](https://scholar.google.com/scholar?q=Safe+LLM-Controlled+Robots+with+Formal+Guarantees+via+Reachability+Analysis). Abuduweili et al.. *arXiv 2503.03911*, 2025.
 - [BadNAVer: Exploring Jailbreak Attacks On Vision-and-Language Navigation](https://scholar.google.com/scholar?q=BadNAVer%3A+Exploring+Jailbreak+Attacks+On+Vision-and-Language+Navigation). Bai et al.. *arXiv 2505.12443*, 2025.
 - [AGENTSAFE: Benchmarking the Safety of Embodied Agents on Hazardous Instructions](https://scholar.google.com/scholar?q=AGENTSAFE%3A+Benchmarking+the+Safety+of+Embodied+Agents+on+Hazardous+Instructions). Liu et al.. *arXiv 2506.14697*, 2025.
@@ -373,8 +378,11 @@ We review **400+** papers across five capability layers of embodied AI.
 </details>
 
 <details>
-<summary>World Model (10)</summary>
+<summary>World Model (13)</summary>
 
+- [Safety, Security, and Cognitive Risks in World Models](https://arxiv.org/abs/2604.01346). Parmar. *arXiv 2604.01346*, 2026.
+- [TRAP: Tail-aware Ranking Attack for World-Model Planning](https://arxiv.org/abs/2605.01950). Duan, Zhang, Luo. *arXiv 2605.01950*, 2026.
+- [Benchmarking Vision-Language Models under Contradictory Virtual Content Attacks in AR](https://arxiv.org/abs/2604.05510). Xiu et al.. *arXiv 2604.05510*, 2026.
 - [The Safety Challenge of World Models for Embodied AI Agents: A Review](https://scholar.google.com/scholar?q=The+Safety+Challenge+of+World+Models+for+Embodied+AI+Agents%3A+A+Review). Baraldi et al.. *arXiv 2510.05865*, 2025.
 - [MASH-VLM](https://scholar.google.com/scholar?q=MASH-VLM). Hou et al.. *CVPR*, 2025.
 - [A Comprehensive Survey on World Models for Embodied AI](https://scholar.google.com/scholar?q=A+Comprehensive+Survey+on+World+Models+for+Embodied+AI). Li et al.. *arXiv 2510.16732*, 2025.
@@ -409,11 +417,14 @@ We review **400+** papers across five capability layers of embodied AI.
 ---
 
 <details open>
-<summary>🗺️ <b>Planning</b> (56 papers)</summary>
+<summary>🗺️ <b>Planning</b> (59 papers)</summary>
 
 <details>
-<summary>Task Planning (19)</summary>
+<summary>Task Planning (22)</summary>
 
+- [Safety in Vision-Language-Action Models: A Survey](https://arxiv.org/abs/2604.23775). Li et al.. *arXiv 2604.23775*, 2026.
+- [Using Large Language Models for Embodied Planning Introduces Systematic Safety Risks](https://arxiv.org/abs/2604.18463). Zhang et al.. *arXiv 2604.18463*, 2026.
+- [Safety Evaluation of LLMs for Robotic Health Attendants Against Harmful Instructions](https://arxiv.org/abs/2604.26577). Nakao, Takemoto. *arXiv 2604.26577*, 2026.
 - [SafeMind: Benchmarking and Mitigating Safety Risks in Embodied LLM Agents](https://scholar.google.com/scholar?q=SafeMind%3A+Benchmarking+and+Mitigating+Safety+Risks+in+Embodied+LLM+Agents). Chen et al.. *arXiv 2509.25885*, 2025.
 - [A Framework for Benchmarking and Aligning Task-Planning Safety in LLM-Based Embodied Agents](https://scholar.google.com/scholar?q=A+Framework+for+Benchmarking+and+Aligning+Task-Planning+Safety+in+LLM-Based+Embodied+Agents). Huang et al.. *arXiv 2504.14650*, 2025.
 - [HASARD: A Benchmark for Vision-Based Safe Reinforcement Learning in Embodied Agents](https://scholar.google.com/scholar?q=HASARD%3A+A+Benchmark+for+Vision-Based+Safe+Reinforcement+Learning+in+Embodied+Agents). Tomilin et al.. *ICLR*, 2025.
@@ -490,11 +501,19 @@ We review **400+** papers across five capability layers of embodied AI.
 ---
 
 <details open>
-<summary>🤖 <b>Action and Interaction</b> (97 papers)</summary>
+<summary>🤖 <b>Action and Interaction</b> (105 papers)</summary>
 
 <details>
-<summary>Robot Control (82)</summary>
+<summary>Robot Control (90)</summary>
 
+- [RedVLA: Physical Red Teaming of Vision-Language-Action Models](https://arxiv.org/abs/2604.22591). Zhang et al.. *arXiv 2604.22591*, 2026.
+- [HazardArena: Evaluating Semantic Safety in Vision-Language-Action Models](https://arxiv.org/abs/2604.12447). Chen et al.. *arXiv 2604.12447*, 2026.
+- [Uncovering Linguistic Fragility in Vision-Language-Action Models via Diversity-Aware Red Teaming](https://arxiv.org/abs/2604.05595). Tong et al.. *arXiv 2604.05595*, 2026.
+- [JailWAM: Jailbreaking World Action Models in Robot Control](https://arxiv.org/abs/2604.05498). Liu et al.. *arXiv 2604.05498*, 2026.
+- [From Prompt to Physical Action: Structured Backdoor Attacks on LLM-Mediated Robotic Control Systems](https://arxiv.org/abs/2604.03890). Xie, Wei-Kocsis. *arXiv 2604.03890*, 2026.
+- [Tex3D: Objects as Attack Surfaces via Adversarial 3D Textures for Vision-Language-Action Models](https://arxiv.org/abs/2604.01618). Chen et al.. *arXiv 2604.01618*, 2026.
+- [UniAda: Universal Adaptive Multi-objective Adversarial Attack for End-to-End Autonomous Driving Systems](https://arxiv.org/abs/2604.23362). Zhang et al.. *arXiv 2604.23362*, 2026.
+- [STRONG-VLA: Decoupled Robustness Learning for Vision-Language-Action Models under Multimodal Perturbations](https://arxiv.org/abs/2604.10055). Xie et al.. *arXiv 2604.10055*, 2026.
 - [BEAT: Visual Backdoor Attacks on VLM-based Embodied Agents via Contrastive Trigger Learning](https://scholar.google.com/scholar?q=BEAT%3A+Visual+Backdoor+Attacks+on+VLM-based+Embodied+Agents+via+Contrastive+Trigger+Learning). Zhan et al.. *arXiv 2510.27623*, 2025.
 - [Regret-based Defense in Adversarial Reinforcement Learning](https://scholar.google.com/scholar?q=Regret-based+Defense+in+Adversarial+Reinforcement+Learning). Belaire et al.. *AAMAS*, 2024.
 - [Train Hard, Fight Easy: Robust Meta Reinforcement Learning](https://scholar.google.com/scholar?q=Train+Hard+Fight+Easy%3A+Robust+Meta+Reinforcement+Learning). Greenberg et al.. *NeurIPS*, 2023.
@@ -612,11 +631,19 @@ We review **400+** papers across five capability layers of embodied AI.
 ---
 
 <details open>
-<summary>⚡ <b>Agentic</b> (76 papers)</summary>
+<summary>⚡ <b>Agentic</b> (87 papers)</summary>
 
 <details>
-<summary>Tool Use (9)</summary>
+<summary>Tool Use and Skill (17)</summary>
 
+- [DecodingTrust-Agent Platform (DTap): A Controllable and Interactive Red-Teaming Platform for AI Agents](https://arxiv.org/abs/2605.04808). Chen et al.. *arXiv 2605.04808*, 2026.
+- [Indirect Prompt Injection in the Wild: An Empirical Study of Prevalence, Techniques, and Objectives](https://arxiv.org/abs/2604.27202). Khodayari et al.. *arXiv 2604.27202*, 2026.
+- [Breaking MCP with Function Hijacking Attacks: Novel Threats for Function Calling and Agentic Models](https://arxiv.org/abs/2604.20994). Belkhiter et al.. *arXiv 2604.20994*, 2026.
+- [Structured Security Auditing and Robustness Enhancement for Untrusted Agent Skills](https://arxiv.org/abs/2604.25109). Lv et al.. *arXiv 2604.25109*, 2026.
+- [RouteGuard: Internal-Signal Detection of Skill Poisoning in LLM Agents](https://arxiv.org/abs/2604.22888). Xiao et al.. *arXiv 2604.22888*, 2026.
+- [Black-Box Skill Stealing Attack from Proprietary LLM Agents: An Empirical Study](https://arxiv.org/abs/2604.21829). Wang et al.. *arXiv 2604.21829*, 2026.
+- [Supply-Chain Poisoning Attacks Against LLM Coding Agent Skill Ecosystems](https://arxiv.org/abs/2604.03081). Qu et al.. *arXiv 2604.03081*, 2026.
+- [Towards Secure Agent Skills: Architecture, Threat Taxonomy, and Security Analysis](https://arxiv.org/abs/2604.02837). Li et al.. *arXiv 2604.02837*, 2026.
 - [AgentSpec](https://scholar.google.com/scholar?q=AgentSpec). Chen et al.. *ICSE*, 2026.
 - [BackdoorAgent](https://scholar.google.com/scholar?q=BackdoorAgent). Liang et al.. *arXiv 2601.04566*, 2026.
 - [OWASP](https://scholar.google.com/scholar?q=OWASP). Project. 2026.
@@ -630,8 +657,10 @@ We review **400+** papers across five capability layers of embodied AI.
 </details>
 
 <details>
-<summary>Memory (15)</summary>
+<summary>Memory (17)</summary>
 
+- [SafeHarbor: Hierarchical Memory-Augmented Guardrail for LLM Agent Safety](https://arxiv.org/abs/2605.05704). Liu et al.. *ICML*, 2026.
+- [How Far Are VLMs from Privacy Awareness in the Physical World? An Empirical Study](https://arxiv.org/abs/2605.05340). Wang et al.. *arXiv 2605.05340*, 2026.
 - [From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms](https://scholar.google.com/scholar?q=From+Storage+to+Experience%3A+A+Survey+on+the+Evolution+of+LLM+Agent+Memory+Mechanisms). Luo et al.. *Preprints.org*, 2026.
 - [OWASP](https://scholar.google.com/scholar?q=OWASP). Project. 2026.
 - [Just Ask: Curious Code Agents Reveal System Prompts in Frontier LLMs](https://scholar.google.com/scholar?q=Just+Ask%3A+Curious+Code+Agents+Reveal+System+Prompts+in+Frontier+LLMs). Zheng et al.. *arXiv 2601.21233*, 2026.
@@ -673,8 +702,9 @@ We review **400+** papers across five capability layers of embodied AI.
 </details>
 
 <details>
-<summary>Cascading Risks (36)</summary>
+<summary>Cascading Risks (37)</summary>
 
+- [Position: Embodied AI Requires a Privacy-Utility Trade-off](https://arxiv.org/abs/2605.05017). Fan et al.. *arXiv 2605.05017*, 2026.
 - [A Survey of Agentic AI and Cybersecurity: Challenges, Opportunities and Use-case Prototypes](https://scholar.google.com/scholar?q=A+Survey+of+Agentic+AI+and+Cybersecurity%3A+Challenges%2C+Opportunities+and+Use-case+Prototypes). Lazer et al.. *arXiv 2601.05293*, 2026.
 - [A Survey on Agentic Security: Applications, Threats and Defenses](https://scholar.google.com/scholar?q=A+Survey+on+Agentic+Security%3A+Applications%2C+Threats+and+Defenses). Shahriar. *arXiv 2510.06445*, 2025.
 - [SkillJect: Automating Stealthy Skill-Based Prompt Injection for Coding Agents with Trace-Driven Closed-Loop Refinement](https://scholar.google.com/scholar?q=SkillJect%3A+Automating+Stealthy+Skill-Based+Prompt+Injection+for+Coding+Agents+with+Trace-Driven+Closed-Loop+Refinement). Jia et al.. *arXiv 2602.14211*, 2026.
