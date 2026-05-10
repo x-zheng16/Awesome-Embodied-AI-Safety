@@ -667,7 +667,7 @@ We review **480+** papers across five capability layers of embodied AI.
 - [How Far Are VLMs from Privacy Awareness in the Physical World? An Empirical Study](https://arxiv.org/abs/2605.05340). Wang et al.. *arXiv 2605.05340*, 2026.
 - [From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms](https://scholar.google.com/scholar?q=From+Storage+to+Experience%3A+A+Survey+on+the+Evolution+of+LLM+Agent+Memory+Mechanisms). Luo et al.. *Preprints.org*, 2026.
 - [OWASP](https://scholar.google.com/scholar?q=OWASP). Project. 2026.
-- [Just Ask: Curious Code Agents Reveal System Prompts in Frontier LLMs](https://scholar.google.com/scholar?q=Just+Ask%3A+Curious+Code+Agents+Reveal+System+Prompts+in+Frontier+LLMs). Zheng et al.. *arXiv 2601.21233*, 2026.
+- [Just Ask: Curious Code Agents Reveal System Prompts in Frontier LLMs](https://arxiv.org/abs/2601.21233). Zheng et al.. *ICML*, 2026.
 - [Cascading Failures in Agentic AI](https://scholar.google.com/scholar?q=Cascading+Failures+in+Agentic+AI). AI. 2025.
 - [A-MEM](https://scholar.google.com/scholar?q=A-MEM). Anonymous. *NeurIPS*, 2025.
 - [Memory in the Age of AI Agents](https://scholar.google.com/scholar?q=Memory+in+the+Age+of+AI+Agents). Hu et al.. *arXiv 2512.13564*, 2025.
