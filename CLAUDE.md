@@ -126,7 +126,7 @@ When helping a user contribute to this repository:
 ## Citation
 
 ```bibtex
-@article{li2026embodied,
+@article{li2026safety,
   title={Safety in Embodied AI: A Survey of Risks, Attacks, and Defenses},
   author={Li, Xiao and Zheng, Xiang and Gao, Yifeng and others},
   journal={arXiv preprint arXiv:2605.02900},
