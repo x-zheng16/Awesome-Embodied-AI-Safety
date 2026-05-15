@@ -128,7 +128,7 @@ When helping a user contribute to this repository:
 ```bibtex
 @article{li2026safety,
   title={Safety in Embodied AI: A Survey of Risks, Attacks, and Defenses},
-  author={Li, Xiao and Zheng, Xiang and Gao, Yifeng and others},
+  author={Li, Xiao and Zheng, Xiang and Gao, Yifeng and Xia, Xinyu and Wang, Yixu and Wang, Xin and Sun, Ye and Zhao, Yunhan and Wen, Ming and Li, Jiayu and Chen, Zixing and Gong, Xun and Liu, Yi and Li, Yige and Wu, Yutao and Wang, Cong and Sun, Jun and Cao, Yixin and Chen, Zhineng and Chen, Jingjing and Gui, Tao and Zhang, Qi and Wu, Zuxuan and Qiu, Xipeng and Huang, Xuanjing and Zhang, Tiehua and Wei, Zhipeng and Wang, Kun and Li, Xinfeng and Huang, Hanxun and Erfani, Sarah and Bailey, James and Wang, Jianping and Xiao, Chaowei and He, Ran and Li, Bo and Ma, Xingjun and Jiang, Yu-Gang},
   journal={arXiv preprint arXiv:2605.02900},
   year={2026},
   url={https://arxiv.org/abs/2605.02900}
