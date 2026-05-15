@@ -70,7 +70,7 @@
 
 ## 🔥 News
 
-- **[2026/05/11]** Updated with 29 new arXiv papers (2026-04 / 2026-05) across all 5 layers, including HazardArena, RedVLA, JailWAM, DTap, IPI-in-Wild, MCP function-hijacking, and skill-safety literature; renamed `Tool Use` to `Tool Use and Skill` to track the agentic-skill threat surface.
+- **[2026/05/11]** Updated with 29 new arXiv papers (2026-04 / 2026-05) across all 5 layers, including HazardArena, RedVLA, JailWAM, DTap, IPI-in-Wild, MCP function-hijacking, and skill-safety literature; renamed `Tool Use` to `Tool Use and Skill` to track the agentic-skill threat surface. Survey now indexes **481 papers** across **38 co-authors** from **13 institutions**.
 - **[2026/05/09]** Paper posted on [arXiv](https://arxiv.org/abs/2605.02900).
 - **[2026/04/01]** Beautified paper list with layer icons and visual separators.
 - **[2026/03/31]** Added `llms.txt` and SEO meta tags for AI discoverability.
