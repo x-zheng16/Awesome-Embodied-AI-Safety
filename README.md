@@ -8,7 +8,7 @@
 [![Website](https://img.shields.io/badge/Website-Project%20Page-blue.svg)](https://x-zheng16.github.io/Awesome-Embodied-AI-Safety/)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![Papers](https://img.shields.io/badge/Papers-480%2B-blue.svg)](#surveyed-papers)
+[![Papers](https://img.shields.io/badge/Papers-450%2B-blue.svg)](#surveyed-papers)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/pulls)
 [![GitHub stars](https://img.shields.io/github/stars/x-zheng16/Awesome-Embodied-AI-Safety?style=social)](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety)
 [![GitHub forks](https://img.shields.io/github/forks/x-zheng16/Awesome-Embodied-AI-Safety?style=social)](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety)
@@ -118,18 +118,18 @@ As these systems gain autonomy and enter domains such as autonomous driving, hea
 
 ## Surveyed Papers
 
-We review **480+** papers across five capability layers of embodied AI.
+We review **450+** papers across five capability layers of embodied AI.
 
 |     | Layer                      | Subcategories                                                    | Papers |
 |:---:|----------------------------|------------------------------------------------------------------|-------:|
-| 👁️ | **Perception**             | Visual, Auditory, Spatial, Motion, Cross-Modal                   |    192 |
-| 🧠 | **Cognition**              | Instruction Understanding, World Model, Reasoning                |     38 |
-| 🗺️ | **Planning**               | Task, Trajectory, Multi-Agent                                    |     59 |
-| 🤖 | **Action and Interaction** | Robot Control, Human-Agent, Multi-Agent Collaboration             |    105 |
-| ⚡  | **Agentic**                | Tool Use and Skill, Memory, Self-Evolving, Cascading Risks       |     87 |
+| 👁️ | **Perception**             | Visual, Auditory, Spatial, Motion, Cross-Modal                   |    191 |
+| 🧠 | **Cognition**              | Instruction Understanding, World Model, Reasoning                |     29 |
+| 🗺️ | **Planning**               | Task, Trajectory, Multi-Agent                                    |     57 |
+| 🤖 | **Action and Interaction** | Robot Control, Human-Agent, Multi-Agent Collaboration             |    101 |
+| ⚡  | **Agentic**                | Tool Use and Skill, Memory, Self-Evolving, Cascading Risks       |     74 |
 
 <details open>
-<summary>👁️ <b>Perception</b> (192 papers)</summary>
+<summary>👁️ <b>Perception</b> (191 papers)</summary>
 
 <details>
 <summary>Visual Perception (56)</summary>
@@ -141,7 +141,7 @@ We review **480+** papers across five capability layers of embodied AI.
 - [Towards stealthy and effective backdoor attacks on lane detection: A naturalistic data poisoning approach](https://scholar.google.com/scholar?q=Towards+stealthy+and+effective+backdoor+attacks+on+lane+detection%3A+A+naturalistic+data+poisoning+approach). Liao et al.. *arXiv 2508.15778*, 2025.
 - [Stealthy Backdoor Attack in Self-Supervised Learning Vision Encoders for Large Vision Language Models](https://scholar.google.com/scholar?q=Stealthy+Backdoor+Attack+in+Self-Supervised+Learning+Vision+Encoders+for+Large+Vision+Language+Models). Liu et al.. *CVPR*, 2025.
 - [PB-UAP: Hybride Universal Adversarial Attack for Image Segmentation](https://scholar.google.com/scholar?q=PB-UAP%3A+Hybride+Universal+Adversarial+Attack+for+Image+Segmentation). Song et al.. *ICASSP*, 2025.
-- [BDetCLIP: Multimodal Prompting Contrastive Test-Time Backdoor Detection](https://scholar.google.com/scholar?q=BDetCLIP%3A+Multimodal+Prompting+Contrastive+Test-Time+Backdoor+Detection). Xu et al.. *ICML*, 2025.
+- [BDetCLIP: Multimodal Prompting Contrastive Test-Time Backdoor Detection](https://scholar.google.com/scholar?q=BDetCLIP%3A+Multimodal+Prompting+Contrastive+Test-Time+Backdoor+Detection). Niu et al.. *ICML*, 2025.
 - [AnyAttack: Towards Large-scale Self-supervised Adversarial Attacks on Vision-language Models](https://scholar.google.com/scholar?q=AnyAttack%3A+Towards+Large-scale+Self-supervised+Adversarial+Attacks+on+Vision-language+Models). Zhang et al.. *CVPR*, 2025.
 - [RP-PGD: Boosting Segmentation Robustness with a Region-and-Prototype Based Adversarial Attack](https://scholar.google.com/scholar?q=RP-PGD%3A+Boosting+Segmentation+Robustness+with+a+Region-and-Prototype+Based+Adversarial+Attack). Zhang et al.. *AAAI*, 2025.
 - [A Robust UAV Tracking Solution in the Adversarial Environment](https://scholar.google.com/scholar?q=A+Robust+UAV+Tracking+Solution+in+the+Adversarial+Environment). Jia, Li, Yuan. *ICTAI*, 2024.
@@ -154,7 +154,7 @@ We review **480+** papers across five capability layers of embodied AI.
 - [Embodied laser attack: leveraging scene priors to achieve agent-based robust non-contact attacks](https://scholar.google.com/scholar?q=Embodied+laser+attack%3A+leveraging+scene+priors+to+achieve+agent-based+robust+non-contact+attacks). Sun, Huang, Wei. *MM*, 2024.
 - [Cascaded adversarial attack: Simultaneously fooling rain removal and semantic segmentation networks](https://scholar.google.com/scholar?q=Cascaded+adversarial+attack%3A+Simultaneously+fooling+rain+removal+and+semantic+segmentation+networks). Wang et al.. *MM*, 2024.
 - [Physical ID-Transfer Attacks against Multi-Object Tracking via Adversarial Trajectory](https://scholar.google.com/scholar?q=Physical+ID-Transfer+Attacks+against+Multi-Object+Tracking+via+Adversarial+Trajectory). Wang et al.. *ACSAC*, 2024.
-- [A Human-in-the-Middle Attack against Object Detection Systems](https://scholar.google.com/scholar?q=A+Human-in-the-Middle+Attack+against+Object+Detection+Systems). Wu, Rowlands, Wahlstrom. *Artificial Intelligence (AIJ)*, 2024.
+- [A Human-in-the-Middle Attack against Object Detection Systems](https://scholar.google.com/scholar?q=A+Human-in-the-Middle+Attack+against+Object+Detection+Systems). Wu, Rowlands, Wahlstrom. *Artificial Intelligence (AIJ)*, 2022.
 - [Not All Prompts Are Secure: A Switchable Backdoor Attack Against Pre-trained Vision Transformers](https://scholar.google.com/scholar?q=Not+All+Prompts+Are+Secure%3A+A+Switchable+Backdoor+Attack+Against+Pre-trained+Vision+Transformers). Yang et al.. *CVPR*, 2024.
 - [Towards robust physical-world backdoor attacks on lane detection](https://scholar.google.com/scholar?q=Towards+robust+physical-world+backdoor+attacks+on+lane+detection). Zhang et al.. *MM*, 2024.
 - [CleanCLIP: Mitigating Data Poisoning Attacks in Multimodal Contrastive Learning](https://scholar.google.com/scholar?q=CleanCLIP%3A+Mitigating+Data+Poisoning+Attacks+in+Multimodal+Contrastive+Learning). Bansal et al.. *ICCV*, 2023.
@@ -172,10 +172,10 @@ We review **480+** papers across five capability layers of embodied AI.
 - [Image-adaptive YOLO for object detection in adverse weather conditions](https://scholar.google.com/scholar?q=Image-adaptive+YOLO+for+object+detection+in+adverse+weather+conditions). Liu et al.. *AAAI*, 2022.
 - [A Perturbation-Constrained Adversarial Attack for Evaluating the Robustness of Optical Flow](https://scholar.google.com/scholar?q=A+Perturbation-Constrained+Adversarial+Attack+for+Evaluating+the+Robustness+of+Optical+Flow). Schmalfuss, Scholze, Bruhn. *ECCV*, 2022.
 - [Automating defense against adversarial attacks: discovery of vulnerabilities and application of multi-INT imagery to protect deployed models](https://scholar.google.com/scholar?q=Automating+defense+against+adversarial+attacks%3A+discovery+of+vulnerabilities+and+application+of+multi-INT+imagery+to+protect+deployed+models). Kalin et al.. *Disruptive Technologies in Information Sciences V*, 2021.
-- [SLAP](https://scholar.google.com/scholar?q=SLAP). Lovisotto et al.. *USENIX Security*, 2021.
+- [SLAP: Improving Physical Adversarial Examples with Short-Lived Adversarial Perturbations](https://scholar.google.com/scholar?q=SLAP). Lovisotto et al.. *USENIX Security*, 2021.
 - [Dirty road can attack: Security of deep learning based automated lane centering under Physical-World Attack](https://scholar.google.com/scholar?q=Dirty+road+can+attack%3A+Security+of+deep+learning+based+automated+lane+centering+under+Physical-World+Attack). Sato et al.. *USENIX Security*, 2021.
 - [Model-agnostic defense for lane detection against adversarial attack](https://scholar.google.com/scholar?q=Model-agnostic+defense+for+lane+detection+against+adversarial+attack). Xu, Ju, Wagner. *arXiv 2103.00663*, 2021.
-- [Sentinet: Detecting localized universal attacks against deep learning systems](https://scholar.google.com/scholar?q=Sentinet%3A+Detecting+localized+universal+attacks+against+deep+learning+systems). Chou, Tramer, Pellegrino. *SPW*, 2020.
+- [Sentinet: Detecting localized universal attacks against deep learning systems](https://scholar.google.com/scholar?q=Sentinet%3A+Detecting+localized+universal+attacks+against+deep+learning+systems). Chou, Tramer, Pellegrino. *SPW*, 2018.
 - [DSNet: Joint semantic learning for object detection in inclement weather conditions](https://scholar.google.com/scholar?q=DSNet%3A+Joint+semantic+learning+for+object+detection+in+inclement+weather+conditions). Huang, Le, Jaw. *IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)*, 2020.
 - [Fooling detection alone is not enough: Adversarial attack against multiple object tracking](https://scholar.google.com/scholar?q=Fooling+detection+alone+is+not+enough%3A+Adversarial+attack+against+multiple+object+tracking). Jia et al.. *ICLR*, 2020.
 - [Robust tracking against adversarial attacks](https://scholar.google.com/scholar?q=Robust+tracking+against+adversarial+attacks). Jia et al.. *ECCV*, 2020.
@@ -214,7 +214,7 @@ We review **480+** papers across five capability layers of embodied AI.
 - [A multiversion programming inspired approach to detecting audio adversarial examples](https://scholar.google.com/scholar?q=A+multiversion+programming+inspired+approach+to+detecting+audio+adversarial+examples). Zeng et al.. *DSN*, 2019.
 - [Who activated my voice assistant? A stealthy attack on android phones without users’ awareness](https://scholar.google.com/scholar?q=Who+activated+my+voice+assistant%3F+A+stealthy+attack+on+android+phones+without+users%E2%80%99+awareness). Zhang et al.. *ML4CS*, 2019.
 - [Towards mitigating audio adversarial perturbations](https://scholar.google.com/scholar?q=Towards+mitigating+audio+adversarial+perturbations). Yang et al.. *arXiv 1806.02776*, 2018.
-- [CommanderSong](https://scholar.google.com/scholar?q=CommanderSong). Yuan et al.. *USENIX Security*, 2018.
+- [CommanderSong: A Systematic Approach for Practical Adversarial Voice Recognition](https://scholar.google.com/scholar?q=CommanderSong). Yuan et al.. *USENIX Security*, 2018.
 - [Hidden voice commands](https://scholar.google.com/scholar?q=Hidden+voice+commands). Carlini et al.. *USENIX security*, 2016.
 - [Cocaine noodles: exploiting the gap between human and machine speech recognition](https://scholar.google.com/scholar?q=Cocaine+noodles%3A+exploiting+the+gap+between+human+and+machine+speech+recognition). Vaidya et al.. *WOOT*, 2015.
 
@@ -227,7 +227,7 @@ We review **480+** papers across five capability layers of embodied AI.
 - [LiDAttack: Robust Black-Box Attack on LiDAR-Based Object Detection](https://scholar.google.com/scholar?q=LiDAttack%3A+Robust+Black-Box+Attack+on+LiDAR-Based+Object+Detection). Chen et al.. *ITSC*, 2025.
 - [Splat-nav: Safe real-time robot navigation in gaussian splatting maps](https://scholar.google.com/scholar?q=Splat-nav%3A+Safe+real-time+robot+navigation+in+gaussian+splatting+maps). Chen et al.. *IEEE Transactions on Robotics (T-RO)*, 2025.
 - [Black-box explainability-guided adversarial attack for 3D object tracking](https://scholar.google.com/scholar?q=Black-box+explainability-guided+adversarial+attack+for+3D+object+tracking). Cheng et al.. *IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)*, 2025.
-- [Lidar light scattering augmentation (lisa): Physics-based simulation of adverse weather conditions for 3d object detection](https://scholar.google.com/scholar?q=Lidar+light+scattering+augmentation+%28lisa%29%3A+Physics-based+simulation+of+adverse+weather+conditions+for+3d+object+detection). Kilic et al.. *ICASSP*, 2025.
+- [Lidar light scattering augmentation (lisa): Physics-based simulation of adverse weather conditions for 3d object detection](https://scholar.google.com/scholar?q=Lidar+light+scattering+augmentation+%28lisa%29%3A+Physics-based+simulation+of+adverse+weather+conditions+for+3d+object+detection). Kilic et al.. *ICASSP*, 2021.
 - [Invisible but Detected: Physical Adversarial Shadow Attack and Defense on LiDAR-based 3D Object Detection](https://scholar.google.com/scholar?q=Invisible+but+Detected%3A+Physical+Adversarial+Shadow+Attack+and+Defense+on+LiDAR-based+3D+Object+Detection). Kobayashi et al.. *USENIX Security*, 2025.
 - [Enhancing the Robustness of LiDAR-based Object Detection under Disappearing Attacks](https://scholar.google.com/scholar?q=Enhancing+the+Robustness+of+LiDAR-based+Object+Detection+under+Disappearing+Attacks). Wang et al.. *ICASSP*, 2025.
 - [An imperceptible adversarial attack against 3d object detectors in autonomous driving](https://scholar.google.com/scholar?q=An+imperceptible+adversarial+attack+against+3d+object+detectors+in+autonomous+driving). Wang et al.. *IEEE Internet of Things Journal (IoT-J)*, 2025.
@@ -246,9 +246,9 @@ We review **480+** papers across five capability layers of embodied AI.
 - [Evaluating the Robustness of LiDAR Point Cloud Tracking Against Adversarial Attack](https://scholar.google.com/scholar?q=Evaluating+the+Robustness+of+LiDAR+Point+Cloud+Tracking+Against+Adversarial+Attack). Tian et al.. *arXiv 2410.20893*, 2024.
 - [Benchmarking robustness in neural radiance fields](https://scholar.google.com/scholar?q=Benchmarking+robustness+in+neural+radiance+fields). Wang et al.. *CVPR*, 2024.
 - [Mobile Cooperative Robot Safe Interaction Method Based on Embodied Perception](https://scholar.google.com/scholar?q=Mobile+Cooperative+Robot+Safe+Interaction+Method+Based+on+Embodied+Perception). Wang et al.. *ICCA*, 2024.
-- [A comprehensive study of the robustness for lidar-based 3d object detectors against adversarial attacks](https://scholar.google.com/scholar?q=A+comprehensive+study+of+the+robustness+for+lidar-based+3d+object+detectors+against+adversarial+attacks). Zhang, Hou, Yuan. *International Journal of Computer Vision (IJCV)*, 2024.
+- [A comprehensive study of the robustness for lidar-based 3d object detectors against adversarial attacks](https://scholar.google.com/scholar?q=A+comprehensive+study+of+the+robustness+for+lidar-based+3d+object+detectors+against+adversarial+attacks). Zhang, Hou, Yuan. *International Journal of Computer Vision (IJCV)*, 2022.
 - [Control-barrier-aided teleoperation with visual-inertial slam for safe mav navigation in complex environments](https://scholar.google.com/scholar?q=Control-barrier-aided+teleoperation+with+visual-inertial+slam+for+safe+mav+navigation+in+complex+environments). Zhou et al.. *ICRA*, 2024.
-- [AE-Morpher](https://scholar.google.com/scholar?q=AE-Morpher). Zhu et al.. *USENIX Security*, 2024.
+- [AE-Morpher: Improve physical robustness of adversarial objects against LiDAR-based detectors via object reconstruction](https://scholar.google.com/scholar?q=AE-Morpher). Zhu et al.. *USENIX Security*, 2024.
 - [Adopt: Lidar spoofing attack detection based on point-level temporal consistency](https://scholar.google.com/scholar?q=Adopt%3A+Lidar+spoofing+attack+detection+based+on+point-level+temporal+consistency). Cho et al.. *arXiv 2310.14504*, 2023.
 - [Targeted adversarial attacks on generalizable neural radiance fields](https://scholar.google.com/scholar?q=Targeted+adversarial+attacks+on+generalizable+neural+radiance+fields). Horvath. *CVPR*, 2023.
 - [Badlidet: A simple backdoor attack against lidar object detection in autonomous driving](https://scholar.google.com/scholar?q=Badlidet%3A+A+simple+backdoor+attack+against+lidar+object+detection+in+autonomous+driving). Li et al.. *TrustCom*, 2023.
@@ -267,7 +267,7 @@ We review **480+** papers across five capability layers of embodied AI.
 - [Adversarial scan attack against scan matching algorithm for pose estimation in lidar-based slam](https://scholar.google.com/scholar?q=Adversarial+scan+attack+against+scan+matching+algorithm+for+pose+estimation+in+lidar-based+slam). Yoshida, Hojo, Fujino. *Science*, 2022.
 - [Pointcutmix: Regularization strategy for point cloud classification](https://scholar.google.com/scholar?q=Pointcutmix%3A+Regularization+strategy+for+point+cloud+classification). Zhang et al.. *Neurocomputing*, 2022.
 - [Towards backdoor attacks against lidar object detection in autonomous driving](https://scholar.google.com/scholar?q=Towards+backdoor+attacks+against+lidar+object+detection+in+autonomous+driving). Zhang et al.. *SenSys*, 2022.
-- [DoubleStar](https://scholar.google.com/scholar?q=DoubleStar). Zhou et al.. *USENIX Security*, 2022.
+- [DoubleStar: Long-Range Attack Towards Depth Estimation based Obstacle Avoidance in Autonomous Systems](https://scholar.google.com/scholar?q=DoubleStar). Zhou et al.. *USENIX Security*, 2022.
 - [Universal adversarial attack against 3D object tracking](https://scholar.google.com/scholar?q=Universal+adversarial+attack+against+3D+object+tracking). Cheng et al.. *HPCC*, 2021.
 - [Fog simulation on real LiDAR point clouds for 3D object detection in adverse weather](https://scholar.google.com/scholar?q=Fog+simulation+on+real+LiDAR+point+clouds+for+3D+object+detection+in+adverse+weather). Hahner et al.. *CVPR*, 2021.
 - [Object removal attacks on lidar-based 3d object detectors](https://scholar.google.com/scholar?q=Object+removal+attacks+on+lidar-based+3d+object+detectors). Hau et al.. *arXiv 2102.03722*, 2021.
@@ -324,7 +324,7 @@ We review **480+** papers across five capability layers of embodied AI.
 - [Deepsim: Gps spoofing detection on uavs using satellite imagery matching](https://scholar.google.com/scholar?q=Deepsim%3A+Gps+spoofing+detection+on+uavs+using+satellite+imagery+matching). Xue et al.. *ACSAC*, 2020.
 - [VANET-assisted interference mitigation for millimeter-wave automotive radar sensors](https://scholar.google.com/scholar?q=VANET-assisted+interference+mitigation+for+millimeter-wave+automotive+radar+sensors). Zhang et al.. *IEEE Network*, 2020.
 - [Drones in distress: A game-theoretic countermeasure for protecting UAVs against GPS spoofing](https://scholar.google.com/scholar?q=Drones+in+distress%3A+A+game-theoretic+countermeasure+for+protecting+UAVs+against+GPS+spoofing). Eldosouky, Ferdowsi, Saad. *IEEE Internet of Things Journal (IoT-J)*, 2019.
-- [A dual antenna GNSS spoofing detector based on the dispersion of double difference measurements](https://scholar.google.com/scholar?q=A+dual+antenna+GNSS+spoofing+detector+based+on+the+dispersion+of+double+difference+measurements). Falco et al.. *NAVITEC*, 2018.
+- [A dual antenna GNSS spoofing detector based on the dispersion of double difference measurements](https://scholar.google.com/scholar?q=A+dual+antenna+GNSS+spoofing+detector+based+on+the+dispersion+of+double+difference+measurements). Nguyen, V. H. et al.. *NAVITEC*, 2018.
 - [Development of a GPS spoofing apparatus to attack a DJI Matrice 100 Quadcopter](https://scholar.google.com/scholar?q=Development+of+a+GPS+spoofing+apparatus+to+attack+a+DJI+Matrice+100+Quadcopter). Horton, Ranganathan. *The Journal of Global Positioning Systems*, 2018.
 - [Crowd-GPS-Sec: Leveraging crowdsourcing to detect and localize GPS spoofing attacks](https://scholar.google.com/scholar?q=Crowd-GPS-Sec%3A+Leveraging+crowdsourcing+to+detect+and+localize+GPS+spoofing+attacks). Jansen et al.. *S&P*, 2018.
 - [Autonomous vehicle ultrasonic sensor vulnerability and impact assessment](https://scholar.google.com/scholar?q=Autonomous+vehicle+ultrasonic+sensor+vulnerability+and+impact+assessment). Lim, Keoh, Thing. *WF-IoT*, 2018.
@@ -332,7 +332,7 @@ We review **480+** papers across five capability layers of embodied AI.
 - [Chips-message robust authentication (Chimera) for GPS civilian signals](https://scholar.google.com/scholar?q=Chips-message+robust+authentication+%28Chimera%29+for+GPS+civilian+signals). Anderson et al.. *GNSS+*, 2017.
 - [WALNUT: Waging doubt on the integrity of MEMS accelerometers with acoustic injection attacks](https://scholar.google.com/scholar?q=WALNUT%3A+Waging+doubt+on+the+integrity+of+MEMS+accelerometers+with+acoustic+injection+attacks). Trippel et al.. *EuroS&P*, 2017.
 - [GNSS spoofing detection and mitigation based on maximum likelihood estimation](https://scholar.google.com/scholar?q=GNSS+spoofing+detection+and+mitigation+based+on+maximum+likelihood+estimation). Wang, Li, Lu. *Sensors*, 2017.
-- [A navigation message authentication proposal for the Galileo open service](https://scholar.google.com/scholar?q=A+navigation+message+authentication+proposal+for+the+Galileo+open+service). Fernandez-Hernandez, Rijmen, Seco-Granados. *NAVIGATION: Journal of the Institute of Navigation*, 2016.
+- [A navigation message authentication proposal for the Galileo open service](https://scholar.google.com/scholar?q=A+navigation+message+authentication+proposal+for+the+Galileo+open+service). Fernández‐Hernández, I et al.. *NAVIGATION: Journal of the Institute of Navigation*, 2016.
 - [Can you trust autonomous vehicles: Contactless attacks against sensors of self-driving vehicle](https://scholar.google.com/scholar?q=Can+you+trust+autonomous+vehicles%3A+Contactless+attacks+against+sensors+of+self-driving+vehicle). Yan, Xu, Liu. *DEF CON*, 2016.
 - [Rocking drones with intentional sound noise on gyroscopic sensors](https://scholar.google.com/scholar?q=Rocking+drones+with+intentional+sound+noise+on+gyroscopic+sensors). Son et al.. *USENIX Security*, 2015.
 - [Anti-spoofing and open GNSS signal authentication with signal authentication sequences](https://scholar.google.com/scholar?q=Anti-spoofing+and+open+GNSS+signal+authentication+with+signal+authentication+sequences). Pozzobon et al.. *NAVITEC*, 2010.
@@ -340,16 +340,15 @@ We review **480+** papers across five capability layers of embodied AI.
 </details>
 
 <details>
-<summary>Cross-Modal Perception (8)</summary>
+<summary>Cross-Modal Perception (7)</summary>
 
-- [Temporal Misalignment Attacks against Multimodal Perception in Autonomous Driving](https://scholar.google.com/scholar?q=Temporal+Misalignment+Attacks+against+Multimodal+Perception+in+Autonomous+Driving). Hou et al.. *arXiv 2507.09095*, 2025.
-- [Malicious Attacks against Multi-Sensor Fusion in Autonomous Driving](https://scholar.google.com/scholar?q=Malicious+Attacks+against+Multi-Sensor+Fusion+in+Autonomous+Driving). Li et al.. *Proceedings of the ACM International Conference on Mobile Computing and Networking (MobiCom)*, 2024.
+- [Temporal Misalignment Attacks against Multimodal Perception in Autonomous Driving](https://scholar.google.com/scholar?q=Temporal+Misalignment+Attacks+against+Multimodal+Perception+in+Autonomous+Driving). Shahriar, Md Hasan et al.. *arXiv 2507.09095*, 2025.
+- [Malicious Attacks against Multi-Sensor Fusion in Autonomous Driving](https://scholar.google.com/scholar?q=Malicious+Attacks+against+Multi-Sensor+Fusion+in+Autonomous+Driving). Zhu, Yi et al.. *Proceedings of the ACM International Conference on Mobile Computing and Networking (MobiCom)*, 2024.
 - [MMCert](https://scholar.google.com/scholar?q=MMCert). Wang et al.. *CVPR*, 2024.
-- [A robust multi-sensor fusion model against adversarial patch attack](https://scholar.google.com/scholar?q=A+robust+multi-sensor+fusion+model+against+adversarial+patch+attack). Yang et al.. *ResearchGate preprint*, 2024.
-- [Exploring Adversarial Robustness of LiDAR](https://scholar.google.com/scholar?q=Exploring+Adversarial+Robustness+of+LiDAR). Li et al.. *CVPR*, 2023.
-- [Security Analysis of Camera-LiDAR](https://scholar.google.com/scholar?q=Security+Analysis+of+Camera-LiDAR). Hallyburton et al.. *USENIX Security*, 2022.
-- [Adversarial Robustness of Deep Sensor Fusion Models](https://scholar.google.com/scholar?q=Adversarial+Robustness+of+Deep+Sensor+Fusion+Models). Wang et al.. *WACV*, 2022.
-- [Invisible for both Camera and LiDAR](https://scholar.google.com/scholar?q=Invisible+for+both+Camera+and+LiDAR). Cao et al.. *S&P*, 2021.
+- [A robust multi-sensor fusion model against adversarial patch attack](https://scholar.google.com/scholar?q=A+robust+multi-sensor+fusion+model+against+adversarial+patch+attack). El-Fatyany, Aya et al.. *ResearchGate preprint*, 2024.
+- [Security Analysis of Camera-LiDAR Fusion Against Black-Box Attacks on Autonomous Vehicles](https://scholar.google.com/scholar?q=Security+Analysis+of+Camera-LiDAR+Fusion+Against+Black-Box+Attacks+on+Autonomous+Vehicles). Hallyburton et al.. *USENIX Security*, 2022.
+- [Adversarial Robustness of Deep Sensor Fusion Models](https://scholar.google.com/scholar?q=Adversarial+Robustness+of+Deep+Sensor+Fusion+Models). Wang et al.. *WACV*, 2020.
+- [Invisible for both Camera and LiDAR: Security of Multi-Sensor Fusion based Perception in Autonomous Driving Under Physical-World Attacks](https://scholar.google.com/scholar?q=Invisible+for+both+Camera+and+LiDAR%3A+Security+of+Multi-Sensor+Fusion+based+Perception+in+Autonomous+Driving+Under+Physical-World+Attacks). Cao et al.. *S&P*, 2021.
 
 </details>
 
@@ -358,26 +357,24 @@ We review **480+** papers across five capability layers of embodied AI.
 ---
 
 <details open>
-<summary>🧠 <b>Cognition</b> (38 papers)</summary>
+<summary>🧠 <b>Cognition</b> (29 papers)</summary>
 
 <details>
-<summary>Instruction Understanding (15)</summary>
+<summary>Instruction Understanding (13)</summary>
 
 - [Semantic Denial of Service in LLM-Controlled Robots](https://arxiv.org/abs/2604.24790). Steinberg, Gal. *arXiv 2604.24790*, 2026.
 - [Seeing No Evil: Blinding Large Vision-Language Models to Safety Instructions via Adversarial Attention Hijacking](https://arxiv.org/abs/2604.10299). Li, Ren, Zhu. *ACL*, 2026.
 - [Mitigating Trust Boundary Confusion from Visual Injections on Vision-Language Agentic Systems](https://arxiv.org/abs/2604.19844). Chang et al.. *arXiv 2604.19844*, 2026.
-- [Safe LLM-Controlled Robots with Formal Guarantees via Reachability Analysis](https://scholar.google.com/scholar?q=Safe+LLM-Controlled+Robots+with+Formal+Guarantees+via+Reachability+Analysis). Abuduweili et al.. *arXiv 2503.03911*, 2025.
-- [BadNAVer: Exploring Jailbreak Attacks On Vision-and-Language Navigation](https://scholar.google.com/scholar?q=BadNAVer%3A+Exploring+Jailbreak+Attacks+On+Vision-and-Language+Navigation). Bai et al.. *arXiv 2505.12443*, 2025.
+- [Safe LLM-Controlled Robots with Formal Guarantees via Reachability Analysis](https://scholar.google.com/scholar?q=Safe+LLM-Controlled+Robots+with+Formal+Guarantees+via+Reachability+Analysis). Hafez, Ahmad et al.. *arXiv 2503.03911*, 2025.
+- [BadNAVer: Exploring Jailbreak Attacks On Vision-and-Language Navigation](https://scholar.google.com/scholar?q=BadNAVer%3A+Exploring+Jailbreak+Attacks+On+Vision-and-Language+Navigation). Lyu, Wenqi et al.. *arXiv 2505.12443*, 2025.
 - [AGENTSAFE: Benchmarking the Safety of Embodied Agents on Hazardous Instructions](https://scholar.google.com/scholar?q=AGENTSAFE%3A+Benchmarking+the+Safety+of+Embodied+Agents+on+Hazardous+Instructions). Liu et al.. *arXiv 2506.14697*, 2025.
 - [Embodied Scene Understanding for Vision Language Models via MetaVQA](https://scholar.google.com/scholar?q=Embodied+Scene+Understanding+for+Vision+Language+Models+via+MetaVQA). Wang et al.. *CVPR*, 2025.
-- [RoboSafe: Safeguarding Embodied Agents via Executable Safety Logic](https://scholar.google.com/scholar?q=RoboSafe%3A+Safeguarding+Embodied+Agents+via+Executable+Safety+Logic). Wang et al.. *arXiv 2512.21220*, 2025.
-- [Preventing Robotic Jailbreaking via Multimodal Domain Adaptation](https://scholar.google.com/scholar?q=Preventing+Robotic+Jailbreaking+via+Multimodal+Domain+Adaptation). Wu et al.. *arXiv 2509.23281*, 2025.
+- [Preventing Robotic Jailbreaking via Multimodal Domain Adaptation](https://scholar.google.com/scholar?q=Preventing+Robotic+Jailbreaking+via+Multimodal+Domain+Adaptation). Marchiori, Francesco et al.. *arXiv 2509.23281*, 2025.
 - [EmbodiedBench: Comprehensive Benchmarking Multi-modal Large Language Models for Vision-Driven Embodied Agents](https://scholar.google.com/scholar?q=EmbodiedBench%3A+Comprehensive+Benchmarking+Multi-modal+Large+Language+Models+for+Vision-Driven+Embodied+Agents). Yang et al.. *arXiv preprint*, 2025.
-- [CHAI: Command Hijacking against Embodied AI](https://scholar.google.com/scholar?q=CHAI%3A+Command+Hijacking+against+Embodied+AI). Burbano, Ortiz, Sun. *arXiv 2510.00181*, 2024.
-- [Can we trust embodied agents? exploring backdoor attacks against embodied LLM-based decision-making systems](https://scholar.google.com/scholar?q=Can+we+trust+embodied+agents%3F+exploring+backdoor+attacks+against+embodied+LLM-based+decision-making+systems). Jiao et al.. *arXiv 2405.20774*, 2024.
+- [CHAI: Command Hijacking against Embodied AI](https://scholar.google.com/scholar?q=CHAI%3A+Command+Hijacking+against+Embodied+AI). Burbano, Ortiz, Sun. *arXiv 2510.00181*, 2025.
 - [IndustryEQA: Pushing the Frontiers of Embodied Question Answering in Industrial Scenarios](https://scholar.google.com/scholar?q=IndustryEQA%3A+Pushing+the+Frontiers+of+Embodied+Question+Answering+in+Industrial+Scenarios). Li et al.. *arXiv preprint*, 2024.
 - [Mmro: Are multimodal llms eligible as the brain for in-home robotics?](https://scholar.google.com/scholar?q=Mmro%3A+Are+multimodal+llms+eligible+as+the+brain+for+in-home+robotics%3F). Li et al.. *arXiv 2406.19693*, 2024.
-- [SQA3D](https://scholar.google.com/scholar?q=SQA3D). Yong et al.. *ICLR*, 2023.
+- [Sqa3d: Situated question answering in 3d scenes](https://scholar.google.com/scholar?q=SQA3D). Ma et al.. *ICLR*, 2023.
 
 </details>
 
@@ -388,7 +385,7 @@ We review **480+** papers across five capability layers of embodied AI.
 - [TRAP: Tail-aware Ranking Attack for World-Model Planning](https://arxiv.org/abs/2605.01950). Duan, Zhang, Luo. *arXiv 2605.01950*, 2026.
 - [Benchmarking Vision-Language Models under Contradictory Virtual Content Attacks in AR](https://arxiv.org/abs/2604.05510). Xiu et al.. *arXiv 2604.05510*, 2026.
 - [The Safety Challenge of World Models for Embodied AI Agents: A Review](https://scholar.google.com/scholar?q=The+Safety+Challenge+of+World+Models+for+Embodied+AI+Agents%3A+A+Review). Baraldi et al.. *arXiv 2510.05865*, 2025.
-- [MASH-VLM](https://scholar.google.com/scholar?q=MASH-VLM). Hou et al.. *CVPR*, 2025.
+- [Mash-vlm: Mitigating action-scene hallucination in video-llms through disentangled spatial-temporal representations](https://scholar.google.com/scholar?q=MASH-VLM). Bae et al.. *CVPR*, 2025.
 - [A Comprehensive Survey on World Models for Embodied AI](https://scholar.google.com/scholar?q=A+Comprehensive+Survey+on+World+Models+for+Embodied+AI). Li et al.. *arXiv 2510.16732*, 2025.
 - [VL-SAFE: Vision-Language Guided Safety-Aware RL with World Models for Autonomous Driving](https://scholar.google.com/scholar?q=VL-SAFE%3A+Vision-Language+Guided+Safety-Aware+RL+with+World+Models+for+Autonomous+Driving). Qu et al.. *arXiv preprint*, 2025.
 - [An Empirical Study on Hallucinations in Embodied Agents](https://scholar.google.com/scholar?q=An+Empirical+Study+on+Hallucinations+in+Embodied+Agents). Tao et al.. *EMNLP Findings*, 2025.
@@ -396,23 +393,16 @@ We review **480+** papers across five capability layers of embodied AI.
 - [SafeDreamer: Safe Reinforcement Learning with World Models](https://scholar.google.com/scholar?q=SafeDreamer%3A+Safe+Reinforcement+Learning+with+World+Models). Huang et al.. *ICLR*, 2024.
 - [Learning Latent Dynamic Robust Representations for World Models](https://scholar.google.com/scholar?q=Learning+Latent+Dynamic+Robust+Representations+for+World+Models). Sun et al.. *ICML*, 2024.
 - [Driving into the Future: Multiview Visual Forecasting and Planning with World Model for Autonomous Driving](https://scholar.google.com/scholar?q=Driving+into+the+Future%3A+Multiview+Visual+Forecasting+and+Planning+with+World+Model+for+Autonomous+Driving). Wang et al.. *CVPR*, 2024.
-- [Scalable Policy Evaluation with Video World Models](https://scholar.google.com/scholar?q=Scalable+Policy+Evaluation+with+Video+World+Models). Wen et al.. *arXiv 2511.11520*, 2024.
+- [Scalable Policy Evaluation with Video World Models](https://scholar.google.com/scholar?q=Scalable+Policy+Evaluation+with+Video+World+Models). Tseng, Wei-Cheng et al.. *arXiv 2511.11520*, 2024.
 
 </details>
 
 <details>
-<summary>Reasoning (10)</summary>
+<summary>Reasoning (3)</summary>
 
-- [Safety Not Found (404): Hidden Risks of LLM-Based Robotics Decision Making](https://scholar.google.com/scholar?q=Safety+Not+Found+%28404%29%3A+Hidden+Risks+of+LLM-Based+Robotics+Decision+Making). Han et al.. *arXiv 2601.05529*, 2026.
 - [HEAL: An Empirical Study on Hallucinations in Embodied Agents Driven by Large Language Models](https://scholar.google.com/scholar?q=HEAL%3A+An+Empirical+Study+on+Hallucinations+in+Embodied+Agents+Driven+by+Large+Language+Models). Chakraborty et al.. *Findings of the Association for Computational Linguistics: EMNLP*, 2025.
 - [H-CoT: Hijacking the Chain-of-Thought Safety Reasoning Mechanism to Jailbreak Large Reasoning Models](https://scholar.google.com/scholar?q=H-CoT%3A+Hijacking+the+Chain-of-Thought+Safety+Reasoning+Mechanism+to+Jailbreak+Large+Reasoning+Models). Kuo et al.. *arXiv 2502.12893*, 2025.
-- [CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models](https://scholar.google.com/scholar?q=CoT-VLA%3A+Visual+Chain-of-Thought+Reasoning+for+Vision-Language-Action+Models). Zhao et al.. *IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)*, 2025.
 - [pi0: A Vision-Language-Action Flow Model for General Robot Control](https://scholar.google.com/scholar?q=pi0%3A+A+Vision-Language-Action+Flow+Model+for+General+Robot+Control). Black et al.. *arXiv 2410.24164*, 2024.
-- [Agent Smith: A Single Image Can Jailbreak One Million Multimodal LLM Agents Exponentially Fast](https://scholar.google.com/scholar?q=Agent+Smith%3A+A+Single+Image+Can+Jailbreak+One+Million+Multimodal+LLM+Agents+Exponentially+Fast). Gu et al.. *ICML*, 2024.
-- [Robotic Control via Embodied Chain-of-Thought Reasoning](https://scholar.google.com/scholar?q=Robotic+Control+via+Embodied+Chain-of-Thought+Reasoning). Zawalski et al.. *Conference on Robot Learning (CoRL)*, 2024.
-- [RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control](https://scholar.google.com/scholar?q=RT-2%3A+Vision-Language-Action+Models+Transfer+Web+Knowledge+to+Robotic+Control). Brohan et al.. *Conference on Robot Learning (CoRL)*, 2023.
-- [Do As I Can, Not As I Say: Grounding Language in Robotic Affordances](https://scholar.google.com/scholar?q=Do+As+I+Can%2C+Not+As+I+Say%3A+Grounding+Language+in+Robotic+Affordances). Ahn et al.. *Conference on Robot Learning (CoRL)*, 2022.
-- [Inner Monologue: Embodied Reasoning through Planning with Language Models](https://scholar.google.com/scholar?q=Inner+Monologue%3A+Embodied+Reasoning+through+Planning+with+Language+Models). Huang et al.. *Conference on Robot Learning (CoRL)*, 2022.
 
 </details>
 
@@ -421,10 +411,10 @@ We review **480+** papers across five capability layers of embodied AI.
 ---
 
 <details open>
-<summary>🗺️ <b>Planning</b> (59 papers)</summary>
+<summary>🗺️ <b>Planning</b> (57 papers)</summary>
 
 <details>
-<summary>Task Planning (22)</summary>
+<summary>Task Planning (20)</summary>
 
 - [Safety in Vision-Language-Action Models: A Survey](https://arxiv.org/abs/2604.23775). Li et al.. *arXiv 2604.23775*, 2026.
 - [Using Large Language Models for Embodied Planning Introduces Systematic Safety Risks](https://arxiv.org/abs/2604.18463). Zhang et al.. *arXiv 2604.18463*, 2026.
@@ -432,19 +422,17 @@ We review **480+** papers across five capability layers of embodied AI.
 - [SafeMind: Benchmarking and Mitigating Safety Risks in Embodied LLM Agents](https://scholar.google.com/scholar?q=SafeMind%3A+Benchmarking+and+Mitigating+Safety+Risks+in+Embodied+LLM+Agents). Chen et al.. *arXiv 2509.25885*, 2025.
 - [A Framework for Benchmarking and Aligning Task-Planning Safety in LLM-Based Embodied Agents](https://scholar.google.com/scholar?q=A+Framework+for+Benchmarking+and+Aligning+Task-Planning+Safety+in+LLM-Based+Embodied+Agents). Huang et al.. *arXiv 2504.14650*, 2025.
 - [HASARD: A Benchmark for Vision-Based Safe Reinforcement Learning in Embodied Agents](https://scholar.google.com/scholar?q=HASARD%3A+A+Benchmark+for+Vision-Based+Safe+Reinforcement+Learning+in+Embodied+Agents). Tomilin et al.. *ICLR*, 2025.
-- [Preventing Robotic Jailbreaking via Multimodal Domain Adaptation](https://scholar.google.com/scholar?q=Preventing+Robotic+Jailbreaking+via+Multimodal+Domain+Adaptation). Marchiori et al.. *arXiv 2509.23281*, 2025.
-- [Robo-Troj](https://scholar.google.com/scholar?q=Robo-Troj). Nahian et al.. *arXiv 2504.17070*, 2025.
-- [SafePlan](https://scholar.google.com/scholar?q=SafePlan). Obi et al.. *arXiv 2503.06892*, 2025.
-- [RoboSafe: Safeguarding Embodied Agents via Executable Safety Logic](https://scholar.google.com/scholar?q=RoboSafe%3A+Safeguarding+Embodied+Agents+via+Executable+Safety+Logic). Wang et al.. *arXiv 2512.21220*, 2025.
+- [Robo-Troj: Attacking LLM-based Task Planners](https://scholar.google.com/scholar?q=Robo-Troj). Nahian et al.. *arXiv 2504.17070*, 2025.
+- [Safeplan: Leveraging formal logic and chain-of-thought reasoning for enhanced safety in llm-based robotic task planning](https://scholar.google.com/scholar?q=SafePlan). Obi et al.. *arXiv 2503.06892*, 2025.
+- [RoboSafe: Safeguarding Embodied Agents via Executable Safety Logic](https://scholar.google.com/scholar?q=RoboSafe%3A+Safeguarding+Embodied+Agents+via+Executable+Safety+Logic). Wang, Pengcheng et al.. *arXiv 2512.21220*, 2025.
 - [CEE: An Inference-Time Jailbreak Defense for Embodied Intelligence via Subspace Concept Rotation](https://scholar.google.com/scholar?q=CEE%3A+An+Inference-Time+Jailbreak+Defense+for+Embodied+Intelligence+via+Subspace+Concept+Rotation). Yang et al.. *arXiv 2504.13201*, 2025.
-- [Enhancing Reliability in LLM](https://scholar.google.com/scholar?q=Enhancing+Reliability+in+LLM). Zhang et al.. *Journal of Systems and Software*, 2025.
+- [Enhancing reliability in LLM-integrated robotic systems](https://scholar.google.com/scholar?q=Enhancing+reliability+in+LLM-integrated+robotic+systems). Zhang et al.. *Journal of Systems and Software*, 2025.
 - [Malicious path manipulations via exploitation of representation vulnerabilities of vision-language navigation systems](https://scholar.google.com/scholar?q=Malicious+path+manipulations+via+exploitation+of+representation+vulnerabilities+of+vision-language+navigation+systems). Islam et al.. *IROS*, 2024.
 - [Can we trust embodied agents? exploring backdoor attacks against embodied LLM-based decision-making systems](https://scholar.google.com/scholar?q=Can+we+trust+embodied+agents%3F+exploring+backdoor+attacks+against+embodied+LLM-based+decision-making+systems). Jiao et al.. *arXiv 2405.20774*, 2024.
 - [Compromising embodied agents with contextual backdoor attacks](https://scholar.google.com/scholar?q=Compromising+embodied+agents+with+contextual+backdoor+attacks). Liu et al.. *arXiv 2408.02882*, 2024.
 - [Exploring the robustness of decision-level through adversarial attacks on llm-based embodied models](https://scholar.google.com/scholar?q=Exploring+the+robustness+of+decision-level+through+adversarial+attacks+on+llm-based+embodied+models). Liu et al.. *MM*, 2024.
 - [POEX: Understanding and Mitigating Policy Executable Jailbreak Attacks against Embodied AI](https://scholar.google.com/scholar?q=POEX%3A+Understanding+and+Mitigating+Policy+Executable+Jailbreak+Attacks+against+Embodied+AI). Lu et al.. *arXiv 2412.16633*, 2024.
 - [Jailbreaking llm-controlled robots](https://scholar.google.com/scholar?q=Jailbreaking+llm-controlled+robots). Robey et al.. *arXiv 2410.13691*, 2024.
-- [How secure are large language models (llms) for navigation in urban environments?](https://scholar.google.com/scholar?q=How+secure+are+large+language+models+%28llms%29+for+navigation+in+urban+environments%3F). Wen et al.. *arXiv 2402.09546*, 2024.
 - [BadRobot: Jailbreaking embodied LLMs in the physical world](https://scholar.google.com/scholar?q=BadRobot%3A+Jailbreaking+embodied+LLMs+in+the+physical+world). Zhang et al.. *arXiv 2407.20242*, 2024.
 - [Safeembodai: a safety framework for mobile robots in embodied ai systems](https://scholar.google.com/scholar?q=Safeembodai%3A+a+safety+framework+for+mobile+robots+in+embodied+ai+systems). Zhang et al.. *arXiv 2409.01630*, 2024.
 - [Adversarial Attacks on Optimization based Planners](https://scholar.google.com/scholar?q=Adversarial+Attacks+on+Optimization+based+Planners). Vemprala, Kapoor. *ICRA*, 2021.
@@ -455,7 +443,7 @@ We review **480+** papers across five capability layers of embodied AI.
 <summary>Trajectory Planning (24)</summary>
 
 - [SafeBench: A Benchmarking Platform for Safety Evaluation of Autonomous Vehicles](https://scholar.google.com/scholar?q=SafeBench%3A+A+Benchmarking+Platform+for+Safety+Evaluation+of+Autonomous+Vehicles). Xu et al.. *NeurIPS*, 2022.
-- [PINA](https://scholar.google.com/scholar?q=PINA). Liu et al.. *ICASSP*, 2026.
+- [PINA: Prompt Injection Attack against Navigation Agents](https://scholar.google.com/scholar?q=PINA). Liu et al.. *ICASSP*, 2026.
 - [Beyond Crash: Hijacking Your Autonomous Vehicle for Fun and Profit](https://scholar.google.com/scholar?q=Beyond+Crash%3A+Hijacking+Your+Autonomous+Vehicle+for+Fun+and+Profit). Sun et al.. *arXiv 2602.07249*, 2026.
 - [Universal Closed-Box Adversarial Attack for Trajectory Representation via Controlling High-Dimensional Iterative Constraints](https://scholar.google.com/scholar?q=Universal+Closed-Box+Adversarial+Attack+for+Trajectory+Representation+via+Controlling+High-Dimensional+Iterative+Constraints). Bai et al.. *IEEE Internet of Things Journal (IoT-J)*, 2025.
 - [Avatar: Adversarial Vehicle Trajectory Attack Targeting Autonomous Driving Planner](https://scholar.google.com/scholar?q=Avatar%3A+Adversarial+Vehicle+Trajectory+Attack+Targeting+Autonomous+Driving+Planner). Liu, Mori. *EuroS&PW*, 2025.
@@ -473,7 +461,7 @@ We review **480+** papers across five capability layers of embodied AI.
 - [King: Generating safety-critical driving scenarios for robust imitation via kinematics gradients](https://scholar.google.com/scholar?q=King%3A+Generating+safety-critical+driving+scenarios+for+robust+imitation+via+kinematics+gradients). Hanselmann et al.. *ECCV*, 2022.
 - [Generating useful accident-prone driving scenarios via a learned traffic prior](https://scholar.google.com/scholar?q=Generating+useful+accident-prone+driving+scenarios+via+a+learned+traffic+prior). Rempe et al.. *CVPR*, 2022.
 - [On adversarial robustness of trajectory prediction for autonomous vehicles](https://scholar.google.com/scholar?q=On+adversarial+robustness+of+trajectory+prediction+for+autonomous+vehicles). Zhang et al.. *CVPR*, 2022.
-- [Stochastic model predictive control with a safety guarantee for automated driving](https://scholar.google.com/scholar?q=Stochastic+model+predictive+control+with+a+safety+guarantee+for+automated+driving). Brudigam et al.. *IV*, 2021.
+- [Stochastic model predictive control with a safety guarantee for automated driving](https://scholar.google.com/scholar?q=Stochastic+model+predictive+control+with+a+safety+guarantee+for+automated+driving). Br{\"u}digam, Tim et al.. *IV*, 2021.
 - [Intelligent driving intelligence test for autonomous vehicles with naturalistic and adversarial environment](https://scholar.google.com/scholar?q=Intelligent+driving+intelligence+test+for+autonomous+vehicles+with+naturalistic+and+adversarial+environment). Feng et al.. *Nature Communications*, 2021.
 - [Advsim: Generating safety-critical scenarios for self-driving vehicles](https://scholar.google.com/scholar?q=Advsim%3A+Generating+safety-critical+scenarios+for+self-driving+vehicles). Wang et al.. *CVPR*, 2021.
 - [Learning to collide: An adaptive safety-critical scenarios generating method](https://scholar.google.com/scholar?q=Learning+to+collide%3A+An+adaptive+safety-critical+scenarios+generating+method). Ding et al.. *IROS*, 2020.
@@ -484,15 +472,15 @@ We review **480+** papers across five capability layers of embodied AI.
 <details>
 <summary>Multi-Agent Planning (13)</summary>
 
-- [RoboRebound](https://scholar.google.com/scholar?q=RoboRebound). Gandhi et al.. *Proceedings of the European Conference on Computer Systems (EuroSys)*, 2025.
-- [Multi-Robot Coordination with Adversarial Perception](https://scholar.google.com/scholar?q=Multi-Robot+Coordination+with+Adversarial+Perception). Gao et al.. *International Conference on Unmanned Aircraft Systems (ICUAS)*, 2025.
-- [Red-Teaming LLM](https://scholar.google.com/scholar?q=Red-Teaming+LLM). He et al.. *ACL*, 2025.
+- [RoboRebound: Multi-Robot System Defense with Bounded-Time Interaction](https://scholar.google.com/scholar?q=RoboRebound). Gandhi et al.. *Proceedings of the European Conference on Computer Systems (EuroSys)*, 2025.
+- [Multi-Robot Coordination with Adversarial Perception](https://scholar.google.com/scholar?q=Multi-Robot+Coordination+with+Adversarial+Perception). Bahrami, Rayan et al.. *International Conference on Unmanned Aircraft Systems (ICUAS)*, 2025.
+- [Red-Teaming LLM Multi-Agent Systems via Communication Attacks](https://scholar.google.com/scholar?q=Red-Teaming+LLM). He et al.. *ACL*, 2025.
 - [Distributed Resilience-Aware Control in Multi-Robot Networks](https://scholar.google.com/scholar?q=Distributed+Resilience-Aware+Control+in+Multi-Robot+Networks). Lee, Panagou. *IEEE Conference on Decision and Control (CDC)*, 2025.
 - [Open Challenges in Multi-Agent Security: Towards Secure Systems of Interacting AI](https://scholar.google.com/scholar?q=Open+Challenges+in+Multi-Agent+Security%3A+Towards+Secure+Systems+of+Interacting+AI). Witt. *arXiv 2505.02077*, 2025.
-- [A Systematic Literature Review on Multi-Robot Task Allocation](https://scholar.google.com/scholar?q=A+Systematic+Literature+Review+on+Multi-Robot+Task+Allocation). Khamis et al.. *ACM Computing Surveys (CSUR)*, 2024.
-- [Adversarial Machine Learning Attacks and Defences in Multi-Agent Reinforcement Learning](https://scholar.google.com/scholar?q=Adversarial+Machine+Learning+Attacks+and+Defences+in+Multi-Agent+Reinforcement+Learning). Sookha, Benevenuto. *ACM Computing Surveys (CSUR)*, 2024.
-- [Robot Swarms Neutralize Harmful B](https://scholar.google.com/scholar?q=Robot+Swarms+Neutralize+Harmful+B). Strobel, Pacheco, Dorigo. *Science Robotics*, 2023.
-- [Dynamic Multi-Robot Task Allocation Under Uncertainty and Temporal Constraints](https://scholar.google.com/scholar?q=Dynamic+Multi-Robot+Task+Allocation+Under+Uncertainty+and+Temporal+Constraints). Choudhury et al.. *Autonomous Robots*, 2022.
+- [A Systematic Literature Review on Multi-Robot Task Allocation](https://scholar.google.com/scholar?q=A+Systematic+Literature+Review+on+Multi-Robot+Task+Allocation). KA, Athira and Subramaniam, Umashankar. *ACM Computing Surveys (CSUR)*, 2024.
+- [Adversarial Machine Learning Attacks and Defences in Multi-Agent Reinforcement Learning](https://scholar.google.com/scholar?q=Adversarial+Machine+Learning+Attacks+and+Defences+in+Multi-Agent+Reinforcement+Learning). Standen, Maxwell et al.. *ACM Computing Surveys (CSUR)*, 2024.
+- [Robot swarms neutralize harmful Byzantine robots using a blockchain-based token economy](https://scholar.google.com/scholar?q=Robot+swarms+neutralize+harmful+Byzantine+robots+using+a+blockchain-based+token+economy). Strobel, Pacheco, Dorigo. *Science Robotics*, 2023.
+- [Dynamic Multi-Robot Task Allocation Under Uncertainty and Temporal Constraints](https://scholar.google.com/scholar?q=Dynamic+Multi-Robot+Task+Allocation+Under+Uncertainty+and+Temporal+Constraints). Choudhury et al.. *Autonomous Robots*, 2020.
 - [The Emergence of Adversarial Communication in Multi-Agent Reinforcement Learning](https://scholar.google.com/scholar?q=The+Emergence+of+Adversarial+Communication+in+Multi-Agent+Reinforcement+Learning). Blumenkamp, Prorok. *CoRL*, 2021.
 - [Multi-Robot Coordination and Planning in Uncertain and Adversarial Environments](https://scholar.google.com/scholar?q=Multi-Robot+Coordination+and+Planning+in+Uncertain+and+Adversarial+Environments). Zhou, Tokekar. *Robotics*, 2021.
 - [Resilient Distributed Diffusion for Multi-Robot Systems Using Centerpoint](https://scholar.google.com/scholar?q=Resilient+Distributed+Diffusion+for+Multi-Robot+Systems+Using+Centerpoint). Li et al.. *RSS*, 2020.
@@ -505,10 +493,10 @@ We review **480+** papers across five capability layers of embodied AI.
 ---
 
 <details open>
-<summary>🤖 <b>Action and Interaction</b> (105 papers)</summary>
+<summary>🤖 <b>Action and Interaction</b> (101 papers)</summary>
 
 <details>
-<summary>Robot Control (90)</summary>
+<summary>Robot Control (86)</summary>
 
 - [RedVLA: Physical Red Teaming of Vision-Language-Action Models](https://arxiv.org/abs/2604.22591). Zhang et al.. *arXiv 2604.22591*, 2026.
 - [HazardArena: Evaluating Semantic Safety in Vision-Language-Action Models](https://arxiv.org/abs/2604.12447). Chen et al.. *arXiv 2604.12447*, 2026.
@@ -518,105 +506,101 @@ We review **480+** papers across five capability layers of embodied AI.
 - [Tex3D: Objects as Attack Surfaces via Adversarial 3D Textures for Vision-Language-Action Models](https://arxiv.org/abs/2604.01618). Chen et al.. *arXiv 2604.01618*, 2026.
 - [UniAda: Universal Adaptive Multi-objective Adversarial Attack for End-to-End Autonomous Driving Systems](https://arxiv.org/abs/2604.23362). Zhang et al.. *arXiv 2604.23362*, 2026.
 - [STRONG-VLA: Decoupled Robustness Learning for Vision-Language-Action Models under Multimodal Perturbations](https://arxiv.org/abs/2604.10055). Xie et al.. *arXiv 2604.10055*, 2026.
-- [BEAT: Visual Backdoor Attacks on VLM-based Embodied Agents via Contrastive Trigger Learning](https://scholar.google.com/scholar?q=BEAT%3A+Visual+Backdoor+Attacks+on+VLM-based+Embodied+Agents+via+Contrastive+Trigger+Learning). Zhan et al.. *arXiv 2510.27623*, 2025.
+- [BEAT: Visual Backdoor Attacks on VLM-based Embodied Agents via Contrastive Trigger Learning](https://arxiv.org/abs/2510.27623). Zhan, Qiusi et al.. *ICLR*, 2026.
 - [Regret-based Defense in Adversarial Reinforcement Learning](https://scholar.google.com/scholar?q=Regret-based+Defense+in+Adversarial+Reinforcement+Learning). Belaire et al.. *AAMAS*, 2024.
 - [Train Hard, Fight Easy: Robust Meta Reinforcement Learning](https://scholar.google.com/scholar?q=Train+Hard+Fight+Easy%3A+Robust+Meta+Reinforcement+Learning). Greenberg et al.. *NeurIPS*, 2023.
 - [Who Is the Strongest Enemy? Towards Optimal and Efficient Evasion Attacks in Deep RL](https://scholar.google.com/scholar?q=Who+Is+the+Strongest+Enemy%3F+Towards+Optimal+and+Efficient+Evasion+Attacks+in+Deep+RL). Sun et al.. *ICLR*, 2022.
 - [Natural Actor-Critic for Robust Reinforcement Learning with Function Approximation](https://scholar.google.com/scholar?q=Natural+Actor-Critic+for+Robust+Reinforcement+Learning+with+Function+Approximation). Zhou et al.. *NeurIPS*, 2023.
 - [LIBERO-X: Robustness Litmus for Vision-Language-Action Models](https://scholar.google.com/scholar?q=LIBERO-X%3A+Robustness+Litmus+for+Vision-Language-Action+Models). Wang et al.. *arXiv 2602.06556*, 2026.
-- [RAT](https://scholar.google.com/scholar?q=RAT). Bai et al.. *AAAI*, 2025.
+- [Universal Closed-Box Adversarial Attack for Trajectory Representation via Controlling High-Dimensional Iterative Constraints](https://scholar.google.com/scholar?q=RAT). Bai et al.. *AAAI*, 2025.
 - [On Minimizing Adversarial Counterfactual Error](https://scholar.google.com/scholar?q=On+Minimizing+Adversarial+Counterfactual+Error). Belaire, Sinha, Varakantham. *ICLR*, 2025.
-- [PNAct](https://scholar.google.com/scholar?q=PNAct). Guo et al.. *IJCAI*, 2025.
-- [ANNIE](https://scholar.google.com/scholar?q=ANNIE). Huang et al.. 2025.
-- [Adversarial Attacks](https://scholar.google.com/scholar?q=Adversarial+Attacks). Jones et al.. 2025.
-- [Embodied Red Teaming](https://scholar.google.com/scholar?q=Embodied+Red+Teaming). Karnik et al.. 2025.
+- [PNAct: Crafting Backdoor Attacks in Safe Reinforcement Learning](https://scholar.google.com/scholar?q=PNAct). Guo et al.. *IJCAI*, 2025.
+- [Annie: Be careful of your robots](https://scholar.google.com/scholar?q=ANNIE). Huang et al.. 2025.
+- [Adversarial attacks on robotic vision language action models](https://scholar.google.com/scholar?q=Adversarial+Attacks). Jones, Eliot Krzysztof et al.. 2025.
+- [Embodied Red Teaming for Auditing Robotic Foundation Models](https://scholar.google.com/scholar?q=Embodied+Red+Teaming). Karnik et al.. 2025.
 - [Robust Multi-Agent Reinforcement Learning](https://scholar.google.com/scholar?q=Robust+Multi-Agent+Reinforcement+Learning). Li et al.. *IEEE Transactions on Neural Networks and Learning Systems (TNNLS)*, 2025.
-- [TooBadRL](https://scholar.google.com/scholar?q=TooBadRL). Li et al.. 2025.
-- [AERMANI-VLM](https://scholar.google.com/scholar?q=AERMANI-VLM). Mishra et al.. *arXiv preprint arXiv.2511.01472*, 2025.
-- [Off-Policy Actor-Critic](https://scholar.google.com/scholar?q=Off-Policy+Actor-Critic). Nakanishi et al.. *ICML*, 2025.
+- [TooBadRL: Trigger Optimization to Boost Effectiveness of Backdoor Attacks on Deep Reinforcement Learning](https://scholar.google.com/scholar?q=TooBadRL). Li et al.. 2025.
+- [AERMANI-VLM: Structured Prompting and Reasoning for Aerial Manipulation with Vision Language Models](https://scholar.google.com/scholar?q=AERMANI-VLM). Mishra et al.. *arXiv preprint arXiv.2511.01472*, 2025.
+- [Off-Policy Actor-Critic for Adversarial Observation Robustness: Virtual Alternative Training via Symmetric Policy Evaluation](https://scholar.google.com/scholar?q=Off-Policy+Actor-Critic+for+Adversarial+Observation+Robustness%3A+Virtual+Alternative+Training+via+Symmetric+Policy+Evaluation). Nakanishi et al.. *ICML*, 2025.
 - [Action Robust Reinforcement Learning Via Optimal Adversary Aware Policy Optimization](https://scholar.google.com/scholar?q=Action+Robust+Reinforcement+Learning+Via+Optimal+Adversary+Aware+Policy+Optimization). Nie et al.. 2025.
 - [How Vulnerable Is My Policy](https://scholar.google.com/scholar?q=How+Vulnerable+Is+My+Policy). Patil et al.. 2025.
-- [Exploring the Adversarial Vulnerabilities](https://scholar.google.com/scholar?q=Exploring+the+Adversarial+Vulnerabilities). Wang et al.. *ICCV*, 2025.
+- [Exploring the Adversarial Vulnerabilities of Vision-Language-Action Models in Robotics](https://scholar.google.com/scholar?q=Exploring+the+Adversarial+Vulnerabilities+of+Vision-Language-Action+Models+in+Robotics). Wang et al.. *ICCV*, 2025.
 - [Towards Robust Deep Reinforcement Learning Against Environmental State Perturbation](https://scholar.google.com/scholar?q=Towards+Robust+Deep+Reinforcement+Learning+Against+Environmental+State+Perturbation). Wang, Liu. 2025.
-- [BadVLA](https://scholar.google.com/scholar?q=BadVLA). Zhou et al.. 2025.
+- [BadVLA: Towards Backdoor Attacks on Vision-Language-Action Models via Objective-Decoupled Optimization](https://proceedings.neurips.cc/paper_files/paper/2025/hash/b94925a92f2271cd60c9f3f7a7d366fe-Abstract-Conference.html). Zhou, Xueyang et al.. *NeurIPS*, 2026.
 - [LIBERO-Plus: In-depth Robustness Analysis of Vision-Language-Action Models](https://scholar.google.com/scholar?q=LIBERO-Plus%3A+In-depth+Robustness+Analysis+of+Vision-Language-Action+Models). Fei et al.. *arXiv 2510.13626*, 2025.
 - [Run-time Observation Interventions Make Vision-Language-Action Models More Visually Robust](https://scholar.google.com/scholar?q=Run-time+Observation+Interventions+Make+Vision-Language-Action+Models+More+Visually+Robust). Hancock, Ren, Majumdar. *ICRA*, 2025.
 - [VLSA: Vision-Language-Action Models with Plug-and-Play Safety Constraint Layer](https://scholar.google.com/scholar?q=VLSA%3A+Vision-Language-Action+Models+with+Plug-and-Play+Safety+Constraint+Layer). Hu et al.. *arXiv 2512.11891*, 2025.
-- [AttackVLA: Benchmarking Adversarial and Backdoor Attacks on Vision-Language-Action Models](https://scholar.google.com/scholar?q=AttackVLA%3A+Benchmarking+Adversarial+and+Backdoor+Attacks+on+Vision-Language-Action+Models). Jiayu. *arXiv:2511.12149*, 2025.
-- [When Robots Obey the Patch: Universal Transferable Patch Attacks on Vision-Language-Action Models](https://scholar.google.com/scholar?q=When+Robots+Obey+the+Patch%3A+Universal+Transferable+Patch+Attacks+on+Vision-Language-Action+Models). Hui. *arXiv:2511.21192*, 2025.
+- [AttackVLA: Benchmarking Adversarial and Backdoor Attacks on Vision-Language-Action Models](https://scholar.google.com/scholar?q=AttackVLA%3A+Benchmarking+Adversarial+and+Backdoor+Attacks+on+Vision-Language-Action+Models). Li, Jiayu et al.. *arXiv:2511.12149*, 2025.
+- [When Robots Obey the Patch: Universal Transferable Patch Attacks on Vision-Language-Action Models](https://scholar.google.com/scholar?q=When+Robots+Obey+the+Patch%3A+Universal+Transferable+Patch+Attacks+on+Vision-Language-Action+Models). Lu, Hui et al.. *arXiv:2511.21192*, 2025.
 - [ADVEDM: Fine-grained Adversarial Attack against VLM-based Embodied Agents](https://scholar.google.com/scholar?q=ADVEDM%3A+Fine-grained+Adversarial+Attack+against+VLM-based+Embodied+Agents). Wang et al.. *arXiv 2509.16645*, 2025.
 - [FreezeVLA: Action-Freezing Attacks against Vision-Language-Action Models](https://scholar.google.com/scholar?q=FreezeVLA%3A+Action-Freezing+Attacks+against+Vision-Language-Action+Models). Wang et al.. *arXiv 2509.19870*, 2025.
-- [Model-agnostic adversarial attack and defense for vision-language-action models](https://scholar.google.com/scholar?q=Model-agnostic+adversarial+attack+and+defense+for+vision-language-action+models). Haochuan. *arXiv 2510.13237*, 2025.
-- [TabVLA: Targeted Backdoor Attacks on Vision-Language-Action Models](https://scholar.google.com/scholar?q=TabVLA%3A+Targeted+Backdoor+Attacks+on+Vision-Language-Action+Models). Zonghuan. *arXiv:2510.10932*, 2025.
-- [When Alignment Fails: Multimodal Adversarial Attacks on Vision-Language-Action Models](https://scholar.google.com/scholar?q=When+Alignment+Fails%3A+Multimodal+Adversarial+Attacks+on+Vision-Language-Action+Models). al.. *arXiv:2511.16203*, 2025.
-- [Visual Backdoor Attacks on MLLM Embodied Decision Making via Contrastive Trigger Learning](https://scholar.google.com/scholar?q=Visual+Backdoor+Attacks+on+MLLM+Embodied+Decision+Making+via+Contrastive+Trigger+Learning). Zhan et al.. *arXiv 2510.27623*, 2025.
-- [Attention-Guided Patch-Wise Sparse Adversarial Attacks on Vision-Language-Action Models](https://scholar.google.com/scholar?q=Attention-Guided+Patch-Wise+Sparse+Adversarial+Attacks+on+Vision-Language-Action+Models). Naifu. *arXiv:2511.21663*, 2025.
+- [Model-agnostic adversarial attack and defense for vision-language-action models](https://scholar.google.com/scholar?q=Model-agnostic+adversarial+attack+and+defense+for+vision-language-action+models). Xu, Haochuan et al.. *arXiv 2510.13237*, 2025.
+- [TabVLA: Targeted Backdoor Attacks on Vision-Language-Action Models](https://scholar.google.com/scholar?q=TabVLA%3A+Targeted+Backdoor+Attacks+on+Vision-Language-Action+Models). Xu, Zonghuan et al.. *arXiv:2510.10932*, 2025.
+- [When Alignment Fails: Multimodal Adversarial Attacks on Vision-Language-Action Models](https://scholar.google.com/scholar?q=When+Alignment+Fails%3A+Multimodal+Adversarial+Attacks+on+Vision-Language-Action+Models). Yan, Yuping et al.. *arXiv:2511.16203*, 2025.
+- [Attention-Guided Patch-Wise Sparse Adversarial Attacks on Vision-Language-Action Models](https://scholar.google.com/scholar?q=Attention-Guided+Patch-Wise+Sparse+Adversarial+Attacks+on+Vision-Language-Action+Models). Zhang, Naifu et al.. *arXiv:2511.21663*, 2025.
 - [SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning](https://scholar.google.com/scholar?q=SafeVLA%3A+Towards+Safety+Alignment+of+Vision-Language-Action+Model+via+Constrained+Learning). Zhang et al.. *NeurIPS*, 2025.
-- [Goal-oriented Backdoor Attack against Vision-Language-Action Models via Physical Objects](https://scholar.google.com/scholar?q=Goal-oriented+Backdoor+Attack+against+Vision-Language-Action+Models+via+Physical+Objects). Zirun. *arXiv:2510.09269*, 2025.
-- [Regret-Based Defense](https://scholar.google.com/scholar?q=Regret-Based+Defense). Belaire et al.. *AAMAS*, 2024.
-- [Diffusion Policy Attacker](https://scholar.google.com/scholar?q=Diffusion+Policy+Attacker). Chen, Xue, Chen. *NeurIPS*, 2024.
-- [Manipulation Facing Threats](https://scholar.google.com/scholar?q=Manipulation+Facing+Threats). Cheng et al.. 2024.
-- [Bring Your Own](https://scholar.google.com/scholar?q=Bring+Your+Own). Gadot et al.. *ICML*, 2024.
-- [Baffle: Hiding Backdoors](https://scholar.google.com/scholar?q=Baffle%3A+Hiding+Backdoors). Gong et al.. *S&P*, 2024.
+- [Goal-oriented Backdoor Attack against Vision-Language-Action Models via Physical Objects](https://arxiv.org/abs/2510.09269). Zhou, Zirun et al.. *arXiv 2510.09269*, 2025.
+- [Regret-Based Defense in Adversarial Reinforcement Learning](https://scholar.google.com/scholar?q=Regret-Based+Defense+in+Adversarial+Reinforcement+Learning). Belaire et al.. *AAMAS*, 2024.
+- [Diffusion Policy Attacker: Crafting Adversarial Attacks for Diffusion-based Policies](https://scholar.google.com/scholar?q=Diffusion+Policy+Attacker%3A+Crafting+Adversarial+Attacks+for+Diffusion-based+Policies). Chen, Xue, Chen. *NeurIPS*, 2024.
+- [Manipulation Facing Threats: Evaluating Physical Vulnerabilities in End-to-End Vision Language Action Models](https://scholar.google.com/scholar?q=Manipulation+Facing+Threats). Cheng et al.. 2024.
+- [Bring Your Own (Non-Robust) Algorithm to Solve Robust MDPs by Estimating The Worst Kernel](https://scholar.google.com/scholar?q=Bring+Your+Own). Gadot et al.. *ICML*, 2024.
+- [Baffle: Hiding Backdoors in Offline Reinforcement Learning Datasets](https://scholar.google.com/scholar?q=Baffle%3A+Hiding+Backdoors+in+Offline+Reinforcement+Learning+Datasets). Gong et al.. *S&P*, 2024.
 - [Game-Theoretic Robust Reinforcement Learning Handles Temporally-Coupled Perturbations](https://scholar.google.com/scholar?q=Game-Theoretic+Robust+Reinforcement+Learning+Handles+Temporally-Coupled+Perturbations). Liang et al.. *ICLR*, 2024.
-- [Rethinking Adversarial Policies](https://scholar.google.com/scholar?q=Rethinking+Adversarial+Policies). Liu et al.. *ICLR*, 2024.
-- [Beyond Worst-Case Attacks](https://scholar.google.com/scholar?q=Beyond+Worst-Case+Attacks). Liu et al.. *ICLR*, 2024.
-- [Mitigating Adversarial Perturbations](https://scholar.google.com/scholar?q=Mitigating+Adversarial+Perturbations). Luu et al.. *IROS*, 2024.
-- [SUB-PLAY](https://scholar.google.com/scholar?q=SUB-PLAY). Ma et al.. *CCS*, 2024.
+- [Rethinking Adversarial Policies: A Generalized Attack Formulation and Provable Defense in RL](https://scholar.google.com/scholar?q=Rethinking+Adversarial+Policies%3A+A+Generalized+Attack+Formulation+and+Provable+Defense+in+RL). Liu et al.. *ICLR*, 2024.
+- [Beyond Worst-case Attacks: Robust RL with Adaptive Defense via Non-dominated Policies](https://scholar.google.com/scholar?q=Beyond+Worst-case+Attacks%3A+Robust+RL+with+Adaptive+Defense+via+Non-dominated+Policies). Liu et al.. *ICLR*, 2024.
+- [Mitigating Adversarial Perturbations for Deep Reinforcement Learning via Vector Quantization](https://scholar.google.com/scholar?q=Mitigating+Adversarial+Perturbations+for+Deep+Reinforcement+Learning+via+Vector+Quantization). Luu et al.. *IROS*, 2024.
+- [SUB-PLAY: Adversarial Policies against Partially Observed Multi-Agent Reinforcement Learning Systems](https://scholar.google.com/scholar?q=SUB-PLAY). Ma et al.. *CCS*, 2024.
 - [Adversarially Robust Decision Transformer](https://scholar.google.com/scholar?q=Adversarially+Robust+Decision+Transformer). Tang et al.. *NeurIPS*, 2024.
 - [Towards Robust Offline Reinforcement Learning Under Diverse Data Corruption](https://scholar.google.com/scholar?q=Towards+Robust+Offline+Reinforcement+Learning+Under+Diverse+Data+Corruption). Yang et al.. *ICLR*, 2024.
-- [Uncertainty-Based Offline Variational Bayesian Reinforcement Learning](https://scholar.google.com/scholar?q=Uncertainty-Based+Offline+Variational+Bayesian+Reinforcement+Learning). Yang et al.. *NeurIPS*, 2024.
+- [Uncertainty-based Offline Variational Bayesian Reinforcement Learning for Robustness under Diverse Data Corruptions](https://scholar.google.com/scholar?q=Uncertainty-based+Offline+Variational+Bayesian+Reinforcement+Learning+for+Robustness+under+Diverse+Data+Corruptions). Yang et al.. *NeurIPS*, 2024.
 - [Rethinking the Intermediate Features](https://scholar.google.com/scholar?q=Rethinking+the+Intermediate+Features). Zhao et al.. 2024.
-- [Toward Evaluating Robustness](https://scholar.google.com/scholar?q=Toward+Evaluating+Robustness). Zheng et al.. *DSN*, 2024.
+- [Toward Evaluating Robustness of Reinforcement Learning with Adversarial Policy](https://scholar.google.com/scholar?q=Toward+Evaluating+Robustness+of+Reinforcement+Learning+with+Adversarial+Policy). Zheng, Xiang et al.. *DSN*, 2024.
 - [Trojanrobot: Physical-world backdoor attacks against vlm-based robotic manipulation](https://scholar.google.com/scholar?q=Trojanrobot%3A+Physical-world+backdoor+attacks+against+vlm-based+robotic+manipulation). Wang et al.. *arXiv 2411.11683*, 2024.
-- [MARNet](https://scholar.google.com/scholar?q=MARNet). Chen, Zheng, Gong. *IEEE Transactions on Dependable and Secure Computing (TDSC)*, 2023.
-- [Train Hard](https://scholar.google.com/scholar?q=Train+Hard). Greenberg et al.. *NeurIPS*, 2023.
-- [PATROL](https://scholar.google.com/scholar?q=PATROL). Guo et al.. *USENIX Security*, 2023.
-- [PolicyCleanse](https://scholar.google.com/scholar?q=PolicyCleanse). Guo et al.. *ICCV*, 2023.
-- [Trade-Off Between Robustness](https://scholar.google.com/scholar?q=Trade-Off+Between+Robustness). Huang, Choi, Figueroa. *IEEE Robotics and Automation Letters (RA-L)*, 2023.
+- [MARNet: Backdoor Attacks Against Cooperative Multi-Agent Reinforcement Learning](https://scholar.google.com/scholar?q=MARNet). Chen, Zheng, Gong. *IEEE Transactions on Dependable and Secure Computing (TDSC)*, 2023.
+- [Train Hard, Fight Easy: Robust Meta Reinforcement Learning](https://scholar.google.com/scholar?q=Train+Hard). Greenberg et al.. *NeurIPS*, 2023.
+- [PATROL: Provable defense against adversarial policy in two-player games](https://scholar.google.com/scholar?q=PATROL). Guo et al.. *USENIX Security*, 2023.
+- [PolicyCleanse: Backdoor Detection and Mitigation for Competitive Reinforcement Learning](https://scholar.google.com/scholar?q=PolicyCleanse). Guo et al.. *ICCV*, 2023.
+- [Trade-Off Between Robustness and Rewards Adversarial Training for Deep Reinforcement Learning](https://scholar.google.com/scholar?q=Trade-Off+Between+Robustness). Huang, Choi, Figueroa. *IEEE Robotics and Automation Letters (RA-L)*, 2023.
 - [Revisiting Domain Randomization Via Relaxed State-AdversarialPolicy Optimization](https://scholar.google.com/scholar?q=Revisiting+Domain+Randomization+Via+Relaxed+State-AdversarialPolicy+Optimization). Lien, Hsieh, Wang. *ICML*, 2023.
 - [Certifiably Robust Policy Learning Against Adversarial Multi-Agent Communication](https://scholar.google.com/scholar?q=Certifiably+Robust+Policy+Learning+Against+Adversarial+Multi-Agent+Communication). Sun et al.. *ICLR*, 2023.
 - [Robust Multi-Agent Coordination Via Evolutionary Generation](https://scholar.google.com/scholar?q=Robust+Multi-Agent+Coordination+Via+Evolutionary+Generation). Yuan et al.. *AAAI*, 2023.
-- [Natural Actor-Critic](https://scholar.google.com/scholar?q=Natural+Actor-Critic). Zhou et al.. *NeurIPS*, 2023.
 - [A Robust Mean-Field Actor-Critic Reinforcement Learning Against Adversarial Perturbations](https://scholar.google.com/scholar?q=A+Robust+Mean-Field+Actor-Critic+Reinforcement+Learning+Against+Adversarial+Perturbations). Zhou, Liu, Zhou. *IEEE Transactions on Neural Networks and Learning Systems (TNNLS)*, 2023.
 - [Distributionally Adaptive Meta Reinforcement Learning](https://scholar.google.com/scholar?q=Distributionally+Adaptive+Meta+Reinforcement+Learning). Ajay et al.. *NeurIPS*, 2022.
-- [Robust Reinforcement Learning](https://scholar.google.com/scholar?q=Robust+Reinforcement+Learning). Huang et al.. *IJCAI*, 2022.
-- [Learning Robust Policy Against Disturbance](https://scholar.google.com/scholar?q=Learning+Robust+Policy+Against+Disturbance). Kuang et al.. *AAAI*, 2022.
-- [Efficient Adversarial Training Without Attacking](https://scholar.google.com/scholar?q=Efficient+Adversarial+Training+Without+Attacking). Liang et al.. *NeurIPS*, 2022.
-- [Who Is](https://scholar.google.com/scholar?q=Who+Is). Sun et al.. *ICLR*, 2022.
-- [CROP](https://scholar.google.com/scholar?q=CROP). Wu et al.. *ICLR*, 2022.
-- [Monotonic Robust Policy Optimization](https://scholar.google.com/scholar?q=Monotonic+Robust+Policy+Optimization). Jiang et al.. *ICML*, 2021.
+- [Learning Robust Policy against Disturbance in Transition Dynamics via State-Conservative Policy Optimization](https://scholar.google.com/scholar?q=Learning+Robust+Policy+against+Disturbance+in+Transition+Dynamics+via+State-Conservative+Policy+Optimization). Kuang et al.. *AAAI*, 2022.
+- [Efficient Adversarial Training without Attacking: Worst-Case-Aware Robust Reinforcement Learning](https://scholar.google.com/scholar?q=Efficient+Adversarial+Training+without+Attacking%3A+Worst-Case-Aware+Robust+Reinforcement+Learning). Liang et al.. *NeurIPS*, 2022.
+- [Who is in control? practical physical layer attack and defense for mmwave-based sensing in autonomous vehicles](https://scholar.google.com/scholar?q=Who+Is). Sun et al.. *ICLR*, 2022.
+- [CROP: Certifying Robust Policies for Reinforcement Learning through Functional Smoothing](https://scholar.google.com/scholar?q=CROP). Wu et al.. *ICLR*, 2022.
+- [Monotonic Robust Policy Optimization with Model Discrepancy](https://scholar.google.com/scholar?q=Monotonic+Robust+Policy+Optimization+with+Model+Discrepancy). Jiang et al.. *ICML*, 2021.
 - [Robust Deep Reinforcement Learning Through Adversarial Loss](https://scholar.google.com/scholar?q=Robust+Deep+Reinforcement+Learning+Through+Adversarial+Loss). Oikarinen et al.. *NeurIPS*, 2021.
-- [BackdooRL](https://scholar.google.com/scholar?q=BackdooRL). Wang et al.. *IJCAI*, 2021.
-- [Robust Reinforcement Learning](https://scholar.google.com/scholar?q=Robust+Reinforcement+Learning). Zhang et al.. *ICLR*, 2021.
-- [Adversarial Policies](https://scholar.google.com/scholar?q=Adversarial+Policies). Gleave et al.. *ICLR*, 2020.
-- [Spatiotemporally Constrained Action Space Attacks](https://scholar.google.com/scholar?q=Spatiotemporally+Constrained+Action+Space+Attacks). Lee et al.. *AAAI*, 2020.
+- [BACKDOORL: Backdoor Attack against Competitive Reinforcement Learning](https://scholar.google.com/scholar?q=BackdooRL). Wang et al.. *IJCAI*, 2021.
+- [Robust Reinforcement Learning on State Observations with Learned Optimal Adversary](https://scholar.google.com/scholar?q=Robust+Reinforcement+Learning+on+State+Observations+with+Learned+Optimal+Adversary). Zhang, Huan et al.. *ICLR*, 2021.
+- [Adversarial Policies: Attacking Deep Reinforcement Learning](https://scholar.google.com/scholar?q=Adversarial+Policies). Gleave et al.. *ICLR*, 2020.
+- [Spatiotemporally Constrained Action Space Attacks on Deep Reinforcement Learning Agents](https://scholar.google.com/scholar?q=Spatiotemporally+Constrained+Action+Space+Attacks+on+Deep+Reinforcement+Learning+Agents). Lee et al.. *AAAI*, 2020.
 - [Stealthy and Efficient Adversarial Attacks Against Deep Reinforcement Learning](https://scholar.google.com/scholar?q=Stealthy+and+Efficient+Adversarial+Attacks+Against+Deep+Reinforcement+Learning). Sun et al.. *AAAI*, 2020.
 - [Robustifying Reinforcement Learning Agents Via Action Space Adversarial Training](https://scholar.google.com/scholar?q=Robustifying+Reinforcement+Learning+Agents+Via+Action+Space+Adversarial+Training). Tan et al.. *ACC*, 2020.
 - [Robust Reinforcement Learning Using Adversarial Populations](https://scholar.google.com/scholar?q=Robust+Reinforcement+Learning+Using+Adversarial+Populations). Vinitsky et al.. 2020.
-- [Toward Evaluating Robustness](https://scholar.google.com/scholar?q=Toward+Evaluating+Robustness). Weng et al.. *ICLR*, 2020.
 - [Robust Deep Reinforcement Learning Against Adversarial Perturbations](https://scholar.google.com/scholar?q=Robust+Deep+Reinforcement+Learning+Against+Adversarial+Perturbations). Zhang et al.. *NeurIPS*, 2020.
-- [Action Robust Reinforcement Learning](https://scholar.google.com/scholar?q=Action+Robust+Reinforcement+Learning). Tessler, Efroni, Mannor. *ICML*, 2019.
-- [Adversarially Robust Policy Learning](https://scholar.google.com/scholar?q=Adversarially+Robust+Policy+Learning). Mandlekar et al.. *IROS*, 2017.
+- [Action Robust Reinforcement Learning and Applications in Continuous Control](https://scholar.google.com/scholar?q=Action+Robust+Reinforcement+Learning+and+Applications+in+Continuous+Control). Tessler, Efroni, Mannor. *ICML*, 2019.
+- [Adversarially Robust Policy Learning through Active Construction of Physically-Plausible Perturbations](https://scholar.google.com/scholar?q=Adversarially+Robust+Policy+Learning+through+Active+Construction+of+Physically-Plausible+Perturbations). Mandlekar et al.. *IROS*, 2017.
 - [Robust Adversarial Reinforcement Learning](https://scholar.google.com/scholar?q=Robust+Adversarial+Reinforcement+Learning). Pinto et al.. *ICML*, 2017.
-- [EPOpt](https://scholar.google.com/scholar?q=EPOpt). Rajeswaran et al.. *ICLR*, 2017.
+- [EPOpt: Learning Robust Neural Network Policies Using Model Ensembles](https://scholar.google.com/scholar?q=EPOpt). Rajeswaran et al.. *ICLR*, 2017.
 
 </details>
 
 <details>
 <summary>Human-Agent Interaction (12)</summary>
 
-- [Biomimetic Approach to Designing Trust-Based Robot-to-Human Object Handover in a Collaborative Assembly Task](https://scholar.google.com/scholar?q=Biomimetic+Approach+to+Designing+Trust-Based+Robot-to-Human+Object+Handover+in+a+Collaborative+Assembly+Task). Makenova et al.. *Robotics*, 2025.
+- [Biomimetic Approach to Designing Trust-Based Robot-to-Human Object Handover in a Collaborative Assembly Task](https://scholar.google.com/scholar?q=Biomimetic+Approach+to+Designing+Trust-Based+Robot-to-Human+Object+Handover+in+a+Collaborative+Assembly+Task). Rahman, S. et al.. *Robotics*, 2025.
 - [LLM-Based Human-Agent Collaboration and Interaction Systems: A Survey](https://scholar.google.com/scholar?q=LLM-Based+Human-Agent+Collaboration+and+Interaction+Systems%3A+A+Survey). Zou et al.. *arXiv 2505.00753*, 2025.
-- [Compliant Blind Handover Control for Human-Robot Collaboration](https://scholar.google.com/scholar?q=Compliant+Blind+Handover+Control+for+Human-Robot+Collaboration). Pantano et al.. *IROS*, 2024.
-- [Fast and Comfortable Robot-to-Human Handover for Mobile Cooperation Robot System](https://scholar.google.com/scholar?q=Fast+and+Comfortable+Robot-to-Human+Handover+for+Mobile+Cooperation+Robot+System). Yang, Zhu, Chen. *Cyborg and Bionic Systems*, 2024.
-- [Human--Robot Object Handover: Recent Progress and Future Direction](https://scholar.google.com/scholar?q=Human--Robot+Object+Handover%3A+Recent+Progress+and+Future+Direction). Yang et al.. *Robotics*, 2024.
+- [Compliant Blind Handover Control for Human-Robot Collaboration](https://scholar.google.com/scholar?q=Compliant+Blind+Handover+Control+for+Human-Robot+Collaboration). Ferrari, Davide et al.. *IROS*, 2024.
+- [Fast and Comfortable Robot-to-Human Handover for Mobile Cooperation Robot System](https://scholar.google.com/scholar?q=Fast+and+Comfortable+Robot-to-Human+Handover+for+Mobile+Cooperation+Robot+System). Meng, Chongxi et al.. *Cyborg and Bionic Systems*, 2024.
+- [Human--Robot Object Handover: Recent Progress and Future Direction](https://scholar.google.com/scholar?q=Human--Robot+Object+Handover%3A+Recent+Progress+and+Future+Direction). Duan, H et al.. *Robotics*, 2024.
 - [PsySafe: A Comprehensive Framework for Psychological-based Attack, Defense, and Evaluation of Multi-agent System Safety](https://scholar.google.com/scholar?q=PsySafe%3A+A+Comprehensive+Framework+for+Psychological-based+Attack%2C+Defense%2C+and+Evaluation+of+Multi-agent+System+Safety). Zhang et al.. *ACL*, 2024.
-- [Optimizing Human-Robot Handovers: The Impact of Adaptive Transport Methods](https://scholar.google.com/scholar?q=Optimizing+Human-Robot+Handovers%3A+The+Impact+of+Adaptive+Transport+Methods). Belmonte et al.. *Robotics*, 2023.
-- [A Novel Human Intention Prediction Approach Based on Fuzzy Rules Through Wearable Sensing in Human--Robot Handover](https://scholar.google.com/scholar?q=A+Novel+Human+Intention+Prediction+Approach+Based+on+Fuzzy+Rules+Through+Wearable+Sensing+in+Human--Robot+Handover). Ding, Liu, Zhao. *Robotics*, 2023.
-- [A Taxonomy of Factors Influencing Perceived Safety in Human--Robot Interaction](https://scholar.google.com/scholar?q=A+Taxonomy+of+Factors+Influencing+Perceived+Safety+in+Human--Robot+Interaction). Rubagotti et al.. *Robotics*, 2023.
-- [Handover Control for Human-Robot and Robot-Robot Collaboration](https://scholar.google.com/scholar?q=Handover+Control+for+Human-Robot+and+Robot-Robot+Collaboration). Rosenberger et al.. *Robotics*, 2021.
-- [Perceived Safety in Physical Human Robot Interaction -- A Survey](https://scholar.google.com/scholar?q=Perceived+Safety+in+Physical+Human+Robot+Interaction+--+A+Survey). Lasota, Fong, Shah. *Robotics and Autonomous Systems*, 2021.
+- [Optimizing Human-Robot Handovers: The Impact of Adaptive Transport Methods](https://scholar.google.com/scholar?q=Optimizing+Human-Robot+Handovers%3A+The+Impact+of+Adaptive+Transport+Methods). Käppler, M et al.. *Robotics*, 2023.
+- [A Novel Human Intention Prediction Approach Based on Fuzzy Rules Through Wearable Sensing in Human--Robot Handover](https://scholar.google.com/scholar?q=A+Novel+Human+Intention+Prediction+Approach+Based+on+Fuzzy+Rules+Through+Wearable+Sensing+in+Human--Robot+Handover). Zou, R et al.. *Robotics*, 2023.
+- [A Taxonomy of Factors Influencing Perceived Safety in Human--Robot Interaction](https://scholar.google.com/scholar?q=A+Taxonomy+of+Factors+Influencing+Perceived+Safety+in+Human--Robot+Interaction). Akalin, Neziha et al.. *Robotics*, 2023.
+- [Handover Control for Human-Robot and Robot-Robot Collaboration](https://scholar.google.com/scholar?q=Handover+Control+for+Human-Robot+and+Robot-Robot+Collaboration). Costanzo, M et al.. *Robotics*, 2021.
+- [Perceived Safety in Physical Human Robot Interaction -- A Survey](https://scholar.google.com/scholar?q=Perceived+Safety+in+Physical+Human+Robot+Interaction+--+A+Survey). Rubagotti, M et al.. *Robotics and Autonomous Systems*, 2021.
 - [A Review on Trust in Human-Robot Interaction](https://scholar.google.com/scholar?q=A+Review+on+Trust+in+Human-Robot+Interaction). Khavas, Ahmadi, Abdi. *arXiv 2105.10045*, 2021.
 
 </details>
@@ -635,10 +619,10 @@ We review **480+** papers across five capability layers of embodied AI.
 ---
 
 <details open>
-<summary>⚡ <b>Agentic</b> (87 papers)</summary>
+<summary>⚡ <b>Agentic</b> (74 papers)</summary>
 
 <details>
-<summary>Tool Use and Skill (17)</summary>
+<summary>Tool Use and Skill (16)</summary>
 
 - [DecodingTrust-Agent Platform (DTap): A Controllable and Interactive Red-Teaming Platform for AI Agents](https://arxiv.org/abs/2605.04808). Chen et al.. *arXiv 2605.04808*, 2026.
 - [Indirect Prompt Injection in the Wild: An Empirical Study of Prevalence, Techniques, and Objectives](https://arxiv.org/abs/2604.27202). Khodayari et al.. *arXiv 2604.27202*, 2026.
@@ -648,65 +632,59 @@ We review **480+** papers across five capability layers of embodied AI.
 - [Black-Box Skill Stealing Attack from Proprietary LLM Agents: An Empirical Study](https://arxiv.org/abs/2604.21829). Wang et al.. *arXiv 2604.21829*, 2026.
 - [Supply-Chain Poisoning Attacks Against LLM Coding Agent Skill Ecosystems](https://arxiv.org/abs/2604.03081). Qu et al.. *arXiv 2604.03081*, 2026.
 - [Towards Secure Agent Skills: Architecture, Threat Taxonomy, and Security Analysis](https://arxiv.org/abs/2604.02837). Li et al.. *arXiv 2604.02837*, 2026.
-- [AgentSpec](https://scholar.google.com/scholar?q=AgentSpec). Chen et al.. *ICSE*, 2026.
-- [BackdoorAgent](https://scholar.google.com/scholar?q=BackdoorAgent). Liang et al.. *arXiv 2601.04566*, 2026.
+- [AgentSpec](https://scholar.google.com/scholar?q=AgentSpec). Wang, Haoyu et al.. *ICSE*, 2026.
+- [BackdoorAgent: A Unified Framework for Backdoor Attacks on LLM-based Agents](https://scholar.google.com/scholar?q=BackdoorAgent). Feng, Yunhao et al.. *arXiv 2601.04566*, 2026.
 - [OWASP](https://scholar.google.com/scholar?q=OWASP). Project. 2026.
-- [STAC](https://scholar.google.com/scholar?q=STAC). Liu et al.. *arXiv 2509.25624*, 2025.
-- [Prompt Injection Attack to Tool Selection in LLM](https://scholar.google.com/scholar?q=Prompt+Injection+Attack+to+Tool+Selection+in+LLM). Wang et al.. *arXiv 2504.19793*, 2025.
-- [RoboSafe](https://scholar.google.com/scholar?q=RoboSafe). Zhu et al.. *arXiv 2512.21220*, 2025.
-- [Generating Safe and Efficient Task Plans for Robot Agents with Large Language Models](https://scholar.google.com/scholar?q=Generating+Safe+and+Efficient+Task+Plans+for+Robot+Agents+with+Large+Language+Models). Ahn et al.. *arXiv preprint*, 2024.
-- [Plug in the Safety Chip: Enforcing Constraints for LLM](https://scholar.google.com/scholar?q=Plug+in+the+Safety+Chip%3A+Enforcing+Constraints+for+LLM). Lab. *Brown University Technical Report*, 2024.
-- [RoboCodeX](https://scholar.google.com/scholar?q=RoboCodeX). Yu et al.. *ICML*, 2024.
+- [DoubleStar: Long-Range Attack Towards Depth Estimation based Obstacle Avoidance in Autonomous Systems](https://scholar.google.com/scholar?q=STAC). Li, Jing-Jing et al.. *arXiv 2509.25624*, 2025.
+- [Prompt Injection Attack to Tool Selection in LLM](https://scholar.google.com/scholar?q=Prompt+Injection+Attack+to+Tool+Selection+in+LLM). Shi, Jiawen et al.. *arXiv 2504.19793*, 2025.
+- [Generating Safe and Efficient Task Plans for Robot Agents with Large Language Models](https://scholar.google.com/scholar?q=Generating+Safe+and+Efficient+Task+Plans+for+Robot+Agents+with+Large+Language+Models). Wu, Yi et al.. *arXiv preprint*, 2024.
+- [Plug in the Safety Chip: Enforcing Constraints for LLM](https://scholar.google.com/scholar?q=Plug+in+the+Safety+Chip%3A+Enforcing+Constraints+for+LLM). Yang, Ziyi et al.. *Brown University Technical Report*, 2024.
+- [RoboCodeX](https://scholar.google.com/scholar?q=RoboCodeX). Mu, Yao et al.. *ICML*, 2024.
 
 </details>
 
 <details>
-<summary>Memory (17)</summary>
+<summary>Memory (14)</summary>
 
 - [SafeHarbor: Hierarchical Memory-Augmented Guardrail for LLM Agent Safety](https://arxiv.org/abs/2605.05704). Liu et al.. *ICML*, 2026.
 - [How Far Are VLMs from Privacy Awareness in the Physical World? An Empirical Study](https://arxiv.org/abs/2605.05340). Wang et al.. *arXiv 2605.05340*, 2026.
 - [From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms](https://scholar.google.com/scholar?q=From+Storage+to+Experience%3A+A+Survey+on+the+Evolution+of+LLM+Agent+Memory+Mechanisms). Luo et al.. *Preprints.org*, 2026.
-- [OWASP](https://scholar.google.com/scholar?q=OWASP). Project. 2026.
 - [Just Ask: Curious Code Agents Reveal System Prompts in Frontier LLMs](https://arxiv.org/abs/2601.21233). Zheng et al.. *ICML*, 2026.
-- [Cascading Failures in Agentic AI](https://scholar.google.com/scholar?q=Cascading+Failures+in+Agentic+AI). AI. 2025.
-- [A-MEM](https://scholar.google.com/scholar?q=A-MEM). Anonymous. *NeurIPS*, 2025.
+- [A-MEM: Agentic Memory for LLM Agents](https://arxiv.org/abs/2502.12110). Xu, Wujiang et al.. *NeurIPS*, 2026.
 - [Memory in the Age of AI Agents](https://scholar.google.com/scholar?q=Memory+in+the+Age+of+AI+Agents). Hu et al.. *arXiv 2512.13564*, 2025.
-- [MemOS](https://scholar.google.com/scholar?q=MemOS). Hu et al.. *arXiv 2507.03724*, 2025.
+- [MemOS](https://scholar.google.com/scholar?q=MemOS). Li, Zhiyu et al.. *arXiv 2507.03724*, 2025.
 - [Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs](https://scholar.google.com/scholar?q=Topology+Matters%3A+Measuring+Memory+Leakage+in+Multi-Agent+LLMs). Liu et al.. *arXiv 2512.04668*, 2025.
-- [Log-To-Leak: Prompt Injection Attacks on Tool-Using LLM](https://scholar.google.com/scholar?q=Log-To-Leak%3A+Prompt+Injection+Attacks+on+Tool-Using+LLM). Wang et al.. *OpenReview Preprint*, 2025.
 - [Unveiling Privacy Risks in LLM Agent Memory](https://scholar.google.com/scholar?q=Unveiling+Privacy+Risks+in+LLM+Agent+Memory). Wang et al.. *ACL*, 2025.
 - [Memory in LLM-Based Multi-Agent Systems: Mechanisms, Challenges, and Collective Intelligence](https://scholar.google.com/scholar?q=Memory+in+LLM-Based+Multi-Agent+Systems%3A+Mechanisms%2C+Challenges%2C+and+Collective+Intelligence). Wu, Shu. *TechRxiv preprint*, 2025.
 - [Ghost of the Past: Identifying and Resolving Privacy Leakage of LLM's Memory Through Proactive User Interaction](https://scholar.google.com/scholar?q=Ghost+of+the+Past%3A+Identifying+and+Resolving+Privacy+Leakage+of+LLM%27s+Memory+Through+Proactive+User+Interaction). Zhang, Gong, Chen. *arXiv 2410.14931*, 2025.
 - [A Survey on the Memory Mechanism of Large Language Model-Based Agents](https://scholar.google.com/scholar?q=A+Survey+on+the+Memory+Mechanism+of+Large+Language+Model-Based+Agents). Zhang et al.. *ACM Transactions on Information Systems*, 2025.
-- [Embodied Agents Meet Personalization: Exploring Memory Utilization for Personalized Assistance](https://scholar.google.com/scholar?q=Embodied+Agents+Meet+Personalization%3A+Exploring+Memory+Utilization+for+Personalized+Assistance). Zhao et al.. *arXiv 2505.16348*, 2025.
-- [AgentPoison](https://scholar.google.com/scholar?q=AgentPoison). Zeng et al.. *NeurIPS*, 2024.
+- [Embodied Agents Meet Personalization: Exploring Memory Utilization for Personalized Assistance](https://scholar.google.com/scholar?q=Embodied+Agents+Meet+Personalization%3A+Exploring+Memory+Utilization+for+Personalized+Assistance). Kwon, T et al.. *arXiv 2505.16348*, 2025.
+- [Agentpoison: Red-teaming llm agents via poisoning memory or knowledge bases](https://scholar.google.com/scholar?q=AgentPoison). Chen et al.. *NeurIPS*, 2024.
 
 </details>
 
 <details>
-<summary>Self-Evolving (16)</summary>
+<summary>Self-Evolving (14)</summary>
 
-- [HEAL: An Empirical Study on Hallucinations in Embodied Agents Driven by Large Language Models](https://scholar.google.com/scholar?q=HEAL%3A+An+Empirical+Study+on+Hallucinations+in+Embodied+Agents+Driven+by+Large+Language+Models). Chakraborty et al.. *EMNLP*, 2025.
 - [A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems](https://scholar.google.com/scholar?q=A+Comprehensive+Survey+of+Self-Evolving+AI+Agents%3A+A+New+Paradigm+Bridging+Foundation+Models+and+Lifelong+Agentic+Systems). Fang et al.. *arXiv 2508.07407*, 2025.
 - [2025 AI Safety Index](https://scholar.google.com/scholar?q=2025+AI+Safety+Index). Institute. 2025.
 - [Aligning AI Agents with Humans through Law as Information](https://scholar.google.com/scholar?q=Aligning+AI+Agents+with+Humans+through+Law+as+Information). Nay. 2025.
-- [Safe Continual Reinforcement Learning Methods for Nonstationary Environments](https://scholar.google.com/scholar?q=Safe+Continual+Reinforcement+Learning+Methods+for+Nonstationary+Environments). Anonymous. *arXiv 2601.05152*, 2025.
-- [Self-Improving Embodied Foundation Models](https://scholar.google.com/scholar?q=Self-Improving+Embodied+Foundation+Models). Anonymous. 2025.
+- [Safe Continual Reinforcement Learning Methods for Nonstationary Environments](https://scholar.google.com/scholar?q=Safe+Continual+Reinforcement+Learning+Methods+for+Nonstationary+Environments). Tomashevskiy, Timofey. *arXiv 2601.05152*, 2025.
+- [Self-Improving Embodied Foundation Models](https://scholar.google.com/scholar?q=Self-Improving+Embodied+Foundation+Models). Ghasemipour, SKS et al.. 2025.
 - [Your Agent May Misevolve: Emergent Risks in Self-evolving LLM](https://scholar.google.com/scholar?q=Your+Agent+May+Misevolve%3A+Emergent+Risks+in+Self-evolving+LLM). Shao et al.. *arXiv 2509.26354*, 2025.
-- [C3AI: Crafting and Evaluating Constitutions for Constitutional AI](https://scholar.google.com/scholar?q=C3AI%3A+Crafting+and+Evaluating+Constitutions+for+Constitutional+AI). Wu et al.. *ACM Web Conference*, 2025.
+- [C3AI: Crafting and Evaluating Constitutions for Constitutional AI](https://scholar.google.com/scholar?q=C3AI%3A+Crafting+and+Evaluating+Constitutions+for+Constitutional+AI). Kyrychenko, Y et al.. *ACM Web Conference*, 2025.
 - [The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](https://scholar.google.com/scholar?q=The+Landscape+of+Agentic+Reinforcement+Learning+for+LLMs%3A+A+Survey). Zhang et al.. *arXiv 2509.02547*, 2025.
 - [Lifelong Learning of Large Language Model Based Agents: A Roadmap](https://scholar.google.com/scholar?q=Lifelong+Learning+of+Large+Language+Model+Based+Agents%3A+A+Roadmap). Zheng et al.. *arXiv 2501.07278*, 2025.
-- [VLSA: Vision-Language-Action Models with Plug-and-Play Safety Constraint Layer](https://scholar.google.com/scholar?q=VLSA%3A+Vision-Language-Action+Models+with+Plug-and-Play+Safety+Constraint+Layer). Hu et al.. *arXiv 2512.11891*, 2024.
 - [Embodied Red Teaming for Auditing Robotic Foundation Models](https://scholar.google.com/scholar?q=Embodied+Red+Teaming+for+Auditing+Robotic+Foundation+Models). Karnik et al.. *arXiv 2411.18676*, 2024.
-- [Red Teaming Vision-Language-Action Models via Quality Diversity Prompt Generation for Robust Robot Policies](https://scholar.google.com/scholar?q=Red+Teaming+Vision-Language-Action+Models+via+Quality+Diversity+Prompt+Generation+for+Robust+Robot+Policies). Maheshwari et al.. 2024.
-- [Moral Anchor System: A Predictive Framework for AI](https://scholar.google.com/scholar?q=Moral+Anchor+System%3A+A+Predictive+Framework+for+AI). Anonymous. *arXiv 2510.04073*, 2024.
+- [Red Teaming Vision-Language-Action Models via Quality Diversity Prompt Generation for Robust Robot Policies](https://scholar.google.com/scholar?q=Red+Teaming+Vision-Language-Action+Models+via+Quality+Diversity+Prompt+Generation+for+Robust+Robot+Policies). Srikanth, Siddharth et al.. 2024.
+- [Moral Anchor System: A Predictive Framework for AI](https://scholar.google.com/scholar?q=Moral+Anchor+System%3A+A+Predictive+Framework+for+AI). Ravindran, Santhosh Kumar. *arXiv 2510.04073*, 2024.
 - [Towards Resistant and Resilient AI](https://scholar.google.com/scholar?q=Towards+Resistant+and+Resilient+AI). Anonymous. *OpenReview Preprint*, 2024.
 - [Agent-SafetyBench: Evaluating the Safety of LLM](https://scholar.google.com/scholar?q=Agent-SafetyBench%3A+Evaluating+the+Safety+of+LLM). Zhang et al.. *arXiv 2412.14470*, 2024.
 
 </details>
 
 <details>
-<summary>Cascading Risks (37)</summary>
+<summary>Cascading Risks (30)</summary>
 
 - [Position: Embodied AI Requires a Privacy-Utility Trade-off](https://arxiv.org/abs/2605.05017). Fan et al.. *arXiv 2605.05017*, 2026.
 - [A Survey of Agentic AI and Cybersecurity: Challenges, Opportunities and Use-case Prototypes](https://scholar.google.com/scholar?q=A+Survey+of+Agentic+AI+and+Cybersecurity%3A+Challenges%2C+Opportunities+and+Use-case+Prototypes). Lazer et al.. *arXiv 2601.05293*, 2026.
@@ -715,36 +693,29 @@ We review **480+** papers across five capability layers of embodied AI.
 - [SoK: Agentic Skills -- Beyond Tool Use in LLM Agents](https://scholar.google.com/scholar?q=SoK%3A+Agentic+Skills+--+Beyond+Tool+Use+in+LLM+Agents). Jiang et al.. *arXiv 2602.20867*, 2026.
 - [Agent Skills in the Wild: An Empirical Study of Security Vulnerabilities at Scale](https://scholar.google.com/scholar?q=Agent+Skills+in+the+Wild%3A+An+Empirical+Study+of+Security+Vulnerabilities+at+Scale). Liu et al.. *arXiv 2601.10338*, 2026.
 - [Cascading Failures in Agentic AI: ASI08 Security Guide](https://scholar.google.com/scholar?q=Cascading+Failures+in+Agentic+AI%3A+ASI08+Security+Guide). OWASP. 2026.
-- [White-Box Prompt Injection Attack on Embodied AI Agents](https://scholar.google.com/scholar?q=White-Box+Prompt+Injection+Attack+on+Embodied+AI+Agents). Zhang et al.. *Science*, 2026.
-- [Securing Vision-Based Autonomous Systems: A Comprehensive Taxonomy](https://scholar.google.com/scholar?q=Securing+Vision-Based+Autonomous+Systems%3A+A+Comprehensive+Taxonomy). Abdelfattah et al.. *Artificial Intelligence (AIJ)*, 2025.
+- [White-Box Prompt Injection Attack on Embodied AI Agents](https://scholar.google.com/scholar?q=White-Box+Prompt+Injection+Attack+on+Embodied+AI+Agents). Geng et al.. *Science*, 2026.
+- [Securing Vision-Based Autonomous Systems: A Comprehensive Taxonomy](https://scholar.google.com/scholar?q=Securing+Vision-Based+Autonomous+Systems%3A+A+Comprehensive+Taxonomy). Lopez Pellicer et al.. *Artificial Intelligence (AIJ)*, 2025.
 - [Cascading Failures in Agentic AI](https://scholar.google.com/scholar?q=Cascading+Failures+in+Agentic+AI). AI. 2025.
 - [The Adolescence of Technology](https://scholar.google.com/scholar?q=The+Adolescence+of+Technology). Amodei. 2025.
 - [International AI Safety Report 2025: Second Key Update --- Technical Safeguards and Risk Management](https://scholar.google.com/scholar?q=International+AI+Safety+Report+2025%3A+Second+Key+Update+---+Technical+Safeguards+and+Risk+Management). Bengio et al.. *arXiv 2511.19863*, 2025.
 - [Revisiting Adversarial Perception Attacks and Defense Methods](https://scholar.google.com/scholar?q=Revisiting+Adversarial+Perception+Attacks+and+Defense+Methods). Chen et al.. *arXiv 2505.11532*, 2025.
-- [Attacking Autonomous Driving Agents with Adversarial Machine Learning](https://scholar.google.com/scholar?q=Attacking+Autonomous+Driving+Agents+with+Adversarial+Machine+Learning). Cheng et al.. *arXiv 2511.14876*, 2025.
-- [Adversarial Attacks on Robotic Vision Language Action Models](https://scholar.google.com/scholar?q=Adversarial+Attacks+on+Robotic+Vision+Language+Action+Models). Li et al.. *arXiv 2506.03350*, 2025.
-- [SoK: How Sensor Attacks Disrupt Autonomous Vehicles](https://scholar.google.com/scholar?q=SoK%3A+How+Sensor+Attacks+Disrupt+Autonomous+Vehicles). Liu et al.. *arXiv 2509.11120*, 2025.
-- [Goal-oriented Backdoor Attack via Physical Objects](https://scholar.google.com/scholar?q=Goal-oriented+Backdoor+Attack+via+Physical+Objects). Wang et al.. *arXiv 2510.09269*, 2025.
-- [Towards Robust and Secure Embodied AI: A Survey on Vulnerabilities and Attacks](https://scholar.google.com/scholar?q=Towards+Robust+and+Secure+Embodied+AI%3A+A+Survey+on+Vulnerabilities+and+Attacks). Wang et al.. *arXiv 2502.13175*, 2025.
-- [SoK: Cybersecurity Assessment of Humanoid Ecosystem](https://scholar.google.com/scholar?q=SoK%3A+Cybersecurity+Assessment+of+Humanoid+Ecosystem). Wang et al.. *arXiv 2508.17481*, 2025.
-- [Multi-Robot Coordination with Adversarial Perception](https://scholar.google.com/scholar?q=Multi-Robot+Coordination+with+Adversarial+Perception). Wu et al.. *arXiv 2504.09047*, 2025.
+- [Attacking Autonomous Driving Agents with Adversarial Machine Learning: A Holistic Evaluation with the CARLA Leaderboard](https://arxiv.org/abs/2511.14876). Wong, Henry et al.. *arXiv 2511.14876*, 2025.
+- [Adversarial Attacks on Robotic Vision Language Action Models](https://scholar.google.com/scholar?q=Adversarial+Attacks+on+Robotic+Vision+Language+Action+Models). Jones, EK et al.. *arXiv 2506.03350*, 2025.
+- [SoK: How Sensor Attacks Disrupt Autonomous Vehicles](https://scholar.google.com/scholar?q=SoK%3A+How+Sensor+Attacks+Disrupt+Autonomous+Vehicles). Zhang, Qingzhao et al.. *arXiv 2509.11120*, 2025.
+- [Towards Robust and Secure Embodied AI: A Survey on Vulnerabilities and Attacks](https://dl.acm.org/doi/abs/10.1145/3806048). Xing, Wenpeng et al.. *ACM Computing Surveys*, 2026.
+- [SoK: Cybersecurity Assessment of Humanoid Ecosystem](https://scholar.google.com/scholar?q=SoK%3A+Cybersecurity+Assessment+of+Humanoid+Ecosystem). Surve, PP et al.. *arXiv 2508.17481*, 2025.
 - [Automated Discovery of Semantic Attacks in Multi-Robot Navigation](https://scholar.google.com/scholar?q=Automated+Discovery+of+Semantic+Attacks+in+Multi-Robot+Navigation). Yeke et al.. *USENIX Security*, 2025.
-- [BadVLA: Backdoor Attacks on Vision-Language-Action Models](https://scholar.google.com/scholar?q=BadVLA%3A+Backdoor+Attacks+on+Vision-Language-Action+Models). Cai et al.. 2024.
-- [Secure Robotics: Nexus of Safety, Trust, and Cybersecurity](https://scholar.google.com/scholar?q=Secure+Robotics%3A+Nexus+of+Safety%2C+Trust%2C+and+Cybersecurity). Khalid et al.. *ACM Computing Surveys (CSUR)*, 2024.
-- [Towards Physically-Realizable Adversarial Attacks in Embodied Vision Navigation](https://scholar.google.com/scholar?q=Towards+Physically-Realizable+Adversarial+Attacks+in+Embodied+Vision+Navigation). Liu et al.. *IROS*, 2024.
-- [Model Supply Chain Poisoning: Backdoor Attacks via Fine-tuning Transfer](https://scholar.google.com/scholar?q=Model+Supply+Chain+Poisoning%3A+Backdoor+Attacks+via+Fine-tuning+Transfer). Ren et al.. *WWW*, 2024.
-- [Exploring Robustness of Decision-Level Through Adversarial Attacks on LLM-Based Embodied Models](https://scholar.google.com/scholar?q=Exploring+Robustness+of+Decision-Level+Through+Adversarial+Attacks+on+LLM-Based+Embodied+Models). Wang et al.. *MM*, 2024.
-- [TrojanRobot: Backdoor Attacks Against Robotic Manipulation](https://scholar.google.com/scholar?q=TrojanRobot%3A+Backdoor+Attacks+Against+Robotic+Manipulation). Wu et al.. *arXiv 2411.11683*, 2024.
-- [Toward Robust 3D Perception for Autonomous Vehicles](https://scholar.google.com/scholar?q=Toward+Robust+3D+Perception+for+Autonomous+Vehicles). Xu et al.. *IEEE Transactions on Intelligent Transportation Systems (T-ITS)*, 2024.
+- [Secure Robotics: Nexus of Safety, Trust, and Cybersecurity](https://scholar.google.com/scholar?q=Secure+Robotics%3A+Nexus+of+Safety%2C+Trust%2C+and+Cybersecurity). Haskard et al.. *ACM Computing Surveys (CSUR)*, 2024.
+- [Towards Physically-Realizable Adversarial Attacks in Embodied Vision Navigation](https://scholar.google.com/scholar?q=Towards+Physically-Realizable+Adversarial+Attacks+in+Embodied+Vision+Navigation). Chen, M et al.. *IROS*, 2024.
+- [Exploring Robustness of Decision-Level Through Adversarial Attacks on LLM-Based Embodied Models](https://scholar.google.com/scholar?q=Exploring+Robustness+of+Decision-Level+Through+Adversarial+Attacks+on+LLM-Based+Embodied+Models). Jones, Eliot Krzysztof et al.. *MM*, 2025.
+- [Toward Robust 3D Perception for Autonomous Vehicles](https://scholar.google.com/scholar?q=Toward+Robust+3D+Perception+for+Autonomous+Vehicles). Mahima et al.. *IEEE Transactions on Intelligent Transportation Systems (T-ITS)*, 2024.
 - [SafeAgentBench: A Benchmark for Safe Task Planning of Embodied LLM Agents](https://scholar.google.com/scholar?q=SafeAgentBench%3A+A+Benchmark+for+Safe+Task+Planning+of+Embodied+LLM+Agents). Yin et al.. *arXiv 2412.13178*, 2024.
-- [AdvEDM: Fine-grained Adversarial Attack against VLM-based Embodied Agents](https://scholar.google.com/scholar?q=AdvEDM%3A+Fine-grained+Adversarial+Attack+against+VLM-based+Embodied+Agents). Zhang et al.. 2024.
-- [Agent-SafetyBench: Evaluating the Safety of LLM](https://scholar.google.com/scholar?q=Agent-SafetyBench%3A+Evaluating+the+Safety+of+LLM). Zhang et al.. *arXiv 2412.14470*, 2024.
-- [Exploring the Adversarial Vulnerabilities of Vision-Language-Action Models in Robotics](https://scholar.google.com/scholar?q=Exploring+the+Adversarial+Vulnerabilities+of+Vision-Language-Action+Models+in+Robotics). Zou et al.. *arXiv 2411.13587*, 2024.
-- [Dynamic Adversarial Attacks on Autonomous Driving Systems](https://scholar.google.com/scholar?q=Dynamic+Adversarial+Attacks+on+Autonomous+Driving+Systems). Liu et al.. *RSS*, 2023.
-- [Security Considerations in AI-Robotics: A Survey of Current Methods, Challenges, and Opportunities](https://scholar.google.com/scholar?q=Security+Considerations+in+AI-Robotics%3A+A+Survey+of+Current+Methods%2C+Challenges%2C+and+Opportunities). Nassi et al.. *IEEE Access*, 2023.
-- [Adversarial Driving: Attacking End-to-End Autonomous Driving](https://scholar.google.com/scholar?q=Adversarial+Driving%3A+Attacking+End-to-End+Autonomous+Driving). Han et al.. *IEEE Intelligent Vehicle Symposium*, 2021.
-- [Robotics Cyber Security: Vulnerabilities, Attacks, Countermeasures, and Recommendations](https://scholar.google.com/scholar?q=Robotics+Cyber+Security%3A+Vulnerabilities%2C+Attacks%2C+Countermeasures%2C+and+Recommendations). Zhang et al.. *International Journal of Information Security*, 2021.
-- [Spatiotemporal Attacks for Embodied Agents](https://scholar.google.com/scholar?q=Spatiotemporal+Attacks+for+Embodied+Agents). Jia et al.. *ECCV*, 2020.
+- [AdvEDM: Fine-grained Adversarial Attack against VLM-based Embodied Agents](https://scholar.google.com/scholar?q=AdvEDM%3A+Fine-grained+Adversarial+Attack+against+VLM-based+Embodied+Agents). Wang, Y et al.. 2025.
+- [Dynamic Adversarial Attacks on Autonomous Driving Systems](https://scholar.google.com/scholar?q=Dynamic+Adversarial+Attacks+on+Autonomous+Driving+Systems). Chahe, A et al.. *RSS*, 2023.
+- [Security Considerations in AI-Robotics: A Survey of Current Methods, Challenges, and Opportunities](https://scholar.google.com/scholar?q=Security+Considerations+in+AI-Robotics%3A+A+Survey+of+Current+Methods%2C+Challenges%2C+and+Opportunities). Neupane, S et al.. *IEEE Access*, 2023.
+- [Adversarial Driving: Attacking End-to-End Autonomous Driving](https://scholar.google.com/scholar?q=Adversarial+Driving%3A+Attacking+End-to-End+Autonomous+Driving). Wu, Han et al.. *IEEE Intelligent Vehicle Symposium*, 2021.
+- [Robotics Cyber Security: Vulnerabilities, Attacks, Countermeasures, and Recommendations](https://scholar.google.com/scholar?q=Robotics+Cyber+Security%3A+Vulnerabilities%2C+Attacks%2C+Countermeasures%2C+and+Recommendations). Yaacoub, JPA et al.. *International Journal of Information Security*, 2021.
+- [Spatiotemporal Attacks for Embodied Agents](https://scholar.google.com/scholar?q=Spatiotemporal+Attacks+for+Embodied+Agents). Liu, A et al.. *ECCV*, 2020.
 
 </details>
 
