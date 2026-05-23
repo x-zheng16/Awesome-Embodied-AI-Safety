@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Safety in Embodied AI: A Survey of Risks, Attacks, and Defenses</title>
-  <meta name="description" content="A comprehensive survey on safety in embodied AI — attacks and defenses across perception, cognition, planning, interaction, and agentic systems. 500+ papers reviewed.">
+  <meta name="description" content="A comprehensive survey on safety in embodied AI: attacks and defenses across perception, cognition, planning, interaction, and agentic systems. 500+ papers reviewed.">
   <meta name="keywords" content="embodied AI safety, adversarial attacks, backdoor attacks, jailbreak, autonomous driving safety, robotics safety, VLA safety, LLM agents, multi-agent safety, perception attacks, survey, AI safety">
 
   <!-- Open Graph -->
@@ -79,412 +79,684 @@
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Space Grotesk', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'monospace']
+          }
+        }
+      }
+    };
+  </script>
+
   <style>
     :root {
-      --navy:       #06101f;
-      --navy-mid:   #0d1a35;
-      --navy-card:  #111c36;
-      --cream:      #f7f4ef;
-      --white:      #ffffff;
-      --text:       #1c2130;
-      --muted:      #6b7280;
-      --amber:      #c97d12;
-      --amber-lt:   #f5a623;
-      --red:        #c0392b;
-      --blue:       #2563eb;
-      --green:      #15803d;
-      --border:     rgba(0,0,0,0.09);
-      --w:          960px;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
-    body { font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; background: var(--cream); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+      --bg: #FAFBFE;
+      --bg-alt: #F0F2F8;
+      --bg-card: #FFFFFF;
+      --bg-code: #F3F4F9;
+      --accent: #2563EB;
+      --accent-rgb: 37, 99, 235;
+      --accent-glow: rgba(37, 99, 235, 0.12);
+      --accent-light: #3B82F6;
+      --text: #111628;
+      --text-muted: #4B5466;
+      --border: #DDE0ED;
+      --row-hover: rgba(37, 99, 235, 0.06);
+      --expo-out: cubic-bezier(0.16, 1, 0.3, 1);
 
-    /* ── NAV ── */
-    nav {
-      position: sticky; top: 0; z-index: 200;
-      background: rgba(6,16,31,0.97);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      display: flex; justify-content: center; gap: 2.5rem;
-      padding: 0.7rem 2rem;
+      --c-perception: #2563EB;
+      --c-cognition:  #7C3AED;
+      --c-planning:   #B45309;
+      --c-action:     #0F766E;
+      --c-agentic:    #BE123C;
     }
-    nav a {
-      color: rgba(255,255,255,0.6);
-      text-decoration: none;
-      font-size: 0.78rem; font-weight: 500;
-      letter-spacing: 0.08em; text-transform: uppercase;
+    .dark {
+      --bg: #0B0D11;
+      --bg-alt: #111318;
+      --bg-card: #161920;
+      --bg-code: #0E1015;
+      --accent: #3B82F6;
+      --accent-rgb: 59, 130, 246;
+      --accent-glow: rgba(59, 130, 246, 0.14);
+      --accent-light: #60A5FA;
+      --text: #E8EAF2;
+      --text-muted: #98A0B5;
+      --border: #232735;
+      --row-hover: rgba(59, 130, 246, 0.08);
+
+      --c-perception: #60A5FA;
+      --c-cognition:  #A78BFA;
+      --c-planning:   #F59E0B;
+      --c-action:     #2DD4BF;
+      --c-agentic:    #F472B6;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.3s var(--expo-out), color 0.3s var(--expo-out);
+    }
+    h1, h2, h3, h4, .font-display { font-family: 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.01em; }
+    .font-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+    /* NAV: glass blur, fixed */
+    .nav-blur {
+      background: rgba(250, 251, 254, 0.82);
+      backdrop-filter: blur(18px) saturate(1.4);
+      -webkit-backdrop-filter: blur(18px) saturate(1.4);
+    }
+    .dark .nav-blur { background: rgba(11, 13, 17, 0.82); }
+
+    .nav-link {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
       transition: color 0.2s;
     }
-    nav a:hover { color: var(--amber-lt); }
+    .nav-link:hover { color: var(--accent); }
 
-    /* ── HERO ── */
-    .hero { background: var(--navy); color: #fff; }
-    .hero-banner-wrap { position: relative; overflow: hidden; max-height: 300px; }
-    .hero-banner { display: block; width: 100%; max-height: 300px; object-fit: cover; opacity: 0.75; }
+    .icon-btn {
+      width: 34px; height: 34px;
+      display: inline-flex; align-items: center; justify-content: center;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .icon-btn:hover { color: var(--accent); border-color: var(--accent); }
+
+    .gh-star-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: 'JetBrains Mono', monospace; font-size: 12px;
+      padding: 6px 10px; border-radius: 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      transition: color 0.2s, border-color 0.2s;
+      text-decoration: none;
+    }
+    .gh-star-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .gh-star-count {
+      background: var(--accent-glow);
+      padding: 1px 6px; border-radius: 4px;
+      font-size: 11px; color: var(--accent);
+    }
+
+    /* HERO */
+    .hero-grid {
+      background-image:
+        linear-gradient(rgba(var(--accent-rgb), 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(var(--accent-rgb), 0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .dark .hero-grid {
+      background:
+        radial-gradient(ellipse at 50% 30%, rgba(var(--accent-rgb), 0.10) 0%, transparent 55%),
+        linear-gradient(rgba(var(--accent-rgb), 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(var(--accent-rgb), 0.04) 1px, transparent 1px);
+      background-size: 100% 100%, 48px 48px, 48px 48px;
+    }
+
+    .hero-banner-wrap { position: relative; overflow: hidden; max-height: 280px; }
+    .hero-banner { display: block; width: 100%; max-height: 280px; object-fit: cover; opacity: 0.55; }
+    .dark .hero-banner { opacity: 0.42; }
     .hero-banner-wrap::after {
       content: ''; position: absolute; inset: 0;
-      background: linear-gradient(to bottom, rgba(6,16,31,0.1) 0%, rgba(6,16,31,0.7) 100%);
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--bg) 95%);
       pointer-events: none;
     }
-    .hero-body {
-      max-width: var(--w); margin: 0 auto;
-      padding: 3.5rem 2rem 4.5rem;
+
+    .hero-title {
+      font-size: clamp(2rem, 4.8vw, 3.4rem);
+      font-weight: 700; line-height: 1.1;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .badge-pill {
+      display: inline-flex; align-items: center;
+      padding: 4px 12px; border-radius: 999px;
+      font-family: 'JetBrains Mono', monospace; font-size: 11px;
+      text-decoration: none;
+      border: 1px solid;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .badge-pill:hover { opacity: 0.85; transform: translateY(-1px); }
+    .bp-accent { color: var(--accent); border-color: rgba(var(--accent-rgb), 0.3); background: var(--accent-glow); }
+    .bp-muted  { color: var(--text-muted); border-color: var(--border); background: var(--bg-card); }
+
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 9px 18px; border-radius: 8px;
+      font-family: 'JetBrains Mono', monospace; font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s, color 0.15s;
+    }
+    .cta-btn:hover { transform: translateY(-1px); }
+    .cta-primary { color: var(--accent); border: 1px solid rgba(var(--accent-rgb), 0.4); background: var(--accent-glow); }
+    .cta-primary:hover { box-shadow: 0 4px 18px rgba(var(--accent-rgb), 0.25); }
+    .cta-ghost { color: var(--text); border: 1px solid var(--border); background: var(--bg-card); }
+    .cta-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    .authors-block {
+      font-size: 0.92rem; line-height: 2;
+      color: var(--text-muted);
+      max-width: 880px; margin: 0 auto 1rem;
       text-align: center;
     }
-    .hero-body > * { animation: fadeUp 0.55s ease both; opacity: 0; }
-    .hero-body > *:nth-child(1) { animation-delay: 0.08s; }
-    .hero-body > *:nth-child(2) { animation-delay: 0.18s; }
-    .hero-body > *:nth-child(3) { animation-delay: 0.28s; }
-    .hero-body > *:nth-child(4) { animation-delay: 0.38s; }
-    .hero-body > *:nth-child(5) { animation-delay: 0.48s; }
+    .authors-block a { color: var(--text); text-decoration: none; }
+    .authors-block a:hover { color: var(--accent); }
+    .authors-block sup { font-size: 0.65em; color: var(--accent); vertical-align: super; }
+    .author-note { display: inline-block; font-size: 0.75rem; color: var(--text-muted); margin: 0.2rem 0.55rem; }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
+    .affils-block {
+      font-size: 0.8rem; line-height: 1.9;
+      color: var(--text-muted);
+      max-width: 780px; margin: 0 auto;
+      text-align: center;
     }
+    .affils-block sup { color: var(--accent); }
 
-    .title {
-      font-family: 'Crimson Pro', Georgia, serif;
-      font-size: clamp(1.9rem, 4.5vw, 3rem);
-      font-weight: 600; line-height: 1.15;
-      letter-spacing: -0.015em;
-      margin-bottom: 1.75rem;
-    }
-
-    /* ── BADGES ── */
-    .badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.45rem; margin-bottom: 1.75rem; }
-    .badge {
-      display: inline-flex; align-items: center;
-      padding: 0.28rem 0.75rem; border-radius: 4px;
-      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.02em;
-      text-decoration: none; transition: opacity 0.2s;
-    }
-    .badge:hover { opacity: 0.82; }
-    .b-paper    { background: #9b1c1c; color: #fff; }
-    .b-license  { background: #374151; color: #d1d5db; }
-    .b-awesome  { background: #92400e; color: #fde68a; }
-    .b-papers   { background: #1e3a8a; color: #bfdbfe; }
-    .b-maintain { background: #14532d; color: #bbf7d0; }
-
-    /* ── CTA BUTTONS ── */
-    .cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.7rem; margin-bottom: 2.75rem; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 0.35rem;
-      padding: 0.6rem 1.5rem; border-radius: 6px;
-      font-size: 0.9rem; font-weight: 500; text-decoration: none;
-      transition: transform 0.15s, box-shadow 0.15s;
-    }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.35); }
-    .btn-gold   { background: var(--amber); color: #fff; }
-    .btn-ghost  { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); }
-
-    /* ── AUTHORS ── */
-    .authors {
-      font-size: 0.93rem; line-height: 2;
-      color: rgba(255,255,255,0.82);
-      max-width: 840px; margin: 0 auto 1.25rem;
-    }
-    .authors a { color: rgba(255,255,255,0.82); text-decoration: none; }
-    .authors a:hover { color: var(--amber-lt); text-decoration: underline; }
-    sup { font-size: 0.62em; color: var(--amber-lt); vertical-align: super; }
-    .author-note { display: inline-block; font-size: 0.78rem; color: rgba(255,255,255,0.42); margin: 0.2rem 0.6rem; }
-
-    /* ── AFFILIATIONS ── */
-    .affils {
-      font-size: 0.8rem; color: rgba(255,255,255,0.42);
-      max-width: 740px; margin: 0 auto; line-height: 1.9;
-    }
-    .affils sup { color: rgba(245,166,35,0.6); }
-
-    /* ── STATS STRIP ── */
+    /* STATS STRIP */
     .stats-strip {
-      background: var(--navy-mid);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
       display: flex; justify-content: center; flex-wrap: wrap; gap: 0;
     }
     .stat-item {
       display: flex; flex-direction: column; align-items: center;
-      padding: 1.1rem 2.5rem;
-      border-right: 1px solid rgba(255,255,255,0.07);
+      padding: 1.1rem 2.4rem;
+      border-right: 1px solid var(--border);
     }
     .stat-item:last-child { border-right: none; }
-    .stat-num { font-family: 'Crimson Pro', serif; font-size: 2rem; font-weight: 600; color: var(--amber-lt); line-height: 1; }
-    .stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.3rem; }
+    .stat-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.85rem; font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .stat-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem; color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.35rem;
+    }
     @media (max-width: 640px) {
-      .stat-item { padding: 0.85rem 1.5rem; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .stat-item { padding: 0.85rem 1.4rem; border-right: none; border-bottom: 1px solid var(--border); }
       .stat-item:last-child { border-bottom: none; }
     }
 
-    /* ── SECTION SHELL ── */
-    section { padding: 5rem 2rem; }
-    section:nth-child(even) { background: #fff; }
-    .inner { max-width: var(--w); margin: 0 auto; }
+    /* SECTION */
+    section { padding: 4.5rem 1.5rem; }
+    section:nth-of-type(even) { background: var(--bg-alt); }
+    .inner { max-width: 960px; margin: 0 auto; }
 
     .sh {
-      font-family: 'Crimson Pro', Georgia, serif;
-      font-size: 1.75rem; font-weight: 600;
-      color: var(--navy);
-      padding-bottom: 0.6rem;
-      border-bottom: 2.5px solid var(--amber);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.65rem; font-weight: 700;
+      color: var(--text);
+      padding-bottom: 0.5rem;
+      border-bottom: 2.5px solid var(--accent);
       display: inline-block;
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
     }
 
-    /* ── ABSTRACT ── */
     .abstract p {
-      font-size: 1.02rem; line-height: 1.85;
-      color: #374151; max-width: 840px;
+      font-size: 1rem; line-height: 1.8;
+      color: var(--text);
+      max-width: 840px;
     }
     .abstract p + p { margin-top: 1rem; }
 
-    /* ── FIGURES ── */
-    .figures { display: flex; flex-direction: column; gap: 3.5rem; }
+    /* FIGURES */
+    .figures { display: flex; flex-direction: column; gap: 3rem; }
     .fig { text-align: center; }
     .fig img {
       width: 100%; max-width: 880px;
       border-radius: 8px;
       border: 1px solid var(--border);
-      box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+      background: var(--bg-card);
     }
     .fig-cap {
       margin-top: 0.85rem;
-      font-size: 0.86rem; font-style: italic; color: var(--muted);
+      font-size: 0.85rem; font-style: italic; color: var(--text-muted);
       max-width: 720px; margin-left: auto; margin-right: auto;
-      line-height: 1.65;
+      line-height: 1.6;
     }
 
-    /* ── SCOPE TABLE ── */
-    .scope-lead { font-size: 0.95rem; color: #4b5563; margin-bottom: 1.5rem; }
-    .scope-lead strong { color: var(--navy); }
+    /* SCOPE TABLE */
+    .scope-lead { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.4rem; }
+    .scope-lead strong { color: var(--text); }
 
-    table { width: 100%; border-collapse: collapse; }
-    thead tr { background: var(--navy); }
-    th {
-      padding: 0.85rem 1.25rem;
-      color: rgba(255,255,255,0.75); text-align: left;
-      font-size: 0.75rem; font-weight: 500;
+    table.scope-table {
+      width: 100%; border-collapse: collapse;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .scope-table thead tr { background: var(--bg-alt); }
+    .scope-table th {
+      padding: 0.85rem 1.2rem;
+      color: var(--text-muted);
+      text-align: left;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem; font-weight: 500;
       letter-spacing: 0.08em; text-transform: uppercase;
     }
-    th:last-child { text-align: right; }
-    td {
-      padding: 0.85rem 1.25rem;
-      border-bottom: 1px solid rgba(0,0,0,0.055);
+    .scope-table th:last-child { text-align: right; }
+    .scope-table td {
+      padding: 0.85rem 1.2rem;
+      border-top: 1px solid var(--border);
       vertical-align: middle;
     }
-    tr:last-child td { border-bottom: none; }
-    tbody tr:hover td { background: rgba(201,125,18,0.04); }
-    .lname { font-weight: 600; color: var(--navy); font-size: 0.95rem; }
-    .ltopics { font-size: 0.8rem; color: var(--muted); margin-top: 0.15rem; }
+    .scope-table tbody tr:hover td { background: var(--row-hover); }
+    .lname { font-weight: 600; color: var(--text); font-size: 0.95rem; }
+    .ltopics { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.15rem; }
     .cnt-cell { text-align: right; }
     .bar-wrap { display: inline-flex; align-items: center; gap: 0.5rem; float: right; }
-    .bar { display: inline-block; height: 7px; border-radius: 3.5px; background: var(--amber); }
-    .cnt { font-weight: 700; color: var(--navy); font-size: 0.95rem; min-width: 2.2rem; text-align: right; }
-    .total-row td { background: var(--navy-card); color: #fff; }
-    .total-row td:first-child { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
-    .total-count { font-weight: 700; font-size: 1rem; color: var(--amber-lt); float: right; }
+    .bar { display: inline-block; height: 7px; border-radius: 3.5px; background: var(--accent); }
+    .cnt { font-weight: 700; color: var(--text); font-size: 0.95rem; min-width: 2.2rem; text-align: right; }
+    .total-row td { background: var(--bg-alt); color: var(--text); font-weight: 600; }
+    .total-count { font-weight: 700; font-size: 1rem; color: var(--accent); float: right; }
 
-    /* ── NEWS ── */
-    .news-list { list-style: none; }
-    .ni {
-      display: flex; gap: 1.5rem; align-items: flex-start;
-      padding: 1.15rem 0; border-bottom: 1px solid rgba(0,0,0,0.06);
+    /* PAPERS: search, filter pills */
+    .paper-toolbar {
+      display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center;
+      margin-bottom: 1.4rem;
     }
-    .ni:last-child { border-bottom: none; }
-    .ndate { font-size: 0.78rem; font-weight: 600; color: var(--muted); white-space: nowrap; min-width: 88px; padding-top: 0.15rem; letter-spacing: 0.04em; }
-    .ntext { font-size: 0.95rem; color: var(--text); line-height: 1.6; }
-    .ntext a { color: var(--blue); text-decoration: none; }
-    .ntext a:hover { text-decoration: underline; }
-
-    /* ── CITATION ── */
-    .cite-lead { font-size: 0.95rem; color: #4b5563; margin-bottom: 1.25rem; }
-    .bib {
-      position: relative;
-      background: #0b1120; color: #e2e8f0;
-      border: 1px solid rgba(255,255,255,0.08);
+    .search-box {
+      flex: 1; min-width: 240px; position: relative;
+    }
+    .search-input {
+      width: 100%;
+      padding: 0.55rem 0.9rem 0.55rem 2.2rem;
+      border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+      background: var(--bg-card);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .search-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+    .search-input::placeholder { color: var(--text-muted); }
+    .search-icon {
+      position: absolute; left: 0.7rem; top: 50%; transform: translateY(-50%);
+      width: 16px; height: 16px; color: var(--text-muted);
+      pointer-events: none;
+    }
+    .search-stats {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.82rem; line-height: 1.75;
-      overflow-x: auto;
-    }
-    .copy {
-      position: absolute; top: 0.9rem; right: 0.9rem;
-      background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6);
-      border: 1px solid rgba(255,255,255,0.14); border-radius: 4px;
-      padding: 0.25rem 0.65rem; font-size: 0.72rem; cursor: pointer;
-      font-family: 'Atkinson Hyperlegible', sans-serif; transition: background 0.2s;
-    }
-    .copy:hover { background: rgba(255,255,255,0.16); color: #fff; }
-    .k-at    { color: #79c0ff; }
-    .k-field { color: #d2a8ff; }
-    .k-str   { color: #a5d6ff; }
-    .k-key   { color: #ffa657; }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--navy);
-      color: rgba(255,255,255,0.35);
-      text-align: center; padding: 2.25rem 2rem;
-      font-size: 0.8rem; line-height: 1.9;
-    }
-    footer a { color: rgba(255,255,255,0.45); text-decoration: none; }
-    footer a:hover { color: var(--amber-lt); }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 640px) {
-      nav { gap: 1.25rem; flex-wrap: wrap; padding: 0.6rem 1rem; }
-      .hero-body { padding: 2.5rem 1.25rem 3.5rem; }
-      section { padding: 3.25rem 1.25rem; }
-      .ni { flex-direction: column; gap: 0.25rem; }
-      .ndate { min-width: unset; }
+      font-size: 0.72rem; color: var(--text-muted);
+      padding: 0 0.6rem;
     }
 
-    /* ── PAPERS TOC ── */
+    .filter-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.4rem; }
+    .pill {
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.02em;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: border-color 0.18s, color 0.18s, background 0.18s;
+    }
+    .pill:hover { border-color: var(--pill-c, var(--accent)); color: var(--pill-c, var(--accent)); }
+    .pill.active {
+      background: color-mix(in srgb, var(--pill-c, var(--accent)) 12%, transparent);
+      border-color: var(--pill-c, var(--accent));
+      color: var(--pill-c, var(--accent));
+    }
+    .pill[data-layer="all"]        { --pill-c: var(--accent); }
+    .pill[data-layer="perception"] { --pill-c: var(--c-perception); }
+    .pill[data-layer="cognition"]  { --pill-c: var(--c-cognition); }
+    .pill[data-layer="planning"]   { --pill-c: var(--c-planning); }
+    .pill[data-layer="action"]     { --pill-c: var(--c-action); }
+    .pill[data-layer="agentic"]    { --pill-c: var(--c-agentic); }
+
+    /* PAPERS TOC (legacy jump links) */
     .paper-toc {
       display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem;
-      background: var(--navy); border-radius: 8px;
-      padding: 0.75rem 1.1rem; margin-bottom: 2rem;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.7rem 1rem;
+      margin-bottom: 1.6rem;
     }
-    .ptoc-label { font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.4); letter-spacing: 0.07em; text-transform: uppercase; margin-right: 0.25rem; }
+    .ptoc-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem; font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.07em; text-transform: uppercase;
+      margin-right: 0.25rem;
+    }
     .ptoc-link {
-      font-size: 0.8rem; font-weight: 500; text-decoration: none;
-      color: rgba(255,255,255,0.75);
-      padding: 0.25rem 0.65rem; border-radius: 4px;
-      border: 1px solid rgba(255,255,255,0.12);
-      transition: background 0.15s, color 0.15s;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem; font-weight: 500;
+      text-decoration: none;
+      color: var(--text);
+      padding: 0.25rem 0.65rem; border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
     }
-    .ptoc-link em { color: rgba(255,255,255,0.45); font-style: normal; }
-    .ptoc-link:hover { background: var(--lc); color: #fff; border-color: transparent; }
+    .ptoc-link em { color: var(--text-muted); font-style: normal; margin-left: 4px; }
+    .ptoc-link:hover { border-color: var(--lc, var(--accent)); color: var(--lc, var(--accent)); }
 
-    /* ── LAYER ACCORDION ── */
-    .layer-block { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 0.85rem; overflow: hidden; }
+    /* LAYER ACCORDION */
+    .layer-block {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 0.85rem;
+      overflow: hidden;
+      background: var(--bg-card);
+    }
     .layer-block[open] .layer-summary { border-bottom: 1px solid var(--border); }
     .layer-summary {
       display: flex; align-items: center; gap: 0.75rem;
-      padding: 1rem 1.25rem; cursor: pointer; user-select: none;
-      background: #fff; list-style: none;
+      padding: 0.95rem 1.2rem; cursor: pointer; user-select: none;
+      background: var(--bg-card);
+      list-style: none;
       transition: background 0.15s;
     }
     .layer-summary::-webkit-details-marker { display: none; }
-    .layer-summary:hover { background: #f9fafb; }
+    .layer-summary:hover { background: var(--bg-alt); }
     .layer-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-    .layer-label { font-weight: 600; font-size: 1rem; color: var(--navy); flex: 1; }
-    .layer-cnt { font-size: 0.8rem; color: var(--muted); background: #f3f4f6; padding: 0.2rem 0.55rem; border-radius: 12px; }
-    .layer-summary::after { content: '›'; font-size: 1.1rem; color: var(--muted); transition: transform 0.2s; margin-left: 0.25rem; }
+    .layer-label { font-weight: 600; font-size: 1rem; color: var(--text); flex: 1; font-family: 'Space Grotesk', sans-serif; }
+    .layer-cnt {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem; color: var(--text-muted);
+      background: var(--bg-alt); padding: 0.2rem 0.55rem; border-radius: 12px;
+    }
+    .layer-summary::after { content: '>'; font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; color: var(--text-muted); transition: transform 0.2s; margin-left: 0.25rem; }
     .layer-block[open] .layer-summary::after { transform: rotate(90deg); }
-    .layer-body { padding: 1rem 1.25rem; background: #fafafa; }
+    .layer-body { padding: 0.85rem 1.2rem; background: var(--bg); }
+    .dark .layer-body { background: var(--bg-code); }
 
-    /* ── CATEGORY ACCORDION ── */
-    .cat-block { margin-bottom: 0.5rem; }
+    /* CATEGORY ACCORDION */
+    .cat-block { margin-bottom: 0.4rem; }
     .cat-summary {
       cursor: pointer; user-select: none; list-style: none;
-      font-size: 0.88rem; font-weight: 600; color: #374151;
-      padding: 0.5rem 0.25rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.88rem; font-weight: 600; color: var(--text);
+      padding: 0.45rem 0.25rem;
       display: flex; align-items: center; gap: 0.4rem;
     }
     .cat-summary::-webkit-details-marker { display: none; }
-    .cat-summary::before { content: '▶'; font-size: 0.6rem; color: var(--muted); transition: transform 0.2s; }
+    .cat-summary::before { content: '>'; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--text-muted); transition: transform 0.2s; }
     .cat-block[open] .cat-summary::before { transform: rotate(90deg); }
-    .cat-summary:hover { color: var(--navy); }
-    .cat-cnt { font-weight: 400; color: var(--muted); }
+    .cat-summary:hover { color: var(--accent); }
+    .cat-cnt { font-weight: 400; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; }
 
-    /* ── PAPER LIST ── */
-    .paper-list { list-style: none; padding: 0.25rem 0 0.5rem 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }
-    .paper-list li { font-size: 0.85rem; color: #374151; line-height: 1.55; border-left: 2px solid var(--layer-accent, #e5e7eb); padding-left: 0.75rem; }
-    .paper-list li a { color: var(--navy); text-decoration: none; font-weight: 500; }
-    .paper-list li a:hover { color: var(--layer-accent, var(--blue)); text-decoration: underline; }
+    /* PAPER LIST */
+    .paper-list { list-style: none; padding: 0.25rem 0 0.5rem 1.2rem; display: flex; flex-direction: column; gap: 0.4rem; margin: 0; }
+    .paper-list li {
+      font-size: 0.86rem; color: var(--text); line-height: 1.55;
+      border-left: 2px solid var(--layer-accent, var(--border));
+      padding: 0.3rem 0.4rem 0.3rem 0.75rem;
+      border-radius: 0 6px 6px 0;
+      transition: background 0.15s;
+    }
+    .paper-list li:hover { background: var(--row-hover); }
+    .paper-list li a { color: var(--text); text-decoration: none; font-weight: 500; }
+    .paper-list li a:hover { color: var(--layer-accent, var(--accent)); text-decoration: underline; }
+    .paper-list li em { color: var(--text-muted); font-style: italic; }
+    .paper-list li.hidden { display: none; }
 
-    /* ── LAYER COLOR PROPAGATION ── */
-    #layer-perception { --layer-accent: #2563eb; }
-    #layer-cognition  { --layer-accent: #7c3aed; }
-    #layer-planning   { --layer-accent: #b45309; }
-    #layer-action     { --layer-accent: #0f766e; }
-    #layer-agentic    { --layer-accent: #be123c; }
+    /* LAYER COLOR PROPAGATION */
+    #layer-perception { --layer-accent: var(--c-perception); }
+    #layer-cognition  { --layer-accent: var(--c-cognition); }
+    #layer-planning   { --layer-accent: var(--c-planning); }
+    #layer-action     { --layer-accent: var(--c-action); }
+    #layer-agentic    { --layer-accent: var(--c-agentic); }
+    .layer-block[open] .layer-summary { border-left: 3px solid var(--layer-accent, var(--accent)); padding-left: calc(1.2rem - 3px); }
+    .layer-block[open] .layer-label   { color: var(--layer-accent, var(--text)); }
+    .layer-block.layer-hidden { display: none; }
 
-    /* Layer summary colored left border when open */
-    .layer-block[open] .layer-summary { border-left: 3px solid var(--layer-accent, var(--amber)); padding-left: calc(1.25rem - 3px); }
-    .layer-block[open] .layer-label   { color: var(--layer-accent, var(--navy)); }
-
-    /* ── CONTRIBUTE ── */
+    /* CONTRIBUTE */
     .contribute-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
+      gap: 1.25rem;
       margin-top: 0.5rem;
     }
     @media (max-width: 640px) { .contribute-grid { grid-template-columns: 1fr; } }
-
     .contrib-card {
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.75rem;
-      background: #fff;
-      transition: box-shadow 0.2s, transform 0.2s;
+      border-radius: 12px;
+      padding: 1.6rem;
+      background: var(--bg-card);
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
     }
-    .contrib-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.09); transform: translateY(-2px); }
-    .contrib-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
-    .contrib-title { font-weight: 700; font-size: 1rem; color: var(--navy); margin-bottom: 0.5rem; }
-    .contrib-desc { font-size: 0.88rem; color: #4b5563; line-height: 1.65; margin-bottom: 1.25rem; }
+    .contrib-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08); }
+    .contrib-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: var(--accent-glow);
+      color: var(--accent);
+      display: inline-flex; align-items: center; justify-content: center;
+      margin-bottom: 0.85rem;
+    }
+    .contrib-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1rem; color: var(--text); margin-bottom: 0.45rem; }
+    .contrib-desc { font-size: 0.87rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.1rem; }
     .contrib-btn {
       display: inline-flex; align-items: center; gap: 0.35rem;
-      padding: 0.5rem 1.1rem; border-radius: 6px;
-      font-size: 0.85rem; font-weight: 600; text-decoration: none;
-      background: var(--navy); color: #fff;
-      transition: background 0.15s;
+      padding: 0.45rem 1rem; border-radius: 7px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem; font-weight: 500;
+      text-decoration: none;
+      background: var(--accent); color: #fff;
+      transition: opacity 0.2s, transform 0.2s;
     }
-    .contrib-btn:hover { background: var(--navy-mid); }
-    .contrib-btn.secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
-    .contrib-btn.secondary:hover { background: var(--navy); color: #fff; }
-
+    .contrib-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+    .contrib-btn.secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .contrib-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
     .contrib-note {
-      margin-top: 2rem; padding: 1rem 1.25rem;
-      background: rgba(201,125,18,0.07); border-left: 3px solid var(--amber);
+      margin-top: 1.75rem; padding: 0.9rem 1.1rem;
+      background: var(--accent-glow);
+      border-left: 3px solid var(--accent);
       border-radius: 0 6px 6px 0;
-      font-size: 0.85rem; color: #4b5563; line-height: 1.65;
+      font-size: 0.85rem; color: var(--text); line-height: 1.6;
     }
-    .contrib-note strong { color: var(--amber); }
+    .contrib-note strong { color: var(--accent); }
 
+    /* NEWS */
+    .news-list { list-style: none; padding: 0; margin: 0; }
+    .ni {
+      display: flex; gap: 1.4rem; align-items: flex-start;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .ni:last-child { border-bottom: none; }
+    .ndate {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem; font-weight: 500;
+      color: var(--text-muted);
+      white-space: nowrap; min-width: 92px;
+      padding-top: 0.15rem;
+      letter-spacing: 0.04em;
+    }
+    .ntext { font-size: 0.92rem; color: var(--text); line-height: 1.6; }
+    .ntext a { color: var(--accent); text-decoration: none; }
+    .ntext a:hover { text-decoration: underline; }
+    .ntext code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82em;
+      background: var(--bg-alt);
+      padding: 1px 5px; border-radius: 4px;
+      color: var(--text);
+    }
+
+    /* CITATION */
+    .cite-lead { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 1rem; }
+    .bib-wrap {
+      position: relative;
+      background: var(--bg-code);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem;
+      overflow-x: auto;
+    }
+    .bib-wrap pre {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem; line-height: 1.7;
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin: 0;
+    }
+    .copy-btn {
+      position: absolute; top: 0.75rem; right: 0.75rem;
+      background: var(--bg-card);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.3rem 0.7rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem; font-weight: 500;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .copy-btn:hover { color: var(--accent); border-color: var(--accent); }
+    .copy-btn.copied { color: var(--c-action); border-color: var(--c-action); }
+    .k-at    { color: var(--accent); }
+    .k-field { color: var(--c-cognition); }
+    .k-str   { color: var(--c-action); }
+    .k-key   { color: var(--c-planning); }
+
+    /* FOOTER */
+    footer {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      text-align: center;
+      padding: 1.75rem 1.5rem;
+      font-size: 0.82rem; line-height: 1.8;
+    }
+    footer a { color: var(--text); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+    footer .sep { color: var(--border); margin: 0 0.5rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      section { padding: 3rem 1rem; }
+      .ni { flex-direction: column; gap: 0.25rem; }
+      .ndate { min-width: unset; }
+      .nav-mobile-hide { display: none; }
+    }
+
+    /* REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s var(--expo-out), transform 0.7s var(--expo-out);
+    }
+    .reveal.revealed { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, body { transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+      .hero-banner { opacity: 0.55 !important; }
+    }
   </style>
 </head>
 <body>
 
-<nav>
-  <a href="#abstract">Abstract</a>
-  <a href="#overview">Overview</a>
-  <a href="#scope">Scope</a>
-  <a href="#papers">Papers</a>
-  <a href="#contribute">Contribute</a>
-  <a href="#news">News</a>
-  <a href="#citation">Citation</a>
+<nav class="nav-blur fixed top-0 inset-x-0 z-50 border-b" style="border-color: var(--border);">
+  <div class="max-w-6xl mx-auto px-5 h-14 flex items-center justify-between">
+    <a href="#" class="font-display font-bold text-sm" style="color: var(--accent);">Embodied AI Safety</a>
+    <div class="flex items-center gap-3 sm:gap-5">
+      <div class="hidden sm:flex items-center gap-5">
+        <a href="#abstract"   class="nav-link">Abstract</a>
+        <a href="#overview"   class="nav-link">Overview</a>
+        <a href="#scope"      class="nav-link">Scope</a>
+        <a href="#papers"     class="nav-link">Papers</a>
+        <a href="#contribute" class="nav-link">Contribute</a>
+        <a href="#news"       class="nav-link">News</a>
+        <a href="#citation"   class="nav-link">Cite</a>
+      </div>
+      <a href="https://github.com/x-zheng16/Awesome-Embodied-AI-Safety" target="_blank" rel="noopener" class="gh-star-btn" aria-label="GitHub repository">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.55v-2.1c-3.21.7-3.89-1.39-3.89-1.39-.53-1.34-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.18-1.18 3.18-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.71 5.4-5.28 5.69.41.35.78 1.05.78 2.12v3.14c0 .31.21.66.79.55A11.5 11.5 0 0 0 12 .5z"/></svg>
+        <span class="hidden sm:inline">Star</span>
+        <span class="gh-star-count" id="navStarCount" aria-label="star count">...</span>
+      </a>
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">
+        <svg id="iconSun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg id="iconMoon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
 </nav>
 
 <!-- HERO -->
-<header class="hero">
+<header class="hero-grid pt-14">
   <div class="hero-banner-wrap">
-    <img src="https://raw.githubusercontent.com/x-zheng16/Awesome-Embodied-AI-Safety/main/assets/banner.png" alt="Safety in Embodied AI" class="hero-banner">
+    <img src="https://raw.githubusercontent.com/x-zheng16/Awesome-Embodied-AI-Safety/main/assets/banner.png" alt="Safety in Embodied AI" class="hero-banner" loading="eager">
   </div>
-  <div class="hero-body">
+  <div class="max-w-5xl mx-auto px-6 pt-8 pb-14 text-center">
 
-    <h1 class="title">Safety in Embodied AI:<br>A Survey of Risks, Attacks, and Defenses</h1>
+    <span class="badge-pill bp-accent mb-6" style="margin-bottom: 1.5rem;">
+      arXiv:2605.02900 &middot; v2 (May 2026)
+    </span>
 
-    <div class="badges">
-      <a href="https://arxiv.org/abs/2605.02900" class="badge b-paper">&#128196;&nbsp;Paper PDF</a>
-      <span class="badge b-license">CC BY-NC-SA 4.0</span>
-      <span class="badge b-awesome">Awesome</span>
-      <span class="badge b-papers">500+ Papers</span>
-      <span class="badge b-maintain">Maintained</span>
+    <h1 class="hero-title mb-5">Safety in Embodied AI<br><span style="color: var(--text-muted); font-weight: 500;">A Survey of Risks, Attacks, and Defenses</span></h1>
+
+    <div class="flex flex-wrap justify-center gap-2 mb-6">
+      <a href="https://arxiv.org/abs/2605.02900" target="_blank" rel="noopener" class="badge-pill bp-accent">Paper PDF</a>
+      <span class="badge-pill bp-muted">CC BY-NC-SA 4.0</span>
+      <span class="badge-pill bp-muted">Awesome</span>
+      <span class="badge-pill bp-muted">500+ Papers</span>
+      <span class="badge-pill bp-muted">Maintained</span>
     </div>
 
-    <div class="cta">
-      <a href="https://arxiv.org/abs/2605.02900" class="btn btn-gold">&#128196;&nbsp;Read Paper</a>
-      <a href="https://github.com/x-zheng16/Awesome-Embodied-AI-Safety" class="btn btn-ghost">&#128279;&nbsp;GitHub</a>
+    <div class="flex flex-wrap justify-center gap-3 mb-10">
+      <a href="https://arxiv.org/abs/2605.02900" target="_blank" rel="noopener" class="cta-btn cta-primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Read Paper
+      </a>
+      <a href="https://github.com/x-zheng16/Awesome-Embodied-AI-Safety" target="_blank" rel="noopener" class="cta-btn cta-ghost">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.55v-2.1c-3.21.7-3.89-1.39-3.89-1.39-.53-1.34-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.18-1.18 3.18-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.71 5.4-5.28 5.69.41.35.78 1.05.78 2.12v3.14c0 .31.21.66.79.55A11.5 11.5 0 0 0 12 .5z"/></svg>
+        GitHub
+      </a>
     </div>
 
-    <div class="authors">
-      <a href="#">Xiao Li</a><sup>1,&#42;</sup>,
-      <a href="#">Xiang Zheng</a><sup>3,&#42;</sup>,
+    <div class="authors-block">
+      <a href="#">Xiao Li</a><sup>1,*</sup>,
+      <a href="#">Xiang Zheng</a><sup>3,*</sup>,
       <a href="#">Yifeng Gao</a><sup>1</sup>,
       <a href="#">Xinyu Xia</a><sup>4</sup>,
       <a href="#">Yixu Wang</a><sup>1</sup>,
@@ -522,23 +794,23 @@
       <a href="#">Xingjun Ma</a><sup>1,2,&#8224;</sup>,
       <a href="#">Yu-Gang Jiang</a><sup>1,&#8224;</sup>
       <br>
-      <span class="author-note">&#42;&nbsp;Equal Contribution</span>
+      <span class="author-note">*&nbsp;Equal Contribution</span>
       <span class="author-note">&#8224;&nbsp;Corresponding Authors</span>
     </div>
 
-    <div class="affils">
-      <sup>1</sup>&nbsp;Fudan University &nbsp;&nbsp;
-      <sup>2</sup>&nbsp;Shanghai Innovation Institute &nbsp;&nbsp;
-      <sup>3</sup>&nbsp;City University of Hong Kong &nbsp;&nbsp;
-      <sup>4</sup>&nbsp;Jilin University &nbsp;&nbsp;
-      <sup>5</sup>&nbsp;Singapore Management University &nbsp;&nbsp;
-      <sup>6</sup>&nbsp;Deakin University &nbsp;&nbsp;
-      <sup>7</sup>&nbsp;Tongji University &nbsp;&nbsp;
-      <sup>8</sup>&nbsp;UIUC &nbsp;&nbsp;
-      <sup>9</sup>&nbsp;UC Berkeley &nbsp;&nbsp;
-      <sup>10</sup>&nbsp;Nanyang Technological University &nbsp;&nbsp;
-      <sup>11</sup>&nbsp;Chinese Academy of Sciences &nbsp;&nbsp;
-      <sup>12</sup>&nbsp;The University of Melbourne &nbsp;&nbsp;
+    <div class="affils-block">
+      <sup>1</sup>&nbsp;Fudan University &nbsp;&middot;&nbsp;
+      <sup>2</sup>&nbsp;Shanghai Innovation Institute &nbsp;&middot;&nbsp;
+      <sup>3</sup>&nbsp;City University of Hong Kong &nbsp;&middot;&nbsp;
+      <sup>4</sup>&nbsp;Jilin University &nbsp;&middot;&nbsp;
+      <sup>5</sup>&nbsp;Singapore Management University &nbsp;&middot;&nbsp;
+      <sup>6</sup>&nbsp;Deakin University &nbsp;&middot;&nbsp;
+      <sup>7</sup>&nbsp;Tongji University &nbsp;&middot;&nbsp;
+      <sup>8</sup>&nbsp;UIUC &nbsp;&middot;&nbsp;
+      <sup>9</sup>&nbsp;UC Berkeley &nbsp;&middot;&nbsp;
+      <sup>10</sup>&nbsp;Nanyang Technological University &nbsp;&middot;&nbsp;
+      <sup>11</sup>&nbsp;Chinese Academy of Sciences &nbsp;&middot;&nbsp;
+      <sup>12</sup>&nbsp;The University of Melbourne &nbsp;&middot;&nbsp;
       <sup>13</sup>&nbsp;Johns Hopkins University
     </div>
 
@@ -570,15 +842,15 @@
     <h2 class="sh">Overview</h2>
     <div class="figures">
       <div class="fig">
-        <img src="https://raw.githubusercontent.com/x-zheng16/Awesome-Embodied-AI-Safety/main/assets/fig_capability_risk.png" alt="Capability vs. Risk Duality">
-        <p class="fig-cap"><strong>Figure 1:</strong> Capability vs. risk duality in embodied AI systems. As capabilities expand outward from perception to agentic systems, the attack surface grows correspondingly &mdash; vulnerabilities at inner layers cascade to outer layers.</p>
+        <img src="https://raw.githubusercontent.com/x-zheng16/Awesome-Embodied-AI-Safety/main/assets/fig_capability_risk.png" alt="Capability vs. Risk Duality" loading="lazy">
+        <p class="fig-cap"><strong>Figure 1:</strong> Capability vs. risk duality in embodied AI systems. As capabilities expand outward from perception to agentic systems, the attack surface grows correspondingly; vulnerabilities at inner layers cascade to outer layers.</p>
       </div>
       <div class="fig">
-        <img src="https://raw.githubusercontent.com/x-zheng16/Awesome-Embodied-AI-Safety/main/assets/structure.png" alt="Survey Structure">
+        <img src="https://raw.githubusercontent.com/x-zheng16/Awesome-Embodied-AI-Safety/main/assets/structure.png" alt="Survey Structure" loading="lazy">
         <p class="fig-cap"><strong>Figure 2:</strong> Illustration of safety threats and attack surfaces across capability layers of embodied AI systems.</p>
       </div>
       <div class="fig">
-        <img src="https://raw.githubusercontent.com/x-zheng16/Awesome-Embodied-AI-Safety/main/assets/overview.png" alt="Overview of Attack and Defense Methods">
+        <img src="https://raw.githubusercontent.com/x-zheng16/Awesome-Embodied-AI-Safety/main/assets/overview.png" alt="Overview of Attack and Defense Methods" loading="lazy">
         <p class="fig-cap"><strong>Figure 3:</strong> Overview of representative attack and defense methods across perception, cognition, planning, action &amp; interaction, and agentic system layers. The width of the strips is proportional to the number of reviewed works.</p>
       </div>
     </div>
@@ -590,7 +862,7 @@
   <div class="inner">
     <h2 class="sh">Survey Scope</h2>
     <p class="scope-lead">We review <strong>500+ papers</strong> across five capability layers of embodied AI, covering adversarial, backdoor, jailbreak, and hardware-level attacks alongside detection, safe training, and risk-aware interaction defenses.</p>
-    <table>
+    <table class="scope-table">
       <thead>
         <tr>
           <th>Layer</th>
@@ -601,50 +873,50 @@
       <tbody>
         <tr>
           <td><div class="lname">Perception</div></td>
-          <td><div class="ltopics">Visual · Auditory · Spatial · Motion · Cross-Modal Perception</div></td>
+          <td><div class="ltopics">Visual &middot; Auditory &middot; Spatial &middot; Motion &middot; Cross-Modal Perception</div></td>
           <td class="cnt-cell">
             <div class="bar-wrap">
-              <span class="bar" style="width:160px"></span>
+              <span class="bar" style="width:160px; background: var(--c-perception);"></span>
               <span class="cnt">192</span>
             </div>
           </td>
         </tr>
         <tr>
           <td><div class="lname">Cognition</div></td>
-          <td><div class="ltopics">Instruction Understanding · World Model · Reasoning</div></td>
+          <td><div class="ltopics">Instruction Understanding &middot; World Model &middot; Reasoning</div></td>
           <td class="cnt-cell">
             <div class="bar-wrap">
-              <span class="bar" style="width:31px"></span>
+              <span class="bar" style="width:31px; background: var(--c-cognition);"></span>
               <span class="cnt">38</span>
             </div>
           </td>
         </tr>
         <tr>
           <td><div class="lname">Planning</div></td>
-          <td><div class="ltopics">Task Planning · Trajectory Planning · Multi-Agent Planning</div></td>
+          <td><div class="ltopics">Task Planning &middot; Trajectory Planning &middot; Multi-Agent Planning</div></td>
           <td class="cnt-cell">
             <div class="bar-wrap">
-              <span class="bar" style="width:49px"></span>
+              <span class="bar" style="width:49px; background: var(--c-planning);"></span>
               <span class="cnt">59</span>
             </div>
           </td>
         </tr>
         <tr>
           <td><div class="lname">Action and Interaction</div></td>
-          <td><div class="ltopics">Robot Control · Human-Agent Interaction · Multi-Agent Collaboration</div></td>
+          <td><div class="ltopics">Robot Control &middot; Human-Agent Interaction &middot; Multi-Agent Collaboration</div></td>
           <td class="cnt-cell">
             <div class="bar-wrap">
-              <span class="bar" style="width:87px"></span>
+              <span class="bar" style="width:87px; background: var(--c-action);"></span>
               <span class="cnt">105</span>
             </div>
           </td>
         </tr>
         <tr>
           <td><div class="lname">Agentic System</div></td>
-          <td><div class="ltopics">Tool Use and Skill · Memory · Self-Evolving · Cascading Risks</div></td>
+          <td><div class="ltopics">Tool Use and Skill &middot; Memory &middot; Self-Evolving &middot; Cascading Risks</div></td>
           <td class="cnt-cell">
             <div class="bar-wrap">
-              <span class="bar" style="width:72px"></span>
+              <span class="bar" style="width:72px; background: var(--c-agentic);"></span>
               <span class="cnt">87</span>
             </div>
           </td>
@@ -662,13 +934,30 @@
   <div class="inner">
     <h2 class="sh">Surveyed Papers</h2>
 
+    <div class="paper-toolbar">
+      <div class="search-box">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="paperSearch" class="search-input" type="search" placeholder="Search title, author, venue, year..." aria-label="Search papers" autocomplete="off">
+      </div>
+      <span class="search-stats" id="searchStats">452 papers</span>
+    </div>
+
+    <div class="filter-pills" role="tablist" aria-label="Filter by layer">
+      <button class="pill active" data-layer="all" role="tab" aria-selected="true">All (452)</button>
+      <button class="pill" data-layer="perception" role="tab" aria-selected="false">Perception</button>
+      <button class="pill" data-layer="cognition"  role="tab" aria-selected="false">Cognition</button>
+      <button class="pill" data-layer="planning"   role="tab" aria-selected="false">Planning</button>
+      <button class="pill" data-layer="action"     role="tab" aria-selected="false">Action &amp; Interaction</button>
+      <button class="pill" data-layer="agentic"    role="tab" aria-selected="false">Agentic</button>
+    </div>
+
     <div class="paper-toc">
-      <span class="ptoc-label">Jump to layer:</span>
-      <a href="#layer-perception" class="ptoc-link" style="--lc:#2563eb">Perception <em>(192)</em></a>
-      <a href="#layer-cognition" class="ptoc-link" style="--lc:#7c3aed">Cognition <em>(38)</em></a>
-      <a href="#layer-planning" class="ptoc-link" style="--lc:#b45309">Planning <em>(59)</em></a>
-      <a href="#layer-action" class="ptoc-link" style="--lc:#0f766e">Action and Interaction <em>(105)</em></a>
-      <a href="#layer-agentic" class="ptoc-link" style="--lc:#be123c">Agentic <em>(87)</em></a>
+      <span class="ptoc-label">Jump:</span>
+      <a href="#layer-perception" class="ptoc-link" style="--lc: var(--c-perception);">Perception <em>(192)</em></a>
+      <a href="#layer-cognition" class="ptoc-link" style="--lc: var(--c-cognition);">Cognition <em>(38)</em></a>
+      <a href="#layer-planning" class="ptoc-link" style="--lc: var(--c-planning);">Planning <em>(59)</em></a>
+      <a href="#layer-action" class="ptoc-link" style="--lc: var(--c-action);">Action &amp; Interaction <em>(105)</em></a>
+      <a href="#layer-agentic" class="ptoc-link" style="--lc: var(--c-agentic);">Agentic <em>(87)</em></a>
     </div>
 
     <details class="layer-block" open id="layer-perception">
@@ -1281,6 +1570,7 @@
       </div>
     </details>
 
+
   </div>
 </section>
 
@@ -1288,13 +1578,15 @@
 <section id="contribute">
   <div class="inner">
     <h2 class="sh">Contribute</h2>
-    <p style="font-size:0.97rem;color:#4b5563;margin-bottom:1.75rem;max-width:700px;">
+    <p style="font-size:0.95rem; color: var(--text-muted); margin-bottom: 1.6rem; max-width: 700px;">
       This survey is a living document. We welcome the community to help keep it current and comprehensive.
     </p>
 
     <div class="contribute-grid">
       <div class="contrib-card">
-        <div class="contrib-icon">&#128196;</div>
+        <div class="contrib-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+        </div>
         <div class="contrib-title">Submit a Missing Paper</div>
         <div class="contrib-desc">
           Found a relevant paper we haven't covered? Submit it with the venue, year, link, and a brief note on which layer it belongs to. We review submissions regularly.
@@ -1305,10 +1597,12 @@
       </div>
 
       <div class="contrib-card">
-        <div class="contrib-icon">&#127760;</div>
+        <div class="contrib-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
         <div class="contrib-title">Suggest a Taxonomy Change</div>
         <div class="contrib-desc">
-          Think a topic is missing from our taxonomy, or a sub-category should be reorganized? Open a discussion — we're actively improving the framework.
+          Think a topic is missing from our taxonomy, or a sub-category should be reorganized? Open a discussion and we will actively improve the framework with you.
         </div>
         <a href="https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/issues/new?title=[Taxonomy]%20Your%20Suggestion&labels=taxonomy" target="_blank" rel="noopener" class="contrib-btn secondary">
           Open Discussion
@@ -1397,12 +1691,9 @@
   <div class="inner">
     <h2 class="sh">Citation</h2>
     <p class="cite-lead">If you find this survey useful in your research, please cite:</p>
-    <div class="bib">
-      <button class="copy" onclick="
-        var t=document.getElementById('bt').innerText;
-        navigator.clipboard.writeText(t).then(()=>{this.textContent='Copied!';setTimeout(()=>{this.textContent='Copy'},2000)});
-      ">Copy</button>
-      <pre id="bt"><span class="k-at">@article</span>{<span class="k-key">li2026safety</span>,
+    <div class="bib-wrap">
+      <button class="copy-btn" id="copyBibBtn" aria-label="Copy BibTeX to clipboard">Copy BibTeX</button>
+      <pre id="bibText"><span class="k-at">@article</span>{<span class="k-key">li2026safety</span>,
   <span class="k-field">title</span>   = {<span class="k-str">Safety in Embodied AI: A Survey of Risks, Attacks, and Defenses</span>},
   <span class="k-field">author</span>  = {<span class="k-str">Li, Xiao and Zheng, Xiang and Gao, Yifeng and Xia, Xinyu and Wang, Yixu and Wang, Xin and Sun, Ye and Zhao, Yunhan and Wen, Ming and Li, Jiayu and Chen, Zixing and Gong, Xun and Liu, Yi and Li, Yige and Wu, Yutao and Wang, Cong and Sun, Jun and Cao, Yixin and Chen, Zhineng and Chen, Jingjing and Gui, Tao and Zhang, Qi and Wu, Zuxuan and Qiu, Xipeng and Huang, Xuanjing and Zhang, Tiehua and Wei, Zhipeng and Wang, Kun and Li, Xinfeng and Huang, Hanxun and Erfani, Sarah and Bailey, James and Wang, Jianping and Xiao, Chaowei and He, Ran and Li, Bo and Ma, Xingjun and Jiang, Yu-Gang</span>},
   <span class="k-field">journal</span> = {<span class="k-str">arXiv preprint arXiv:2605.02900</span>},
@@ -1415,12 +1706,191 @@
 
 <footer>
   <p>
-    <a href="https://github.com/x-zheng16/Awesome-Embodied-AI-Safety">GitHub</a>&nbsp;&middot;&nbsp;
-    <a href="https://arxiv.org/abs/2605.02900">Paper</a>&nbsp;&middot;&nbsp;
-    Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+    <a href="https://arxiv.org/abs/2605.02900">arXiv</a>
+    <span class="sep">&middot;</span>
+    <a href="https://github.com/x-zheng16/Awesome-Embodied-AI-Safety">GitHub Repo</a>
+    <span class="sep">&middot;</span>
+    <a href="https://github.com/sindresorhus/awesome">Awesome List</a>
+    <span class="sep">&middot;</span>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
   </p>
-  <p style="margin-top:0.4rem; opacity:0.6">Safety in Embodied AI &copy; 2026</p>
+  <p style="margin-top: 0.4rem; opacity: 0.7;">Safety in Embodied AI &copy; 2026</p>
 </footer>
+
+<script>
+  // Theme toggle: dark by default, light is toggle, persists, respects prefers-color-scheme
+  (function () {
+    var html = document.documentElement;
+    var btn = document.getElementById('themeToggle');
+    var iconSun = document.getElementById('iconSun');
+    var iconMoon = document.getElementById('iconMoon');
+    var KEY = 'aeas-theme';
+
+    function applyTheme(theme) {
+      if (theme === 'light') {
+        html.classList.remove('dark');
+        if (iconSun) iconSun.style.display = '';
+        if (iconMoon) iconMoon.style.display = 'none';
+      } else {
+        html.classList.add('dark');
+        if (iconSun) iconSun.style.display = 'none';
+        if (iconMoon) iconMoon.style.display = '';
+      }
+    }
+
+    var stored = localStorage.getItem(KEY);
+    if (stored === 'light' || stored === 'dark') {
+      applyTheme(stored);
+    } else {
+      var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+      applyTheme(prefersLight ? 'light' : 'dark');
+    }
+
+    if (btn) {
+      btn.addEventListener('click', function () {
+        var next = html.classList.contains('dark') ? 'light' : 'dark';
+        applyTheme(next);
+        localStorage.setItem(KEY, next);
+      });
+    }
+  })();
+
+  // GitHub star count
+  (function () {
+    fetch('https://api.github.com/repos/x-zheng16/Awesome-Embodied-AI-Safety')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d || typeof d.stargazers_count !== 'number') return;
+        var count = d.stargazers_count;
+        var fmt = count >= 1000 ? (count / 1000).toFixed(1) + 'k' : String(count);
+        var el = document.getElementById('navStarCount');
+        if (el) el.textContent = fmt;
+      })
+      .catch(function () { /* silent: keep '...' fallback */ });
+  })();
+
+  // Paper search + layer filter
+  (function () {
+    var input = document.getElementById('paperSearch');
+    var statsEl = document.getElementById('searchStats');
+    var pills = document.querySelectorAll('.pill[data-layer]');
+    var layerBlocks = document.querySelectorAll('.layer-block[id]');
+    var allItems = document.querySelectorAll('#papers .paper-list li');
+
+    var TOTAL = allItems.length;
+    var activeLayer = 'all';
+    var query = '';
+    var debounceTimer = null;
+
+    function norm(s) { return (s || '').toLowerCase(); }
+
+    function apply() {
+      var visible = 0;
+      var q = norm(query);
+      layerBlocks.forEach(function (block) {
+        var layerKey = (block.id || '').replace('layer-', '');
+        var layerActive = (activeLayer === 'all' || activeLayer === layerKey);
+        if (!layerActive) {
+          block.classList.add('layer-hidden');
+          return;
+        }
+        block.classList.remove('layer-hidden');
+        var items = block.querySelectorAll('.paper-list li');
+        var blockMatches = 0;
+        items.forEach(function (li) {
+          var text = norm(li.textContent);
+          var match = (q === '' || text.indexOf(q) !== -1);
+          if (match) { li.classList.remove('hidden'); blockMatches++; visible++; }
+          else { li.classList.add('hidden'); }
+        });
+        if (q !== '' && activeLayer === 'all') {
+          if (blockMatches === 0) block.classList.add('layer-hidden');
+          else block.removeAttribute('open');
+        }
+        if (q !== '' && blockMatches > 0 && activeLayer === 'all') {
+          block.setAttribute('open', '');
+        }
+      });
+      if (statsEl) {
+        if (q === '' && activeLayer === 'all') {
+          statsEl.textContent = TOTAL + ' papers';
+        } else {
+          statsEl.textContent = visible + ' / ' + TOTAL + ' papers';
+        }
+      }
+    }
+
+    if (input) {
+      input.addEventListener('input', function (e) {
+        query = e.target.value;
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(apply, 220);
+      });
+    }
+    pills.forEach(function (p) {
+      p.addEventListener('click', function () {
+        pills.forEach(function (q) { q.classList.remove('active'); q.setAttribute('aria-selected', 'false'); });
+        p.classList.add('active');
+        p.setAttribute('aria-selected', 'true');
+        activeLayer = p.dataset.layer || 'all';
+        if (activeLayer !== 'all') {
+          var target = document.getElementById('layer-' + activeLayer);
+          if (target) target.setAttribute('open', '');
+        }
+        apply();
+      });
+    });
+
+    if (statsEl) statsEl.textContent = TOTAL + ' papers';
+  })();
+
+  // Copy BibTeX
+  (function () {
+    var btn = document.getElementById('copyBibBtn');
+    var pre = document.getElementById('bibText');
+    if (!btn || !pre) return;
+    btn.addEventListener('click', function () {
+      var txt = pre.innerText;
+      if (!navigator.clipboard) {
+        var ta = document.createElement('textarea');
+        ta.value = txt;
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta);
+        flash();
+        return;
+      }
+      navigator.clipboard.writeText(txt).then(flash).catch(function () { flash(); });
+    });
+    function flash() {
+      var orig = btn.textContent;
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(function () {
+        btn.textContent = orig;
+        btn.classList.remove('copied');
+      }, 1600);
+    }
+  })();
+
+  // Reveal on scroll
+  (function () {
+    if (typeof IntersectionObserver === 'undefined') {
+      document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('revealed'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  })();
+</script>
 
 </body>
 </html>
