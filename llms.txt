@@ -1,6 +1,6 @@
 # Safety in Embodied AI: A Survey of Risks, Attacks, and Defenses
 
-> A comprehensive survey covering 480+ papers on safety across the full embodied AI pipeline, organized by a 5-layer taxonomy.
+> A comprehensive survey covering 500+ papers on safety across the full embodied AI pipeline, organized by a 5-layer taxonomy.
 
 This repository accompanies the survey paper "Safety in Embodied AI: A Survey of Risks, Attacks, and Defenses" (2026).
 It provides the first unified safety framework for embodied AI systems, mapping attacks and defenses across perception, cognition, planning, interaction, and agentic systems.
