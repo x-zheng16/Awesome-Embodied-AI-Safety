@@ -6,9 +6,9 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2605.02900-b31b1b.svg)](https://arxiv.org/abs/2605.02900)
 [![Website](https://img.shields.io/badge/Website-Project%20Page-blue.svg)](https://x-zheng16.github.io/Awesome-Embodied-AI-Safety/)
-[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![Papers](https://img.shields.io/badge/Papers-500%2B-blue.svg)](#surveyed-papers)
+[![Papers](https://img.shields.io/badge/Papers-533-blue.svg)](#surveyed-papers)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/pulls)
 [![GitHub stars](https://img.shields.io/github/stars/x-zheng16/Awesome-Embodied-AI-Safety?style=social)](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety)
 [![GitHub forks](https://img.shields.io/github/forks/x-zheng16/Awesome-Embodied-AI-Safety?style=social)](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety)
@@ -89,6 +89,7 @@
 - [News](#-news)
 - [Overview](#overview)
 - [Surveyed Papers](#surveyed-papers) -- Perception, Cognition, Planning, Action & Interaction, Agentic
+- [Other Related Works](#other-related-works)
 - [Open Challenges](#open-challenges)
 - [Contributing](#contributing)
 - [Citation](#citation)
@@ -119,15 +120,15 @@ As these systems gain autonomy and enter domains such as autonomous driving, hea
 
 ## Surveyed Papers
 
-We review **500+** papers across five capability layers of embodied AI.
+We review **533** papers across five capability layers of embodied AI. The taxonomy below organizes the core attack and defense literature; the remaining cited works (background and capability models, datasets, simulators, and related surveys) are collected under [Other Related Works](#other-related-works).
 
 |     | Layer                      | Subcategories                                                    | Papers |
 |:---:|----------------------------|------------------------------------------------------------------|-------:|
 | 👁️ | **Perception**             | Visual, Auditory, Spatial, Motion, Cross-Modal                   |    191 |
-| 🧠 | **Cognition**              | Instruction Understanding, World Model, Reasoning                |     29 |
+| 🧠 | **Cognition**              | Instruction Understanding, World Model, Reasoning                |     28 |
 | 🗺️ | **Planning**               | Task, Trajectory, Multi-Agent                                    |     57 |
-| 🤖 | **Action and Interaction** | Robot Control, Human-Agent, Multi-Agent Collaboration             |    101 |
-| ⚡  | **Agentic**                | Tool Use and Skill, Memory, Self-Evolving, Cascading Risks       |     74 |
+| 🤖 | **Action and Interaction** | Robot Control, Human-Agent, Multi-Agent Collaboration             |     96 |
+| ⚡  | **Agentic**                | Tool Use and Skill, Memory, Self-Evolving, Cascading Risks       |     66 |
 
 <details open>
 <summary>👁️ <b>Perception</b> (191 papers)</summary>
@@ -161,7 +162,7 @@ We review **500+** papers across five capability layers of embodied AI.
 - [CleanCLIP: Mitigating Data Poisoning Attacks in Multimodal Contrastive Learning](https://arxiv.org/abs/2303.03323). Bansal et al.. *ICCV*, 2023.
 - [Defending Backdoor Attacks on Vision Transformer via Patch Processing](https://arxiv.org/abs/2206.12381). Doan et al.. *AAAI*, 2023.
 - [PSO-Based Black-Box Lane Detection Adversarial Attack](https://scholar.google.com/scholar?q=PSO-Based+Black-Box+Lane+Detection+Adversarial+Attack). Fang et al.. *AIHCIR*, 2023.
-- [Detecting Backdoors in Pre-trained Encoders](https://arxiv.org/abs/2303.15180). Feng et al.. *CVPR*, 2023.
+- [DECREE: Detecting Backdoors in Pre-trained Encoders](https://arxiv.org/abs/2303.15180). Feng et al.. *CVPR*, 2023.
 - [Detection-Friendly Dehazing: Object Detection in Real-World Hazy Scenes](https://scholar.google.com/scholar?q=Detection-friendly+dehazing%3A+Object+detection+in+real-world+hazy+scenes). Li et al.. *IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)*, 2023.
 - [WIP: Towards the Practicality of the Adversarial Attack on Object Tracking in Autonomous Driving](https://scholar.google.com/scholar?q=Wip%3A+Towards+the+practicality+of+the+adversarial+attack+on+object+tracking+in+autonomous+driving). Ma et al.. *VehicleSec*, 2023.
 - [Understanding Zero-Shot Adversarial Robustness for Large-Scale Models](https://arxiv.org/abs/2212.07016). Mao et al.. *ICLR*, 2023.
@@ -214,7 +215,7 @@ We review **500+** papers across five capability layers of embodied AI.
 - [Practical Hidden Voice Attacks against Speech and Speaker Recognition Systems](https://arxiv.org/abs/1904.05734). Abdullah et al.. *arXiv 1904.05734*, 2019.
 - [A Multiversion Programming Inspired Approach to Detecting Audio Adversarial Examples](https://arxiv.org/abs/1812.10199). Zeng et al.. *DSN*, 2019.
 - [Who Activated My Voice Assistant? A Stealthy Attack on Android Phones Without Users' Awareness](https://scholar.google.com/scholar?q=Who+activated+my+voice+assistant%3F+A+stealthy+attack+on+android+phones+without+users%E2%80%99+awareness). Zhang et al.. *ML4CS*, 2019.
-- [Towards Mitigating Audio Adversarial Perturbations](https://scholar.google.com/scholar?q=Towards+mitigating+audio+adversarial+perturbations). Yang et al.. *arXiv 1806.02776*, 2018.
+- [Towards Mitigating Audio Adversarial Perturbations](https://arxiv.org/abs/1806.02776). Yang et al.. *arXiv 1806.02776*, 2018.
 - [CommanderSong: A Systematic Approach for Practical Adversarial Voice Recognition](https://arxiv.org/abs/1801.08535). Yuan et al.. *USENIX Security*, 2018.
 - [Hidden Voice Commands](https://scholar.google.com/scholar?q=Hidden+voice+commands). Carlini et al.. *USENIX security*, 2016.
 - [Cocaine Noodles: Exploiting the Gap between Human and Machine Speech Recognition](https://scholar.google.com/scholar?q=Cocaine+noodles%3A+exploiting+the+gap+between+human+and+machine+speech+recognition). Vaidya et al.. *WOOT*, 2015.
@@ -237,7 +238,7 @@ We review **500+** papers across five capability layers of embodied AI.
 - [Diffusion Models-Based Purification for Common Corruptions on Robust 3D Object Detection](https://scholar.google.com/scholar?q=Diffusion+models-based+purification+for+common+corruptions+on+robust+3D+object+detection). Cai et al.. *Sensors*, 2024.
 - [Adversary is on the Road: Attacks on Visual SLAM with Robust Perturbations on Point Clouds](https://scholar.google.com/scholar?q=Adversary+is+on+the+Road%3A+Attacks+on+Visual+SLAM+with+Robust+Perturbations+on+Point+Clouds). Chen et al.. *USENIX Security*, 2024.
 - [CATNIPS: Collision Avoidance Through Neural Implicit Probabilistic Scenes](https://arxiv.org/abs/2302.12931). Chen, Culbertson, Schwager. *IEEE Transactions on Robotics (T-RO)*, 2024.
-- [A Control Barrier Function for Safe Navigation with Online Gaussian Splatting Maps](https://arxiv.org/abs/2409.09868). Chen et al.. *arXiv 2409.09868*, 2024.
+- [Safer-Splat: A Control Barrier Function for Safe Navigation with Online Gaussian Splatting Maps](https://arxiv.org/abs/2409.09868). Chen et al.. *arXiv 2409.09868*, 2024.
 - [Random Spoofing Attack against LiDAR-Based Scan Matching SLAM](https://scholar.google.com/scholar?q=Random+Spoofing+Attack+against+LiDAR-Based+Scan+Matching+SLAM). Fukunaga, Sugawara. *VehicleSec*, 2024.
 - [SpotAttack: Covering Spots on Surface to Attack LiDAR-Based Autonomous Driving Systems](https://scholar.google.com/scholar?q=SpotAttack%3A+Covering+Spots+on+Surface+to+Attack+LiDAR+Based+Autonomous+Driving+Systems). Huang et al.. *IEEE Internet of Things Journal (IoT-J)*, 2024.
 - [Adv3D: Generating 3D Adversarial Examples for 3D Object Detection in Driving Scenarios with NeRF](https://arxiv.org/abs/2309.01351). Li, Lian, Chen. *IROS*, 2024.
@@ -358,7 +359,7 @@ We review **500+** papers across five capability layers of embodied AI.
 ---
 
 <details open>
-<summary>🧠 <b>Cognition</b> (29 papers)</summary>
+<summary>🧠 <b>Cognition</b> (28 papers)</summary>
 
 <details>
 <summary>Instruction Understanding (13)</summary>
@@ -380,7 +381,7 @@ We review **500+** papers across five capability layers of embodied AI.
 </details>
 
 <details>
-<summary>World Model (13)</summary>
+<summary>World Model (12)</summary>
 
 - [Safety, Security, and Cognitive Risks in World Models](https://arxiv.org/abs/2604.01346). Parmar. *arXiv 2604.01346*, 2026.
 - [TRAP: Tail-aware Ranking Attack for World-Model Planning](https://arxiv.org/abs/2605.01950). Duan, Zhang, Luo. *arXiv 2605.01950*, 2026.
@@ -389,7 +390,6 @@ We review **500+** papers across five capability layers of embodied AI.
 - [MASH-VLM: Mitigating Action-Scene Hallucination in Video-LLMs through Disentangled Spatial-Temporal Representations](https://arxiv.org/abs/2503.15871). Bae et al.. *CVPR*, 2025.
 - [A Comprehensive Survey on World Models for Embodied AI](https://arxiv.org/abs/2510.16732). Li et al.. *arXiv 2510.16732*, 2025.
 - [VLM-SAFE: Vision-Language Model-Guided Safety-Aware Reinforcement Learning with World Models for Autonomous Driving](https://arxiv.org/abs/2505.16377). Qu et al.. *arXiv preprint*, 2025.
-- [HEAL: An Empirical Study on Hallucinations in Embodied Agents Driven by Large Language Models](https://arxiv.org/abs/2506.15065). Tao et al.. *EMNLP Findings*, 2025.
 - [Multi-Object Hallucination in Vision-Language Models](https://arxiv.org/abs/2407.06192). Chen et al.. *NeurIPS*, 2024.
 - [SafeDreamer: Safe Reinforcement Learning with World Models](https://arxiv.org/abs/2307.07176). Huang et al.. *ICLR*, 2024.
 - [Learning Latent Dynamic Robust Representations for World Models](https://arxiv.org/abs/2405.06263). Sun et al.. *ICML*, 2024.
@@ -401,7 +401,7 @@ We review **500+** papers across five capability layers of embodied AI.
 <details>
 <summary>Reasoning (3)</summary>
 
-- [HEAL: An Empirical Study on Hallucinations in Embodied Agents Driven by Large Language Models](https://scholar.google.com/scholar?q=HEAL%3A+An+Empirical+Study+on+Hallucinations+in+Embodied+Agents+Driven+by+Large+Language+Models). Chakraborty et al.. *Findings of the Association for Computational Linguistics: EMNLP*, 2025.
+- [HEAL: An Empirical Study on Hallucinations in Embodied Agents Driven by Large Language Models](https://arxiv.org/abs/2506.15065). Chakraborty et al.. *Findings of the Association for Computational Linguistics: EMNLP*, 2025.
 - [H-CoT: Hijacking the Chain-of-Thought Safety Reasoning Mechanism to Jailbreak Large Reasoning Models, Including OpenAI o1/o3, DeepSeek-R1, and Gemini 2.0 Flash Thinking](https://arxiv.org/abs/2502.12893). Kuo et al.. *arXiv 2502.12893*, 2025.
 - [π0: A Vision-Language-Action Flow Model for General Robot Control](https://arxiv.org/abs/2410.24164). Black et al.. *arXiv 2410.24164*, 2024.
 
@@ -433,7 +433,7 @@ We review **500+** papers across five capability layers of embodied AI.
 - [Compromising Embodied Agents with Contextual Backdoor Attacks](https://arxiv.org/abs/2408.02882). Liu et al.. *arXiv 2408.02882*, 2024.
 - [Exploring the Robustness of Decision-Level Through Adversarial Attacks on LLM-Based Embodied Models](https://arxiv.org/abs/2405.19802). Liu et al.. *MM*, 2024.
 - [POEX: Towards Policy Executable Jailbreak Attacks Against the LLM-based Robots](https://arxiv.org/abs/2412.16633). Lu et al.. *arXiv 2412.16633*, 2024.
-- [Jailbreaking LLM-Controlled Robots](https://scholar.google.com/scholar?q=Jailbreaking+llm-controlled+robots). Robey et al.. *arXiv 2410.13691*, 2024.
+- [Jailbreaking LLM-Controlled Robots](https://arxiv.org/abs/2410.13691). Robey et al.. *arXiv 2410.13691*, 2024.
 - [BadRobot: Jailbreaking Embodied LLMs in the Physical World](https://arxiv.org/abs/2407.20242). Zhang et al.. *arXiv 2407.20242*, 2024.
 - [SafeEmbodAI: a Safety Framework for Mobile Robots in Embodied AI Systems](https://arxiv.org/abs/2409.01630). Zhang et al.. *arXiv 2409.01630*, 2024.
 - [Adversarial Attacks on Optimization based Planners](https://arxiv.org/abs/2011.00095). Vemprala, Kapoor. *ICRA*, 2021.
@@ -494,10 +494,10 @@ We review **500+** papers across five capability layers of embodied AI.
 ---
 
 <details open>
-<summary>🤖 <b>Action and Interaction</b> (101 papers)</summary>
+<summary>🤖 <b>Action and Interaction</b> (96 papers)</summary>
 
 <details>
-<summary>Robot Control (86)</summary>
+<summary>Robot Control (81)</summary>
 
 - [RedVLA: Physical Red Teaming of Vision-Language-Action Models](https://arxiv.org/abs/2604.22591). Zhang et al.. *arXiv 2604.22591*, 2026.
 - [HazardArena: Evaluating Semantic Safety in Vision-Language-Action Models](https://arxiv.org/abs/2604.12447). Chen et al.. *arXiv 2604.12447*, 2026.
@@ -513,7 +513,6 @@ We review **500+** papers across five capability layers of embodied AI.
 - [Who Is the Strongest Enemy? Towards Optimal and Efficient Evasion Attacks in Deep RL](https://arxiv.org/abs/2106.05087). Sun et al.. *ICLR*, 2022.
 - [Natural Actor-Critic for Robust Reinforcement Learning with Function Approximation](https://arxiv.org/abs/2307.08875). Zhou et al.. *NeurIPS*, 2023.
 - [LIBERO-X: Robustness Litmus for Vision-Language-Action Models](https://arxiv.org/abs/2602.06556). Wang et al.. *arXiv 2602.06556*, 2026.
-- [Universal Closed-Box Adversarial Attack for Trajectory Representation via Controlling High-Dimensional Iterative Constraints](https://scholar.google.com/scholar?q=RAT). Bai et al.. *AAAI*, 2025.
 - [On Minimizing Adversarial Counterfactual Error in Adversarial Reinforcement Learning](https://arxiv.org/abs/2406.04724). Belaire, Sinha, Varakantham. *ICLR*, 2025.
 - [PNAct: Crafting Backdoor Attacks in Safe Reinforcement Learning](https://arxiv.org/abs/2507.00485). Guo et al.. *IJCAI*, 2025.
 - [ANNIE: Be Careful of Your Robots](https://arxiv.org/abs/2509.03383). Huang et al.. 2025.
@@ -527,7 +526,6 @@ We review **500+** papers across five capability layers of embodied AI.
 - [How Vulnerable Is My Learned Policy? Universal Adversarial Perturbation Attacks On Modern Behavior Cloning Policies](https://arxiv.org/abs/2502.03698). Patil et al.. 2025.
 - [Exploring the Adversarial Vulnerabilities of Vision-Language-Action Models in Robotics](https://arxiv.org/abs/2411.13587). Wang et al.. *ICCV*, 2025.
 - [Towards Robust Deep Reinforcement Learning against Environmental State Perturbation](https://arxiv.org/abs/2506.08961). Wang, Liu. 2025.
-- [BadVLA: Towards Backdoor Attacks on Vision-Language-Action Models via Objective-Decoupled Optimization](https://proceedings.neurips.cc/paper_files/paper/2025/hash/b94925a92f2271cd60c9f3f7a7d366fe-Abstract-Conference.html). Zhou, Xueyang et al.. *NeurIPS*, 2026.
 - [LIBERO-Plus: In-depth Robustness Analysis of Vision-Language-Action Models](https://arxiv.org/abs/2510.13626). Fei et al.. *arXiv 2510.13626*, 2025.
 - [Run-time Observation Interventions Make Vision-Language-Action Models More Visually Robust](https://arxiv.org/abs/2410.01971). Hancock, Ren, Majumdar. *ICRA*, 2025.
 - [VLSA: Vision-Language-Action Models with Plug-and-Play Safety Constraint Layer](https://arxiv.org/abs/2512.11891). Hu et al.. *arXiv 2512.11891*, 2025.
@@ -541,7 +539,6 @@ We review **500+** papers across five capability layers of embodied AI.
 - [Attention-Guided Patch-Wise Sparse Adversarial Attacks on Vision-Language-Action Models](https://arxiv.org/abs/2511.21663). Zhang, Naifu et al.. *arXiv:2511.21663*, 2025.
 - [SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning](https://arxiv.org/abs/2503.03480). Zhang et al.. *NeurIPS*, 2025.
 - [Goal-oriented Backdoor Attack against Vision-Language-Action Models via Physical Objects](https://arxiv.org/abs/2510.09269). Zhou, Zirun et al.. *arXiv 2510.09269*, 2025.
-- [Regret-based Defense in Adversarial Reinforcement Learning](https://arxiv.org/abs/2302.06912). Belaire et al.. *AAMAS*, 2024.
 - [Diffusion Policy Attacker: Crafting Adversarial Attacks for Diffusion-based Policies](https://arxiv.org/abs/2405.19424). Chen, Xue, Chen. *NeurIPS*, 2024.
 - [Manipulation Facing Threats: Evaluating Physical Vulnerabilities in End-to-End Vision Language Action Models](https://arxiv.org/abs/2409.13174). Cheng et al.. 2024.
 - [Bring Your Own (Non-Robust) Algorithm to Solve Robust MDPs by Estimating The Worst Kernel](https://arxiv.org/abs/2306.05859). Gadot et al.. *ICML*, 2024.
@@ -558,7 +555,6 @@ We review **500+** papers across five capability layers of embodied AI.
 - [Toward Evaluating Robustness of Reinforcement Learning with Adversarial Policy](https://arxiv.org/abs/2305.02605). Zheng, Xiang et al.. *DSN*, 2024.
 - [Robot Collapse: Supply Chain Backdoor Attacks Against VLM-based Robotic Manipulation](https://arxiv.org/abs/2411.11683). Wang et al.. *arXiv 2411.11683*, 2024.
 - [MARNet: Backdoor Attacks Against Cooperative Multi-Agent Reinforcement Learning](https://scholar.google.com/scholar?q=MARNet). Chen, Zheng, Gong. *IEEE Transactions on Dependable and Secure Computing (TDSC)*, 2023.
-- [Train Hard, Fight Easy: Robust Meta Reinforcement Learning](https://scholar.google.com/scholar?q=Train+Hard). Greenberg et al.. *NeurIPS*, 2023.
 - [PATROL: Provable Defense against Adversarial Policy in Two-player Games](https://scholar.google.com/scholar?q=PATROL). Guo et al.. *USENIX Security*, 2023.
 - [PolicyCleanse: Backdoor Detection and Mitigation for Competitive Reinforcement Learning](https://arxiv.org/abs/2202.03609). Guo et al.. *ICCV*, 2023.
 - [Trade-Off Between Robustness and Rewards Adversarial Training for Deep Reinforcement Learning Under Large Perturbations](https://scholar.google.com/scholar?q=Trade-Off+Between+Robustness). Huang, Choi, Figueroa. *IEEE Robotics and Automation Letters (RA-L)*, 2023.
@@ -569,7 +565,6 @@ We review **500+** papers across five capability layers of embodied AI.
 - [Distributionally Adaptive Meta Reinforcement Learning](https://arxiv.org/abs/2210.03104). Ajay et al.. *NeurIPS*, 2022.
 - [Learning Robust Policy against Disturbance in Transition Dynamics via State-Conservative Policy Optimization](https://arxiv.org/abs/2112.10513). Kuang et al.. *AAAI*, 2022.
 - [Efficient Adversarial Training without Attacking: Worst-Case-Aware Robust Reinforcement Learning](https://arxiv.org/abs/2210.05927). Liang et al.. *NeurIPS*, 2022.
-- [Who Is in Control? Practical Physical Layer Attack and Defense for mmWave-Based Sensing in Autonomous Vehicles](https://arxiv.org/abs/2011.10947). Sun et al.. *ICLR*, 2022.
 - [CROP: Certifying Robust Policies for Reinforcement Learning through Functional Smoothing](https://arxiv.org/abs/2106.09292). Wu et al.. *ICLR*, 2022.
 - [Monotonic Robust Policy Optimization with Model Discrepancy](https://scholar.google.com/scholar?q=Monotonic+Robust+Policy+Optimization+with+Model+Discrepancy). Jiang et al.. *ICML*, 2021.
 - [Robust Deep Reinforcement Learning through Adversarial Loss](https://arxiv.org/abs/2008.01976). Oikarinen et al.. *NeurIPS*, 2021.
@@ -620,10 +615,10 @@ We review **500+** papers across five capability layers of embodied AI.
 ---
 
 <details open>
-<summary>⚡ <b>Agentic</b> (74 papers)</summary>
+<summary>⚡ <b>Agentic</b> (66 papers)</summary>
 
 <details>
-<summary>Tool Use and Skill (16)</summary>
+<summary>Tool Use and Skill (14)</summary>
 
 - [DecodingTrust-Agent Platform (DTap): A Controllable and Interactive Red-Teaming Platform for AI Agents](https://arxiv.org/abs/2605.04808). Chen et al.. *arXiv 2605.04808*, 2026.
 - [Indirect Prompt Injection in the Wild: An Empirical Study of Prevalence, Techniques, and Objectives](https://arxiv.org/abs/2604.27202). Khodayari et al.. *arXiv 2604.27202*, 2026.
@@ -635,7 +630,6 @@ We review **500+** papers across five capability layers of embodied AI.
 - [Towards Secure Agent Skills: Architecture, Threat Taxonomy, and Security Analysis](https://arxiv.org/abs/2604.02837). Li et al.. *arXiv 2604.02837*, 2026.
 - [AgentSpec: Customizable Runtime Enforcement for Safe and Reliable LLM Agents](https://arxiv.org/abs/2503.18666). Wang, Haoyu et al.. *ICSE*, 2026.
 - [BackdoorAgent: A Unified Framework for Backdoor Attacks on LLM-based Agents](https://arxiv.org/abs/2601.04566). Feng, Yunhao et al.. *arXiv 2601.04566*, 2026.
-- [Enhancing Website Security Using Vulnerability Assessment and Penetration Testing (VAPT) Based on OWASP Top Ten](https://scholar.google.com/scholar?q=OWASP). Project. 2026.
 - [Prompt Injection Attack to Tool Selection in LLM Agents](https://arxiv.org/abs/2504.19793). Shi, Jiawen et al.. *arXiv 2504.19793*, 2025.
 - [SELP: Generating Safe and Efficient Task Plans for Robot Agents with Large Language Models](https://arxiv.org/abs/2409.19471). Wu, Yi et al.. *arXiv preprint*, 2024.
 - [Plug in the Safety Chip: Enforcing Constraints for LLM-driven Robot Agents](https://arxiv.org/abs/2309.09919). Yang, Ziyi et al.. *Brown University Technical Report*, 2024.
@@ -664,27 +658,24 @@ We review **500+** papers across five capability layers of embodied AI.
 </details>
 
 <details>
-<summary>Self-Evolving (14)</summary>
+<summary>Self-Evolving (11)</summary>
 
 - [A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems](https://arxiv.org/abs/2508.07407). Fang et al.. *arXiv 2508.07407*, 2025.
-- [Dose-dependent efficacy and safety of Filgotinib in moderate to severe Crohn’s disease: a grade-assessed systematic review and meta-analysis of randomized controlled trials](https://scholar.google.com/scholar?q=2025+AI+Safety+Index). Institute. 2025.
-- [Principles of artificial intelligence in law](https://scholar.google.com/scholar?q=Aligning+AI+Agents+with+Humans+through+Law+as+Information). Nay. 2025.
 - [Safe Continual Reinforcement Learning Methods for Nonstationary Environments. Towards a Survey of the State of the Art](https://arxiv.org/abs/2601.05152). Tomashevskiy, Timofey. *arXiv 2601.05152*, 2025.
 - [Self-Improving Embodied Foundation Models](https://arxiv.org/abs/2509.15155). Ghasemipour, SKS et al.. 2025.
 - [Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents](https://arxiv.org/abs/2509.26354). Shao et al.. *arXiv 2509.26354*, 2025.
 - [C3AI: Crafting and Evaluating Constitutions for Constitutional AI](https://arxiv.org/abs/2502.15861). Kyrychenko, Y et al.. *ACM Web Conference*, 2025.
 - [The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](https://arxiv.org/abs/2509.02547). Zhang et al.. *arXiv 2509.02547*, 2025.
 - [Lifelong Learning of Large Language Model Based Agents: A Roadmap](https://arxiv.org/abs/2501.07278). Zheng et al.. *arXiv 2501.07278*, 2025.
-- [Embodied Red Teaming for Auditing Robotic Foundation Models](https://scholar.google.com/scholar?q=Embodied+Red+Teaming+for+Auditing+Robotic+Foundation+Models). Karnik et al.. *arXiv 2411.18676*, 2024.
 - [Red-Teaming Vision-Language-Action Models via Quality Diversity Prompt Generation for Robust Robot Policies](https://arxiv.org/abs/2603.12510). Srikanth, Siddharth et al.. 2024.
 - [Moral Anchor System: A Predictive Framework for AI Value Alignment and Drift Prevention](https://arxiv.org/abs/2510.04073). Ravindran, Santhosh Kumar. *arXiv 2510.04073*, 2024.
-- [R2AI: Towards Resistant and Resilient AI in an Evolving World](https://scholar.google.com/scholar?q=Towards+Resistant+and+Resilient+AI). Anonymous. *OpenReview Preprint*, 2024.
+- [R2AI: Towards Resistant and Resilient AI in an Evolving World](https://arxiv.org/abs/2509.06786). Anonymous. *OpenReview Preprint*, 2024.
 - [Agent-SafetyBench: Evaluating the Safety of LLM Agents](https://arxiv.org/abs/2412.14470). Zhang et al.. *arXiv 2412.14470*, 2024.
 
 </details>
 
 <details>
-<summary>Cascading Risks (30)</summary>
+<summary>Cascading Risks (27)</summary>
 
 - [Position: Embodied AI Requires a Privacy-Utility Trade-off](https://arxiv.org/abs/2605.05017). Fan et al.. *arXiv 2605.05017*, 2026.
 - [A Survey of Agentic AI and Cybersecurity: Challenges, Opportunities and Use-case Prototypes](https://arxiv.org/abs/2601.05293). Lazer et al.. *arXiv 2601.05293*, 2026.
@@ -695,22 +686,19 @@ We review **500+** papers across five capability layers of embodied AI.
 - [Cascading Failures in Agentic AI: ASI08 Security Guide](https://scholar.google.com/scholar?q=Cascading+Failures+in+Agentic+AI%3A+ASI08+Security+Guide). OWASP. 2026.
 - [A white-box prompt injection attack on embodied AI agents driven by large language models](https://scholar.google.com/scholar?q=White-Box+Prompt+Injection+Attack+on+Embodied+AI+Agents). Geng et al.. *Science*, 2026.
 - [Securing (vision-based) autonomous systems: taxonomy, challenges, and defense mechanisms against adversarial threats](https://scholar.google.com/scholar?q=Securing+Vision-Based+Autonomous+Systems%3A+A+Comprehensive+Taxonomy). Lopez Pellicer et al.. *Artificial Intelligence (AIJ)*, 2025.
-- [From Failure Modes to Reliability Awareness in Generative and Agentic AI System](https://arxiv.org/abs/2511.05511). AI. 2025.
+- [From Failure Modes to Reliability Awareness in Generative and Agentic AI System](https://arxiv.org/abs/2511.05511). Lin, Zhang. 2025.
 - [The Adolescence of Technology](https://scholar.google.com/scholar?q=The+Adolescence+of+Technology). Amodei. 2025.
 - [International AI Safety Report 2025: Second Key Update: Technical Safeguards and Risk Management](https://arxiv.org/abs/2511.19863). Bengio et al.. *arXiv 2511.19863*, 2025.
 - [Revisiting Adversarial Perception Attacks and Defense Methods on Autonomous Driving Systems](https://arxiv.org/abs/2505.11532). Chen et al.. *arXiv 2505.11532*, 2025.
 - [Attacking Autonomous Driving Agents with Adversarial Machine Learning: A Holistic Evaluation with the CARLA Leaderboard](https://arxiv.org/abs/2511.14876). Wong, Henry et al.. *arXiv 2511.14876*, 2025.
-- [Adversarial Attacks on Robotic Vision Language Action Models](https://scholar.google.com/scholar?q=Adversarial+Attacks+on+Robotic+Vision+Language+Action+Models). Jones, EK et al.. *arXiv 2506.03350*, 2025.
 - [SoK: How Sensor Attacks Disrupt Autonomous Vehicles: An End-to-end Analysis, Challenges, and Missed Threats](https://arxiv.org/abs/2509.11120). Zhang, Qingzhao et al.. *arXiv 2509.11120*, 2025.
 - [Towards Robust and Secure Embodied AI: A Survey on Vulnerabilities and Attacks](https://dl.acm.org/doi/abs/10.1145/3806048). Xing, Wenpeng et al.. *ACM Computing Surveys*, 2026.
 - [SoK: Cybersecurity Assessment of Humanoid Ecosystem](https://arxiv.org/abs/2508.17481). Surve, PP et al.. *arXiv 2508.17481*, 2025.
 - [Automated Discovery of Semantic Attacks in Multi-Robot Navigation Systems](https://scholar.google.com/scholar?q=Automated+Discovery+of+Semantic+Attacks+in+Multi-Robot+Navigation). Yeke et al.. *USENIX Security*, 2025.
 - [Secure Robotics: Navigating Challenges at the Nexus of Safety, Trust, and Cybersecurity in Cyber-Physical Systems](https://scholar.google.com/scholar?q=Secure+Robotics%3A+Nexus+of+Safety%2C+Trust%2C+and+Cybersecurity). Haskard et al.. *ACM Computing Surveys (CSUR)*, 2024.
 - [Towards Physically Realizable Adversarial Attacks in Embodied Vision Navigation](https://arxiv.org/abs/2409.10071). Chen, M et al.. *IROS*, 2024.
-- [Exploring the Robustness of Decision-Level Through Adversarial Attacks on LLM-Based Embodied Models](https://arxiv.org/abs/2405.19802). Jones, Eliot Krzysztof et al.. *MM*, 2025.
 - [Toward Robust 3D Perception for Autonomous Vehicles: A Review of Adversarial Attacks and Countermeasures](https://scholar.google.com/scholar?q=Toward+Robust+3D+Perception+for+Autonomous+Vehicles). Mahima et al.. *IEEE Transactions on Intelligent Transportation Systems (T-ITS)*, 2024.
 - [SafeAgentBench: A Benchmark for Safe Task Planning of Embodied LLM Agents](https://arxiv.org/abs/2412.13178). Yin et al.. *arXiv 2412.13178*, 2024.
-- [ADVEDM:Fine-grained Adversarial Attack against VLM-based Embodied Agents](https://arxiv.org/abs/2509.16645). Wang, Y et al.. 2025.
 - [Dynamic Adversarial Attacks on Autonomous Driving Systems](https://arxiv.org/abs/2312.06701). Chahe, A et al.. *RSS*, 2023.
 - [Security Considerations in AI-Robotics: A Survey of Current Methods, Challenges, and Opportunities](https://arxiv.org/abs/2310.08565). Neupane, S et al.. *IEEE Access*, 2023.
 - [Adversarial Driving: Attacking End-to-End Autonomous Driving](https://arxiv.org/abs/2103.09151). Wu, Han et al.. *IEEE Intelligent Vehicle Symposium*, 2021.
@@ -718,6 +706,120 @@ We review **500+** papers across five capability layers of embodied AI.
 - [Spatiotemporal Attacks for Embodied Agents](https://scholar.google.com/scholar?q=Spatiotemporal+Attacks+for+Embodied+Agents). Liu, A et al.. *ECCV*, 2020.
 
 </details>
+
+</details>
+
+## Other Related Works
+
+<details>
+<summary><b>Other Related Works</b> (104 papers)</summary>
+
+Cited works beyond the five-layer attack and defense taxonomy: background and capability models, datasets, simulators, benchmarks, and related surveys.
+
+- [A Safety Report on GPT-5.2, Gemini 3 Pro, Qwen3-VL, Grok 4.1 Fast, Nano Banana Pro, and Seedream 4.5](https://arxiv.org/abs/2601.10527). Ma et al.. *arXiv 2601.10527*, 2026.
+- [A Survey of Large Audio Language Models: Generalization, Trustworthiness, and Outlook](https://arxiv.org/abs/2605.20266). Luo et al.. *arXiv 2605.20266*, 2026.
+- [Adversarial Flow Matching for Imperceptible Attacks on End-to-End Autonomous Driving](https://arxiv.org/abs/2605.00880). Zeng et al.. *arXiv 2605.00880*, 2026.
+- [Adversarial Robustness in Embodied AI: A Closed-Loop Perspective on Attacks and Defenses](https://scholar.google.com/scholar?q=Adversarial+Robustness+in+Embodied+AI%3A+A+Closed-Loop+Perspective+on+Attacks+and+Defenses). Wang et al.. *TechRxiv preprint*, 2026.
+- [Agent Harness Engineering: A Survey](https://scholar.google.com/scholar?q=Agent+Harness+Engineering%3A+A+Survey). Li et al.. *OpenReview preprint*, 2026.
+- [AgentTrap: Measuring Runtime Trust Failures in Third-Party Agent Skills](https://arxiv.org/abs/2605.13940). Zhuang et al.. *arXiv 2605.13940*, 2026.
+- [Altered Thoughts, Altered Actions: Probing Chain-of-Thought Vulnerabilities in VLA Robotic Manipulation](https://arxiv.org/abs/2603.12717). Trinh, Akhtar, Azam. *arXiv 2603.12717*, 2026.
+- [Auditing Agent Harness Safety](https://arxiv.org/abs/2605.14271). Liu et al.. *arXiv 2605.14271*, 2026.
+- [Benchmarking the Safety of Large Language Models for Robotic Health Attendant Control](https://arxiv.org/abs/2604.26577). Nakao, Takemoto. *arXiv 2604.26577*, 2026.
+- [CtrlAttack: A Unified Attack on World-Model Control in Diffusion Models](https://arxiv.org/abs/2603.13435). Xu et al.. *arXiv 2603.13435*, 2026.
+- [Deep Reinforcement Learning in the Era of Foundation Models: A Survey](https://scholar.google.com/scholar?q=Deep+Reinforcement+Learning+in+the+Era+of+Foundation+Models%3A+A+Survey). Mienye, Esenogho, Modisane. *Computers*, 2026.
+- [Dreaming the Unseen: World Model-Regularized Diffusion Policy for Out-of-Distribution Robustness](https://arxiv.org/abs/2603.21017). Hu et al.. *arXiv 2603.21017*, 2026.
+- [Externalization in LLM Agents: A Unified Review of Memory, Skills, Protocols and Harness Engineering](https://arxiv.org/abs/2604.08224). Zhou et al.. *arXiv 2604.08224*, 2026.
+- [FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching Vision-Language-Action Models](https://scholar.google.com/scholar?q=FlowHijack%3A+A+Dynamics-Aware+Backdoor+Attack+on+Flow-Matching+Vision-Language-Action+Models). An et al.. *CVPR*, 2026.
+- [Hidden in Memory: Sleeper Memory Poisoning in LLM Agents](https://arxiv.org/abs/2605.15338). Pulipaka et al.. *arXiv 2605.15338*, 2026.
+- [Hierarchical Attacks for Multi-Modal Multi-Agent Reasoning](https://scholar.google.com/scholar?q=Hierarchical+Attacks+for+Multi-Modal+Multi-Agent+Reasoning). Zhou et al.. *CVPR*, 2026.
+- [HomeGuard: VLM-Based Embodied Safeguard for Identifying Contextual Risk in Household Task](https://arxiv.org/abs/2603.14367). Lu et al.. *arXiv 2603.14367*, 2026.
+- [Internal Safety Collapse in Frontier Large Language Models](https://arxiv.org/abs/2603.23509). Wu et al.. *arXiv 2603.23509*, 2026.
+- [MalTool: Malicious Tool Attacks on LLM Agents](https://arxiv.org/abs/2602.12194). Hu et al.. *arXiv 2602.12194*, 2026.
+- [Navigating Embodied Intelligence: Enabling Technologies, Security and Privacy, and Emerging Trends](https://scholar.google.com/scholar?q=Navigating+Embodied+Intelligence%3A+Enabling+Technologies%2C+Security+and+Privacy%2C+and+Emerging+Trends). Wang et al.. *IEEE Internet of Things Journal (IoT-J)*, 2026.
+- [Not What You Asked For: Typographic Attacks in Household Robot Manipulation](https://arxiv.org/abs/2605.18593). Iranmanesh, Liu. *arXiv 2605.18593*, 2026.
+- [OEP: Poisoning Self-Evolving LLM Agents via Locally Correct but Non-Transferable Experiences](https://arxiv.org/abs/2605.18930). Wang et al.. *arXiv 2605.18930*, 2026.
+- [On Evaluating the Robustness of Large Vision-Language Models via Untargeted Modality Alignment Breaking Adversarial Attack](https://scholar.google.com/scholar?q=On+Evaluating+the+Robustness+of+Large+Vision-Language+Models+via+Untargeted+Modality+Alignment+Breaking+Adversarial+Attack). Li et al.. *USENIX Security*, 2026.
+- [OWASP](https://scholar.google.com/scholar?q=OWASP). Project. *https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/*, 2026.
+- [PRISM: Generation-Time Detection and Mitigation of Secret Leakage in Multi-Agent LLM Pipelines](https://arxiv.org/abs/2605.10614). Tapwal, Kumar, Maple. *arXiv 2605.10614*, 2026.
+- [Remembering More, Risking More: Longitudinal Safety Risks in Memory-Equipped LLM Agents](https://arxiv.org/abs/2605.17830). Al-Tawaha et al.. *arXiv 2605.17830*, 2026.
+- [RoboJailBench: Benchmarking Adversarial Attacks and Defenses in Embodied Robotic Agents](https://arxiv.org/abs/2605.19328). Yeke et al.. *arXiv 2605.19328*, 2026.
+- [SafeDream: Safety World Model for Proactive Early Jailbreak Detection](https://arxiv.org/abs/2604.16824). Yan et al.. *arXiv 2604.16824*, 2026.
+- [Safety Guardrails for LLM-Enabled Robots](https://scholar.google.com/scholar?q=Safety+Guardrails+for+LLM-Enabled+Robots). Ravichandran et al.. *IEEE RA-L*, 2026.
+- [SilentDrift: Exploiting Action Chunking for Stealthy Backdoor Attacks on Vision-Language-Action Models](https://arxiv.org/abs/2601.14323). Xu et al.. *arXiv 2601.14323*, 2026.
+- [SkillSafetyBench: Evaluating Agent Safety under Skill-Facing Attack Surfaces](https://arxiv.org/abs/2605.12015). Jin et al.. *arXiv 2605.12015*, 2026.
+- [SmartAgent: Chain-of-User-Thought for Embodied Personalized Agent in Cyber World](https://scholar.google.com/scholar?q=SmartAgent%3A+Chain-of-User-Thought+for+Embodied+Personalized+Agent+in+Cyber+World). Zhang et al.. *AAAI*, 2026.
+- [The Attack and Defense Landscape of Agentic AI: A Comprehensive Survey](https://scholar.google.com/scholar?q=The+Attack+and+Defense+Landscape+of+Agentic+AI%3A+A+Comprehensive+Survey). Kim et al.. *USENIX Security*, 2026.
+- [Toward Efficient Agents: Memory, Tool Learning, and Planning](https://arxiv.org/abs/2601.14192). Yang et al.. *arXiv 2601.14192*, 2026.
+- [Trust in LLM-Controlled Robotics: A Survey of Security Threats, Defenses and Challenges](https://arxiv.org/abs/2601.02377). Huang et al.. *arXiv 2601.02377*, 2026.
+- [Vision-Language-Action Safety: Threats, Challenges, Evaluations, and Mechanisms](https://arxiv.org/abs/2604.23775). Li et al.. *arXiv 2604.23775*, 2026.
+- [What Breaks Embodied AI Security: LLM Vulnerabilities, CPS Flaws, or Something Else?](https://arxiv.org/abs/2602.17345). Ma et al.. *arXiv 2602.17345*, 2026.
+- [When World Models Dream Wrong: Physical-Conditioned Adversarial Attacks against World Models](https://arxiv.org/abs/2602.18739). Guo et al.. *arXiv 2602.18739*, 2026.
+- [World Action Models: The Next Frontier in Embodied AI](https://arxiv.org/abs/2605.12090). Wang et al.. *arXiv 2605.12090*, 2026.
+- [2025 AI Safety Index](https://scholar.google.com/scholar?q=2025+AI+Safety+Index). Institute. *https://futureoflife.org/ai-safety-index-summer-2025/*, 2025.
+- [A Comprehensive Survey in LLM (-Agent) Full Stack Safety: Data, Training and Deployment](https://arxiv.org/abs/2504.15585). Wang et al.. *arXiv 2504.15585*, 2025.
+- [A Survey of Safety on Large Vision-Language Models: Attacks, Defenses and Evaluations](https://arxiv.org/abs/2502.14881). Ye et al.. *arXiv 2502.14881*, 2025.
+- [A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence](https://arxiv.org/abs/2507.21046). Gao et al.. *arXiv 2507.21046*, 2025.
+- [A Systematic Survey of Self-Evolving Agents: From Model-Centric to Environment-Driven Co-Evolution](https://scholar.google.com/scholar?q=A+Systematic+Survey+of+Self-Evolving+Agents%3A+From+Model-Centric+to+Environment-Driven+Co-Evolution). Xiang et al.. *TechRxiv preprint*, 2025.
+- [AgentSafe: Safeguarding Large Language Model-Based Multi-Agent Systems via Hierarchical Data Management](https://arxiv.org/abs/2503.04392). Mao et al.. *arXiv 2503.04392*, 2025.
+- [AI Agents under Threat: A Survey of Key Security Challenges and Future Pathways](https://scholar.google.com/scholar?q=AI+Agents+under+Threat%3A+A+Survey+of+Key+Security+Challenges+and+Future+Pathways). Deng et al.. *ACM Computing Surveys*, 2025.
+- [Aligning AI Agents with Humans through Law as Information](https://scholar.google.com/scholar?q=Aligning+AI+Agents+with+Humans+through+Law+as+Information). Nay. *Stanford Law School Working Paper*, 2025.
+- [Backdoors in DRL: Four Environments Focusing on In-Distribution Triggers](https://arxiv.org/abs/2505.17248). Ashcraft et al.. *arXiv 2505.17248*, 2025.
+- [BlueSuffix: Reinforced Blue Teaming for Vision-Language Models Against Jailbreak Attacks](https://scholar.google.com/scholar?q=BlueSuffix%3A+Reinforced+Blue+Teaming+for+Vision-Language+Models+Against+Jailbreak+Attacks). Zhao et al.. *ICLR*, 2025.
+- [Cascading Failures in Agentic AI](https://scholar.google.com/scholar?q=Cascading+Failures+in+Agentic+AI). AI. *https://adversa.ai/blog/cascading-failures-in-agentic-ai-complete-owasp-asi08-security-guide-2026/*, 2025.
+- [DiffusionVLA: Scaling Robot Foundation Models via Unified Diffusion and Autoregression](https://scholar.google.com/scholar?q=DiffusionVLA%3A+Scaling+Robot+Foundation+Models+via+Unified+Diffusion+and+Autoregression). Wen et al.. *ICML*, 2025.
+- [DropVLA: An Action-Level Backdoor Attack on Vision-Language-Action Models](https://arxiv.org/abs/2510.10932). Xu et al.. *arXiv 2510.10932*, 2025.
+- [Embodied AI: Emerging Risks and Opportunities for Policy Action](https://arxiv.org/abs/2509.00117). Perlo et al.. *arXiv 2509.00117*, 2025.
+- [Exploring Adversarial Obstacle Attacks in Search-Based Path Planning for Autonomous Mobile Robots](https://scholar.google.com/scholar?q=Exploring+Adversarial+Obstacle+Attacks+in+Search-Based+Path+Planning+for+Autonomous+Mobile+Robots). Szvoren et al.. *ICRA*, 2025.
+- [FAST: Efficient Action Tokenization for Vision-Language-Action Models](https://arxiv.org/abs/2501.09747). Pertsch et al.. *arXiv 2501.09747*, 2025.
+- [Gemini Robotics: Bringing AI into the Physical World](https://arxiv.org/abs/2503.20020). Team et al.. *arXiv 2503.20020*, 2025.
+- [Generating Robot Constitutions & Benchmarks for Semantic Safety](https://arxiv.org/abs/2503.08663). Sermanet et al.. *arXiv 2503.08663*, 2025.
+- [M3Bench: Benchmarking Whole-Body Motion Generation for Mobile Manipulation in 3D Scenes](https://scholar.google.com/scholar?q=M3Bench%3A+Benchmarking+Whole-Body+Motion+Generation+for+Mobile+Manipulation+in+3D+Scenes). Zhang et al.. *IEEE Robotics and Automation Letters (RA-L)*, 2025.
+- [Memory in LLM-Based Multi-Agent Systems: Mechanisms, Challenges, and Collective Intelligence](https://scholar.google.com/scholar?q=Memory+in+LLM-Based+Multi-Agent+Systems%3A+Mechanisms%2C+Challenges%2C+and+Collective+Intelligence). Wu, Shu. *Authorea Preprints*, 2025.
+- [MemOS: A Memory OS for AI System](https://arxiv.org/abs/2507.03724). Li et al.. *arXiv 2507.03724*, 2025.
+- [OpenDriveVLA: Towards End-to-End Autonomous Driving with Large Vision Language Action Model](https://arxiv.org/abs/2503.23463). Zhou et al.. *arXiv 2503.23463*, 2025.
+- [OpenVLA: An Open-Source Vision-Language-Action Model](https://scholar.google.com/scholar?q=OpenVLA%3A+An+Open-Source+Vision-Language-Action+Model). Kim, Pertsch. *CoRL*, 2025.
+- [RAT: Adversarial Attacks on Deep Reinforcement Agents for Targeted Behaviors](https://scholar.google.com/scholar?q=RAT%3A+Adversarial+Attacks+on+Deep+Reinforcement+Agents+for+Targeted+Behaviors). Bai et al.. *AAAI*, 2025.
+- [Robust Multi-Agent Reinforcement Learning by Mutual Information Regularization](https://scholar.google.com/scholar?q=Robust+Multi-Agent+Reinforcement+Learning+by+Mutual+Information+Regularization). Li et al.. *IEEE Transactions on Neural Networks and Learning Systems (TNNLS)*, 2025.
+- [Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety](https://scholar.google.com/scholar?q=Safety+at+Scale%3A+A+Comprehensive+Survey+of+Large+Model+and+Agent+Safety). Ma et al.. *Foundations and Trends*, 2025.
+- [Safety of Embodied Navigation: A Survey](https://arxiv.org/abs/2508.05855). Wang, Hu, Mu. *arXiv 2508.05855*, 2025.
+- [SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model](https://scholar.google.com/scholar?q=SpatialVLA%3A+Exploring+Spatial+Representations+for+Visual-Language-Action+Model). Qu et al.. *RSS*, 2025.
+- [STAC: When Innocent Tools Form Dangerous Chains to Jailbreak LLM Agents](https://arxiv.org/abs/2509.25624). Li et al.. *arXiv 2509.25624*, 2025.
+- [TinyVLA: Towards Fast, Data-Efficient Vision-Language-Action Models for Robotic Manipulation](https://scholar.google.com/scholar?q=TinyVLA%3A+Towards+Fast%2C+Data-Efficient+Vision-Language-Action+Models+for+Robotic+Manipulation). Wen et al.. *IEEE Robotics and Automation Letters (RA-L)*, 2025.
+- [Towards Safe and Trustworthy Embodied AI: Foundations, Status, and Prospects](https://scholar.google.com/scholar?q=Towards+Safe+and+Trustworthy+Embodied+AI%3A+Foundations%2C+Status%2C+and+Prospects). Tan et al.. *OpenReview preprint*, 2025.
+- [World Model Robustness via Surprise Recognition](https://arxiv.org/abs/2512.01119). Zollicoffer et al.. *arXiv 2512.01119*, 2025.
+- [Bench2Drive: Towards Multi-Ability Benchmarking of Closed-Loop End-to-End Autonomous Driving](https://scholar.google.com/scholar?q=Bench2Drive%3A+Towards+Multi-Ability+Benchmarking+of+Closed-Loop+End-to-End+Autonomous+Driving). Jia et al.. *NeurIPS*, 2024.
+- [Breaking the Barrier: Enhanced Utility and Robustness in Smoothed DRL Agents](https://scholar.google.com/scholar?q=Breaking+the+Barrier%3A+Enhanced+Utility+and+Robustness+in+Smoothed+DRL+Agents). Sun, Gao, Weng. *ICML*, 2024.
+- [Dolphins: Multimodal Language Model for Driving](https://scholar.google.com/scholar?q=Dolphins%3A+Multimodal+Language+Model+for+Driving). Ma et al.. *ECCV*, 2024.
+- [DriveVLM: The Convergence of Autonomous Driving and Large Vision-Language Models](https://scholar.google.com/scholar?q=DriveVLM%3A+The+Convergence+of+Autonomous+Driving+and+Large+Vision-Language+Models). Tian et al.. *CoRL*, 2024.
+- [Embodied Agent Interface: Benchmarking LLMs for Embodied Decision Making](https://scholar.google.com/scholar?q=Embodied+Agent+Interface%3A+Benchmarking+LLMs+for+Embodied+Decision+Making). Li et al.. *NeurIPS*, 2024.
+- [MMCert](https://scholar.google.com/scholar?q=MMCert). Wang et al.. *CVPR*, 2024.
+- [Navigating the Risks: A Survey of Security, Privacy, and Ethics Threats in LLM-Based Agents](https://arxiv.org/abs/2411.09523). Gan et al.. *arXiv 2411.09523*, 2024.
+- [NavSim: Data-Driven Non-Reactive Autonomous Vehicle Simulation and Benchmarking](https://scholar.google.com/scholar?q=NavSim%3A+Data-Driven+Non-Reactive+Autonomous+Vehicle+Simulation+and+Benchmarking). Dauner et al.. *NeurIPS*, 2024.
+- [RoboCodeX](https://scholar.google.com/scholar?q=RoboCodeX). Mu et al.. *ICML*, 2024.
+- [TrojanRobot: Physical-World Backdoor Attacks Against VLM-Based Robotic Manipulation](https://arxiv.org/abs/2411.11683). Wang et al.. *arXiv 2411.11683*, 2024.
+- [Generating Explanations for Embodied Action Decision from Visual Observation](https://scholar.google.com/scholar?q=Generating+Explanations+for+Embodied+Action+Decision+from+Visual+Observation). Wang et al.. *MM*, 2023.
+- [Habitat 3.0: A Co-Habitat for Humans, Avatars and Robots](https://arxiv.org/abs/2310.13724). Puig et al.. *arXiv 2310.13724*, 2023.
+- [Scenic: A Language for Scenario Specification and Data Generation](https://scholar.google.com/scholar?q=Scenic%3A+A+Language+for+Scenario+Specification+and+Data+Generation). Fremont et al.. *Machine Learning (MLJ)*, 2023.
+- [User-Oriented Robust Reinforcement Learning](https://scholar.google.com/scholar?q=User-Oriented+Robust+Reinforcement+Learning). You et al.. *AAAI*, 2023.
+- [iGibson 2.0: Object-Centric Simulation for Robot Learning of Everyday Household Tasks](https://scholar.google.com/scholar?q=iGibson+2.0%3A+Object-Centric+Simulation+for+Robot+Learning+of+Everyday+Household+Tasks). Li et al.. *CoRL*, 2022.
+- [MetaDrive: Composing Diverse Driving Scenarios for Generalizable Reinforcement Learning](https://scholar.google.com/scholar?q=MetaDrive%3A+Composing+Diverse+Driving+Scenarios+for+Generalizable+Reinforcement+Learning). Li et al.. *IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)*, 2022.
+- [Robust Reinforcement Learning as a Stackelberg Game via Adaptively-Regularized Adversarial Training](https://scholar.google.com/scholar?q=Robust+Reinforcement+Learning+as+a+Stackelberg+Game+via+Adaptively-Regularized+Adversarial+Training). Huang et al.. *IJCAI*, 2022.
+- [CommonRoad-RL: A Configurable Reinforcement Learning Environment for Motion Planning of Autonomous Vehicles](https://scholar.google.com/scholar?q=CommonRoad-RL%3A+A+Configurable+Reinforcement+Learning+Environment+for+Motion+Planning+of+Autonomous+Vehicles). Wang, Krasowski, Althoff. *ITSC*, 2021.
+- [Service Robots in the Healthcare Sector](https://scholar.google.com/scholar?q=Service+Robots+in+the+Healthcare+Sector). Holland et al.. *Robotics*, 2021.
+- [Healthcare Robots to Combat COVID-19](https://scholar.google.com/scholar?q=Healthcare+Robots+to+Combat+COVID-19). Kaiser et al.. *COVID-19*, 2020.
+- [SUMMIT: A Simulator for Urban Driving in Massive Mixed Traffic](https://scholar.google.com/scholar?q=SUMMIT%3A+A+Simulator+for+Urban+Driving+in+Massive+Mixed+Traffic). Cai et al.. *ICRA*, 2020.
+- [Toward Evaluating Robustness of Deep Reinforcement Learning with Continuous Control](https://scholar.google.com/scholar?q=Toward+Evaluating+Robustness+of+Deep+Reinforcement+Learning+with+Continuous+Control). Weng et al.. *ICLR*, 2020.
+- [Your Robot Therapist Will See You Now: Ethical Implications of Embodied Artificial Intelligence in Psychiatry, Psychology, and Psychotherapy](https://scholar.google.com/scholar?q=Your+Robot+Therapist+Will+See+You+Now%3A+Ethical+Implications+of+Embodied+Artificial+Intelligence+in+Psychiatry%2C+Psychology%2C+and+Psychotherapy). Fiske, Henningsen, Buyx. *Journal of Medical Internet Research (JMIR)*, 2019.
+- [An Environment for Autonomous Driving Decision-Making](https://scholar.google.com/scholar?q=An+Environment+for+Autonomous+Driving+Decision-Making). Leurent. 2018.
+- [Microscopic Traffic Simulation Using SUMO](https://scholar.google.com/scholar?q=Microscopic+Traffic+Simulation+Using+SUMO). Lopez et al.. *ITSC*, 2018.
+- [Vision-and-Language Navigation: Interpreting Visually-Grounded Navigation Instructions in Real Environments](https://scholar.google.com/scholar?q=Vision-and-Language+Navigation%3A+Interpreting+Visually-Grounded+Navigation+Instructions+in+Real+Environments). Anderson et al.. *CVPR*, 2018.
+- [VizWiz Grand Challenge: Answering Visual Questions from Blind People](https://scholar.google.com/scholar?q=VizWiz+Grand+Challenge%3A+Answering+Visual+Questions+from+Blind+People). Gurari et al.. *CVPR*, 2018.
+- [CARLA: An Open Urban Driving Simulator](https://scholar.google.com/scholar?q=CARLA%3A+An+Open+Urban+Driving+Simulator). Dosovitskiy et al.. *CoRL*, 2017.
+- [PyBullet, a Python Module for Physics Simulation for Games, Robotics and Machine Learning](https://scholar.google.com/scholar?q=PyBullet%2C+a+Python+Module+for+Physics+Simulation+for+Games%2C+Robotics+and+Machine+Learning). Coumans, Bai. *http://pybullet.org*, 2016--2021.
+- [MuJoCo: A Physics Engine for Model-Based Control](https://scholar.google.com/scholar?q=MuJoCo%3A+A+Physics+Engine+for+Model-Based+Control). Todorov, Erez, Tassa. *IROS*, 2012.
+- [Design and Use Paradigms for Gazebo, an Open-Source Multi-Robot Simulator](https://scholar.google.com/scholar?q=Design+and+Use+Paradigms+for+Gazebo%2C+an+Open-Source+Multi-Robot+Simulator). Koenig, Howard. *IROS*, 2004.
+- [Computing Machinery and Intelligence](https://scholar.google.com/scholar?q=Computing+Machinery+and+Intelligence). Turing. *Parsing the Turing test*, 1950.
+- [Isaac Sim](https://scholar.google.com/scholar?q=Isaac+Sim). NVIDIA.
 
 </details>
 

@@ -1,6 +1,6 @@
 # Safety in Embodied AI: A Survey of Risks, Attacks, and Defenses
 
-> A comprehensive survey covering 500+ papers on safety across the full embodied AI pipeline, organized by a 5-layer taxonomy.
+> A comprehensive survey covering 533 papers on safety across the full embodied AI pipeline, organized by a 5-layer taxonomy.
 
 This repository accompanies the survey paper "Safety in Embodied AI: A Survey of Risks, Attacks, and Defenses" (2026).
 It provides the first unified safety framework for embodied AI systems, mapping attacks and defenses across perception, cognition, planning, interaction, and agentic systems.
@@ -13,11 +13,12 @@ Paper: https://arxiv.org/abs/2605.02900
 
 | Layer                    | Subcategories                                                         | Papers |
 | ------------------------ | --------------------------------------------------------------------- | -----: |
-| Perception               | Visual, Auditory, Spatial, Motion, Cross-Modal                        |    192 |
-| Cognition                | Instruction Understanding, World Model, Reasoning                     |     38 |
-| Planning                 | Task Planning, Trajectory Planning, Multi-Agent Planning              |     59 |
-| Action and Interaction   | Robot Control, Human-Agent Interaction, Multi-Agent Collaboration     |    105 |
-| Agentic System           | Tool Use and Skill, Memory, Self-Evolving, Cascading Risks            |     87 |
+| Perception               | Visual, Auditory, Spatial, Motion, Cross-Modal                        |    191 |
+| Cognition                | Instruction Understanding, World Model, Reasoning                     |     28 |
+| Planning                 | Task Planning, Trajectory Planning, Multi-Agent Planning              |     57 |
+| Action and Interaction   | Robot Control, Human-Agent Interaction, Multi-Agent Collaboration     |     96 |
+| Agentic System           | Tool Use and Skill, Memory, Self-Evolving, Cascading Risks            |     66 |
+| Other Related Works      | Background models, datasets, simulators, benchmarks, related surveys  |    104 |
 
 ## Core Insight
 
