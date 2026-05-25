@@ -83,8 +83,8 @@ authors:
 - family-names: "Jiang"
   given-names: "Yu-Gang"
 title: "Safety in Embodied AI: A Survey of Risks, Attacks, and Defenses"
-version: 1.0.0
-date-released: "2026-03-27"
+version: 2.0.0
+date-released: "2026-05-24"
 url: "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety"
 preferred-citation:
     type: article
