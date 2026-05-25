@@ -133,7 +133,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 <details open>
 <summary>👁️ <b>Perception</b> (191 papers)</summary>
 
-<details>
+<details open>
 <summary>Visual Perception (56)</summary>
 
 - [Physical Adversarial Clothing Evades Visible-Thermal Detectors via Non-Overlapping RGB-T Pattern](https://arxiv.org/abs/2605.04675). Zhu et al.. *arXiv 2605.04675*, 2026.
@@ -195,7 +195,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 
 </details>
 
-<details>
+<details open>
 <summary>Auditory Perception (21)</summary>
 
 - [Watch Your Speed: Injecting Malicious Voice Commands via Time-Scale Modification](https://scholar.google.com/scholar?q=Watch+your+speed%3A+Injecting+malicious+voice+commands+via+time-scale+modification). Ji et al.. *IEEE Transactions on Information Forensics and Security (TIFS)*, 2024.
@@ -222,7 +222,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 
 </details>
 
-<details>
+<details open>
 <summary>Spatial Perception (59)</summary>
 
 - [Semantically Safe Robot Manipulation: From Semantic Scene Understanding to Motion Safeguards](https://arxiv.org/abs/2410.15185). Brunke et al.. *IEEE Robotics and Automation Letters (RA-L)*, 2025.
@@ -287,7 +287,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 
 </details>
 
-<details>
+<details open>
 <summary>Motion Perception (48)</summary>
 
 - [Safety Interventions against Adversarial Patches in an Open-Source Driver Assistance System](https://arxiv.org/abs/2504.18990). Chen et al.. *DSN*, 2025.
@@ -341,7 +341,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 
 </details>
 
-<details>
+<details open>
 <summary>Cross-Modal Perception (7)</summary>
 
 - [Temporal Misalignment Attacks against Multimodal Perception in Autonomous Driving](https://arxiv.org/abs/2507.09095). Shahriar, Md Hasan et al.. *arXiv 2507.09095*, 2025.
@@ -361,7 +361,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 <details open>
 <summary>🧠 <b>Cognition</b> (28 papers)</summary>
 
-<details>
+<details open>
 <summary>Instruction Understanding (13)</summary>
 
 - [Semantic Denial of Service in LLM-Controlled Robots](https://arxiv.org/abs/2604.24790). Steinberg, Gal. *arXiv 2604.24790*, 2026.
@@ -380,7 +380,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 
 </details>
 
-<details>
+<details open>
 <summary>World Model (12)</summary>
 
 - [Safety, Security, and Cognitive Risks in World Models](https://arxiv.org/abs/2604.01346). Parmar. *arXiv 2604.01346*, 2026.
@@ -398,7 +398,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 
 </details>
 
-<details>
+<details open>
 <summary>Reasoning (3)</summary>
 
 - [HEAL: An Empirical Study on Hallucinations in Embodied Agents Driven by Large Language Models](https://arxiv.org/abs/2506.15065). Chakraborty et al.. *Findings of the Association for Computational Linguistics: EMNLP*, 2025.
@@ -414,7 +414,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 <details open>
 <summary>🗺️ <b>Planning</b> (57 papers)</summary>
 
-<details>
+<details open>
 <summary>Task Planning (20)</summary>
 
 - [Safety in Vision-Language-Action Models: A Survey](https://arxiv.org/abs/2604.23775). Li et al.. *arXiv 2604.23775*, 2026.
@@ -440,7 +440,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 
 </details>
 
-<details>
+<details open>
 <summary>Trajectory Planning (24)</summary>
 
 - [SafeBench: A Benchmarking Platform for Safety Evaluation of Autonomous Vehicles](https://arxiv.org/abs/2206.09682). Xu et al.. *NeurIPS*, 2022.
@@ -470,7 +470,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 
 </details>
 
-<details>
+<details open>
 <summary>Multi-Agent Planning (13)</summary>
 
 - [RoboRebound: Multi-Robot System Defense with Bounded-Time Interaction](https://scholar.google.com/scholar?q=RoboRebound). Gandhi et al.. *Proceedings of the European Conference on Computer Systems (EuroSys)*, 2025.
@@ -496,7 +496,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 <details open>
 <summary>🤖 <b>Action and Interaction</b> (96 papers)</summary>
 
-<details>
+<details open>
 <summary>Robot Control (81)</summary>
 
 - [RedVLA: Physical Red Teaming of Vision-Language-Action Models](https://arxiv.org/abs/2604.22591). Zhang et al.. *arXiv 2604.22591*, 2026.
@@ -583,7 +583,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 
 </details>
 
-<details>
+<details open>
 <summary>Human-Agent Interaction (12)</summary>
 
 - [Biomimetic Approach to Designing Trust-Based Robot-to-Human Object Handover in a Collaborative Assembly Task](https://scholar.google.com/scholar?q=Biomimetic+Approach+to+Designing+Trust-Based+Robot-to-Human+Object+Handover+in+a+Collaborative+Assembly+Task). Rahman, S. et al.. *Robotics*, 2025.
@@ -601,7 +601,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 
 </details>
 
-<details>
+<details open>
 <summary>Multi-Agent Collaboration (3)</summary>
 
 - [When Autonomy Goes Rogue: Preparing for Risks of Multi-Agent Collusion in Social Systems](https://arxiv.org/abs/2507.14660). Ren et al.. *arXiv 2507.14660*, 2025.
@@ -617,7 +617,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 <details open>
 <summary>⚡ <b>Agentic</b> (66 papers)</summary>
 
-<details>
+<details open>
 <summary>Tool Use and Skill (14)</summary>
 
 - [DecodingTrust-Agent Platform (DTap): A Controllable and Interactive Red-Teaming Platform for AI Agents](https://arxiv.org/abs/2605.04808). Chen et al.. *arXiv 2605.04808*, 2026.
@@ -637,7 +637,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 
 </details>
 
-<details>
+<details open>
 <summary>Memory (14)</summary>
 
 - [SafeHarbor: Hierarchical Memory-Augmented Guardrail for LLM Agent Safety](https://arxiv.org/abs/2605.05704). Liu et al.. *ICML*, 2026.
@@ -657,7 +657,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 
 </details>
 
-<details>
+<details open>
 <summary>Self-Evolving (11)</summary>
 
 - [A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems](https://arxiv.org/abs/2508.07407). Fang et al.. *arXiv 2508.07407*, 2025.
@@ -674,7 +674,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 
 </details>
 
-<details>
+<details open>
 <summary>Cascading Risks (27)</summary>
 
 - [Position: Embodied AI Requires a Privacy-Utility Trade-off](https://arxiv.org/abs/2605.05017). Fan et al.. *arXiv 2605.05017*, 2026.
