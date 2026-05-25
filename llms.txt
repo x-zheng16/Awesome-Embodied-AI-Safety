@@ -13,12 +13,12 @@ Paper: https://arxiv.org/abs/2605.02900
 
 | Layer                    | Subcategories                                                         | Papers |
 | ------------------------ | --------------------------------------------------------------------- | -----: |
-| Perception               | Visual, Auditory, Spatial, Motion, Cross-Modal                        |    194 |
-| Cognition                | Instruction Understanding, World Model, Reasoning                     |     35 |
-| Planning                 | Task Planning, Trajectory Planning, Multi-Agent Planning              |     60 |
-| Action and Interaction   | Robot Control, Human-Agent Interaction, Multi-Agent Collaboration     |    108 |
-| Agentic System           | Tool Use and Skill, Memory, Self-Evolving, Cascading Risks            |     74 |
-| Other Related Works      | Background models, datasets, simulators, benchmarks, related surveys  |     71 |
+| Perception               | Visual, Auditory, Spatial, Motion, Cross-Modal                        |    195 |
+| Cognition                | Instruction Understanding, World Model, Reasoning                     |     37 |
+| Planning                 | Task Planning, Trajectory Planning, Multi-Agent Planning              |     81 |
+| Action and Interaction   | Robot Control, Human-Agent Interaction, Multi-Agent Collaboration     |    109 |
+| Agentic System           | Tool Use and Skill, Memory, Self-Evolving, Cascading Risks            |     91 |
+| Other Related Works      | Background models, datasets, simulators, benchmarks, related surveys  |     29 |
 
 ## Core Insight
 
