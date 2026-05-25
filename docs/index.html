@@ -157,8 +157,8 @@
     /* NAV: glass blur, fixed */
     .nav-blur {
       background: rgba(250, 251, 254, 0.82);
-      backdrop-filter: blur(18px) saturate(1.4);
-      -webkit-backdrop-filter: blur(18px) saturate(1.4);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
     .dark .nav-blur { background: rgba(40, 44, 52, 0.82); }
 
@@ -209,10 +209,9 @@
     }
     .dark .hero-grid {
       background:
-        radial-gradient(ellipse at 50% 30%, rgba(var(--accent-rgb), 0.10) 0%, transparent 55%),
         linear-gradient(rgba(var(--accent-rgb), 0.04) 1px, transparent 1px),
         linear-gradient(90deg, rgba(var(--accent-rgb), 0.04) 1px, transparent 1px);
-      background-size: 100% 100%, 48px 48px, 48px 48px;
+      background-size: 48px 48px, 48px 48px;
     }
 
     .hero-banner-wrap { position: relative; overflow: hidden; max-height: 280px; }
