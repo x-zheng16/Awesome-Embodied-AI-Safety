@@ -940,6 +940,7 @@
         <input id="paperSearch" class="search-input" type="search" placeholder="Search title, author, venue, year..." aria-label="Search papers" autocomplete="off">
       </div>
       <span class="search-stats" id="searchStats">542 papers</span>
+      <button id="toggleAll" class="gh-star-btn" type="button" style="cursor:pointer;">Collapse all</button>
     </div>
 
     <div class="filter-pills" role="tablist" aria-label="Filter by layer">
@@ -969,7 +970,7 @@
         <span class="layer-cnt">191 papers</span>
       </summary>
       <div class="layer-body">
-        <details class="cat-block">
+        <details class="cat-block" open>
           <summary class="cat-summary">Visual Perception <span class="cat-cnt">(56)</span></summary>
           <ul class="paper-list">
             <li><a href="https://arxiv.org/abs/2605.04675" target="_blank" rel="noopener">Physical Adversarial Clothing Evades Visible-Thermal Detectors via Non-Overlapping RGB-T Pattern</a>. Zhu et al.. <em>arXiv 2605.04675</em>, 2026.</li>
@@ -1030,7 +1031,7 @@
             <li><a href="https://arxiv.org/abs/1708.06939" target="_blank" rel="noopener">Is Deep Learning Safe for Robot Vision? Adversarial Examples Against the iCub Humanoid</a>. Melis et al.. <em>ICCV</em>, 2017.</li>
           </ul>
         </details>
-        <details class="cat-block">
+        <details class="cat-block" open>
           <summary class="cat-summary">Auditory Perception <span class="cat-cnt">(21)</span></summary>
           <ul class="paper-list">
             <li><a href="https://scholar.google.com/scholar?q=Watch+your+speed%3A+Injecting+malicious+voice+commands+via+time-scale+modification" target="_blank" rel="noopener">Watch Your Speed: Injecting Malicious Voice Commands via Time-Scale Modification</a>. Ji et al.. <em>IEEE Transactions on Information Forensics and Security (TIFS)</em>, 2024.</li>
@@ -1056,7 +1057,7 @@
             <li><a href="https://scholar.google.com/scholar?q=Cocaine+noodles%3A+exploiting+the+gap+between+human+and+machine+speech+recognition" target="_blank" rel="noopener">Cocaine Noodles: Exploiting the Gap between Human and Machine Speech Recognition</a>. Vaidya et al.. <em>WOOT</em>, 2015.</li>
           </ul>
         </details>
-        <details class="cat-block">
+        <details class="cat-block" open>
           <summary class="cat-summary">Spatial Perception <span class="cat-cnt">(59)</span></summary>
           <ul class="paper-list">
             <li><a href="https://arxiv.org/abs/2410.15185" target="_blank" rel="noopener">Semantically Safe Robot Manipulation: From Semantic Scene Understanding to Motion Safeguards</a>. Brunke et al.. <em>IEEE Robotics and Automation Letters (RA-L)</em>, 2025.</li>
@@ -1120,7 +1121,7 @@
             <li><a href="https://arxiv.org/abs/2002.11881" target="_blank" rel="noopener">Defense-PointNet: Protecting PointNet Against Adversarial Attacks</a>. Zhang et al.. <em>Big Data</em>, 2019.</li>
           </ul>
         </details>
-        <details class="cat-block">
+        <details class="cat-block" open>
           <summary class="cat-summary">Motion Perception <span class="cat-cnt">(48)</span></summary>
           <ul class="paper-list">
             <li><a href="https://arxiv.org/abs/2504.18990" target="_blank" rel="noopener">Safety Interventions against Adversarial Patches in an Open-Source Driver Assistance System</a>. Chen et al.. <em>DSN</em>, 2025.</li>
@@ -1173,7 +1174,7 @@
             <li><a href="https://scholar.google.com/scholar?q=Anti-spoofing+and+open+GNSS+signal+authentication+with+signal+authentication+sequences" target="_blank" rel="noopener">Anti-spoofing and open GNSS signal authentication with signal authentication sequences</a>. Pozzobon et al.. <em>NAVITEC</em>, 2010.</li>
           </ul>
         </details>
-        <details class="cat-block">
+        <details class="cat-block" open>
           <summary class="cat-summary">Cross-Modal Perception <span class="cat-cnt">(7)</span></summary>
           <ul class="paper-list">
             <li><a href="https://arxiv.org/abs/2507.09095" target="_blank" rel="noopener">Temporal Misalignment Attacks against Multimodal Perception in Autonomous Driving</a>. Shahriar, Md Hasan et al.. <em>arXiv 2507.09095</em>, 2025.</li>
@@ -1187,14 +1188,14 @@
         </details>
       </div>
     </details>
-    <details class="layer-block" id="layer-cognition">
+    <details class="layer-block" open id="layer-cognition">
       <summary class="layer-summary">
         <span class="layer-dot" style="background:#7c3aed"></span>
         <span class="layer-label">Cognition</span>
         <span class="layer-cnt">28 papers</span>
       </summary>
       <div class="layer-body">
-        <details class="cat-block">
+        <details class="cat-block" open>
           <summary class="cat-summary">Instruction Understanding <span class="cat-cnt">(13)</span></summary>
           <ul class="paper-list">
             <li><a href="https://arxiv.org/abs/2604.24790" target="_blank" rel="noopener">Semantic Denial of Service in LLM-Controlled Robots</a>. Steinberg, Gal. <em>arXiv 2604.24790</em>, 2026.</li>
@@ -1212,7 +1213,7 @@
             <li><a href="https://arxiv.org/abs/2210.07474" target="_blank" rel="noopener">SQA3D: Situated Question Answering in 3D Scenes</a>. Ma et al.. <em>ICLR</em>, 2023.</li>
           </ul>
         </details>
-        <details class="cat-block">
+        <details class="cat-block" open>
           <summary class="cat-summary">World Model <span class="cat-cnt">(12)</span></summary>
           <ul class="paper-list">
             <li><a href="https://arxiv.org/abs/2604.01346" target="_blank" rel="noopener">Safety, Security, and Cognitive Risks in World Models</a>. Parmar. <em>arXiv 2604.01346</em>, 2026.</li>
@@ -1229,7 +1230,7 @@
             <li><a href="https://arxiv.org/abs/2511.11520" target="_blank" rel="noopener">Scalable Policy Evaluation with Video World Models</a>. Tseng, Wei-Cheng et al.. <em>arXiv 2511.11520</em>, 2024.</li>
           </ul>
         </details>
-        <details class="cat-block">
+        <details class="cat-block" open>
           <summary class="cat-summary">Reasoning <span class="cat-cnt">(3)</span></summary>
           <ul class="paper-list">
             <li><a href="https://arxiv.org/abs/2506.15065" target="_blank" rel="noopener">HEAL: An Empirical Study on Hallucinations in Embodied Agents Driven by Large Language Models</a>. Chakraborty et al.. <em>Findings of the Association for Computational Linguistics: EMNLP</em>, 2025.</li>
@@ -1239,14 +1240,14 @@
         </details>
       </div>
     </details>
-    <details class="layer-block" id="layer-planning">
+    <details class="layer-block" open id="layer-planning">
       <summary class="layer-summary">
         <span class="layer-dot" style="background:#b45309"></span>
         <span class="layer-label">Planning</span>
         <span class="layer-cnt">57 papers</span>
       </summary>
       <div class="layer-body">
-        <details class="cat-block">
+        <details class="cat-block" open>
           <summary class="cat-summary">Task Planning <span class="cat-cnt">(20)</span></summary>
           <ul class="paper-list">
             <li><a href="https://arxiv.org/abs/2604.23775" target="_blank" rel="noopener">Safety in Vision-Language-Action Models: A Survey</a>. Li et al.. <em>arXiv 2604.23775</em>, 2026.</li>
@@ -1271,7 +1272,7 @@
             <li><a href="https://arxiv.org/abs/2011.00095" target="_blank" rel="noopener">Adversarial Attacks on Optimization based Planners</a>. Vemprala, Kapoor. <em>ICRA</em>, 2021.</li>
           </ul>
         </details>
-        <details class="cat-block">
+        <details class="cat-block" open>
           <summary class="cat-summary">Trajectory Planning <span class="cat-cnt">(24)</span></summary>
           <ul class="paper-list">
             <li><a href="https://arxiv.org/abs/2206.09682" target="_blank" rel="noopener">SafeBench: A Benchmarking Platform for Safety Evaluation of Autonomous Vehicles</a>. Xu et al.. <em>NeurIPS</em>, 2022.</li>
@@ -1300,7 +1301,7 @@
             <li><a href="https://arxiv.org/abs/1906.02859" target="_blank" rel="noopener">Risky Action Recognition in Lane Change Video Clips using Deep Spatiotemporal Networks with Segmentation Mask Transfer</a>. Yurtsever et al.. <em>ITSC</em>, 2019.</li>
           </ul>
         </details>
-        <details class="cat-block">
+        <details class="cat-block" open>
           <summary class="cat-summary">Multi-Agent Planning <span class="cat-cnt">(13)</span></summary>
           <ul class="paper-list">
             <li><a href="https://scholar.google.com/scholar?q=RoboRebound" target="_blank" rel="noopener">RoboRebound: Multi-Robot System Defense with Bounded-Time Interaction</a>. Gandhi et al.. <em>Proceedings of the European Conference on Computer Systems (EuroSys)</em>, 2025.</li>
@@ -1320,14 +1321,14 @@
         </details>
       </div>
     </details>
-    <details class="layer-block" id="layer-action">
+    <details class="layer-block" open id="layer-action">
       <summary class="layer-summary">
         <span class="layer-dot" style="background:#0f766e"></span>
         <span class="layer-label">Action and Interaction</span>
         <span class="layer-cnt">96 papers</span>
       </summary>
       <div class="layer-body">
-        <details class="cat-block">
+        <details class="cat-block" open>
           <summary class="cat-summary">Robot Control <span class="cat-cnt">(81)</span></summary>
           <ul class="paper-list">
             <li><a href="https://arxiv.org/abs/2604.22591" target="_blank" rel="noopener">RedVLA: Physical Red Teaming of Vision-Language-Action Models</a>. Zhang et al.. <em>arXiv 2604.22591</em>, 2026.</li>
@@ -1413,7 +1414,7 @@
             <li><a href="https://arxiv.org/abs/1610.01283" target="_blank" rel="noopener">EPOpt: Learning Robust Neural Network Policies Using Model Ensembles</a>. Rajeswaran et al.. <em>ICLR</em>, 2017.</li>
           </ul>
         </details>
-        <details class="cat-block">
+        <details class="cat-block" open>
           <summary class="cat-summary">Human-Agent Interaction <span class="cat-cnt">(12)</span></summary>
           <ul class="paper-list">
             <li><a href="https://scholar.google.com/scholar?q=Biomimetic+Approach+to+Designing+Trust-Based+Robot-to-Human+Object+Handover+in+a+Collaborative+Assembly+Task" target="_blank" rel="noopener">Biomimetic Approach to Designing Trust-Based Robot-to-Human Object Handover in a Collaborative Assembly Task</a>. Rahman, S. et al.. <em>Robotics</em>, 2025.</li>
@@ -1430,7 +1431,7 @@
             <li><a href="https://arxiv.org/abs/2105.10045" target="_blank" rel="noopener">A Review on Trust in Human-Robot Interaction</a>. Khavas, Ahmadi, Abdi. <em>arXiv 2105.10045</em>, 2021.</li>
           </ul>
         </details>
-        <details class="cat-block">
+        <details class="cat-block" open>
           <summary class="cat-summary">Multi-Agent Collaboration <span class="cat-cnt">(3)</span></summary>
           <ul class="paper-list">
             <li><a href="https://arxiv.org/abs/2507.14660" target="_blank" rel="noopener">When Autonomy Goes Rogue: Preparing for Risks of Multi-Agent Collusion in Social Systems</a>. Ren et al.. <em>arXiv 2507.14660</em>, 2025.</li>
@@ -1440,14 +1441,14 @@
         </details>
       </div>
     </details>
-    <details class="layer-block" id="layer-agentic">
+    <details class="layer-block" open id="layer-agentic">
       <summary class="layer-summary">
         <span class="layer-dot" style="background:#be123c"></span>
         <span class="layer-label">Agentic</span>
         <span class="layer-cnt">66 papers</span>
       </summary>
       <div class="layer-body">
-        <details class="cat-block">
+        <details class="cat-block" open>
           <summary class="cat-summary">Tool Use and Skill <span class="cat-cnt">(14)</span></summary>
           <ul class="paper-list">
             <li><a href="https://arxiv.org/abs/2605.04808" target="_blank" rel="noopener">DecodingTrust-Agent Platform (DTap): A Controllable and Interactive Red-Teaming Platform for AI Agents</a>. Chen et al.. <em>arXiv 2605.04808</em>, 2026.</li>
@@ -1466,7 +1467,7 @@
             <li><a href="https://arxiv.org/abs/2402.16117" target="_blank" rel="noopener">RoboCodeX: Multimodal Code Generation for Robotic Behavior Synthesis</a>. Mu, Yao et al.. <em>ICML</em>, 2024.</li>
           </ul>
         </details>
-        <details class="cat-block">
+        <details class="cat-block" open>
           <summary class="cat-summary">Memory <span class="cat-cnt">(14)</span></summary>
           <ul class="paper-list">
             <li><a href="https://arxiv.org/abs/2605.05704" target="_blank" rel="noopener">SafeHarbor: Hierarchical Memory-Augmented Guardrail for LLM Agent Safety</a>. Liu et al.. <em>ICML</em>, 2026.</li>
@@ -1485,7 +1486,7 @@
             <li><a href="https://arxiv.org/abs/2407.12784" target="_blank" rel="noopener">AgentPoison: Red-teaming LLM Agents via Poisoning Memory or Knowledge Bases</a>. Chen et al.. <em>NeurIPS</em>, 2024.</li>
           </ul>
         </details>
-        <details class="cat-block">
+        <details class="cat-block" open>
           <summary class="cat-summary">Self-Evolving <span class="cat-cnt">(11)</span></summary>
           <ul class="paper-list">
             <li><a href="https://arxiv.org/abs/2508.07407" target="_blank" rel="noopener">A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems</a>. Fang et al.. <em>arXiv 2508.07407</em>, 2025.</li>
@@ -1501,7 +1502,7 @@
             <li><a href="https://arxiv.org/abs/2412.14470" target="_blank" rel="noopener">Agent-SafetyBench: Evaluating the Safety of LLM Agents</a>. Zhang et al.. <em>arXiv 2412.14470</em>, 2024.</li>
           </ul>
         </details>
-        <details class="cat-block">
+        <details class="cat-block" open>
           <summary class="cat-summary">Cascading Risks <span class="cat-cnt">(27)</span></summary>
           <ul class="paper-list">
             <li><a href="https://arxiv.org/abs/2605.05017" target="_blank" rel="noopener">Position: Embodied AI Requires a Privacy-Utility Trade-off</a>. Fan et al.. <em>arXiv 2605.05017</em>, 2026.</li>
@@ -1535,14 +1536,14 @@
         </details>
       </div>
     </details>
-    <details class="layer-block" id="layer-orw">
+    <details class="layer-block" open id="layer-orw">
       <summary class="layer-summary">
         <span class="layer-dot" style="background:#64748b"></span>
         <span class="layer-label">Other Related Works</span>
         <span class="layer-cnt">104 papers</span>
       </summary>
       <div class="layer-body">
-        <details class="cat-block">
+        <details class="cat-block" open>
           <summary class="cat-summary">Other Related Works <span class="cat-cnt">(104)</span></summary>
           <ul class="paper-list">
             <li><a href="https://arxiv.org/abs/2601.10527" target="_blank" rel="noopener">A Safety Report on GPT-5.2, Gemini 3 Pro, Qwen3-VL, Grok 4.1 Fast, Nano Banana Pro, and Seedream 4.5</a>. Ma et al.. <em>arXiv 2601.10527</em>, 2026.</li>
@@ -1970,6 +1971,21 @@
       });
     }, { threshold: 0.08 });
     document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  })();
+
+  // Expand all / collapse all accordions
+  (function () {
+    var btn = document.getElementById('toggleAll');
+    if (!btn) return;
+    var blocks = document.querySelectorAll('#papers details.layer-block, #papers details.cat-block');
+    function anyOpen() { return Array.prototype.some.call(blocks, function (d) { return d.open; }); }
+    function sync() { btn.textContent = anyOpen() ? 'Collapse all' : 'Expand all'; }
+    btn.addEventListener('click', function () {
+      var open = !anyOpen();
+      blocks.forEach(function (d) { d.open = open; });
+      sync();
+    });
+    sync();
   })();
 </script>
 
