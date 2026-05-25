@@ -213,8 +213,8 @@
     }
 
     .hero-banner-wrap { position: relative; overflow: hidden; max-height: 280px; }
-    .hero-banner { display: block; width: 100%; max-height: 280px; object-fit: cover; opacity: 0.55; }
-    .dark .hero-banner { opacity: 0.42; }
+    .hero-banner { display: block; width: 100%; max-height: 280px; object-fit: cover; opacity: 1; }
+    .dark .hero-banner { opacity: 1; }
     .hero-banner-wrap::after {
       content: ''; position: absolute; inset: 0;
       background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--bg) 95%);
@@ -687,7 +687,7 @@
     @media (prefers-reduced-motion: reduce) {
       .reveal, body { transition: none !important; }
       .reveal { opacity: 1; transform: none; }
-      .hero-banner { opacity: 0.55 !important; }
+      .hero-banner { opacity: 1 !important; }
     }
   </style>
 </head>
@@ -733,7 +733,6 @@
     <h1 class="hero-title mb-5">Safety in Embodied AI<br><span style="color: var(--text-muted); font-weight: 500;">A Survey of Risks, Attacks, and Defenses</span></h1>
 
     <div class="flex flex-wrap justify-center gap-2 mb-6">
-      <a href="https://arxiv.org/abs/2605.02900" target="_blank" rel="noopener" class="badge-pill bp-accent">Paper PDF</a>
       <span class="badge-pill bp-muted">CC BY 4.0</span>
       <span class="badge-pill bp-muted">Awesome</span>
       <span class="badge-pill bp-muted">500+ Papers</span>
@@ -2012,6 +2011,10 @@
     });
     sync();
   })();
+
+  // Always open at the top, not a restored scroll position
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.addEventListener('load', function () { if (!location.hash) window.scrollTo(0, 0); });
 </script>
 
 </body>
