@@ -619,6 +619,20 @@
       color: var(--text);
     }
 
+    /* RECOMMENDED READING */
+    .reading-lead { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.6rem; max-width: 700px; }
+    .reading-list { list-style: none; padding: 0; margin: 0; }
+    .reading-list li {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.92rem; line-height: 1.6; color: var(--text);
+    }
+    .reading-list li:last-child { border-bottom: none; }
+    .reading-list a { color: var(--accent); text-decoration: none; font-weight: 500; }
+    .reading-list a:hover { text-decoration: underline; }
+    .reading-sep { color: var(--text-muted); padding: 0 0.4rem; }
+    .reading-desc { color: var(--text-muted); }
+
     /* CITATION */
     .cite-lead { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 1rem; }
     .bib-wrap {
@@ -705,6 +719,7 @@
         <a href="#contribute" class="nav-link">Contribute</a>
         <a href="#news"       class="nav-link">News</a>
         <a href="#citation"   class="nav-link">Cite</a>
+        <a href="#reading"    class="nav-link">Reading</a>
       </div>
       <a href="https://github.com/x-zheng16/Awesome-Embodied-AI-Safety" target="_blank" rel="noopener" class="gh-star-btn" aria-label="GitHub repository">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.55v-2.1c-3.21.7-3.89-1.39-3.89-1.39-.53-1.34-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.18-1.18 3.18-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.71 5.4-5.28 5.69.41.35.78 1.05.78 2.12v3.14c0 .31.21.66.79.55A11.5 11.5 0 0 0 12 .5z"/></svg>
@@ -1715,6 +1730,20 @@
     <h2 class="sh">News</h2>
     <ul class="news-list">
       <li class="ni">
+        <span class="ndate">2026/05/25</span>
+        <span class="ntext">
+          Featured by Chinese AI &amp; tech media:
+          <a href="https://mp.weixin.qq.com/s/N_F0JG_-0R6tiI6b5-HFWg">机器之心</a>,
+          <a href="https://mp.weixin.qq.com/s/ysMbG6ryVpy5t6Ug6IMwpA">专知</a>,
+          <a href="https://mp.weixin.qq.com/s/oHa9LLTnKkvaDqkXVaP08g">机器学习算法与自然语言处理</a>,
+          <a href="https://mp.weixin.qq.com/s/lXkKpvotnsJNmAzUZloufw">AI与安全</a>,
+          <a href="https://mp.weixin.qq.com/s/z6dCPpK-9JOOJbZqsDR42A">AI思想会</a>,
+          <a href="https://mp.weixin.qq.com/s/5JFjNUHDSOnF7F6M3lWdzw">非具身不智能</a>,
+          <a href="https://mp.weixin.qq.com/s/i_5QV1T_Nh7I-gYnueGyMA">诺亚星辰</a>, and
+          <a href="https://www.xiaohongshu.com/discovery/item/69ff39f6000000001a03681e?xsec_token=CBI2FPaypbvuiLoumuwww7qzhVgtPFgtWVxoWRh5zCSmw%3D&amp;xsec_source=app_share">小红书</a>.
+        </span>
+      </li>
+      <li class="ni">
         <span class="ndate">2026/05/24</span>
         <span class="ntext">
           <a href="https://arxiv.org/abs/2605.02900">arXiv v2</a> released; integrated further
@@ -1816,6 +1845,19 @@
   <span class="k-field">url</span>     = {<span class="k-str">https://arxiv.org/abs/2605.02900</span>}
 }</pre>
     </div>
+  </div>
+</section>
+
+<!-- RECOMMENDED READING -->
+<section id="reading">
+  <div class="inner">
+    <h2 class="sh">Recommended Reading &amp; Viewing</h2>
+    <p class="reading-lead">Curated external resources on frontier AI safety beyond the surveyed papers:</p>
+    <ul class="reading-list">
+      <li>
+        <a href="https://metr.org/fsp" target="_blank" rel="noopener">Frontier AI Safety Policies</a><span class="reading-sep">&ndash;</span><span class="reading-desc">METR's resource on frontier AI developers' safety policies and commitments.</span>
+      </li>
+    </ul>
   </div>
 </section>
 
