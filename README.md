@@ -23,45 +23,45 @@
 <div align="center">
 
 <a href="#">Xiao Li</a><sup>1,&#42;</sup>,
-<a href="#">Xiang Zheng</a><sup>3,&#42;</sup>,
+<a href="#">Xiang Zheng</a><sup>4,&#42;</sup>,
 <a href="#">Yifeng Gao</a><sup>1</sup>,
-<a href="#">Xinyu Xia</a><sup>4</sup>,
+<a href="#">Xinyu Xia</a><sup>5</sup>,
 <a href="#">Yixu Wang</a><sup>1</sup>,
 <a href="#">Xin Wang</a><sup>1</sup>,
 <a href="#">Ye Sun</a><sup>1</sup>,
 <a href="#">Yunhan Zhao</a><sup>1</sup>,
-<a href="#">Ming Wen</a><sup>1,2</sup>,
+<a href="#">Ming Wen</a><sup>1,3</sup>,
 <a href="#">Jiayu Li</a><sup>1</sup>,
 <a href="#">Zixing Chen</a><sup>1</sup>,
-<a href="#">Xun Gong</a><sup>4</sup>,
-<a href="#">Yi Liu</a><sup>3</sup>,
-<a href="#">Yige Li</a><sup>5</sup>,
-<a href="#">Yutao Wu</a><sup>6</sup>,
-<a href="#">Cong Wang</a><sup>3</sup>,
-<a href="#">Jun Sun</a><sup>5</sup>,
-<a href="#">Yixin Cao</a><sup>1,2</sup>,
-<a href="#">Zhineng Chen</a><sup>1</sup>,
-<a href="#">Jingjing Chen</a><sup>1</sup>,
-<a href="#">Tao Gui</a><sup>1,2</sup>,
-<a href="#">Qi Zhang</a><sup>1</sup>,
-<a href="#">Zuxuan Wu</a><sup>1,2</sup>,
-<a href="#">Xipeng Qiu</a><sup>1,2</sup>,
-<a href="#">Xuanjing Huang</a><sup>1</sup>,
-<a href="#">Tiehua Zhang</a><sup>7</sup>,
-<a href="#">Zhipeng Wei</a><sup>9</sup>,
-<a href="#">Kun Wang</a><sup>10</sup>,
-<a href="#">Xinfeng Li</a><sup>10</sup>,
-<a href="#">Hanxun Huang</a><sup>12</sup>,
-<a href="#">Sarah Erfani</a><sup>12</sup>,
-<a href="#">James Bailey</a><sup>12</sup>,
-<a href="#">Jianping Wang</a><sup>3</sup>,
-<a href="#">Chaowei Xiao</a><sup>13</sup>,
-<a href="#">Ran He</a><sup>11</sup>,
-<a href="#">Bo Li</a><sup>8</sup>,
-<a href="#">Xingjun Ma</a><sup>1,2,&dagger;</sup>,
-<a href="#">Yu-Gang Jiang</a><sup>1,&dagger;</sup>
+<a href="#">Xun Gong</a><sup>5</sup>,
+<a href="#">Yi Liu</a><sup>4</sup>,
+<a href="#">Yige Li</a><sup>6</sup>,
+<a href="#">Yutao Wu</a><sup>7</sup>,
+<a href="#">Cong Wang</a><sup>4</sup>,
+<a href="#">Jun Sun</a><sup>6</sup>,
+<a href="#">Yixin Cao</a><sup>1,2,3</sup>,
+<a href="#">Zhineng Chen</a><sup>1,3</sup>,
+<a href="#">Jingjing Chen</a><sup>1,3</sup>,
+<a href="#">Tao Gui</a><sup>1,2,3</sup>,
+<a href="#">Qi Zhang</a><sup>1,3</sup>,
+<a href="#">Zuxuan Wu</a><sup>1,2,3</sup>,
+<a href="#">Xipeng Qiu</a><sup>1,2,3</sup>,
+<a href="#">Xuanjing Huang</a><sup>1,3</sup>,
+<a href="#">Tiehua Zhang</a><sup>8</sup>,
+<a href="#">Zhipeng Wei</a><sup>10</sup>,
+<a href="#">Kun Wang</a><sup>11</sup>,
+<a href="#">Xinfeng Li</a><sup>11</sup>,
+<a href="#">Hanxun Huang</a><sup>13</sup>,
+<a href="#">Sarah Erfani</a><sup>13</sup>,
+<a href="#">James Bailey</a><sup>13</sup>,
+<a href="#">Jianping Wang</a><sup>4</sup>,
+<a href="#">Chaowei Xiao</a><sup>14</sup>,
+<a href="#">Ran He</a><sup>12</sup>,
+<a href="#">Bo Li</a><sup>9</sup>,
+<a href="#">Xingjun Ma</a><sup>1,2,3,&dagger;</sup>,
+<a href="#">Yu-Gang Jiang</a><sup>1,3,&dagger;</sup>
 
-<sup>1</sup>Fudan University, <sup>2</sup>Shanghai Innovation Institute, <sup>3</sup>City University of Hong Kong, <sup>4</sup>Jilin University, <sup>5</sup>Singapore Management University, <sup>6</sup>Deakin University, <sup>7</sup>Tongji University, <sup>8</sup>UIUC, <sup>9</sup>UC Berkeley, <sup>10</sup>Nanyang Technological University, <sup>11</sup>Chinese Academy of Sciences, <sup>12</sup>The University of Melbourne, <sup>13</sup>Johns Hopkins University
+<sup>1</sup>Institute of Trustworthy Embodied AI, Fudan University, <sup>2</sup>Shanghai Innovation Institute, <sup>3</sup>Shanghai Key Laboratory of Multimodal Embodied AI, <sup>4</sup>City University of Hong Kong, <sup>5</sup>Jilin University, <sup>6</sup>Singapore Management University, <sup>7</sup>Deakin University, <sup>8</sup>Tongji University, <sup>9</sup>UIUC, <sup>10</sup>UC Berkeley, <sup>11</sup>Nanyang Technological University, <sup>12</sup>Chinese Academy of Sciences, <sup>13</sup>The University of Melbourne, <sup>14</sup>Johns Hopkins University
 
 <sup>&#42;</sup>Equal Contribution, <sup>&dagger;</sup>Corresponding Authors
 
@@ -426,10 +426,10 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 ---
 
 <details open>
-<summary>🗺️ <b>Planning</b> (81 papers)</summary>
+<summary>🗺️ <b>Planning</b> (82 papers)</summary>
 
 <details open>
-<summary>Task Planning (33)</summary>
+<summary>Task Planning (34)</summary>
 
 - [Safety in Vision-Language-Action Models: A Survey](https://arxiv.org/abs/2604.23775). Li et al.. *arXiv 2604.23775*, 2026.
 - [Using Large Language Models for Embodied Planning Introduces Systematic Safety Risks](https://arxiv.org/abs/2604.18463). Zhang et al.. *arXiv 2604.18463*, 2026.
@@ -465,6 +465,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 - [Habitat 3.0: A Co-Habitat for Humans, Avatars and Robots](https://arxiv.org/abs/2310.13724). Puig et al.. *arXiv 2310.13724*, 2023.
 - [Isaac Sim](https://scholar.google.com/scholar?q=Isaac+Sim). NVIDIA.
 - [Embodied Agent Interface: Benchmarking LLMs for Embodied Decision Making](https://scholar.google.com/scholar?q=Embodied+Agent+Interface%3A+Benchmarking+LLMs+for+Embodied+Decision+Making). Li et al.. *NeurIPS*, 2024.
+- [VestaBench: An Embodied Benchmark for Safe Long-Horizon Planning Under Multi-Constraint and Adversarial Settings](https://scholar.google.com/scholar?q=VestaBench%3A+An+Embodied+Benchmark+for+Safe+Long-Horizon+Planning). Sadhu, Chen, Pesaranghader. *EMNLP*, 2025.
 </details>
 
 <details open>
@@ -532,10 +533,10 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 ---
 
 <details open>
-<summary>🤖 <b>Action and Interaction</b> (109 papers)</summary>
+<summary>🤖 <b>Action and Interaction</b> (111 papers)</summary>
 
 <details open>
-<summary>Robot Control (94)</summary>
+<summary>Robot Control (96)</summary>
 
 - [RedVLA: Physical Red Teaming of Vision-Language-Action Models](https://arxiv.org/abs/2604.22591). Zhang et al.. *arXiv 2604.22591*, 2026.
 - [HazardArena: Evaluating Semantic Safety in Vision-Language-Action Models](https://arxiv.org/abs/2604.12447). Chen et al.. *arXiv 2604.12447*, 2026.
@@ -632,6 +633,8 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 - [Robust Reinforcement Learning as a Stackelberg Game via Adaptively-Regularized Adversarial Training](https://scholar.google.com/scholar?q=Robust+Reinforcement+Learning+as+a+Stackelberg+Game+via+Adaptively-Regularized+Adversarial+Training). Huang et al.. *IJCAI*, 2022.
 - [Toward Evaluating Robustness of Deep Reinforcement Learning with Continuous Control](https://scholar.google.com/scholar?q=Toward+Evaluating+Robustness+of+Deep+Reinforcement+Learning+with+Continuous+Control). Weng et al.. *ICLR*, 2020.
 - [Deep Reinforcement Learning in the Era of Foundation Models: A Survey](https://scholar.google.com/scholar?q=Deep+Reinforcement+Learning+in+the+Era+of+Foundation+Models%3A+A+Survey). Mienye, Esenogho, Modisane. *Computers*, 2026.
+- [Pre-VLA: Preemptive Runtime Verification for Reliable Vision-Language-Action and World-Model Rollouts](https://arxiv.org/abs/2605.22446). Sun et al.. *arXiv 2605.22446*, 2026.
+- [IS-Bench: Evaluating Interactive Safety of VLM-Driven Embodied Agents in Daily Household Tasks](https://arxiv.org/abs/2506.16402). Lu et al.. *arXiv 2506.16402*, 2025.
 </details>
 
 <details open>
@@ -666,7 +669,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 ---
 
 <details open>
-<summary>⚡ <b>Agentic</b> (91 papers)</summary>
+<summary>⚡ <b>Agentic</b> (93 papers)</summary>
 
 <details open>
 <summary>Tool Use and Skill (22)</summary>
@@ -725,7 +728,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 </details>
 
 <details open>
-<summary>Self-Evolving (16)</summary>
+<summary>Self-Evolving (17)</summary>
 
 - [A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems](https://arxiv.org/abs/2508.07407). Fang et al.. *arXiv 2508.07407*, 2025.
 - [Safe Continual Reinforcement Learning Methods for Nonstationary Environments. Towards a Survey of the State of the Art](https://arxiv.org/abs/2601.05152). Tomashevskiy, Timofey. *arXiv 2601.05152*, 2025.
@@ -744,10 +747,11 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 - [A Systematic Survey of Self-Evolving Agents: From Model-Centric to Environment-Driven Co-Evolution](https://scholar.google.com/scholar?q=A+Systematic+Survey+of+Self-Evolving+Agents%3A+From+Model-Centric+to+Environment-Driven+Co-Evolution). Xiang et al.. *TechRxiv preprint*, 2025.
 - [A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence](https://arxiv.org/abs/2507.21046). Gao et al.. *arXiv 2507.21046*, 2025.
 - [2025 AI Safety Index](https://scholar.google.com/scholar?q=2025+AI+Safety+Index). Institute. *https://futureoflife.org/ai-safety-index-summer-2025/*, 2025.
+- [EmbodiedGovBench: A Benchmark for Governance, Recovery, and Upgrade Safety in Embodied Agent Systems](https://arxiv.org/abs/2604.11174). Qin et al.. *arXiv 2604.11174*, 2026.
 </details>
 
 <details open>
-<summary>Cascading Risks (31)</summary>
+<summary>Cascading Risks (32)</summary>
 
 - [Position: Embodied AI Requires a Privacy-Utility Trade-off](https://arxiv.org/abs/2605.05017). Fan et al.. *arXiv 2605.05017*, 2026.
 - [A Survey of Agentic AI and Cybersecurity: Challenges, Opportunities and Use-case Prototypes](https://arxiv.org/abs/2601.05293). Lazer et al.. *arXiv 2601.05293*, 2026.
@@ -781,6 +785,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 - [Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety](https://scholar.google.com/scholar?q=Safety+at+Scale%3A+A+Comprehensive+Survey+of+Large+Model+and+Agent+Safety). Ma et al.. *Foundations and Trends*, 2025.
 - [Internal Safety Collapse in Frontier Large Language Models](https://arxiv.org/abs/2603.23509). Wu et al.. *arXiv 2603.23509*, 2026.
 - [The Attack and Defense Landscape of Agentic AI: A Comprehensive Survey](https://scholar.google.com/scholar?q=The+Attack+and+Defense+Landscape+of+Agentic+AI%3A+A+Comprehensive+Survey). Kim et al.. *USENIX Security*, 2026.
+- [The Yes-Man Syndrome: Benchmarking Abstention in Embodied Robotic Agents](https://arxiv.org/abs/2605.20544). Yeke et al.. *arXiv 2605.20544*, 2026.
 </details>
 
 </details>
@@ -790,7 +795,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 29 cited works beyond the five-layer attack and defense taxonomy, grouped by type.
 
 <details open>
-<summary><b>Surveys & Reviews</b> (10)</summary>
+<summary><b>Surveys & Reviews</b> (11)</summary>
 
 - [AI Agents under Threat: A Survey of Key Security Challenges and Future Pathways](https://scholar.google.com/scholar?q=AI+Agents+under+Threat%3A+A+Survey+of+Key+Security+Challenges+and+Future+Pathways). Deng et al.. *ACM Computing Surveys*, 2025.
 - [Navigating the Risks: A Survey of Security, Privacy, and Ethics Threats in LLM-Based Agents](https://arxiv.org/abs/2411.09523). Gan et al.. *arXiv 2411.09523*, 2024.
@@ -802,6 +807,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 - [A Comprehensive Survey in LLM (-Agent) Full Stack Safety: Data, Training and Deployment](https://arxiv.org/abs/2504.15585). Wang et al.. *arXiv 2504.15585*, 2025.
 - [Safety of Embodied Navigation: A Survey](https://arxiv.org/abs/2508.05855). Wang, Hu, Mu. *arXiv 2508.05855*, 2025.
 - [A Survey of Safety on Large Vision-Language Models: Attacks, Defenses and Evaluations](https://arxiv.org/abs/2502.14881). Ye et al.. *arXiv 2502.14881*, 2025.
+- [A Survey on Predictive Safety in Embodied AI](https://scholar.google.com/scholar?q=A+Survey+on+Predictive+Safety+in+Embodied+AI). da Costa et al.. *SSRN*, 2026.
 
 </details>
 
@@ -830,7 +836,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 </details>
 
 <details open>
-<summary><b>Other & Foundational</b> (7)</summary>
+<summary><b>Other & Foundational</b> (8)</summary>
 
 - [Your Robot Therapist Will See You Now: Ethical Implications of Embodied Artificial Intelligence in Psychiatry, Psychology, and Psychotherapy](https://scholar.google.com/scholar?q=Your+Robot+Therapist+Will+See+You+Now%3A+Ethical+Implications+of+Embodied+Artificial+Intelligence+in+Psychiatry%2C+Psychology%2C+and+Psychotherapy). Fiske, Henningsen, Buyx. *Journal of Medical Internet Research (JMIR)*, 2019.
 - [Service Robots in the Healthcare Sector](https://scholar.google.com/scholar?q=Service+Robots+in+the+Healthcare+Sector). Holland et al.. *Robotics*, 2021.
@@ -838,6 +844,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 - [A Safety Report on GPT-5.2, Gemini 3 Pro, Qwen3-VL, Grok 4.1 Fast, Nano Banana Pro, and Seedream 4.5](https://arxiv.org/abs/2601.10527). Ma et al.. *arXiv 2601.10527*, 2026.
 - [What Breaks Embodied AI Security: LLM Vulnerabilities, CPS Flaws, or Something Else?](https://arxiv.org/abs/2602.17345). Ma et al.. *arXiv 2602.17345*, 2026.
 - [Embodied AI: Emerging Risks and Opportunities for Policy Action](https://arxiv.org/abs/2509.00117). Perlo et al.. *arXiv 2509.00117*, 2025.
+- [Beyond Alignment: Why Robotic Foundation Models Need Context-Aware Safety](https://scholar.google.com/scholar?q=Beyond+Alignment%3A+Why+Robotic+Foundation+Models+Need+Context-Aware+Safety). Robey et al.. *Science Robotics*, 2026.
 - [Computing Machinery and Intelligence](https://scholar.google.com/scholar?q=Computing+Machinery+and+Intelligence). Turing. *Parsing the Turing test*, 1950.
 
 </details>
