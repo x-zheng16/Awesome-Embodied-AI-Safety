@@ -889,7 +889,7 @@ From the same team:
 - [Awesome-Large-Model-Safety](https://github.com/xingjunm/Awesome-Large-Model-Safety) -- Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety
 - [BackdoorLLM](https://github.com/bboylyg/BackdoorLLM) -- A Comprehensive Benchmark for Backdoor Attacks on LLMs (NeurIPS 2025)
 - [BackdoorAgent](https://github.com/Yunhao-Feng/BackdoorAgent) -- Backdoor Attacks on LLM-based Agent Workflows
-- [JustAsk](https://github.com/x-zheng16/JustAsk) -- Curious Code Agents Reveal System Prompts in Frontier LLMs
+- [JustAsk](https://github.com/x-zheng16/JustAsk) -- Curious Code Agents Reveal System Prompts in Frontier LLMs (ICML 2026)
 - [Unlearnable-Examples](https://github.com/HanxunH/Unlearnable-Examples) -- Making Personal Data Unexploitable (ICLR 2021)
 - [XTransferBench](https://github.com/HanxunH/XTransferBench) -- Super Transferable Adversarial Attacks on CLIP (ICML 2025)
 
