@@ -59,7 +59,7 @@
 <a href="https://rhe-web.github.io/" target="_blank" rel="noopener">Ran He</a><sup>12</sup>,
 <a href="https://aisecure.github.io/" target="_blank" rel="noopener">Bo Li</a><sup>9</sup>,
 <a href="http://xingjunma.com/" target="_blank" rel="noopener">Xingjun Ma</a><sup>1,2,3,&dagger;</sup>,
-<a href="https://teai.fudan.edu.cn/faculty-detail/110" target="_blank" rel="noopener">Yu-Gang Jiang</a><sup>1,3,&dagger;</sup>
+<a href="https://scholar.google.com/citations?hl=en&user=f3_FP8AAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener">Yu-Gang Jiang</a><sup>1,3,&dagger;</sup>
 
 <sup>1</sup>Institute of Trustworthy Embodied AI, Fudan University, <sup>2</sup>Shanghai Innovation Institute, <sup>3</sup>Shanghai Key Laboratory of Multimodal Embodied AI, <sup>4</sup>City University of Hong Kong, <sup>5</sup>Jilin University, <sup>6</sup>Singapore Management University, <sup>7</sup>Deakin University, <sup>8</sup>Tongji University, <sup>9</sup>UIUC, <sup>10</sup>UC Berkeley, <sup>11</sup>Nanyang Technological University, <sup>12</sup>Chinese Academy of Sciences, <sup>13</sup>The University of Melbourne, <sup>14</sup>Johns Hopkins University
 
