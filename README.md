@@ -132,11 +132,13 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 | ⚡  | **Agentic**                | Tool Use and Skill, Memory, Self-Evolving, Cascading Risks       |     91 |
 
 <details open>
-<summary>👁️ <b>Perception</b> (195 papers)</summary>
+<summary>👁️ <b>Perception</b> (199 papers)</summary>
 
 <details open>
-<summary>Visual Perception (56)</summary>
+<summary>Visual Perception (58)</summary>
 
+- [Adversarial Attacks and Detection in Visual Place Recognition for Safer Robot Navigation](https://arxiv.org/abs/2506.15988). Malone et al.. *arXiv 2506.15988*, 2025.
+- [Embodied Active Defense: Leveraging Recurrent Feedback to Counter Adversarial Patches](https://arxiv.org/abs/2404.00540). Wu et al.. *arXiv 2404.00540*, 2024.
 - [Physical Adversarial Clothing Evades Visible-Thermal Detectors via Non-Overlapping RGB-T Pattern](https://arxiv.org/abs/2605.04675). Zhu et al.. *arXiv 2605.04675*, 2026.
 - [Securing the Lane: Defences Against Patch Attacks on Autonomous Vehicle's Lane Detection](https://scholar.google.com/scholar?q=Securing+the+Lane%3A+Defences+Against+Patch+Attacks+on+Autonomous+Vehicle%27s+Lane+Detection). Blazevic et al.. *EuroS&PW*, 2025.
 - [Detecting Adversarial Attacks Based on Tracking Differences in Frequency Bands](https://scholar.google.com/scholar?q=Detecting+Adversarial+Attacks+Based+on+Tracking+Differences+in+Frequency+Bands). Li, Li, Zhang. *IEEE Transactions on Multimedia (TMM)*, 2025.
@@ -224,8 +226,10 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 </details>
 
 <details open>
-<summary>Spatial Perception (59)</summary>
+<summary>Spatial Perception (61)</summary>
 
+- [SLAMSpoof: Practical LiDAR Spoofing Attacks on Localization Systems Guided by Scan Matching Vulnerability Analysis](https://arxiv.org/abs/2502.13641). Nagata et al.. *arXiv 2502.13641*, 2025.
+- [BadDepth: Backdoor Attacks Against Monocular Depth Estimation in the Physical World](https://arxiv.org/abs/2505.16154). Guo et al.. *arXiv 2505.16154*, 2025.
 - [Semantically Safe Robot Manipulation: From Semantic Scene Understanding to Motion Safeguards](https://arxiv.org/abs/2410.15185). Brunke et al.. *IEEE Robotics and Automation Letters (RA-L)*, 2025.
 - [LiDAttack: Robust Black-Box Attack on LiDAR-Based Object Detection](https://arxiv.org/abs/2411.01889). Chen et al.. *ITSC*, 2025.
 - [Splat-Nav: Safe Real-Time Robot Navigation in Gaussian Splatting Maps](https://arxiv.org/abs/2403.02751). Chen et al.. *IEEE Transactions on Robotics (T-RO)*, 2025.
@@ -364,11 +368,12 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 ---
 
 <details open>
-<summary>🧠 <b>Cognition</b> (37 papers)</summary>
+<summary>🧠 <b>Cognition</b> (38 papers)</summary>
 
 <details open>
-<summary>Instruction Understanding (15)</summary>
+<summary>Instruction Understanding (16)</summary>
 
+- [Advancing Embodied Agent Security: From Safety Benchmarks to Input Moderation](https://arxiv.org/abs/2504.15699). Wang et al.. *arXiv 2504.15699*, 2025.
 - [Semantic Denial of Service in LLM-Controlled Robots](https://arxiv.org/abs/2604.24790). Steinberg, Gal. *arXiv 2604.24790*, 2026.
 - [Seeing No Evil: Blinding Large Vision-Language Models to Safety Instructions via Adversarial Attention Hijacking](https://arxiv.org/abs/2604.10299). Li, Ren, Zhu. *ACL*, 2026.
 - [Mitigating Trust Boundary Confusion from Visual Injections on Vision-Language Agentic Systems](https://arxiv.org/abs/2604.19844). Chang et al.. *arXiv 2604.19844*, 2026.
@@ -533,11 +538,13 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 ---
 
 <details open>
-<summary>🤖 <b>Action and Interaction</b> (111 papers)</summary>
+<summary>🤖 <b>Action and Interaction</b> (113 papers)</summary>
 
 <details open>
-<summary>Robot Control (96)</summary>
+<summary>Robot Control (98)</summary>
 
+- [AdvGrasp: Adversarial Attacks on Robotic Grasping from a Physical Perspective](https://arxiv.org/abs/2507.09857). Wang et al.. *arXiv 2507.09857*, 2025.
+- [Optimal Actuator Attacks on Autonomous Vehicles Using Reinforcement Learning](https://arxiv.org/abs/2502.07839). Wang et al.. *arXiv 2502.07839*, 2025.
 - [RedVLA: Physical Red Teaming of Vision-Language-Action Models](https://arxiv.org/abs/2604.22591). Zhang et al.. *arXiv 2604.22591*, 2026.
 - [HazardArena: Evaluating Semantic Safety in Vision-Language-Action Models](https://arxiv.org/abs/2604.12447). Chen et al.. *arXiv 2604.12447*, 2026.
 - [Uncovering Linguistic Fragility in Vision-Language-Action Models via Diversity-Aware Red Teaming](https://arxiv.org/abs/2604.05595). Tong et al.. *arXiv 2604.05595*, 2026.
@@ -792,11 +799,13 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 
 ## Other Related Works
 
-29 cited works beyond the five-layer attack and defense taxonomy, grouped by type.
+33 cited works beyond the five-layer attack and defense taxonomy, grouped by type.
 
 <details open>
-<summary><b>Surveys & Reviews</b> (11)</summary>
+<summary><b>Surveys & Reviews</b> (13)</summary>
 
+- [A Survey on Adversarial Robustness of LiDAR-based Machine Learning Perception in Autonomous Vehicles](https://arxiv.org/abs/2411.13778). Kim, Kaur. *arXiv 2411.13778*, 2024.
+- [SoK: Rethinking Sensor Spoofing Attacks against Robotic Vehicles from a Systematic View](https://scholar.google.com/scholar?q=SoK%3A+Rethinking+Sensor+Spoofing+Attacks+against+Robotic+Vehicles+from+a+Systematic+View). Xu et al.. *IEEE EuroS&P*, 2022.
 - [AI Agents under Threat: A Survey of Key Security Challenges and Future Pathways](https://scholar.google.com/scholar?q=AI+Agents+under+Threat%3A+A+Survey+of+Key+Security+Challenges+and+Future+Pathways). Deng et al.. *ACM Computing Surveys*, 2025.
 - [Navigating the Risks: A Survey of Security, Privacy, and Ethics Threats in LLM-Based Agents](https://arxiv.org/abs/2411.09523). Gan et al.. *arXiv 2411.09523*, 2024.
 - [Trust in LLM-Controlled Robotics: A Survey of Security Threats, Defenses and Challenges](https://arxiv.org/abs/2601.02377). Huang et al.. *arXiv 2601.02377*, 2026.
@@ -843,7 +852,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 - [Healthcare Robots to Combat COVID-19](https://scholar.google.com/scholar?q=Healthcare+Robots+to+Combat+COVID-19). Kaiser et al.. *COVID-19*, 2020.
 - [A Safety Report on GPT-5.2, Gemini 3 Pro, Qwen3-VL, Grok 4.1 Fast, Nano Banana Pro, and Seedream 4.5](https://arxiv.org/abs/2601.10527). Ma et al.. *arXiv 2601.10527*, 2026.
 - [What Breaks Embodied AI Security: LLM Vulnerabilities, CPS Flaws, or Something Else?](https://arxiv.org/abs/2602.17345). Ma et al.. *arXiv 2602.17345*, 2026.
-- [Embodied AI: Emerging Risks and Opportunities for Policy Action](https://arxiv.org/abs/2509.00117). Perlo et al.. *arXiv 2509.00117*, 2025.
+- [Emerging Risks from Embodied AI Require Urgent Policy Action](https://arxiv.org/abs/2509.00117). Perlo et al.. *NeurIPS*, 2025.
 - [Beyond Alignment: Why Robotic Foundation Models Need Context-Aware Safety](https://scholar.google.com/scholar?q=Beyond+Alignment%3A+Why+Robotic+Foundation+Models+Need+Context-Aware+Safety). Robey et al.. *Science Robotics*, 2026.
 - [Computing Machinery and Intelligence](https://scholar.google.com/scholar?q=Computing+Machinery+and+Intelligence). Turing. *Parsing the Turing test*, 1950.
 

@@ -18,7 +18,7 @@ Paper: https://arxiv.org/abs/2605.02900
 | Planning                 | Task Planning, Trajectory Planning, Multi-Agent Planning              |     81 |
 | Action and Interaction   | Robot Control, Human-Agent Interaction, Multi-Agent Collaboration     |    109 |
 | Agentic System           | Tool Use and Skill, Memory, Self-Evolving, Cascading Risks            |     91 |
-| Other Related Works      | Background models, datasets, simulators, benchmarks, related surveys  |     29 |
+| Other Related Works      | Background models, datasets, simulators, benchmarks, related surveys  |     33 |
 
 ## Core Insight
 
