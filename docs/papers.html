@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paper Reader &mdash; Safety in Embodied AI</title>
+  <meta name="description" content="Read abstracts and keywords for 560+ papers on safety in embodied AI, across perception, cognition, planning, interaction, and agentic systems.">
+
+  <meta property="og:title" content="Paper Reader — Safety in Embodied AI Survey">
+  <meta property="og:description" content="Browse abstracts and keywords for 560+ embodied-AI safety papers across a 5-layer taxonomy.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://x-zheng16.github.io/Awesome-Embodied-AI-Safety/papers.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #FAFBFE; --bg-alt: #F0F2F8; --bg-card: #FFFFFF;
+      --accent: #2563EB; --accent-rgb: 37,99,235;
+      --text: #111628; --text-muted: #4B5466; --border: #DDE0ED;
+      --row-hover: rgba(37,99,235,0.06);
+      --c-perception:#2563EB; --c-cognition:#7C3AED; --c-planning:#B45309; --c-action:#0F766E; --c-agentic:#BE123C; --c-orw:#64748B;
+    }
+    .dark {
+      --bg:#282C34; --bg-alt:#2D323B; --bg-card:#212529;
+      --accent:#3B82F6; --accent-rgb:59,130,246;
+      --text:#E8EAF2; --text-muted:#98A0B5; --border:#424246;
+      --row-hover:rgba(59,130,246,0.08);
+      --c-perception:#60A5FA; --c-cognition:#A78BFA; --c-planning:#F59E0B; --c-action:#2DD4BF; --c-agentic:#F472B6; --c-orw:#94A3B8;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif; line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Nav */
+    nav {
+      position: sticky; top: 0; z-index: 50;
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0.85rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .nav-brand { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.98rem; color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 1.3rem; }
+    .nav-link { color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
+    .nav-link:hover { color: var(--accent); text-decoration: none; }
+    .icon-btn { background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 4px; display: inline-flex; }
+    .icon-btn:hover { color: var(--accent); }
+
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 2.4rem 1.5rem 4rem; }
+
+    header.hero { margin-bottom: 1.8rem; }
+    h1 { font-family: 'Space Grotesk', sans-serif; font-size: 1.85rem; font-weight: 700; margin: 0 0 0.4rem; letter-spacing: -0.01em; }
+    .hero-sub { color: var(--text-muted); font-size: 0.97rem; margin: 0; max-width: 720px; }
+    .hero-sub a { font-weight: 500; }
+
+    /* Controls */
+    .controls { margin: 1.6rem 0 1.2rem; }
+    .search-row { display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap; }
+    .search-input {
+      flex: 1; min-width: 260px; background: var(--bg-card); color: var(--text);
+      border: 1px solid var(--border); border-radius: 8px; padding: 0.7rem 1rem;
+      font-size: 0.95rem; font-family: inherit;
+    }
+    .search-input:focus { outline: none; border-color: var(--accent); }
+    .stats { color: var(--text-muted); font-size: 0.88rem; white-space: nowrap; font-family: 'JetBrains Mono', monospace; }
+    .pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+    .pill {
+      border: 1px solid var(--border); background: var(--bg-card); color: var(--text-muted);
+      border-radius: 999px; padding: 0.32rem 0.85rem; font-size: 0.82rem; font-weight: 500;
+      cursor: pointer; font-family: 'JetBrains Mono', monospace; transition: all .15s;
+    }
+    .pill:hover { border-color: var(--pill-c, var(--accent)); color: var(--pill-c, var(--accent)); }
+    .pill.active { background: var(--pill-c, var(--accent)); border-color: var(--pill-c, var(--accent)); color: #fff; }
+    .pill[data-layer="all"]{--pill-c:var(--accent);}
+    .pill[data-layer="Perception"]{--pill-c:var(--c-perception);}
+    .pill[data-layer="Cognition"]{--pill-c:var(--c-cognition);}
+    .pill[data-layer="Planning"]{--pill-c:var(--c-planning);}
+    .pill[data-layer="Action and Interaction"]{--pill-c:var(--c-action);}
+    .pill[data-layer="Agentic"]{--pill-c:var(--c-agentic);}
+    .pill[data-layer="Other Related Works"]{--pill-c:var(--c-orw);}
+
+    /* Cards */
+    .cards { display: flex; flex-direction: column; gap: 0.9rem; margin-top: 1.5rem; }
+    .card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+      padding: 1.1rem 1.3rem; border-left: 3px solid var(--lc, var(--accent));
+    }
+    .card.hidden { display: none; }
+    .card-title { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1.04rem; margin: 0 0 0.35rem; line-height: 1.4; }
+    .card-title a { color: var(--text); }
+    .card-title a:hover { color: var(--lc, var(--accent)); }
+    .card-meta { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.55rem; }
+    .card-meta .venue { font-style: italic; }
+    .badge {
+      display: inline-block; font-size: 0.7rem; font-weight: 600; font-family: 'JetBrains Mono', monospace;
+      padding: 1px 7px; border-radius: 4px; margin-right: 0.4rem;
+      background: color-mix(in srgb, var(--lc, var(--accent)) 16%, transparent); color: var(--lc, var(--accent));
+    }
+    .badge.sub { background: var(--bg-alt); color: var(--text-muted); }
+    .abstract { font-size: 0.9rem; color: var(--text); margin: 0.55rem 0 0; line-height: 1.62; }
+    .abstract.clamp { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .abstract-none { font-size: 0.86rem; color: var(--text-muted); font-style: italic; margin: 0.5rem 0 0; }
+    .more-btn { background: none; border: none; color: var(--accent); cursor: pointer; font-size: 0.82rem; padding: 0.3rem 0 0; font-family: inherit; }
+    .kw-row { margin-top: 0.7rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .kw {
+      font-size: 0.74rem; font-family: 'JetBrains Mono', monospace;
+      background: var(--bg-alt); color: var(--text-muted);
+      border: 1px solid var(--border); border-radius: 5px; padding: 1px 8px;
+    }
+    .empty { text-align: center; color: var(--text-muted); padding: 3rem 1rem; font-size: 0.95rem; }
+    .loading { text-align: center; color: var(--text-muted); padding: 4rem 1rem; font-family: 'JetBrains Mono', monospace; }
+    footer { text-align: center; color: var(--text-muted); font-size: 0.85rem; padding: 2.4rem 1rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    footer a { font-weight: 500; }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Safety in Embodied AI</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">&larr; Catalog</a>
+      <a href="index.html#papers" class="nav-link">Taxonomy</a>
+      <a href="https://arxiv.org/abs/2605.02900" class="nav-link" target="_blank" rel="noopener">arXiv</a>
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">
+        <svg id="iconSun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg id="iconMoon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="hero">
+    <h1>Paper Reader</h1>
+    <p class="hero-sub">Abstracts and keywords for every paper in the <a href="index.html">Safety in Embodied AI</a> survey. Search across titles, authors, venues, abstracts, and keywords; filter by taxonomy layer.</p>
+  </header>
+
+  <div class="controls">
+    <div class="search-row">
+      <input id="search" class="search-input" type="search" placeholder="Search title, author, venue, abstract, keyword..." autocomplete="off" aria-label="Search papers">
+      <span class="stats" id="stats">loading...</span>
+    </div>
+    <div class="pills" id="pills">
+      <button class="pill active" data-layer="all">All</button>
+      <button class="pill" data-layer="Perception">Perception</button>
+      <button class="pill" data-layer="Cognition">Cognition</button>
+      <button class="pill" data-layer="Planning">Planning</button>
+      <button class="pill" data-layer="Action and Interaction">Action</button>
+      <button class="pill" data-layer="Agentic">Agentic</button>
+      <button class="pill" data-layer="Other Related Works">Other</button>
+    </div>
+  </div>
+
+  <div id="cards" class="cards"><div class="loading">Loading papers...</div></div>
+</div>
+
+<footer>
+  <a href="index.html">Catalog</a> &middot;
+  <a href="https://arxiv.org/abs/2605.02900">arXiv</a> &middot;
+  <a href="https://github.com/x-zheng16/Awesome-Embodied-AI-Safety">GitHub</a> &middot;
+  Safety in Embodied AI &copy; 2026
+</footer>
+
+<script>
+  // Theme (shared key with index.html)
+  (function () {
+    var html = document.documentElement, KEY = 'aeas-theme';
+    var sun = document.getElementById('iconSun'), moon = document.getElementById('iconMoon');
+    function apply(t){ if(t==='light'){html.classList.remove('dark'); sun.style.display=''; moon.style.display='none';} else {html.classList.add('dark'); sun.style.display='none'; moon.style.display='';} }
+    var s = localStorage.getItem(KEY);
+    apply(s==='light'||s==='dark' ? s : (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light':'dark'));
+    document.getElementById('themeToggle').addEventListener('click', function(){ var n = html.classList.contains('dark')?'light':'dark'; apply(n); localStorage.setItem(KEY,n); });
+  })();
+
+  var LAYER_VAR = {
+    "Perception":"--c-perception","Cognition":"--c-cognition","Planning":"--c-planning",
+    "Action and Interaction":"--c-action","Agentic":"--c-agentic","Other Related Works":"--c-orw"
+  };
+  var PAPERS = [], activeLayer = 'all', query = '', debounce = null;
+  var cardsEl = document.getElementById('cards'), statsEl = document.getElementById('stats'), searchEl = document.getElementById('search');
+
+  function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+  function cardHTML(p){
+    var lv = LAYER_VAR[p.layer] || '--accent';
+    var meta = [esc(p.authors), p.venue ? '<span class="venue">'+esc(p.venue)+'</span>' : '', esc(p.year)].filter(Boolean).join(' &middot; ');
+    var badges = '<span class="badge">'+esc(p.layer)+'</span>' + (p.subcat ? '<span class="badge sub">'+esc(p.subcat)+'</span>' : '');
+    var abs = p.abstract
+      ? '<p class="abstract clamp">'+esc(p.abstract)+'</p><button class="more-btn" type="button">Show more</button>'
+      : '<p class="abstract-none">Abstract not available &mdash; see source link.</p>';
+    var kws = (p.keywords && p.keywords.length)
+      ? '<div class="kw-row">'+p.keywords.map(function(k){return '<span class="kw">'+esc(k)+'</span>';}).join('')+'</div>' : '';
+    return '<div class="card" style="--lc:var('+lv+')">'
+      + '<div>'+badges+'</div>'
+      + '<h2 class="card-title"><a href="'+esc(p.url)+'" target="_blank" rel="noopener">'+esc(p.title)+'</a></h2>'
+      + '<div class="card-meta">'+meta+'</div>'
+      + abs + kws + '</div>';
+  }
+
+  function norm(s){ return (s||'').toLowerCase(); }
+  function matches(p, q){
+    if(!q) return true;
+    return norm(p.title).includes(q) || norm(p.authors).includes(q) || norm(p.venue).includes(q)
+        || norm(p.abstract).includes(q) || (p.keywords||[]).some(function(k){return norm(k).includes(q);});
+  }
+
+  function render(){
+    var q = norm(query), shown = 0, html = [];
+    for (var i=0;i<PAPERS.length;i++){
+      var p = PAPERS[i];
+      if ((activeLayer==='all'||p.layer===activeLayer) && matches(p,q)){ html.push(cardHTML(p)); shown++; }
+    }
+    cardsEl.innerHTML = shown ? html.join('') : '<div class="empty">No papers match your search.</div>';
+    statsEl.textContent = (shown===PAPERS.length) ? (PAPERS.length+' papers') : (shown+' / '+PAPERS.length+' papers');
+    cardsEl.querySelectorAll('.more-btn').forEach(function(b){
+      b.addEventListener('click', function(){
+        var a = b.previousElementSibling;
+        var on = a.classList.toggle('clamp');
+        b.textContent = on ? 'Show more' : 'Show less';
+      });
+    });
+  }
+
+  document.getElementById('pills').addEventListener('click', function(e){
+    var b = e.target.closest('.pill'); if(!b) return;
+    activeLayer = b.dataset.layer;
+    this.querySelectorAll('.pill').forEach(function(x){x.classList.remove('active');});
+    b.classList.add('active');
+    render();
+  });
+  searchEl.addEventListener('input', function(){
+    query = this.value; clearTimeout(debounce); debounce = setTimeout(render, 120);
+  });
+
+  fetch('papers.json').then(function(r){ return r.json(); }).then(function(data){
+    PAPERS = data; render();
+  }).catch(function(e){
+    cardsEl.innerHTML = '<div class="empty">Failed to load papers.json &mdash; '+esc(String(e))+'</div>';
+    statsEl.textContent = 'error';
+  });
+</script>
+</body>
+</html>
