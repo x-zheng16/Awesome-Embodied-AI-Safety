@@ -676,7 +676,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 ---
 
 <details open>
-<summary>⚡ <b>Agentic</b> (93 papers)</summary>
+<summary>⚡ <b>Agentic</b> (96 papers)</summary>
 
 <details open>
 <summary>Tool Use and Skill (22)</summary>
@@ -758,8 +758,11 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 </details>
 
 <details open>
-<summary>Cascading Risks (32)</summary>
+<summary>Cascading Risks (35)</summary>
 
+- [ShieldNet: Network-Level Guardrails against Emerging Supply-Chain Injections in Agentic Systems](https://arxiv.org/abs/2604.04426). Yuan et al.. *arXiv 2604.04426*, 2026.
+- [ARMs: Adaptive Red-Teaming Agent against Multimodal Models with Plug-and-Play Attacks](https://arxiv.org/abs/2510.02677). Chen et al.. *arXiv 2510.02677*, 2025.
+- [RedCodeAgent: Automatic Red-teaming Agent against Diverse Code Agents](https://arxiv.org/abs/2510.02609). Guo et al.. *arXiv 2510.02609*, 2025.
 - [Position: Embodied AI Requires a Privacy-Utility Trade-off](https://arxiv.org/abs/2605.05017). Fan et al.. *arXiv 2605.05017*, 2026.
 - [A Survey of Agentic AI and Cybersecurity: Challenges, Opportunities and Use-case Prototypes](https://arxiv.org/abs/2601.05293). Lazer et al.. *arXiv 2601.05293*, 2026.
 - [A Survey on Agentic Security: Applications, Threats and Defenses](https://arxiv.org/abs/2510.06445). Shahriar. *arXiv 2510.06445*, 2025.
