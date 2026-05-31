@@ -218,7 +218,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 - [Practical Hidden Voice Attacks against Speech and Speaker Recognition Systems](https://arxiv.org/abs/1904.05734). Abdullah et al.. *arXiv 1904.05734*, 2019.
 - [A Multiversion Programming Inspired Approach to Detecting Audio Adversarial Examples](https://arxiv.org/abs/1812.10199). Zeng et al.. *DSN*, 2019.
 - [Who Activated My Voice Assistant? A Stealthy Attack on Android Phones Without Users' Awareness](https://scholar.google.com/scholar?q=Who+activated+my+voice+assistant%3F+A+stealthy+attack+on+android+phones+without+users%E2%80%99+awareness). Zhang et al.. *ML4CS*, 2019.
-- [Towards Mitigating Audio Adversarial Perturbations](https://arxiv.org/abs/1806.02776). Yang et al.. *arXiv 1806.02776*, 2018.
+- [Characterizing Audio Adversarial Examples Using Temporal Dependency](https://arxiv.org/abs/1809.10875). Yang et al.. *arXiv 1809.10875*, 2018.
 - [CommanderSong: A Systematic Approach for Practical Adversarial Voice Recognition](https://arxiv.org/abs/1801.08535). Yuan et al.. *USENIX Security*, 2018.
 - [Hidden Voice Commands](https://scholar.google.com/scholar?q=Hidden+voice+commands). Carlini et al.. *USENIX security*, 2016.
 - [Cocaine Noodles: Exploiting the Gap between Human and Machine Speech Recognition](https://scholar.google.com/scholar?q=Cocaine+noodles%3A+exploiting+the+gap+between+human+and+machine+speech+recognition). Vaidya et al.. *WOOT*, 2015.
@@ -431,14 +431,12 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 ---
 
 <details open>
-<summary>🗺️ <b>Planning</b> (82 papers)</summary>
+<summary>🗺️ <b>Planning</b> (80 papers)</summary>
 
 <details open>
-<summary>Task Planning (34)</summary>
+<summary>Task Planning (32)</summary>
 
-- [Safety in Vision-Language-Action Models: A Survey](https://arxiv.org/abs/2604.23775). Li et al.. *arXiv 2604.23775*, 2026.
 - [Using Large Language Models for Embodied Planning Introduces Systematic Safety Risks](https://arxiv.org/abs/2604.18463). Zhang et al.. *arXiv 2604.18463*, 2026.
-- [Safety Evaluation of LLMs for Robotic Health Attendants Against Harmful Instructions](https://arxiv.org/abs/2604.26577). Nakao, Takemoto. *arXiv 2604.26577*, 2026.
 - [SafeMind: Benchmarking and Mitigating Safety Risks in Embodied LLM Agents](https://arxiv.org/abs/2509.25885). Chen et al.. *arXiv 2509.25885*, 2025.
 - [A Framework for Benchmarking and Aligning Task-Planning Safety in LLM-Based Embodied Agents](https://arxiv.org/abs/2504.14650). Huang et al.. *arXiv 2504.14650*, 2025.
 - [HASARD: A Benchmark for Vision-Based Safe Reinforcement Learning in Embodied Agents](https://arxiv.org/abs/2503.08241). Tomilin et al.. *ICLR*, 2025.
@@ -538,10 +536,10 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 ---
 
 <details open>
-<summary>🤖 <b>Action and Interaction</b> (113 papers)</summary>
+<summary>🤖 <b>Action and Interaction</b> (112 papers)</summary>
 
 <details open>
-<summary>Robot Control (98)</summary>
+<summary>Robot Control (97)</summary>
 
 - [AdvGrasp: Adversarial Attacks on Robotic Grasping from a Physical Perspective](https://arxiv.org/abs/2507.09857). Wang et al.. *arXiv 2507.09857*, 2025.
 - [Optimal Actuator Attacks on Autonomous Vehicles Using Reinforcement Learning](https://arxiv.org/abs/2502.07839). Wang et al.. *arXiv 2502.07839*, 2025.
@@ -635,7 +633,6 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 - [RAT: Adversarial Attacks on Deep Reinforcement Agents for Targeted Behaviors](https://scholar.google.com/scholar?q=RAT%3A+Adversarial+Attacks+on+Deep+Reinforcement+Agents+for+Targeted+Behaviors). Bai et al.. *AAAI*, 2025.
 - [Robust Multi-Agent Reinforcement Learning by Mutual Information Regularization](https://scholar.google.com/scholar?q=Robust+Multi-Agent+Reinforcement+Learning+by+Mutual+Information+Regularization). Li et al.. *IEEE Transactions on Neural Networks and Learning Systems (TNNLS)*, 2025.
 - [Breaking the Barrier: Enhanced Utility and Robustness in Smoothed DRL Agents](https://scholar.google.com/scholar?q=Breaking+the+Barrier%3A+Enhanced+Utility+and+Robustness+in+Smoothed+DRL+Agents). Sun, Gao, Weng. *ICML*, 2024.
-- [TrojanRobot: Physical-World Backdoor Attacks Against VLM-Based Robotic Manipulation](https://arxiv.org/abs/2411.11683). Wang et al.. *arXiv 2411.11683*, 2024.
 - [User-Oriented Robust Reinforcement Learning](https://scholar.google.com/scholar?q=User-Oriented+Robust+Reinforcement+Learning). You et al.. *AAAI*, 2023.
 - [Robust Reinforcement Learning as a Stackelberg Game via Adaptively-Regularized Adversarial Training](https://scholar.google.com/scholar?q=Robust+Reinforcement+Learning+as+a+Stackelberg+Game+via+Adaptively-Regularized+Adversarial+Training). Huang et al.. *IJCAI*, 2022.
 - [Toward Evaluating Robustness of Deep Reinforcement Learning with Continuous Control](https://scholar.google.com/scholar?q=Toward+Evaluating+Robustness+of+Deep+Reinforcement+Learning+with+Continuous+Control). Weng et al.. *ICLR*, 2020.
@@ -690,7 +687,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 - [Supply-Chain Poisoning Attacks Against LLM Coding Agent Skill Ecosystems](https://arxiv.org/abs/2604.03081). Qu et al.. *arXiv 2604.03081*, 2026.
 - [Towards Secure Agent Skills: Architecture, Threat Taxonomy, and Security Analysis](https://arxiv.org/abs/2604.02837). Li et al.. *arXiv 2604.02837*, 2026.
 - [AgentSpec: Customizable Runtime Enforcement for Safe and Reliable LLM Agents](https://arxiv.org/abs/2503.18666). Wang, Haoyu et al.. *ICSE*, 2026.
-- [BackdoorAgent: A Unified Framework for Backdoor Attacks on LLM-based Agents](https://arxiv.org/abs/2601.04566). Feng, Yunhao et al.. *arXiv 2601.04566*, 2026.
+- [BackdoorAgent: A Unified Framework for Backdoor Attacks on LLM-based Agents](https://arxiv.org/abs/2601.04566). Feng, Yunhao et al.. *Findings of the Association for Computational Linguistics: ACL*, 2026.
 - [Prompt Injection Attack to Tool Selection in LLM Agents](https://arxiv.org/abs/2504.19793). Shi, Jiawen et al.. *arXiv 2504.19793*, 2025.
 - [SELP: Generating Safe and Efficient Task Plans for Robot Agents with Large Language Models](https://arxiv.org/abs/2409.19471). Wu, Yi et al.. *arXiv preprint*, 2024.
 - [Plug in the Safety Chip: Enforcing Constraints for LLM-driven Robot Agents](https://arxiv.org/abs/2309.09919). Yang, Ziyi et al.. *Brown University Technical Report*, 2024.
@@ -897,13 +894,15 @@ If you find this survey useful, please cite our paper:
 
 From the same team:
 
-- [ISC-Bench](https://github.com/wuyoscar/ISC-Bench) -- Internal Safety Collapse in Frontier LLMs (400+ stars)
-- [Awesome-Large-Model-Safety](https://github.com/xingjunm/Awesome-Large-Model-Safety) -- Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety
-- [BackdoorLLM](https://github.com/bboylyg/BackdoorLLM) -- A Comprehensive Benchmark for Backdoor Attacks on LLMs (NeurIPS 2025)
-- [BackdoorAgent](https://github.com/Yunhao-Feng/BackdoorAgent) -- Backdoor Attacks on LLM-based Agent Workflows
-- [JustAsk](https://github.com/x-zheng16/JustAsk) -- Curious Code Agents Reveal System Prompts in Frontier LLMs (ICML 2026)
-- [Unlearnable-Examples](https://github.com/HanxunH/Unlearnable-Examples) -- Making Personal Data Unexploitable (ICLR 2021)
-- [XTransferBench](https://github.com/HanxunH/XTransferBench) -- Super Transferable Adversarial Attacks on CLIP (ICML 2025)
+| Project | Description | Stars |
+| --- | --- | --- |
+| [ISC-Bench](https://github.com/wuyoscar/ISC-Bench) | Internal Safety Collapse in Frontier LLMs | ![](https://img.shields.io/github/stars/wuyoscar/ISC-Bench?style=social) |
+| [Awesome-Large-Model-Safety](https://github.com/xingjunm/Awesome-Large-Model-Safety) | Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety | ![](https://img.shields.io/github/stars/xingjunm/Awesome-Large-Model-Safety?style=social) |
+| [BackdoorLLM](https://github.com/bboylyg/BackdoorLLM) | A Comprehensive Benchmark for Backdoor Attacks on LLMs (NeurIPS 2025) | ![](https://img.shields.io/github/stars/bboylyg/BackdoorLLM?style=social) |
+| [BackdoorAgent](https://github.com/Yunhao-Feng/BackdoorAgent) | Backdoor Attacks on LLM-based Agent Workflows (ACL Findings 2026) | ![](https://img.shields.io/github/stars/Yunhao-Feng/BackdoorAgent?style=social) |
+| [JustAsk](https://github.com/x-zheng16/JustAsk) | Curious Code Agents Reveal System Prompts in Frontier LLMs (ICML 2026) | ![](https://img.shields.io/github/stars/x-zheng16/JustAsk?style=social) |
+| [Unlearnable-Examples](https://github.com/HanxunH/Unlearnable-Examples) | Making Personal Data Unexploitable (ICLR 2021) | ![](https://img.shields.io/github/stars/HanxunH/Unlearnable-Examples?style=social) |
+| [XTransferBench](https://github.com/HanxunH/XTransferBench) | Super Transferable Adversarial Attacks on CLIP (ICML 2025) | ![](https://img.shields.io/github/stars/HanxunH/XTransferBench?style=social) |
 
 ## Recommended Reading & Viewing
 
