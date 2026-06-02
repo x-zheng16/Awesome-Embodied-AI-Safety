@@ -848,6 +848,7 @@
   <div class="stat-item"><span class="stat-num">18</span><span class="stat-label">Subcategories</span></div>
   <div class="stat-item"><span class="stat-num">38</span><span class="stat-label">Authors</span></div>
   <div class="stat-item"><span class="stat-num">14</span><span class="stat-label">Institutions</span></div>
+  <div class="stat-item" id="visitorStat" hidden><span class="stat-num" id="visitorNum">&mdash;</span><span class="stat-label">Visitors</span></div>
 </div>
 
 <!-- ABSTRACT -->
@@ -2122,6 +2123,35 @@
   // Always open at the top, not a restored scroll position
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   window.addEventListener('load', function () { if (!location.hash) window.scrollTo(0, 0); });
+
+  // Live visitor count (busuanzi JSONP) rendered in our own stat style.
+  // site_pv = total page views (counts refreshes); shown only once a number arrives,
+  // so a flaky/dead host degrades to no stat rather than a broken placeholder.
+  (function () {
+    var numEl = document.getElementById('visitorNum');
+    var itemEl = document.getElementById('visitorStat');
+    if (!numEl || !itemEl) return;
+    var cb = 'BusuanziCallback_' + (window.performance ? Math.floor(performance.now() * 1000) : '0');
+    var done = false;
+    window[cb] = function (data) {
+      done = true;
+      if (data && typeof data.site_pv !== 'undefined') {
+        numEl.textContent = Number(data.site_pv).toLocaleString('en-US');
+        itemEl.removeAttribute('hidden');
+      }
+      cleanup();
+    };
+    var s = document.createElement('script');
+    s.src = 'https://busuanzi.ibruce.info/busuanzi?jsonpCallback=' + cb;
+    s.onerror = cleanup;
+    function cleanup() {
+      if (s && s.parentNode) s.parentNode.removeChild(s);
+      try { delete window[cb]; } catch (e) { window[cb] = undefined; }
+    }
+    // Host can hang; give up after 8s and leave the stat hidden.
+    setTimeout(function () { if (!done) cleanup(); }, 8000);
+    document.body.appendChild(s);
+  })();
 </script>
 
 <script>
