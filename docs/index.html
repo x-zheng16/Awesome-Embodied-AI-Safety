@@ -2127,6 +2127,11 @@
   // Live visitor count (busuanzi JSONP) rendered in our own stat style.
   // site_pv = total page views (counts refreshes); shown only once a number arrives,
   // so a flaky/dead host degrades to no stat rather than a broken placeholder.
+  // BASELINE: busuanzi was only wired in on 2026-06-02, so its raw count omits all
+  // prior traffic. Add the count accumulated by the footer laobi visitor-badge before
+  // that switchover (65 as of 2026-06-03) so the hero reflects total visits, not just
+  // the post-switchover tail.
+  var VISITOR_BASELINE = 65;
   (function () {
     var numEl = document.getElementById('visitorNum');
     var itemEl = document.getElementById('visitorStat');
@@ -2136,7 +2141,7 @@
     window[cb] = function (data) {
       done = true;
       if (data && typeof data.site_pv !== 'undefined') {
-        numEl.textContent = Number(data.site_pv).toLocaleString('en-US');
+        numEl.textContent = Number(VISITOR_BASELINE + data.site_pv).toLocaleString('en-US');
         itemEl.removeAttribute('hidden');
       }
       cleanup();
