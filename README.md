@@ -395,8 +395,9 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 </details>
 
 <details open>
-<summary>World Model (18)</summary>
+<summary>World Model (19)</summary>
 
+- [SafeDojo: Safe Reinforcement Learning for VLA via Interactive World Model](https://arxiv.org/abs/2606.20698). Tang et al. *arXiv 2606.20698*, 2026.
 - [Safety, Security, and Cognitive Risks in World Models](https://arxiv.org/abs/2604.01346). Parmar. *arXiv 2604.01346*, 2026.
 - [TRAP: Tail-aware Ranking Attack for World-Model Planning](https://arxiv.org/abs/2605.01950). Duan et al. *arXiv 2605.01950*, 2026.
 - [Benchmarking Vision-Language Models under Contradictory Virtual Content Attacks in AR](https://arxiv.org/abs/2604.05510). Xiu et al. *arXiv 2604.05510*, 2026.
