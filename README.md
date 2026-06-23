@@ -370,7 +370,7 @@ We review **533** papers across five capability layers of embodied AI. The taxon
 ---
 
 <details open>
-<summary>🧠 <b>Cognition</b> (38 papers)</summary>
+<summary>🧠 <b>Cognition</b> (39 papers)</summary>
 
 <details open>
 <summary>Instruction Understanding (16)</summary>
