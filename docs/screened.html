@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paper Reader &mdash; Safety in Embodied AI</title>
-  <meta name="description" content="Read abstracts and keywords for 560+ papers on safety in embodied AI, across perception, cognition, planning, interaction, and agentic systems.">
+  <title>Screened Papers &mdash; Safety in Embodied AI</title>
+  <meta name="description" content="A daily, machine-screened feed of new arXiv papers on safety in embodied AI. Auto-screened and pending human review, audited periodically, and promoted into the curated survey.">
 
-  <meta property="og:title" content="Paper Reader — Safety in Embodied AI Survey">
-  <meta property="og:description" content="Browse abstracts and keywords for 560+ embodied-AI safety papers across a 5-layer taxonomy.">
+  <meta property="og:title" content="Screened Papers — Safety in Embodied AI Survey">
+  <meta property="og:description" content="Daily auto-screened arXiv feed for the embodied-AI-safety survey — auto-screened, pending human review.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://x-zheng16.github.io/Awesome-Embodied-AI-Safety/papers.html">
+  <meta property="og:url" content="https://x-zheng16.github.io/Awesome-Embodied-AI-Safety/screened.html">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -123,6 +123,39 @@
     .loading { text-align: center; color: var(--text-muted); padding: 4rem 1rem; font-family: 'JetBrains Mono', monospace; }
     footer { text-align: center; color: var(--text-muted); font-size: 0.85rem; padding: 2.4rem 1rem; border-top: 1px solid var(--border); margin-top: 2rem; }
     footer a { font-weight: 500; }
+
+    /* Screened-page additions */
+    .notice {
+      background: color-mix(in srgb, var(--c-planning) 12%, var(--bg-card));
+      border: 1px solid color-mix(in srgb, var(--c-planning) 38%, var(--border));
+      border-left: 3px solid var(--c-planning);
+      border-radius: 8px; padding: 0.85rem 1.1rem; margin: 1.3rem 0 0.4rem;
+      font-size: 0.9rem; color: var(--text); line-height: 1.55;
+    }
+    .tiers { display: flex; gap: 0.7rem; margin: 1.3rem 0 0.3rem; flex-wrap: wrap; }
+    .tier {
+      flex: 1; min-width: 210px; text-align: left; cursor: pointer;
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+      padding: 0.75rem 1rem; display: flex; flex-direction: column; gap: 0.12rem;
+      font-family: inherit; transition: all .15s; position: relative;
+    }
+    .tier:hover { border-color: var(--accent); }
+    .tier.active { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+    .tier-name { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.98rem; color: var(--text); }
+    .tier-desc { font-size: 0.8rem; color: var(--text-muted); }
+    .tier-count { position: absolute; top: 0.7rem; right: 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.92rem; font-weight: 600; color: var(--accent); }
+    .cta {
+      background: color-mix(in srgb, var(--accent) 10%, var(--bg-card));
+      border: 1px dashed color-mix(in srgb, var(--accent) 50%, var(--border));
+      border-radius: 8px; padding: 0.7rem 1.1rem; margin: 0.55rem 0 0;
+      font-size: 0.9rem; color: var(--text);
+    }
+    .cta a { font-weight: 600; }
+    .badge.rel-Yes { background: color-mix(in srgb, var(--c-action) 20%, transparent); color: var(--c-action); }
+    .badge.rel-Marginal { background: color-mix(in srgb, var(--c-planning) 20%, transparent); color: var(--c-planning); }
+    .why { font-size: 0.85rem; color: var(--text-muted); margin: 0.5rem 0 0; line-height: 1.55; }
+    .why::before { content: "Why screened: "; font-weight: 600; color: var(--text); }
+    .screened-date { font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; color: var(--text-muted); white-space: nowrap; }
   </style>
 </head>
 <body>
@@ -132,7 +165,7 @@
     <div class="nav-links">
       <a href="index.html" class="nav-link">&larr; Catalog</a>
       <a href="index.html#papers" class="nav-link">Taxonomy</a>
-      <a href="screened.html" class="nav-link">Screened</a>
+      <a href="papers.html" class="nav-link">Browse</a>
       <a href="https://arxiv.org/abs/2605.02900" class="nav-link" target="_blank" rel="noopener">arXiv</a>
       <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">
         <svg id="iconSun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
@@ -144,9 +177,34 @@
 
 <div class="wrap">
   <header class="hero">
-    <h1>Paper Reader</h1>
-    <p class="hero-sub">Abstracts and keywords for every paper in the <a href="index.html">Safety in Embodied AI</a> survey. Search across titles, authors, venues, abstracts, and keywords; filter by taxonomy layer.</p>
+    <h1>Screened Papers</h1>
+    <p class="hero-sub">A daily, machine-screened feed of new arXiv papers for the <a href="index.html">Safety in Embodied AI</a> survey. Search titles, authors, venues, abstracts, and keywords; filter by taxonomy layer.</p>
   </header>
+
+  <div class="notice">
+    <strong>Auto-screened, pending human review.</strong> These papers are surfaced automatically by our
+    embodied-AI-safety screening pipeline (arXiv harvest &rarr; lexicon prefilter &rarr; LLM judge). They are
+    <em>not</em> yet vetted for the survey &mdash; listing here is not endorsement. We audit them periodically
+    and promote the strongest into the <a href="papers.html">curated catalog</a>.
+  </div>
+
+  <div class="tiers" id="tiers" role="tablist" aria-label="Screening tier">
+    <button class="tier active" data-tier="screened" role="tab" aria-selected="true">
+      <span class="tier-name">Auto-screened</span>
+      <span class="tier-desc">raw pipeline output, unreviewed</span>
+      <span class="tier-count" id="cnt-screened">&mdash;</span>
+    </button>
+    <button class="tier" data-tier="audited" role="tab" aria-selected="false">
+      <span class="tier-name">Editor&rsquo;s Audit</span>
+      <span class="tier-desc">re-checked by authors &amp; metadata</span>
+      <span class="tier-count" id="cnt-audited">&mdash;</span>
+    </button>
+  </div>
+
+  <div class="cta" id="cta" hidden>
+    Spotted a strong embodied-AI-safety paper we missed?
+    <a href="https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/issues/new?template=paper-submission.md&amp;labels=paper-submission" target="_blank" rel="noopener">Submissions welcome &rarr;</a>
+  </div>
 
   <div class="controls">
     <div class="search-row">
@@ -160,11 +218,10 @@
       <button class="pill" data-layer="Planning">Planning</button>
       <button class="pill" data-layer="Action and Interaction">Action</button>
       <button class="pill" data-layer="Agentic">Agentic</button>
-      <button class="pill" data-layer="Other Related Works">Other</button>
     </div>
   </div>
 
-  <div id="cards" class="cards"><div class="loading">Loading papers...</div></div>
+  <div id="cards" class="cards"><div class="loading">Loading screened papers...</div></div>
 </div>
 
 <footer>
@@ -189,25 +246,31 @@
     "Perception":"--c-perception","Cognition":"--c-cognition","Planning":"--c-planning",
     "Action and Interaction":"--c-action","Agentic":"--c-agentic","Other Related Works":"--c-orw"
   };
-  var PAPERS = [], activeLayer = 'all', query = '', debounce = null;
-  var cardsEl = document.getElementById('cards'), statsEl = document.getElementById('stats'), searchEl = document.getElementById('search');
+  var DATA = { screened: [], audited: [] };
+  var activeTier = 'screened', activeLayer = 'all', query = '', debounce = null;
+  var cardsEl = document.getElementById('cards'), statsEl = document.getElementById('stats'),
+      searchEl = document.getElementById('search'), ctaEl = document.getElementById('cta');
 
   function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
   function cardHTML(p){
     var lv = LAYER_VAR[p.layer] || '--accent';
-    var meta = [esc(p.authors), p.venue ? '<span class="venue">'+esc(p.venue)+'</span>' : '', esc(p.year)].filter(Boolean).join(' &middot; ');
-    var badges = '<span class="badge">'+esc(p.layer)+'</span>' + (p.subcat ? '<span class="badge sub">'+esc(p.subcat)+'</span>' : '');
+    var cites = (p.citation_count!=null) ? esc(String(p.citation_count))+' cites' : '';
+    var meta = [esc(p.authors), p.venue ? '<span class="venue">'+esc(p.venue)+'</span>' : '', esc(p.year), cites].filter(Boolean).join(' &middot; ');
+    var rel = p.relevance ? '<span class="badge rel-'+esc(p.relevance)+'">'+esc(p.relevance)+'</span>' : '';
+    var badges = rel + '<span class="badge">'+esc(p.layer)+'</span>' + (p.subcat ? '<span class="badge sub">'+esc(p.subcat)+'</span>' : '');
+    var date = p.screened_date ? '<span class="screened-date">screened '+esc(p.screened_date)+'</span>' : '';
+    var why = p.why ? '<p class="why">'+esc(p.why)+'</p>' : '';
     var abs = p.abstract
       ? '<p class="abstract clamp">'+esc(p.abstract)+'</p><button class="more-btn" type="button">Show more</button>'
       : '<p class="abstract-none">Abstract not available &mdash; see source link.</p>';
     var kws = (p.keywords && p.keywords.length)
       ? '<div class="kw-row">'+p.keywords.map(function(k){return '<span class="kw">'+esc(k)+'</span>';}).join('')+'</div>' : '';
     return '<div class="card" style="--lc:var('+lv+')">'
-      + '<div>'+badges+'</div>'
+      + '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.6rem"><div>'+badges+'</div>'+date+'</div>'
       + '<h2 class="card-title"><a href="'+esc(p.url)+'" target="_blank" rel="noopener">'+esc(p.title)+'</a></h2>'
       + '<div class="card-meta">'+meta+'</div>'
-      + abs + kws + '</div>';
+      + why + abs + kws + '</div>';
   }
 
   function norm(s){ return (s||'').toLowerCase(); }
@@ -218,13 +281,18 @@
   }
 
   function render(){
+    var list = DATA[activeTier] || [];
     var q = norm(query), shown = 0, html = [];
-    for (var i=0;i<PAPERS.length;i++){
-      var p = PAPERS[i];
+    for (var i=0;i<list.length;i++){
+      var p = list[i];
       if ((activeLayer==='all'||p.layer===activeLayer) && matches(p,q)){ html.push(cardHTML(p)); shown++; }
     }
-    cardsEl.innerHTML = shown ? html.join('') : '<div class="empty">No papers match your search.</div>';
-    statsEl.textContent = (shown===PAPERS.length) ? (PAPERS.length+' papers') : (shown+' / '+PAPERS.length+' papers');
+    var empty = activeTier==='audited'
+      ? 'Editor&rsquo;s audit in progress &mdash; curated picks will appear here.'
+      : 'No papers in this view yet.';
+    cardsEl.innerHTML = shown ? html.join('') : '<div class="empty">'+(query?'No papers match your search.':empty)+'</div>';
+    statsEl.textContent = (shown===list.length) ? (list.length+' papers') : (shown+' / '+list.length+' papers');
+    ctaEl.hidden = (activeTier !== 'audited');
     cardsEl.querySelectorAll('.more-btn').forEach(function(b){
       b.addEventListener('click', function(){
         var a = b.previousElementSibling;
@@ -234,6 +302,13 @@
     });
   }
 
+  document.getElementById('tiers').addEventListener('click', function(e){
+    var b = e.target.closest('.tier'); if(!b) return;
+    activeTier = b.dataset.tier;
+    this.querySelectorAll('.tier').forEach(function(x){ x.classList.remove('active'); x.setAttribute('aria-selected','false'); });
+    b.classList.add('active'); b.setAttribute('aria-selected','true');
+    render();
+  });
   document.getElementById('pills').addEventListener('click', function(e){
     var b = e.target.closest('.pill'); if(!b) return;
     activeLayer = b.dataset.layer;
@@ -245,11 +320,14 @@
     query = this.value; clearTimeout(debounce); debounce = setTimeout(render, 120);
   });
 
-  fetch('papers.json').then(function(r){ return r.json(); }).then(function(data){
-    PAPERS = data; render();
-  }).catch(function(e){
-    cardsEl.innerHTML = '<div class="empty">Failed to load papers.json &mdash; '+esc(String(e))+'</div>';
-    statsEl.textContent = 'error';
+  function setCounts(){
+    document.getElementById('cnt-screened').textContent = DATA.screened.length;
+    document.getElementById('cnt-audited').textContent = DATA.audited.length;
+  }
+  function load(name){ return fetch(name).then(function(r){ return r.ok ? r.json() : []; }).catch(function(){ return []; }); }
+  Promise.all([load('screened.json'), load('audited.json')]).then(function(res){
+    DATA.screened = res[0]||[]; DATA.audited = res[1]||[];
+    setCounts(); render();
   });
 </script>
 </body>
