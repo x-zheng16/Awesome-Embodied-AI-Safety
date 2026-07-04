@@ -599,6 +599,33 @@
     .paper-list li em { color: var(--text-muted); font-style: italic; }
     .paper-list li.hidden { display: none; }
 
+    /* Paper voting -- dormant until the backend is wired (body.voting-on added by JS).
+       Caret + count render via CSS pseudo-elements so they stay out of li.textContent
+       (the search filter matches textContent and must not see vote glyphs/numbers). */
+    body.voting-on .paper-list li { display: flex; align-items: flex-start; gap: 0.6rem; }
+    body.voting-on .paper-main { flex: 1 1 auto; min-width: 0; }
+    .vote-btn {
+      flex: 0 0 auto; margin-top: 0.1rem;
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      padding: 0.16rem 0.5rem; border-radius: 999px;
+      border: 1px solid var(--border); background: var(--bg-card);
+      color: var(--text-muted); cursor: pointer;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+      font-variant-numeric: tabular-nums; line-height: 1.1;
+      transition: color 0.15s, border-color 0.15s, background 0.15s, transform 0.12s;
+    }
+    .vote-btn::before { content: '\25B2'; font-size: 0.64rem; }
+    .vote-btn::after  { content: attr(data-n); }
+    .vote-btn:hover { color: var(--layer-accent, var(--accent)); border-color: var(--layer-accent, var(--accent)); transform: translateY(-1px); }
+    .vote-btn:disabled { opacity: 0.55; cursor: default; transform: none; }
+    .vote-btn.voted {
+      color: var(--layer-accent, var(--accent));
+      border-color: var(--layer-accent, var(--accent));
+      background: color-mix(in srgb, var(--layer-accent, var(--accent)) 12%, transparent);
+      font-weight: 600;
+    }
+    @media (max-width: 640px) { .vote-btn { font-size: 0.68rem; padding: 0.14rem 0.44rem; } }
+
     /* LAYER COLOR PROPAGATION */
     #layer-perception { --layer-accent: var(--c-perception); }
     #layer-cognition  { --layer-accent: var(--c-cognition); }
@@ -2242,16 +2269,39 @@
   // switchover (65 as of 2026-06-03) so the hero reflects total visits.
   var VISITOR_BASELINE = 65;
   var VISITOR_PV_FLOOR = 226; // last-known busuanzi site_pv (2026-07-04); live refreshes it
+
+  // Self-hosted backend (Cloudflare Worker in worker/). Leave '' to keep the
+  // busuanzi counter and disable voting. After deploying, set this to the
+  // Worker URL, e.g. 'https://embodied-ai-safety-api.<subdomain>.workers.dev'
+  // (no trailing slash). The site URL itself does not change.
+  var API_BASE = '';
+
   (function () {
     var numEl = document.getElementById('visitorNum');
     var itemEl = document.getElementById('visitorStat');
     if (!numEl || !itemEl) return;
-    var CACHE_KEY = 'aeas-visitor-pv';
-    function show(pv) {
-      numEl.textContent = Number(VISITOR_BASELINE + pv).toLocaleString('en-US');
-      itemEl.removeAttribute('hidden');
+    function paint(total) { numEl.textContent = Number(total).toLocaleString('en-US'); itemEl.removeAttribute('hidden'); }
+
+    // Durable self-hosted counter (preferred once the backend is wired).
+    if (API_BASE) {
+      var TKEY = 'aeas-visitor-total';
+      var tc = parseInt(localStorage.getItem(TKEY), 10);
+      paint(isNaN(tc) ? (VISITOR_BASELINE + VISITOR_PV_FLOOR) : tc); // never blank
+      fetch(API_BASE + '/api/views', { method: 'POST' })
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (d && typeof d.views !== 'undefined') {
+            try { localStorage.setItem(TKEY, String(d.views)); } catch (e) {}
+            paint(d.views);
+          }
+        })
+        .catch(function () {}); // cached value stays shown
+      return;
     }
-    // Paint immediately from cache/floor so a slow or failed host never blanks it.
+
+    // Fallback: busuanzi JSONP (flaky host; cache + floor so it never blanks).
+    var CACHE_KEY = 'aeas-visitor-pv';
+    function show(pv) { paint(VISITOR_BASELINE + pv); }
     var cached = parseInt(localStorage.getItem(CACHE_KEY), 10);
     show(isNaN(cached) ? VISITOR_PV_FLOOR : cached);
     var cb = 'BusuanziCallback_' + (window.performance ? Math.floor(performance.now() * 1000) : '0');
@@ -2274,6 +2324,72 @@
     // Host can hang; give up after 8s. The cached/floor value stays shown.
     setTimeout(function () { if (!done) cleanup(); }, 8000);
     document.body.appendChild(s);
+  })();
+
+  // HuggingFace-style paper voting -- activates only when API_BASE is set.
+  // One upvote per anonymous client per paper; the button toggles (vote / un-vote).
+  (function () {
+    if (!API_BASE) return;
+    var CLIENT_ID = (function () {
+      var k = 'aeas-client-id', v = localStorage.getItem(k);
+      if (!v) {
+        v = (window.crypto && crypto.randomUUID) ? crypto.randomUUID()
+          : (String(Date.now()) + Math.random().toString(36).slice(2));
+        try { localStorage.setItem(k, v); } catch (e) {}
+      }
+      return v;
+    })();
+    var VOTED_KEY = 'aeas-voted';
+    var voted = new Set();
+    try { JSON.parse(localStorage.getItem(VOTED_KEY) || '[]').forEach(function (x) { voted.add(x); }); } catch (e) {}
+    function persist() { try { localStorage.setItem(VOTED_KEY, JSON.stringify(Array.prototype.slice.call(voted))); } catch (e) {} }
+    // Stable per-paper id: a slug of the (unique) title text. Kept out of textContent-based search.
+    function slug(t) { return (t || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 90); }
+
+    var rows = [];
+    document.querySelectorAll('#papers .paper-list li').forEach(function (li) {
+      var a = li.querySelector('a'); if (!a) return;
+      var pid = slug(a.textContent); if (!pid) return;
+      var wrap = document.createElement('span'); wrap.className = 'paper-main';
+      while (li.firstChild) wrap.appendChild(li.firstChild);
+      li.appendChild(wrap);
+      var btn = document.createElement('button');
+      btn.type = 'button'; btn.className = 'vote-btn'; btn.dataset.n = '0';
+      btn.setAttribute('aria-label', 'Upvote this paper'); btn.title = 'Upvote';
+      if (voted.has(pid)) btn.classList.add('voted');
+      btn.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); cast(pid, btn); });
+      li.appendChild(btn);
+      rows.push({ pid: pid, btn: btn });
+    });
+    if (!rows.length) return;
+    document.body.classList.add('voting-on');
+
+    fetch(API_BASE + '/api/votes')
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        var counts = (d && d.counts) || {};
+        rows.forEach(function (row) { row.btn.dataset.n = String(counts[row.pid] || 0); });
+      })
+      .catch(function () {});
+
+    function cast(pid, btn) {
+      btn.disabled = true;
+      fetch(API_BASE + '/api/vote', {
+        method: 'POST', headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ paperId: pid, clientId: CLIENT_ID })
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (d && typeof d.count !== 'undefined') {
+            btn.dataset.n = String(d.count);
+            if (d.voted) { btn.classList.add('voted'); voted.add(pid); }
+            else { btn.classList.remove('voted'); voted['delete'](pid); }
+            persist();
+          }
+        })
+        .catch(function () {})
+        .then(function () { btn.disabled = false; });
+    }
   })();
 </script>
 
