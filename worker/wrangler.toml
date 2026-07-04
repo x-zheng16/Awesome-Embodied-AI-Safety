@@ -7,7 +7,7 @@ compatibility_date = "2026-07-01"
 [[d1_databases]]
 binding = "DB"
 database_name = "embodied-ai-safety"
-database_id = "REPLACE_AFTER_D1_CREATE"
+database_id = "3223a209-7efc-456d-88fb-a94a909758dc"
 
 # Observability: keep logs on so the daily view/vote traffic is inspectable in the dash.
 [observability]
