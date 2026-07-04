@@ -119,6 +119,8 @@
       --c-planning:   #B45309;
       --c-action:     #0F766E;
       --c-agentic:    #BE123C;
+      --c-orw:        #64748B;
+      --shadow-card: 0 10px 32px rgba(17, 22, 40, 0.10);
     }
     .dark {
       --bg: #282C34;
@@ -139,10 +141,14 @@
       --c-planning:   #F59E0B;
       --c-action:     #2DD4BF;
       --c-agentic:    #F472B6;
+      --c-orw:        #94A3B8;
+      --shadow-card: 0 14px 36px rgba(0, 0, 0, 0.38);
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+    ::selection { background: rgba(var(--accent-rgb), 0.24); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
     body {
       font-family: 'Inter', system-ui, sans-serif;
       background: var(--bg);
@@ -158,6 +164,13 @@
     .nav-blur {
       background: var(--bg);
       border-bottom: 1px solid var(--border);
+    }
+    @supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+      .nav-blur {
+        background: color-mix(in srgb, var(--bg) 78%, transparent);
+        -webkit-backdrop-filter: blur(14px) saturate(1.5);
+        backdrop-filter: blur(14px) saturate(1.5);
+      }
     }
 
     .nav-link {
@@ -201,15 +214,17 @@
     /* HERO */
     .hero-grid {
       background-image:
+        radial-gradient(ellipse 72% 46% at 50% 8%, rgba(var(--accent-rgb), 0.08), transparent 68%),
         linear-gradient(rgba(var(--accent-rgb), 0.04) 1px, transparent 1px),
         linear-gradient(90deg, rgba(var(--accent-rgb), 0.04) 1px, transparent 1px);
-      background-size: 48px 48px;
+      background-size: 100% 100%, 48px 48px, 48px 48px;
     }
     .dark .hero-grid {
       background:
+        radial-gradient(ellipse 72% 46% at 50% 8%, rgba(var(--accent-rgb), 0.10), transparent 68%),
         linear-gradient(rgba(var(--accent-rgb), 0.04) 1px, transparent 1px),
         linear-gradient(90deg, rgba(var(--accent-rgb), 0.04) 1px, transparent 1px);
-      background-size: 48px 48px, 48px 48px;
+      background-size: 100% 100%, 48px 48px, 48px 48px;
     }
 
     .hero-banner-wrap { position: relative; overflow: hidden; max-height: 280px; }
@@ -222,11 +237,32 @@
     }
 
     .hero-title {
-      font-size: clamp(2rem, 4.8vw, 3.4rem);
-      font-weight: 700; line-height: 1.1;
+      font-size: clamp(2.1rem, 5vw, 3.6rem);
+      font-weight: 700; line-height: 1.06;
       color: var(--text);
-      letter-spacing: -0.02em;
+      letter-spacing: -0.025em;
+      text-wrap: balance;
     }
+    .hero-sub {
+      display: block;
+      margin-top: 0.45em;
+      font-size: 0.55em;
+      font-weight: 500; line-height: 1.3;
+      color: var(--text-muted);
+      letter-spacing: -0.012em;
+    }
+
+    @keyframes hero-rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: none; }
+    }
+    .hero-grid .max-w-5xl > * { animation: hero-rise 0.65s var(--expo-out) backwards; }
+    .hero-grid .max-w-5xl > *:nth-child(1) { animation-delay: 0.05s; }
+    .hero-grid .max-w-5xl > *:nth-child(2) { animation-delay: 0.12s; }
+    .hero-grid .max-w-5xl > *:nth-child(3) { animation-delay: 0.19s; }
+    .hero-grid .max-w-5xl > *:nth-child(4) { animation-delay: 0.26s; }
+    .hero-grid .max-w-5xl > *:nth-child(5) { animation-delay: 0.33s; }
+    .hero-grid .max-w-5xl > *:nth-child(6) { animation-delay: 0.40s; }
 
     .badge-pill {
       display: inline-flex; align-items: center;
@@ -241,16 +277,17 @@
     .bp-muted  { color: var(--text-muted); border-color: var(--border); background: var(--bg-card); }
 
     .cta-btn {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 9px 18px; border-radius: 8px;
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 10px 20px; border-radius: 9px;
       font-family: 'JetBrains Mono', monospace; font-size: 13px;
       font-weight: 500;
       text-decoration: none;
-      transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s, color 0.15s;
+      transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s, color 0.15s, background 0.15s;
     }
     .cta-btn:hover { transform: translateY(-1px); }
-    .cta-primary { color: var(--accent); border: 1px solid rgba(var(--accent-rgb), 0.4); background: var(--accent-glow); }
-    .cta-primary:hover { box-shadow: 0 4px 18px rgba(var(--accent-rgb), 0.25); }
+    .cta-btn:active { transform: translateY(0); }
+    .cta-primary { color: #fff; border: 1px solid transparent; background: var(--accent); box-shadow: 0 1px 3px rgba(var(--accent-rgb), 0.3); }
+    .cta-primary:hover { background: var(--accent-light); box-shadow: 0 6px 22px rgba(var(--accent-rgb), 0.35); }
     .cta-ghost { color: var(--text); border: 1px solid var(--border); background: var(--bg-card); }
     .cta-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
@@ -282,13 +319,15 @@
     }
     .stat-item {
       display: flex; flex-direction: column; align-items: center;
-      padding: 1.1rem 2.4rem;
+      padding: 1.3rem 2.5rem;
       border-right: 1px solid var(--border);
     }
     .stat-item:last-child { border-right: none; }
     .stat-num {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.85rem; font-weight: 700;
+      font-size: 2rem; font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
       color: var(--accent);
       line-height: 1;
     }
@@ -300,85 +339,98 @@
       margin-top: 0.35rem;
     }
     @media (max-width: 640px) {
-      .stat-item { padding: 0.85rem 1.4rem; border-right: none; border-bottom: 1px solid var(--border); }
-      .stat-item:last-child { border-bottom: none; }
+      .stats-strip { padding: 0.55rem 0.5rem; }
+      .stat-item { padding: 0.7rem 0.9rem; border-right: none; }
+      .stat-num { font-size: 1.4rem; }
+      .stat-label { font-size: 0.6rem; margin-top: 0.3rem; }
     }
 
     /* SECTION */
-    section { padding: 4.5rem 1.5rem; }
+    section { padding: clamp(4.5rem, 9vw, 6rem) 1.5rem; }
     section:nth-of-type(even) { background: var(--bg-alt); }
     .inner { max-width: 960px; margin: 0 auto; }
 
     .sh {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.65rem; font-weight: 700;
+      font-size: clamp(1.7rem, 2.7vw, 1.95rem); font-weight: 700;
       color: var(--text);
-      padding-bottom: 0.5rem;
-      border-bottom: 2.5px solid var(--accent);
+      padding-bottom: 0.55rem;
+      border-bottom: 3px solid;
+      border-image: linear-gradient(90deg, var(--accent), rgba(var(--accent-rgb), 0.12)) 1;
       display: inline-block;
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.01em;
+      margin-bottom: 1.9rem;
+      letter-spacing: -0.02em;
     }
 
     .abstract p {
-      font-size: 1rem; line-height: 1.8;
+      font-size: 1.03rem; line-height: 1.85;
       color: var(--text);
       max-width: 840px;
+      text-wrap: pretty;
     }
-    .abstract p + p { margin-top: 1rem; }
+    .abstract p + p { margin-top: 1.15rem; }
 
     /* FIGURES */
-    .figures { display: flex; flex-direction: column; gap: 3rem; }
+    .figures { display: flex; flex-direction: column; gap: 3.5rem; }
     .fig { text-align: center; }
     .fig img {
       width: 100%; max-width: 880px;
-      border-radius: 8px;
+      border-radius: 12px;
       border: 1px solid var(--border);
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
       background: var(--bg-card);
+      transition: transform 0.35s var(--expo-out), box-shadow 0.35s var(--expo-out), border-color 0.35s;
+    }
+    .fig img:hover {
+      transform: translateY(-3px);
+      border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+      box-shadow: var(--shadow-card);
     }
     .fig-cap {
-      margin-top: 0.85rem;
+      margin-top: 1rem;
       font-size: 0.85rem; font-style: italic; color: var(--text-muted);
       max-width: 720px; margin-left: auto; margin-right: auto;
-      line-height: 1.6;
+      line-height: 1.65;
     }
+    .fig-cap strong { color: var(--text); font-style: normal; }
 
     /* SCOPE TABLE */
     .scope-lead { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.4rem; }
     .scope-lead strong { color: var(--text); }
 
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 12px; }
     table.scope-table {
-      width: 100%; border-collapse: collapse;
+      width: 100%; min-width: 640px; border-collapse: collapse;
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 10px;
+      border-radius: 12px;
       overflow: hidden;
     }
     .scope-table thead tr { background: var(--bg-alt); }
     .scope-table th {
-      padding: 0.85rem 1.2rem;
+      padding: 0.9rem 1.25rem;
       color: var(--text-muted);
       text-align: left;
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.72rem; font-weight: 500;
-      letter-spacing: 0.08em; text-transform: uppercase;
+      letter-spacing: 0.1em; text-transform: uppercase;
     }
     .scope-table th:last-child { text-align: right; }
     .scope-table td {
-      padding: 0.85rem 1.2rem;
+      padding: 0.95rem 1.25rem;
       border-top: 1px solid var(--border);
       vertical-align: middle;
+      transition: background 0.15s;
     }
     .scope-table tbody tr:hover td { background: var(--row-hover); }
     .lname { font-weight: 600; color: var(--text); font-size: 0.95rem; }
-    .ltopics { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.15rem; }
+    .ltopics { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.18rem; }
     .cnt-cell { text-align: right; }
-    .bar-wrap { display: inline-flex; align-items: center; gap: 0.5rem; float: right; }
-    .bar { display: inline-block; height: 7px; border-radius: 3.5px; background: var(--accent); }
-    .cnt { font-weight: 700; color: var(--text); font-size: 0.95rem; min-width: 2.2rem; text-align: right; }
+    .bar-wrap { display: inline-flex; align-items: center; gap: 0.55rem; float: right; }
+    .bar { display: inline-block; height: 8px; border-radius: 4px; background: var(--accent); }
+    .cnt { font-weight: 700; color: var(--text); font-size: 0.95rem; min-width: 2.2rem; text-align: right; font-variant-numeric: tabular-nums; }
     .total-row td { background: var(--bg-alt); color: var(--text); font-weight: 600; }
-    .total-count { font-weight: 700; font-size: 1rem; color: var(--accent); float: right; }
+    .total-count { font-weight: 700; font-size: 1rem; color: var(--accent); float: right; font-variant-numeric: tabular-nums; }
 
     /* PAPERS: search, filter pills */
     .paper-toolbar {
@@ -390,9 +442,9 @@
     }
     .search-input {
       width: 100%;
-      padding: 0.55rem 0.9rem 0.55rem 2.2rem;
+      padding: 0.6rem 0.95rem 0.6rem 2.3rem;
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 9px;
       background: var(--bg-card);
       color: var(--text);
       font-family: 'Inter', sans-serif;
@@ -416,9 +468,9 @@
       padding: 0 0.6rem;
     }
 
-    .filter-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.4rem; }
+    .filter-pills { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1.4rem; }
     .pill {
-      padding: 0.35rem 0.85rem;
+      padding: 0.4rem 0.95rem;
       border-radius: 999px;
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.72rem; font-weight: 500;
@@ -427,13 +479,19 @@
       background: var(--bg-card);
       color: var(--text-muted);
       cursor: pointer;
-      transition: border-color 0.18s, color 0.18s, background 0.18s;
+      transition: border-color 0.18s, color 0.18s, background 0.18s, transform 0.18s, box-shadow 0.18s;
     }
-    .pill:hover { border-color: var(--pill-c, var(--accent)); color: var(--pill-c, var(--accent)); }
-    .pill.active {
-      background: color-mix(in srgb, var(--pill-c, var(--accent)) 12%, transparent);
+    .pill:hover {
       border-color: var(--pill-c, var(--accent));
       color: var(--pill-c, var(--accent));
+      transform: translateY(-1px);
+    }
+    .pill.active {
+      background: color-mix(in srgb, var(--pill-c, var(--accent)) 13%, transparent);
+      border-color: var(--pill-c, var(--accent));
+      color: var(--pill-c, var(--accent));
+      font-weight: 600;
+      box-shadow: 0 2px 10px color-mix(in srgb, var(--pill-c, var(--accent)) 18%, transparent);
     }
     .pill[data-layer="all"]        { --pill-c: var(--accent); }
     .pill[data-layer="perception"] { --pill-c: var(--c-perception); }
@@ -441,6 +499,7 @@
     .pill[data-layer="planning"]   { --pill-c: var(--c-planning); }
     .pill[data-layer="action"]     { --pill-c: var(--c-action); }
     .pill[data-layer="agentic"]    { --pill-c: var(--c-agentic); }
+    .pill[data-layer="orw"]        { --pill-c: var(--c-orw); }
 
     /* PAPERS TOC (legacy jump links) */
     .paper-toc {
@@ -469,32 +528,41 @@
       transition: background 0.15s, color 0.15s, border-color 0.15s;
     }
     .ptoc-link em { color: var(--text-muted); font-style: normal; margin-left: 4px; }
-    .ptoc-link:hover { border-color: var(--lc, var(--accent)); color: var(--lc, var(--accent)); }
+    .ptoc-link:hover {
+      border-color: var(--lc, var(--accent));
+      color: var(--lc, var(--accent));
+      background: color-mix(in srgb, var(--lc, var(--accent)) 8%, var(--bg-card));
+    }
 
     /* LAYER ACCORDION */
     .layer-block {
       border: 1px solid var(--border);
-      border-radius: 10px;
-      margin-bottom: 0.85rem;
+      border-radius: 12px;
+      margin-bottom: 0.9rem;
       overflow: hidden;
       background: var(--bg-card);
+      transition: border-color 0.2s;
     }
+    .layer-block[open] { border-color: color-mix(in srgb, var(--layer-accent, var(--accent)) 32%, var(--border)); }
     .layer-block[open] .layer-summary { border-bottom: 1px solid var(--border); }
     .layer-summary {
       display: flex; align-items: center; gap: 0.75rem;
-      padding: 0.95rem 1.2rem; cursor: pointer; user-select: none;
+      padding: 1rem 1.25rem; cursor: pointer; user-select: none;
       background: var(--bg-card);
       list-style: none;
       transition: background 0.15s;
     }
     .layer-summary::-webkit-details-marker { display: none; }
     .layer-summary:hover { background: var(--bg-alt); }
-    .layer-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .layer-block[open] .layer-summary { background: color-mix(in srgb, var(--layer-accent, var(--accent)) 4%, var(--bg-card)); }
+    .layer-block[open] .layer-summary:hover { background: color-mix(in srgb, var(--layer-accent, var(--accent)) 8%, var(--bg-card)); }
+    .layer-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 0 3px color-mix(in srgb, var(--layer-accent, var(--accent)) 16%, transparent); }
     .layer-label { font-weight: 600; font-size: 1rem; color: var(--text); flex: 1; font-family: 'Space Grotesk', sans-serif; }
     .layer-cnt {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.72rem; color: var(--text-muted);
-      background: var(--bg-alt); padding: 0.2rem 0.55rem; border-radius: 12px;
+      font-variant-numeric: tabular-nums;
+      background: var(--bg-alt); padding: 0.2rem 0.6rem; border-radius: 12px;
     }
     .layer-summary::after { content: '>'; font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; color: var(--text-muted); transition: transform 0.2s; margin-left: 0.25rem; }
     .layer-block[open] .layer-summary::after { transform: rotate(90deg); }
@@ -513,7 +581,7 @@
     .cat-summary::-webkit-details-marker { display: none; }
     .cat-summary::before { content: '>'; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--text-muted); transition: transform 0.2s; }
     .cat-block[open] .cat-summary::before { transform: rotate(90deg); }
-    .cat-summary:hover { color: var(--accent); }
+    .cat-summary:hover { color: var(--layer-accent, var(--accent)); }
     .cat-cnt { font-weight: 400; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; }
 
     /* PAPER LIST */
@@ -525,9 +593,9 @@
       border-radius: 0 6px 6px 0;
       transition: background 0.15s;
     }
-    .paper-list li:hover { background: var(--row-hover); }
+    .paper-list li:hover { background: color-mix(in srgb, var(--layer-accent, var(--accent)) 7%, transparent); }
     .paper-list li a { color: var(--text); text-decoration: none; font-weight: 500; }
-    .paper-list li a:hover { color: var(--layer-accent, var(--accent)); text-decoration: underline; }
+    .paper-list li a:hover { color: var(--layer-accent, var(--accent)); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
     .paper-list li em { color: var(--text-muted); font-style: italic; }
     .paper-list li.hidden { display: none; }
 
@@ -537,9 +605,16 @@
     #layer-planning   { --layer-accent: var(--c-planning); }
     #layer-action     { --layer-accent: var(--c-action); }
     #layer-agentic    { --layer-accent: var(--c-agentic); }
-    .layer-block[open] .layer-summary { border-left: 3px solid var(--layer-accent, var(--accent)); padding-left: calc(1.2rem - 3px); }
+    #layer-orw        { --layer-accent: var(--c-orw); }
+    .layer-block[open] .layer-summary { border-left: 3px solid var(--layer-accent, var(--accent)); padding-left: calc(1.25rem - 3px); }
     .layer-block[open] .layer-label   { color: var(--layer-accent, var(--text)); }
     .layer-block.layer-hidden { display: none; }
+
+    @keyframes body-in {
+      from { opacity: 0; transform: translateY(-4px); }
+      to   { opacity: 1; transform: none; }
+    }
+    .layer-block[open] .layer-body { animation: body-in 0.3s var(--expo-out); }
 
     /* CONTRIBUTE */
     .contribute-grid {
@@ -551,12 +626,12 @@
     @media (max-width: 640px) { .contribute-grid { grid-template-columns: 1fr; } }
     .contrib-card {
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.6rem;
+      border-radius: 14px;
+      padding: 1.75rem;
       background: var(--bg-card);
-      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      transition: border-color 0.25s, transform 0.25s var(--expo-out), box-shadow 0.25s;
     }
-    .contrib-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08); }
+    .contrib-card:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--border)); transform: translateY(-3px); box-shadow: var(--shadow-card); }
     .contrib-icon {
       width: 40px; height: 40px;
       border-radius: 10px;
@@ -593,12 +668,24 @@
     .contrib-note strong { color: var(--accent); }
 
     /* NEWS */
-    .news-list { list-style: none; padding: 0; margin: 0; }
+    .news-list { list-style: none; padding: 0 0 0 1.5rem; margin: 0; position: relative; }
+    .news-list::before {
+      content: ''; position: absolute; left: 0; top: 1.2rem; bottom: 1.2rem;
+      width: 2px; border-radius: 1px;
+      background: linear-gradient(to bottom, var(--accent), var(--border) 55%);
+    }
     .ni {
       display: flex; gap: 1.4rem; align-items: flex-start;
-      padding: 1rem 0;
+      padding: 1.05rem 0;
       border-bottom: 1px solid var(--border);
+      position: relative;
     }
+    .ni::before {
+      content: ''; position: absolute; left: calc(-1.5rem - 3px); top: 1.42rem;
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--bg); border: 2px solid var(--accent);
+    }
+    .ni:first-child::before { background: var(--accent); box-shadow: 0 0 0 4px var(--accent-glow); }
     .ni:last-child { border-bottom: none; }
     .ndate {
       font-family: 'JetBrains Mono', monospace;
@@ -607,6 +694,7 @@
       white-space: nowrap; min-width: 92px;
       padding-top: 0.15rem;
       letter-spacing: 0.04em;
+      font-variant-numeric: tabular-nums;
     }
     .ntext { font-size: 0.92rem; color: var(--text); line-height: 1.6; }
     .ntext a { color: var(--accent); text-decoration: none; }
@@ -640,10 +728,13 @@
       background: var(--bg-code);
       color: var(--text);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.4rem;
+      border-radius: 12px;
+      padding: 1.5rem;
       overflow-x: auto;
     }
+    .bib-wrap::-webkit-scrollbar { height: 8px; }
+    .bib-wrap::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    .bib-wrap::-webkit-scrollbar-track { background: transparent; }
     .bib-wrap pre {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.8rem; line-height: 1.7;
@@ -676,7 +767,7 @@
       border-top: 1px solid var(--border);
       color: var(--text-muted);
       text-align: center;
-      padding: 1.75rem 1.5rem;
+      padding: 2.25rem 1.5rem 2rem;
       font-size: 0.82rem; line-height: 1.8;
     }
     footer a { color: var(--text); text-decoration: none; }
@@ -685,16 +776,19 @@
 
     /* RESPONSIVE */
     @media (max-width: 640px) {
-      section { padding: 3rem 1rem; }
-      .ni { flex-direction: column; gap: 0.25rem; }
+      section { padding: 3.25rem 1.1rem; }
+      .ni { flex-direction: column; gap: 0.3rem; }
       .ndate { min-width: unset; }
       .nav-mobile-hide { display: none; }
+      .news-list { padding-left: 1.15rem; }
+      .ni::before { left: calc(-1.15rem - 3px); }
+      .hero-title { line-height: 1.12; }
     }
 
     /* REVEAL */
     .reveal {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(18px);
       transition: opacity 0.7s var(--expo-out), transform 0.7s var(--expo-out);
     }
     .reveal.revealed { opacity: 1; transform: none; }
@@ -702,11 +796,19 @@
       .reveal, body { transition: none !important; }
       .reveal { opacity: 1; transform: none; }
       .hero-banner { opacity: 1 !important; }
+      .hero-grid .max-w-5xl > *, .layer-block[open] .layer-body { animation: none !important; }
+      .fig img, .contrib-card, .pill, .cta-btn, .badge-pill { transition: none !important; }
     }
     /* At-a-glance visualizations */
-    #stats .viz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 18px; }
-    .viz-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 16px 16px 10px; }
-    .viz-card h3 { font-size: 0.9rem; font-weight: 700; margin: 0 0 6px; color: var(--text); }
+    #stats .viz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 20px; }
+    .viz-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 18px 18px 12px; transition: border-color 0.2s; }
+    .viz-card:hover { border-color: color-mix(in srgb, var(--accent) 30%, var(--border)); }
+    .viz-card h3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.09em; text-transform: uppercase;
+      margin: 0 0 10px; color: var(--text-muted);
+    }
     .viz-full { grid-column: 1 / -1; }
     .viz-chart { width: 100%; height: 320px; }
     .viz-tall { height: 400px; }
@@ -753,11 +855,11 @@
   </div>
   <div class="max-w-5xl mx-auto px-6 pt-8 pb-14 text-center">
 
-    <span class="badge-pill bp-accent mb-6" style="margin-bottom: 1.5rem;">
+    <span class="badge-pill bp-accent mb-6">
       arXiv:2605.02900 &middot; v2 (May 2026)
     </span>
 
-    <h1 class="hero-title mb-5">Safety in Embodied AI<br><span style="color: var(--text-muted); font-weight: 500;">A Survey of Risks, Attacks, and Defenses</span></h1>
+    <h1 class="hero-title mb-5">Safety in Embodied AI<span class="hero-sub">A Survey of Risks, Attacks, and Defenses</span></h1>
 
     <div class="flex flex-wrap justify-center gap-2 mb-6">
       <span class="badge-pill bp-muted">CC BY 4.0</span>
@@ -867,15 +969,15 @@
   <div class="inner">
     <h2 class="sh">Overview</h2>
     <div class="figures">
-      <div class="fig">
+      <div class="fig reveal">
         <img src="https://raw.githubusercontent.com/x-zheng16/Awesome-Embodied-AI-Safety/main/assets/fig_capability_risk.png" alt="Capability vs. Risk Duality" loading="lazy">
         <p class="fig-cap"><strong>Figure 1:</strong> Capability vs. risk duality in embodied AI systems. As capabilities expand outward from perception to agentic systems, the attack surface grows correspondingly; vulnerabilities at inner layers cascade to outer layers.</p>
       </div>
-      <div class="fig">
+      <div class="fig reveal">
         <img src="https://raw.githubusercontent.com/x-zheng16/Awesome-Embodied-AI-Safety/main/assets/structure.png" alt="Survey Structure" loading="lazy">
         <p class="fig-cap"><strong>Figure 2:</strong> Illustration of safety threats and attack surfaces across capability layers of embodied AI systems.</p>
       </div>
-      <div class="fig">
+      <div class="fig reveal">
         <img src="https://raw.githubusercontent.com/x-zheng16/Awesome-Embodied-AI-Safety/main/assets/overview.png" alt="Overview of Attack and Defense Methods" loading="lazy">
         <p class="fig-cap"><strong>Figure 3:</strong> Overview of representative attack and defense methods across perception, cognition, planning, action &amp; interaction, and agentic system layers. The width of the strips is proportional to the number of reviewed works.</p>
       </div>
@@ -888,6 +990,7 @@
   <div class="inner">
     <h2 class="sh">Survey Scope</h2>
     <p class="scope-lead">We review <strong>500+ papers</strong> across five capability layers of embodied AI, covering adversarial, backdoor, jailbreak, and hardware-level attacks alongside detection, safe training, and risk-aware interaction defenses.</p>
+    <div class="table-scroll reveal">
     <table class="scope-table">
       <thead>
         <tr>
@@ -963,6 +1066,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
   </div>
 </section>
 
@@ -970,7 +1074,7 @@
   <div class="inner">
     <h2 class="sh">At a Glance</h2>
     <p class="scope-lead">A decade of embodied-AI safety research at a glance. Hover any chart to inspect; click a taxonomy layer or a venue to filter the list below.</p>
-    <div class="viz-grid">
+    <div class="viz-grid reveal">
       <div class="viz-card viz-full"><h3>Papers per Year</h3><div id="vz-year" class="viz-chart"></div></div>
       <div class="viz-card"><h3>Taxonomy &mdash; click a layer to drill in</h3><div id="vz-sun" class="viz-chart viz-tall"></div></div>
       <div class="viz-card"><h3>Venue Type</h3><div id="vz-donut" class="viz-chart viz-tall"></div></div>
@@ -1009,12 +1113,12 @@
       <a href="#layer-planning" class="ptoc-link" style="--lc: var(--c-planning);">Planning <em>(80)</em></a>
       <a href="#layer-action" class="ptoc-link" style="--lc: var(--c-action);">Action &amp; Interaction <em>(112)</em></a>
       <a href="#layer-agentic" class="ptoc-link" style="--lc: var(--c-agentic);">Agentic <em>(96)</em></a>
-      <a href="#layer-orw" class="ptoc-link" style="--lc: #64748b;">Other Related Works <em>(33)</em></a>
+      <a href="#layer-orw" class="ptoc-link" style="--lc: var(--c-orw);">Other Related Works <em>(33)</em></a>
     </div>
 
     <details class="layer-block" open id="layer-perception">
       <summary class="layer-summary">
-        <span class="layer-dot" style="background:#2563eb"></span>
+        <span class="layer-dot" style="background:var(--c-perception)"></span>
         <span class="layer-label">Perception</span>
         <span class="layer-cnt">199 papers</span>
       </summary>
@@ -1247,7 +1351,7 @@
     </details>
     <details class="layer-block" open id="layer-cognition">
       <summary class="layer-summary">
-        <span class="layer-dot" style="background:#7c3aed"></span>
+        <span class="layer-dot" style="background:var(--c-cognition)"></span>
         <span class="layer-label">Cognition</span>
         <span class="layer-cnt">39 papers</span>
       </summary>
@@ -1310,7 +1414,7 @@
     </details>
     <details class="layer-block" open id="layer-planning">
       <summary class="layer-summary">
-        <span class="layer-dot" style="background:#b45309"></span>
+        <span class="layer-dot" style="background:var(--c-planning)"></span>
         <span class="layer-label">Planning</span>
         <span class="layer-cnt">80 papers</span>
       </summary>
@@ -1414,7 +1518,7 @@
     </details>
     <details class="layer-block" open id="layer-action">
       <summary class="layer-summary">
-        <span class="layer-dot" style="background:#0f766e"></span>
+        <span class="layer-dot" style="background:var(--c-action)"></span>
         <span class="layer-label">Action and Interaction</span>
         <span class="layer-cnt">112 papers</span>
       </summary>
@@ -1550,7 +1654,7 @@
     </details>
     <details class="layer-block" open id="layer-agentic">
       <summary class="layer-summary">
-        <span class="layer-dot" style="background:#be123c"></span>
+        <span class="layer-dot" style="background:var(--c-agentic)"></span>
         <span class="layer-label">Agentic</span>
         <span class="layer-cnt">96 papers</span>
       </summary>
@@ -1675,7 +1779,7 @@
     </details>
     <details class="layer-block" open id="layer-orw">
       <summary class="layer-summary">
-        <span class="layer-dot" style="background:#64748b"></span>
+        <span class="layer-dot" style="background:var(--c-orw)"></span>
         <span class="layer-label">Other Related Works</span>
         <span class="layer-cnt">33 papers</span>
       </summary>
@@ -1735,6 +1839,7 @@
         </details>
       </div>
     </details>
+  </div>
 </section>
 
 <!-- CONTRIBUTE -->
@@ -1745,7 +1850,7 @@
       This survey is a living document. We welcome the community to help keep it current and comprehensive.
     </p>
 
-    <div class="contribute-grid">
+    <div class="contribute-grid reveal">
       <div class="contrib-card">
         <div class="contrib-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
@@ -1773,7 +1878,7 @@
       </div>
     </div>
 
-    <div class="contrib-note">
+    <div class="contrib-note reveal">
       <strong>Review process:</strong> We welcome any work that offers insights into embodied AI safety, broadly construed. Submissions are reviewed and added in batches, and accepted contributions are credited in the repository. If you care about embodied safety, please contribute.
     </div>
   </div>
@@ -1783,7 +1888,7 @@
 <section id="news">
   <div class="inner">
     <h2 class="sh">News</h2>
-    <ul class="news-list">
+    <ul class="news-list reveal">
       <li class="ni">
         <span class="ndate">2026/06/01</span>
         <span class="ntext">
@@ -1907,7 +2012,7 @@
   <div class="inner">
     <h2 class="sh">Citation</h2>
     <p class="cite-lead">If you find this survey useful in your research, please cite:</p>
-    <div class="bib-wrap">
+    <div class="bib-wrap reveal">
       <button class="copy-btn" id="copyBibBtn" aria-label="Copy BibTeX to clipboard">Copy BibTeX</button>
       <pre id="bibText"><span class="k-at">@article</span>{<span class="k-key">li2026safety</span>,
   <span class="k-field">title</span>   = {<span class="k-str">Safety in Embodied AI: A Survey of Risks, Attacks, and Defenses</span>},
@@ -1925,7 +2030,7 @@
   <div class="inner">
     <h2 class="sh">Recommended Reading &amp; Viewing</h2>
     <p class="reading-lead">Curated external resources on frontier AI safety beyond the surveyed papers:</p>
-    <ul class="reading-list">
+    <ul class="reading-list reveal">
       <li>
         <a href="https://metr.org/fsp" target="_blank" rel="noopener">Frontier AI Safety Policies</a><span class="reading-sep">&ndash;</span><span class="reading-desc">METR's resource on frontier AI developers' safety policies and commitments.</span>
       </li>
