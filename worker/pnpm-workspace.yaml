@@ -1,4 +1,5 @@
+# pnpm build-script approval for wrangler's trusted native deps.
 allowBuilds:
-  esbuild: set this to true or false
-  sharp: set this to true or false
-  workerd: set this to true or false
+  esbuild: true
+  sharp: true
+  workerd: true
