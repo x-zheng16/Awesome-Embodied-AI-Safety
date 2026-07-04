@@ -1919,6 +1919,14 @@
       <li class="ni">
         <span class="ndate">2026/07/04</span>
         <span class="ntext">
+          The project page now runs on a self-hosted backend: a durable visitor
+          counter and <strong>HuggingFace-style upvoting</strong> on every paper &mdash;
+          click the &#9650; button on any entry to vote for the work you find most useful.
+        </span>
+      </li>
+      <li class="ni">
+        <span class="ndate">2026/07/04</span>
+        <span class="ntext">
           Refreshed the project page: refined typography and spacing, a solid-accent
           call-to-action, per-taxonomy-layer accent theming across the paper list, a
           News timeline, and accessibility touches (focus rings, reduced-motion) with
@@ -2295,7 +2303,7 @@
   // busuanzi counter and disable voting. After deploying, set this to the
   // Worker URL, e.g. 'https://embodied-ai-safety-api.<subdomain>.workers.dev'
   // (no trailing slash). The site URL itself does not change.
-  var API_BASE = '';
+  var API_BASE = 'https://embodied-ai-safety-api.zhengx-thu.workers.dev';
 
   (function () {
     var numEl = document.getElementById('visitorNum');
