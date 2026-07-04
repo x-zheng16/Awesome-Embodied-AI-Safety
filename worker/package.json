@@ -1,0 +1,16 @@
+{
+  "name": "embodied-ai-safety-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cloudflare Worker backend for the Awesome-Embodied-AI-Safety project page: durable visitor count + paper voting (D1).",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:create": "wrangler d1 create embodied-ai-safety",
+    "db:schema": "wrangler d1 execute embodied-ai-safety --remote --file=./schema.sql",
+    "db:schema:local": "wrangler d1 execute embodied-ai-safety --local --file=./schema.sql"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}

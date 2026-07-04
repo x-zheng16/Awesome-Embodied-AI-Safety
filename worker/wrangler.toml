@@ -1,0 +1,14 @@
+name = "embodied-ai-safety-api"
+main = "src/index.js"
+compatibility_date = "2026-07-01"
+
+# D1 (SQLite) binding. `database_id` is filled in after `wrangler d1 create`
+# (see README.md, step 2). The binding name `DB` is what src/index.js reads as env.DB.
+[[d1_databases]]
+binding = "DB"
+database_name = "embodied-ai-safety"
+database_id = "REPLACE_AFTER_D1_CREATE"
+
+# Observability: keep logs on so the daily view/vote traffic is inspectable in the dash.
+[observability]
+enabled = true
