@@ -1,13 +1,20 @@
 #!/bin/sh
 # Guards (single sources of truth: docs/papers.json + docs/news.json):
 #   1. every paper-count on the site agrees with papers.json
-#   2. the News timeline on index.html + README is synced from news.json
+#   2. the paper LISTS on index.html + README are rendered from papers.json
+#   3. the News timeline on index.html + README is synced from news.json
 # Bypass (rarely needed): git commit --no-verify
 root="$(git rev-parse --show-toplevel)"
 if ! python3 "$root/docs/check_counts.py"; then
   echo "" >&2
   echo "pre-commit BLOCKED: paper-count drift between papers.json and the page/llms.txt." >&2
   echo "Fix the counts (or bypass with: git commit --no-verify)." >&2
+  exit 1
+fi
+if ! python3 "$root/docs/sync_papers.py" --check; then
+  echo "" >&2
+  echo "pre-commit BLOCKED: paper lists on index.html/README are out of sync with docs/papers.json." >&2
+  echo "Run: python3 docs/sync_papers.py  then  git add README.md docs/index.html" >&2
   exit 1
 fi
 if ! python3 "$root/docs/sync_news.py" --check; then

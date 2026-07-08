@@ -2,3 +2,6 @@
 *.swp
 *.swo
 *~
+
+# internal design docs (dev-only; docs/ is served publicly by GitHub Pages)
+docs/superpowers/
