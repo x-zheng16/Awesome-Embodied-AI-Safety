@@ -75,6 +75,14 @@
     }
     .search-input:focus { outline: none; border-color: var(--accent); }
     .stats { color: var(--text-muted); font-size: 0.88rem; white-space: nowrap; font-family: 'JetBrains Mono', monospace; }
+    .sort-sel { border: 1px solid var(--border); background: var(--bg-card); color: var(--text); border-radius: 8px; padding: 0.55rem 0.7rem; font-size: 0.85rem; font-family: inherit; cursor: pointer; }
+    .sort-sel:focus { outline: none; border-color: var(--accent); }
+    .vote-btn { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.16rem 0.5rem; border-radius: 999px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-muted); cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-variant-numeric: tabular-nums; line-height: 1.1; transition: color .15s, border-color .15s, background .15s, transform .12s; }
+    .vote-btn::before { content: '\25B2'; font-size: 0.64rem; }
+    .vote-btn::after { content: attr(data-n); }
+    .vote-btn:hover { color: var(--lc, var(--accent)); border-color: var(--lc, var(--accent)); transform: translateY(-1px); }
+    .vote-btn:disabled { opacity: .55; cursor: default; transform: none; }
+    .vote-btn.voted { color: var(--lc, var(--accent)); border-color: var(--lc, var(--accent)); background: color-mix(in srgb, var(--lc, var(--accent)) 12%, transparent); font-weight: 600; }
     .pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
     .pill {
       border: 1px solid var(--border); background: var(--bg-card); color: var(--text-muted);
@@ -151,6 +159,11 @@
   <div class="controls">
     <div class="search-row">
       <input id="search" class="search-input" type="search" placeholder="Search title, author, venue, abstract, keyword..." autocomplete="off" aria-label="Search papers">
+      <select id="sortSel" class="sort-sel" aria-label="Sort papers">
+        <option value="date-desc">Newest first</option>
+        <option value="date-asc">Oldest first</option>
+        <option value="title">Title A&ndash;Z</option>
+      </select>
       <span class="stats" id="stats">loading...</span>
     </div>
     <div class="pills" id="pills">
@@ -189,8 +202,23 @@
     "Perception":"--c-perception","Cognition":"--c-cognition","Planning":"--c-planning",
     "Action and Interaction":"--c-action","Agentic":"--c-agentic","Other Related Works":"--c-orw"
   };
-  var PAPERS = [], activeLayer = 'all', query = '', debounce = null;
+  var PAPERS = [], activeLayer = 'all', query = '', sortKey = 'date-desc', debounce = null;
   var cardsEl = document.getElementById('cards'), statsEl = document.getElementById('stats'), searchEl = document.getElementById('search');
+
+  // Voting -- shared with the catalog page (same title slug => same vote tally).
+  var API_BASE = 'https://embodied-ai-safety-api.zhengx-thu.workers.dev';
+  var VOTES = {}, VOTED = new Set();
+  var CLIENT_ID = (function(){ var k='aeas-client-id', v=localStorage.getItem(k); if(!v){ v=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():(String(Date.now())+Math.random().toString(36).slice(2)); try{localStorage.setItem(k,v);}catch(e){} } return v; })();
+  try { JSON.parse(localStorage.getItem('aeas-voted')||'[]').forEach(function(x){ VOTED.add(x); }); } catch(e){}
+  function slug(t){ return (t||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,90); }
+  function persistVoted(){ try{ localStorage.setItem('aeas-voted', JSON.stringify(Array.prototype.slice.call(VOTED))); }catch(e){} }
+
+  function dateKey(p){ var a=(p.arxiv_id||'').replace(/[^0-9]/g,''); if(a.length>=4){ return (2000+ +a.slice(0,2))*100 + (+a.slice(2,4)); } var y=parseInt(p.year,10); return isFinite(y)?y*100:0; }
+  function sortList(arr){
+    if(sortKey==='title') arr.sort(function(a,b){ return norm(a.title).localeCompare(norm(b.title)); });
+    else if(sortKey==='date-asc') arr.sort(function(a,b){ return dateKey(a)-dateKey(b); });
+    else arr.sort(function(a,b){ return dateKey(b)-dateKey(a); });
+  }
 
   function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
@@ -198,13 +226,15 @@
     var lv = LAYER_VAR[p.layer] || '--accent';
     var meta = [esc(p.authors), p.venue ? '<span class="venue">'+esc(p.venue)+'</span>' : '', esc(p.year)].filter(Boolean).join(' &middot; ');
     var badges = '<span class="badge">'+esc(p.layer)+'</span>' + (p.subcat ? '<span class="badge sub">'+esc(p.subcat)+'</span>' : '');
+    var pid = slug(p.title);
+    var vote = '<button type="button" class="vote-btn'+(VOTED.has(pid)?' voted':'')+'" data-pid="'+pid+'" data-n="'+(VOTES[pid]||0)+'" title="Upvote" aria-label="Upvote this paper"></button>';
     var abs = p.abstract
       ? '<p class="abstract clamp">'+esc(p.abstract)+'</p><button class="more-btn" type="button">Show more</button>'
       : '<p class="abstract-none">Abstract not available &mdash; see source link.</p>';
     var kws = (p.keywords && p.keywords.length)
       ? '<div class="kw-row">'+p.keywords.map(function(k){return '<span class="kw">'+esc(k)+'</span>';}).join('')+'</div>' : '';
     return '<div class="card" style="--lc:var('+lv+')">'
-      + '<div>'+badges+'</div>'
+      + '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.6rem"><div>'+badges+'</div>'+vote+'</div>'
       + '<h2 class="card-title"><a href="'+esc(p.url)+'" target="_blank" rel="noopener">'+esc(p.title)+'</a></h2>'
       + '<div class="card-meta">'+meta+'</div>'
       + abs + kws + '</div>';
@@ -218,11 +248,13 @@
   }
 
   function render(){
-    var q = norm(query), shown = 0, html = [];
+    var q = norm(query), matched = [];
     for (var i=0;i<PAPERS.length;i++){
       var p = PAPERS[i];
-      if ((activeLayer==='all'||p.layer===activeLayer) && matches(p,q)){ html.push(cardHTML(p)); shown++; }
+      if ((activeLayer==='all'||p.layer===activeLayer) && matches(p,q)){ matched.push(p); }
     }
+    sortList(matched);
+    var shown = matched.length, html = matched.map(cardHTML);
     cardsEl.innerHTML = shown ? html.join('') : '<div class="empty">No papers match your search.</div>';
     statsEl.textContent = (shown===PAPERS.length) ? (PAPERS.length+' papers') : (shown+' / '+PAPERS.length+' papers');
     cardsEl.querySelectorAll('.more-btn').forEach(function(b){
@@ -244,9 +276,20 @@
   searchEl.addEventListener('input', function(){
     query = this.value; clearTimeout(debounce); debounce = setTimeout(render, 120);
   });
+  document.getElementById('sortSel').addEventListener('change', function(){ sortKey = this.value; render(); });
+  cardsEl.addEventListener('click', function(e){ var b = e.target.closest('.vote-btn'); if(!b) return; e.preventDefault(); e.stopPropagation(); cast(b.dataset.pid, b); });
+  function cast(pid, btn){
+    btn.disabled = true;
+    fetch(API_BASE+'/api/vote', { method:'POST', headers:{'content-type':'application/json'}, body:JSON.stringify({paperId:pid, clientId:CLIENT_ID}) })
+      .then(function(r){ return r.json(); })
+      .then(function(d){ if(d&&typeof d.count!=='undefined'){ VOTES[pid]=d.count; btn.dataset.n=String(d.count); if(d.voted){btn.classList.add('voted');VOTED.add(pid);}else{btn.classList.remove('voted');VOTED['delete'](pid);} persistVoted(); } })
+      .catch(function(){})
+      .then(function(){ btn.disabled = false; });
+  }
 
   fetch('papers.json').then(function(r){ return r.json(); }).then(function(data){
     PAPERS = data; render();
+    fetch(API_BASE+'/api/votes').then(function(r){ return r.json(); }).then(function(d){ VOTES = (d&&d.counts)||{}; render(); }).catch(function(){});
   }).catch(function(e){
     cardsEl.innerHTML = '<div class="empty">Failed to load papers.json &mdash; '+esc(String(e))+'</div>';
     statsEl.textContent = 'error';
