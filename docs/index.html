@@ -592,7 +592,7 @@
     .paper-list li a { color: var(--text); text-decoration: none; font-weight: 500; }
     .paper-list li a:hover { color: var(--layer-accent, var(--accent)); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
     .paper-list li em { color: var(--text-muted); font-style: italic; }
-    .paper-list li.hidden { display: none; }
+    .paper-list li.hidden { display: none !important; }
 
     /* Paper voting -- dormant until the backend is wired (body.voting-on added by JS).
        Caret + count render via CSS pseudo-elements so they stay out of li.textContent
