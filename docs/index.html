@@ -462,6 +462,13 @@
       font-size: 0.72rem; color: var(--text-muted);
       padding: 0 0.6rem;
     }
+    .sort-sel {
+      border: 1px solid var(--border); border-radius: 9px;
+      background: var(--bg-card); color: var(--text);
+      font-family: 'Inter', sans-serif; font-size: 0.82rem;
+      padding: 0.5rem 0.6rem; cursor: pointer;
+    }
+    .sort-sel:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
 
     .filter-pills { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1.4rem; }
     .pill {
@@ -1115,6 +1122,12 @@
         <input id="paperSearch" class="search-input" type="search" placeholder="Search title, author, venue, year..." aria-label="Search papers" autocomplete="off">
       </div>
       <span class="search-stats" id="searchStats">559 papers</span>
+      <select id="paperSort" class="sort-sel" aria-label="Sort papers within each subcategory">
+        <option value="default">Curated order</option>
+        <option value="date-desc">Newest first</option>
+        <option value="date-asc">Oldest first</option>
+        <option value="title">Title A&ndash;Z</option>
+      </select>
       <button id="toggleAll" class="gh-star-btn" type="button" style="cursor:pointer;">Collapse all</button>
     </div>
 
@@ -2261,6 +2274,37 @@
       });
     }, { threshold: 0.08 });
     document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  })();
+
+  // Sort papers WITHIN each subcategory list (preserves the taxonomy grouping).
+  (function () {
+    var sel = document.getElementById('paperSort');
+    if (!sel) return;
+    var lists = document.querySelectorAll('#papers .paper-list');
+    lists.forEach(function (ul) {
+      Array.prototype.slice.call(ul.children).forEach(function (li, i) { li.dataset.ord = i; });
+    });
+    function liTitle(li) { var a = li.querySelector('a'); return a ? a.textContent.toLowerCase() : ''; }
+    function liDate(li) {
+      var m = li.textContent.match(/\b(\d{2})(\d{2})\.\d{4,5}\b/); // arXiv YYMM.nnnnn
+      if (m) return (2000 + +m[1]) * 100 + (+m[2]);
+      var y = li.textContent.match(/\b(19|20)\d{2}\b/);
+      return y ? (+y[0]) * 100 : 0;
+    }
+    function cmp(key) {
+      return function (a, b) {
+        if (key === 'title') return liTitle(a).localeCompare(liTitle(b));
+        if (key === 'date-asc') return liDate(a) - liDate(b);
+        if (key === 'date-desc') return liDate(b) - liDate(a);
+        return (+a.dataset.ord) - (+b.dataset.ord);
+      };
+    }
+    sel.addEventListener('change', function () {
+      var c = cmp(this.value);
+      lists.forEach(function (ul) {
+        Array.prototype.slice.call(ul.children).sort(c).forEach(function (li) { ul.appendChild(li); });
+      });
+    });
   })();
 
   // Expand all / collapse all accordions
