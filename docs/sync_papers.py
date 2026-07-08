@@ -11,6 +11,8 @@ surfaces, killing the 3-copy drift (papers.json / index.html / README):
                       the "We review **N** papers" prose, the Survey-Scope table
                       per-layer counts, the layer-accordion "(N papers)" counts,
                       and the subcategory-accordion "(n)" counts.
+  - llms.txt          the "covering N papers" headline + the taxonomy table counts
+                      (counts only; llms.txt carries no per-paper list).
 
 Rendering is keyed by subcategory name (papers.json `subcat`). Within a subcat,
 papers render in papers.json `id` order (matching the live site). Non-standard
@@ -37,10 +39,21 @@ HERE = Path(__file__).resolve().parent          # docs/
 ROOT = HERE.parent                              # repo root
 README = ROOT / "README.md"
 INDEX = HERE / "index.html"
+LLMS = ROOT / "llms.txt"
 
 # layer display order + the emoji/name the README table + accordions use.
 TAXONOMY = ["Perception", "Cognition", "Planning", "Action and Interaction", "Agentic"]
 ORW = "Other Related Works"
+# llms.txt taxonomy table + headline: papers.json layer -> the name llms.txt prints
+# (note "Agentic" -> "Agentic System"); all 6 rows incl. ORW, headline = grand total.
+LLMS_DISPLAY = [
+    ("Perception", "Perception"),
+    ("Cognition", "Cognition"),
+    ("Planning", "Planning"),
+    ("Action and Interaction", "Action and Interaction"),
+    ("Agentic", "Agentic System"),
+    ("Other Related Works", "Other Related Works"),
+]
 
 
 def esc_html(s: str) -> str:
@@ -165,6 +178,23 @@ def render_readme(text, papers, groups, cfg, warnings):
     return text
 
 
+def render_llms(text, papers):
+    """Regenerate llms.txt: the "covering N papers" headline + the 6-row taxonomy
+    table counts. Same padded-cell trap as the README table -- allow 1+ spaces
+    before the closing pipe."""
+    layer_ct = defaultdict(int)
+    for p in papers:
+        layer_ct[p["layer"]] += 1
+    text = re.sub(r"covering \d+ papers", f"covering {len(papers)} papers", text)
+    for layer, disp in LLMS_DISPLAY:
+        text = re.sub(
+            r"(\| " + re.escape(disp) + r" +\|.*?)\|\s*\d+\s*\|",
+            lambda m: f"{m.group(1)}| {layer_ct[layer]:>6} |",
+            text,
+        )
+    return text
+
+
 def main() -> int:
     check = "--check" in sys.argv
     papers, cfg = load()
@@ -174,6 +204,7 @@ def main() -> int:
     targets = [
         (INDEX, render_index(INDEX.read_text(), groups, cfg, warnings)),
         (README, render_readme(README.read_text(), papers, groups, cfg, warnings)),
+        (LLMS, render_llms(LLMS.read_text(), papers)),
     ]
 
     if warnings:
@@ -196,7 +227,7 @@ def main() -> int:
             return 1
         print("papers in sync")
         return 0
-    print(f"synced papers -> index.html + README.md ({len(papers)} papers)"
+    print(f"synced papers -> index.html + README.md + llms.txt ({len(papers)} papers)"
           + (f"; updated {', '.join(stale)}" if stale else "; no change"))
     return 0
 
