@@ -70,6 +70,8 @@
 
 ## 🔥 News
 
+<!-- NEWS:START -->
+- **[2026/07/08]** Added **sorting** and HuggingFace-style **▲ upvoting** to all three paper views — the [catalog](https://x-zheng16.github.io/Awesome-Embodied-AI-Safety/), the [Paper Reader](https://x-zheng16.github.io/Awesome-Embodied-AI-Safety/papers.html), and the [Screened feed](https://x-zheng16.github.io/Awesome-Embodied-AI-Safety/screened.html): sort by date or title (plus citations and relevance on the screened feed), and upvote any paper from any view (votes are shared across the site). Also fixed the catalog search to correctly hide non-matching papers, and cleaned up the hero banner.
 - **[2026/07/04]** The [project page](https://x-zheng16.github.io/Awesome-Embodied-AI-Safety/) now runs on a self-hosted backend: a durable visitor counter and **HuggingFace-style upvoting** on every paper — click the ▲ button on any entry to vote for the work you find most useful.
 - **[2026/07/04]** Refreshed the [project page](https://x-zheng16.github.io/Awesome-Embodied-AI-Safety/): refined typography and spacing, a solid-accent call-to-action, per-taxonomy-layer accent theming across the paper list, a News timeline, and accessibility touches (focus rings, reduced-motion) with tighter tablet and mobile layouts.
 - **[2026/07/04]** Launched a **[Screened Papers](https://x-zheng16.github.io/Awesome-Embodied-AI-Safety/screened.html)** feed on the project page: new arXiv papers on embodied-AI safety, auto-screened **daily** by our LLM pipeline and pushed to GitHub every day. Two tiers — an **Auto-screened** list (raw pipeline output, clearly marked *not yet human-reviewed*) and an **Editor's Audit** shortlist re-checked by author and metadata — feed a periodic human review that promotes the strongest into the curated survey. Spotted a paper we missed? [Submissions welcome](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety/issues/new?template=paper-submission.md&labels=paper-submission).
@@ -89,6 +91,7 @@
 - **[2026/03/22]** [ISC-Bench](https://github.com/wuyoscar/ISC-Bench) repository released -- Internal Safety Collapse benchmark for frontier LLMs.
 - **[2025/09/15]** [Safety at Scale](https://github.com/xingjunm/Awesome-Large-Model-Safety) survey published in [Foundations and Trends in Security](https://www.emerald.com/ftsec/article/8/3-4/1/1335095).
 - **[2025/02/02]** [Safety at Scale](https://github.com/xingjunm/Awesome-Large-Model-Safety) survey on [arXiv](https://arxiv.org/abs/2502.05206) -- large model & agent safety.
+<!-- NEWS:END -->
 
 ## Table of Contents
 
