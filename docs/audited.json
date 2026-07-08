@@ -1,5 +1,72 @@
 [
  {
+  "title": "Assessing the Operational Impact of Poisoning Attacks over Augmented 3D Point Cloud Public Datasets for Connected and Autonomous Vehicles",
+  "url": "https://arxiv.org/abs/2607.06484",
+  "authors": "Marwan Lazrag et al",
+  "venue": "arXiv 2607.06484",
+  "year": "2026",
+  "layer": "Perception",
+  "subcat": "Spatial Perception: depth estimation attacks, LiDAR spoofing",
+  "arxiv_id": "2607.06484",
+  "abstract": "Poisoning attacks against public datasets lead to major concerns, such as (i) misclassification of perceived objects when the poisoned data is used for training and (ii) embedding of backdoors that may eventually be triggered later on, when specific conditions in the system apply over the learned models. Its impact over data augmentation models is unclear. While data augmentation reduces the likelihood of poisoning attack success, some valid questions remain. Is data augmentation affecting the impact of poisoning attacks? can it increase the number of poisoned samples or injected backdoors? We explore in this paper some of these questions. We assess the effects of augmenting poisoned 3D point cloud datasets and validate that poisoning is able to evade the sanitizing nature of augmentation techniques when using the concrete case of Generative Adversarial Network (GAN) techniques to exemplify the case of data augmentation processing. We also validate that poisoning propagates over the augmented datasets and perturbs the decision made by general-purpose classifiers, in the end. All the experimental material (including tools, datasets, and classifiers) is publicly available, to facilitate reproducibility and to foster further research in the topic.",
+  "keywords": [
+   "poisoning attacks",
+   "3D point cloud datasets",
+   "data augmentation",
+   "GAN-based augmentation",
+   "backdoor attacks",
+   "autonomous vehicle perception"
+  ],
+  "relevance": "Yes",
+  "why": "Directly studies poisoning attacks on 3D point cloud datasets used for training perception models in connected and autonomous vehicles, with clear embodied AI safety implications.",
+  "citation_count": 0,
+  "screened_date": "2026-07-09"
+ },
+ {
+  "title": "Benchmarking the Robustness of Autonomous Driving to Environmental Illusions: A Lane Perception Perspective",
+  "url": "https://arxiv.org/abs/2607.05783",
+  "authors": "Tianyuan Zhang et al",
+  "venue": "arXiv 2607.05783",
+  "year": "2026",
+  "layer": "Perception",
+  "subcat": "Visual Perception",
+  "arxiv_id": "2607.05783",
+  "abstract": "Environmental illusions (eg., shadows, reflections, and tire marks) are naturally existing yet overlooked phenomena in real-world driving environments. They can disturb visual perception, leading to misinterpretation of the scene and posing serious safety risks to autonomous driving (AD) systems. However, existing researches largely overlook these phenomena, leaving a critical gap. To address this issue, we study AD robustness through the lane perception perspective, a fundamental task supporting core functions like cruise control and lane centering. We focus on two representative models: conventional lane detection (LD) and vision-language model-based systems (ADVLMs). In this work, we introduce the first benchmark, LanEvil++, for evaluating the robustness of lane perception under environmental illusions. LanEvil++ encompasses 14 types of illusions and leverages the CARLA simulator to generate 94 high-fidelity, fully controllable 3D scenes, yielding a dataset of 90,292 annotated images, 1,596 video clips, and 41,855 visual question answering pairs. Extensive evaluations demonstrate that environmental illusions substantially degrade the performance of state-of-the-art LD methods. On average, LD models experience a 5.27% drop in Accuracy and a 10.49% decline in F1-score, while ADVLMs show a 2.03% reduction in GPT-score and a 0.75% drop in Language-score. Among all illusions, shadows emerge as the most disruptive factor, reducing accuracy by up to 7.20%. Furthermore, closed-loop simulations reveal that these illusions can lead to incorrect driving decisions. Complementary real-world case studies highlight safety-critical failures in actual traffic scenes. To enhance robustness, we propose the Multimodal Illusion Defense Approach (MIDA). MIDA achieves substantial gains under challenging conditions, boosting robustness by 4.23% on LD models and 3.82% on ADVLMs.",
+  "keywords": [
+   "environmental illusions",
+   "lane perception robustness",
+   "autonomous driving benchmarking",
+   "simulation-based safety evaluation",
+   "multimodal defense"
+  ],
+  "relevance": "Yes",
+  "why": "Directly studies safety-critical visual perception attacks (environmental illusions like shadows, reflections) on autonomous driving systems, with closed-loop safety impact and a defense method.",
+  "citation_count": 0,
+  "screened_date": "2026-07-09"
+ },
+ {
+  "title": "Measuring the Security of Mobile LLM Agents under Adversarial Prompts from Untrusted Third-Party Channels",
+  "url": "https://arxiv.org/abs/2510.27140",
+  "authors": "Chenghao Du et al",
+  "venue": "arXiv 2510.27140",
+  "year": "2026",
+  "layer": "Agentic",
+  "subcat": "Tool Use and Skill",
+  "arxiv_id": "2510.27140",
+  "abstract": "Large Language Models (LLMs) have transformed software development, enabling AI-powered applications known as LLM-based agents that promise to automate tasks across diverse apps and workflows. Yet, the security implications of deploying such agents in adversarial mobile environments remain poorly understood. In this paper, we present the first systematic study of security risks in mobile LLM agents. We design and evaluate a suite of adversarial case studies, ranging from opportunistic manipulations such as pop-up advertisements to advanced, end-to-end workflows involving malware installation and cross-app data exfiltration. Our evaluation covers eight state-of-the-art mobile agents across three architectures, with over 2,000 adversarial and paired benign trials. The results reveal systemic vulnerabilities: low-barrier vectors such as fraudulent ads succeed with over 80% reliability, while even workflows requiring the circumvention of operating-system warnings, such as malware installation, are consistently completed by advanced multi-app agents. By mapping these attacks to the MITRE ATT&CK Mobile framework, we uncover novel privilege-escalation and persistence pathways unique to LLM-driven automation. Collectively, our findings provide the first end-to-end evidence that mobile LLM agents are exploitable in realistic adversarial settings, where untrusted third-party channels (e.g., ads, embedded webviews, cross-app notifications) are an inherent part of the mobile ecosystem.",
+  "keywords": [
+   "adversarial prompt injection",
+   "mobile LLM agents",
+   "MITRE ATT&CK Mobile",
+   "cross-app data exfiltration",
+   "malware installation via agents"
+  ],
+  "relevance": "Yes",
+  "why": "Systematically studies adversarial attacks on mobile LLM agents executing tool/API calls across apps, including malware installation and data exfiltration, directly relevant to embodied agent safety in autonomous tool-use settings.",
+  "citation_count": 0,
+  "screened_date": "2026-07-09"
+ },
+ {
   "title": "Untrusted Content Masking for Web Agents with Security Guarantees",
   "url": "https://arxiv.org/abs/2607.05277",
   "authors": "Kristina Nikolić et al",
