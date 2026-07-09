@@ -1,5 +1,116 @@
 [
  {
+  "title": "Beware of Agentic Botnets: Scalable Untargeted Promptware Attacks via Universal and Transferable Adversarial HalluSquatting",
+  "url": "https://arxiv.org/abs/2607.07433",
+  "authors": "Aya Spira et al",
+  "venue": "arXiv 2607.07433",
+  "year": "2026",
+  "layer": "Agentic",
+  "subcat": "Tool Use and Skill",
+  "arxiv_id": "2607.07433",
+  "abstract": "The growing adoption of agentic LLM applications has introduced a new threat previously named as promptware. While prior work has established that adversaries can exploit direct channels to LLM applications to apply promptware under weak threat models, many applications do not provide any direct channels that could be exploited for prompt injection beyond the Internet. This raises a question: can attackers exploit LLM applications at scale without any direct channels in practical threat models? In this work, we show that the inherent tendency of LLMs to hallucinate resource identifiers can be exploited to amplify untargeted promptware attacks that pull adversarial prompts at scale and could be exploited to establish a botnet. We introduce adversarial hallucination squatting, a technique in which attackers identify trending resources (e.g., popular repositories, popular skills, etc.), compute the LLM distribution of hallucinations on the trending resource names, and preemptively register them to host adversarial prompts. By leveraging the predictability and transferability of hallucinations across foundational LLMs and to application layers, adversaries can significantly amplify the reach of untargeted promptware under weak threat models and establish a botnet by exploiting LLM applications to install a bot on the device that pulled the compromised hallucinated resource from the Inter. We empirically demonstrate that hallucinated resource generation occurs at high rates, up to 85% in repository cloning scenarios and up to 100% in skill installation, and that these hallucinations transfer between foundational models and different prompts. We demonstrate the practicality of adversarial hallucination squatting against various production LLM applications with integrated terminals in their set of tools, achieving remote tool execution and remote code execution.",
+  "keywords": [
+   "adversarial hallucination squatting",
+   "promptware attacks",
+   "agentic botnets",
+   "universal transferable adversarial prompts",
+   "remote code execution via tool use"
+  ],
+  "relevance": "Yes",
+  "why": "The paper demonstrates scalable untargeted attacks on agentic LLM applications that exploit hallucinated resource identifiers to install adversarial prompts, achieving remote tool execution and RCE—directly relevant to embodied AI safety in the agentic tool-use layer.",
+  "citation_count": null,
+  "screened_date": "2026-07-10"
+ },
+ {
+  "title": "Initiation Safety: A Missing Dimension in Generalist-Robot Safety",
+  "url": "https://arxiv.org/abs/2607.07420",
+  "authors": "Zhijin Meng, Francisco Cruz",
+  "venue": "arXiv 2607.07420",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Human-Agent Interaction",
+  "arxiv_id": "2607.07420",
+  "abstract": "Safety for generalist robots is usually discussed in terms of motion or dialogue. We argue a third question is missing: should the robot take its first hard-to-undo social action at all, such as a greeting, an uninvited grasp, or stepping into someone's space? We call this initiation authorization. Current frameworks rarely treat it as a separate safety layer. Today's stacks often skip this step: a high engagement score or a confident VLA rollout is treated as permission to act. But seeing a person is not the same as having their consent to be addressed. We frame initiation authorization within generalist-robot safety and contrast it with post-plan VLA guardrails, implementing PAS (probe-authorize-speak) on a doorway humanoid, comparing it with direct-init on logged traces, and proposing a three-condition user study, with open questions on metrics, governance, and where initiation ends and foundation-model generation begins.",
+  "keywords": [
+   "initiation safety",
+   "social consent",
+   "probe-authorize-speak",
+   "VLA guardrails",
+   "social authorization"
+  ],
+  "relevance": "Yes",
+  "why": "Directly addresses a novel safety dimension for generalist robots (humanoid) in social interaction, contrasting with VLA guardrails and proposing concrete HRI safety mechanisms.",
+  "citation_count": null,
+  "screened_date": "2026-07-10"
+ },
+ {
+  "title": "A knowledge-augmented dataset of high-risk driving scenarios with LLM annotations for autonomous driving",
+  "url": "https://arxiv.org/abs/2607.07103",
+  "authors": "Heye Huang et al",
+  "venue": "arXiv 2607.07103",
+  "year": "2026",
+  "layer": "Perception",
+  "subcat": "Visual Perception",
+  "arxiv_id": "2607.07103",
+  "abstract": "Safe autonomous driving requires both rapid responses to common high-risk events and deeper reasoning over rare, extreme long-tail scenarios in traffic safety. These scenarios are severely under-represented in naturalistic driving data, and existing trajectory and language-augmented datasets seldom provide high-risk event labels, semantic annotations, and verifiable safety signals. Here we present K-Risk, a knowledge-augmented dataset that combines structured driving trajectories with large language model generated semantic annotations for safety-critical driving scenarios. K-Risk integrates 20 human-driven and autonomous-vehicle trajectory datasets from Europe, China, and the United States, covering highways, urban freeways, intersections, and roundabouts. Using a unified risk-centric extraction pipeline, K-Risk curates 31,398 high-risk events, together with a 1,036-event extreme subset of near-collision cases. Each event is released as a synchronized trajectory, metadata, and language triplet containing structured scenario descriptions, abnormal-behavior notifications, and, for a representative subset, causal risk analyses and action recommendations validated through a closed-loop simulator with iterative reflection. By combining multi-dimensional risk annotations, interpretable language supervision, and verifiable decisions, K-Risk bridges structured traffic trajectories, semantic reasoning, and decision supervision, providing a standardized foundation for developing and evaluating next-generation risk-aware autonomous driving agents.",
+  "keywords": [
+   "autonomous driving safety",
+   "high-risk driving scenarios",
+   "LLM annotation",
+   "risk-aware decision making",
+   "simulator validation",
+   "dataset curation"
+  ],
+  "relevance": "Yes",
+  "why": "Focuses on safety-critical scenario perception and risk annotation for autonomous driving agents, directly supporting embodied AI safety evaluation.",
+  "citation_count": 0,
+  "screened_date": "2026-07-10"
+ },
+ {
+  "title": "A Closed-Loop Multi-Agent Framework for Robust Multi-Robot Manipulation",
+  "url": "https://arxiv.org/abs/2607.06990",
+  "authors": "Yi-Xiang He et al",
+  "venue": "arXiv 2607.06990",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Multi-Agent Collaboration",
+  "arxiv_id": "2607.06990",
+  "abstract": "Multi-robot systems provide the parallelism and redundancy necessary for long-horizon tasks, while Large Language Models (LLMs) offer the reasoning capabilities to decompose these objectives into actionable plans. However, effectively grounding this high-level reasoning in physical multi-robot execution remains an open challenge. Existing LLM-based approaches fall mainly into two categories: Single-robot methods achieve robust contact-rich manipulation but lack the coordination mechanisms required for tasks spanning multiple workspaces. Current multi-robot frameworks focus on high-level planning, often treating manipulation as an idealized primitive that fails to account for real-world execution uncertainties. To address this, we propose a hierarchical closed-loop agentic LLM-based framework to ensure robust multi-robot manipulation. Our system consists of three specialized agents: the Planning Agent decomposes instructions into allocated sub-tasks, the Manipulation Agent for each robot executes actions via adaptive tool use, and the Verification Agent closes the loop by monitoring physical outcomes and feeding back semantic corrections. Extensive real-world experiments demonstrate that our framework achieves superior success rates, ensures robust adaptability ranging from single to cross workspace manipulation, and offers a generalizable approach for diverse manipulation tasks.",
+  "keywords": [
+   "multi-robot manipulation",
+   "LLM-based planning",
+   "closed-loop verification",
+   "adaptive tool use",
+   "cross-workspace coordination"
+  ],
+  "relevance": "Yes",
+  "why": "Proposes a multi-agent robotic manipulation framework with safety-relevant closed-loop verification, directly addressing robustness in embodied multi-robot systems.",
+  "citation_count": 0,
+  "screened_date": "2026-07-10"
+ },
+ {
+  "title": "When Agents Remember Too Much: Memory Poisoning Attacks on Large Language Model Agents",
+  "url": "https://arxiv.org/abs/2607.06595",
+  "authors": "George Torres, Sharad Shrestha, Satyajayant Misra",
+  "venue": "arXiv 2607.06595",
+  "year": "2026",
+  "layer": "Agentic",
+  "subcat": "Memory",
+  "arxiv_id": "2607.06595",
+  "abstract": "Personal AI agents powered by large language models can reason and act using available tools to access emails, manage calendars, and push code to remote repositories, all with minimal oversight. When augmented with long-term memory, an agent can recall specific details relevant to the current task, reducing the need for large context windows. Currently, long-term memory agents tend to fall into two distinct domains: conversational and action-planning agents. Personal assistant agents sit at the convergence of these two domains and handle sensitive information while interacting with untrusted information sources, creating previously unaccounted security vulnerabilities. In this work, we introduce the novel attack vector, GhostWriter, which exploits current memory subsystems in tool-using personal agents to poison their memory store. GhostWriter operates in two phases: injection, where an adversary sends a hidden attack payload to the target agent; and activation, in which the poisoned memory is retrieved. We show that GhostWriter achieves near-universal injection rates of approximately 98% and a high average activation rate of approximately 60% against state-of-the-art agents. This attack is possible due to the lack of security-focused memory governance. In response, we propose Agentic Memory Sentry (AM-Sentry), which leverages two mitigation techniques: a memory-saving policy and a memory-retrieval screen. Our experiments show that AM-Sentry dramatically reduces GhostWriter's success rate while preserving agent utility.",
+  "keywords": [
+   "memory poisoning",
+   "long-term memory",
+   "tool-using agents",
+   "memory governance",
+   "agent defense"
+  ],
+  "relevance": "Yes",
+  "why": "Directly addresses memory poisoning attacks on embodied tool-using agents (personal assistants that interact with emails, calendars, code repos) and proposes defenses, fitting squarely in the Agentic layer's Memory subcategory.",
+  "citation_count": 0,
+  "screened_date": "2026-07-10"
+ },
+ {
   "title": "Assessing the Operational Impact of Poisoning Attacks over Augmented 3D Point Cloud Public Datasets for Connected and Autonomous Vehicles",
   "url": "https://arxiv.org/abs/2607.06484",
   "authors": "Marwan Lazrag et al",
