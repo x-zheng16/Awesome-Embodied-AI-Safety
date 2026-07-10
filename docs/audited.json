@@ -1,5 +1,71 @@
 [
  {
+  "title": "Input-Constrained Spatiotemporal Tubes for Safe Navigation of Unknown Euler-Lagrange Systems in Dynamic Environments",
+  "url": "https://arxiv.org/abs/2607.08189",
+  "authors": "Siddhartha Upadhyay, Ratnangshu Das, Pushpak Jagtap",
+  "venue": "arXiv 2607.08189",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Robot Control",
+  "arxiv_id": "2607.08189",
+  "abstract": "Safe navigation in dynamic environments is challenging when system dynamics are unknown and actuator inputs are limited. Existing methods either rely on accurate models, require online optimization, or do not explicitly account for input constraints. This paper presents a real-time control framework for unknown Euler-Lagrange systems that guarantees finite-time reach-avoid-stay (FT-RAS) specifications while respecting actuator limits. We extend the spatiotemporal tube (STT) framework by incorporating input constraints into the controller design and derive offline-verifiable feasibility conditions that relate the available control authority to the tube design and uncertainty bounds. The resulting framework is approximation-free and computationally efficient, making it suitable for real-time implementation. The proposed approach is validated through simulations on a mobile robot, a quadrotor, and a spacecraft, together with hardware experiments on a mobile robot, demonstrating safe navigation while satisfying actuator constraints.",
+  "keywords": [
+   "reach-avoid-stay specifications",
+   "spatiotemporal tubes",
+   "input constraints",
+   "Euler-Lagrange systems",
+   "unknown dynamics"
+  ],
+  "relevance": "Yes",
+  "why": "The paper directly addresses safety in robot control by guaranteeing safe navigation (reach-avoid-stay specifications) for physical robots with limited actuators, validated on mobile robots, quadrotors, and spacecraft.",
+  "citation_count": null,
+  "screened_date": "2026-07-11"
+ },
+ {
+  "title": "Securing Autonomous Vehicle Systems via Twin-Aware Federated Reinforcement Learning",
+  "url": "https://arxiv.org/abs/2607.08137",
+  "authors": "Zifan Zhang et al",
+  "venue": "arXiv 2607.08137",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Robot Control",
+  "arxiv_id": "2607.08137",
+  "abstract": "Federated reinforcement learning (FRL) is crucial for enabling collaborative learning across multiple agents without sharing raw data, thereby enhancing privacy and scalability in the decision-making process within dynamic vehicular environments. However, poisoning attacks pose a significant threat to the security and reliability of FRL-based systems, particularly in safety-critical autonomous driving, where this vulnerability remains largely unexplored. These attacks can compromise the global control model by subtly injecting malicious system parameters, leading to potential hazards. To counter these challenges, we present \\alg (\\underline{Sec}ure \\underline{A}ggregation with \\underline{p}oisoning-\\underline{p}revention and historical reinforcement) as a defensive framework aimed at enhancing the robustness of FRL systems designed for safety-critical driving scenarios. \\alg strategically integrates digital twins for rehearsal-based learning and leverages historical aggregated model parameters along with a selected central gradient to ensure that only benign data is aggregated, effectively mitigating the influence of malicious agents. Theoretical guarantees are provided for the convergence performance of \\alg in the presence of poisoning attacks. We also validate the effectiveness of \\alg using developed digital twins that model realistic highway environments to evaluate the control of autonomous vehicles under adversarial conditions.",
+  "keywords": [
+   "federated reinforcement learning",
+   "poisoning attacks",
+   "digital twin",
+   "Byzantine-robust aggregation",
+   "autonomous vehicle control"
+  ],
+  "relevance": "Yes",
+  "why": "Directly addresses poisoning attacks on FRL-based control models for autonomous vehicles, a safety-critical embodied AI system, with defenses validated on digital twin highway environments.",
+  "citation_count": null,
+  "screened_date": "2026-07-11"
+ },
+ {
+  "title": "Shift & Drift: A Zero-Shot Benchmark for Generalizable and Robust Autonomous Driving Motion Planning",
+  "url": "https://arxiv.org/abs/2607.07844",
+  "authors": "Alessandro Canevaro et al",
+  "venue": "arXiv 2607.07844",
+  "year": "2026",
+  "layer": "Planning",
+  "subcat": "Trajectory Planning",
+  "arxiv_id": "2607.07844",
+  "abstract": "While closed-loop motion planners trained on large-scale, object-level datasets, e.g., nuPlan, demonstrate strong in-distribution (ID) performance, their generalization to novel urban topologies and recovery mechanisms following execution perturbations remain under-explored. To address this, we present Shift & Drift, a novel dual-track benchmark designed to rigorously stress-test motion planners across two critical axes of distribution shift: (1) The Semantic Shift Track leverages a novel conversion pipeline that transforms the aerial, DeepScenario Open 3D dataset into the nuPlan simulation framework. This enables zero-shot evaluation of planners trained on North American and Singaporean data against 1,182 scenarios spanning four German cities and the US city of San Francisco featuring dense pedestrian-cyclist interactions. (2) The State-Distribution Drift Track injects stochastic perturbations into the ego vehicle's dynamics to quantify robustness against compounding execution errors. Based on this, we systematically evaluate the failure modes of diverse planning paradigms under semantic and state-distribution shifts. While imitation learning methods achieve high scores in ID benchmarks, they exhibit significant failures under semantic shift, particularly in pedestrian-dense environments, and suffer from persistent drift when subjected to temporally correlated actuation noise. In contrast, the evaluated reinforcement-learning-based planner demonstrates more graceful degradation, maintaining higher safety and progress metrics across both tracks. Our findings reveal an empirical trade-off between imitation fidelity and closed-loop resilience, providing the community with a rigorous benchmark to evaluate progress toward reliable deployment.",
+  "keywords": [
+   "zero-shot evaluation",
+   "distribution shift",
+   "closed-loop robustness",
+   "motion planning benchmark",
+   "simulation-to-simulation transfer"
+  ],
+  "relevance": "Yes",
+  "why": "The paper introduces a benchmark specifically designed to stress-test autonomous driving motion planners under distribution shifts and execution perturbations, directly evaluating robustness and safety of trajectory planning systems in embodied agents.",
+  "citation_count": null,
+  "screened_date": "2026-07-11"
+ },
+ {
   "title": "Beware of Agentic Botnets: Scalable Untargeted Promptware Attacks via Universal and Transferable Adversarial HalluSquatting",
   "url": "https://arxiv.org/abs/2607.07433",
   "authors": "Aya Spira et al",
