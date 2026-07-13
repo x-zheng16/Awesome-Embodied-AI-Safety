@@ -1,5 +1,27 @@
 [
  {
+  "title": "Empirical Pedestrian Safety Assessment in a Mobile Robot Using a Predictive Social Force Model",
+  "url": "https://arxiv.org/abs/2607.09192",
+  "authors": "Alireza Jafari, Yun-Hao Tsai, Yen-Chen Liu",
+  "venue": "arXiv 2607.09192",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Human-Agent Interaction",
+  "arxiv_id": "2607.09192",
+  "abstract": "Mobile robots are going to share the sidewalks with pedestrians. They must ensure their objective safety and respect the walkers' subjective safety/comfort. Computationally efficient Social Force Models (SFM) present interpretable solutions for real-time robot navigation in dynamic crowds. Recent explorations of Projected Time-to-collision (PTTC) integration into SFM variants, for example, PTTC-based SFM (TSFM), improve safety metrics. But the effect of predictive variants is unclear. We introduce Predictive SFM (PSFM) and Predictive TSFM (PTSFM) by integrating predicted social force vectors over a finite time horizon. The paper implements SFM, TSFM, PSFM, and PTSFM on a nonholonomic mobile robot and performs experimental trials with volunteers attending a facing scenario. We systematically study objective and subjective safety across the variants. Minimum PTTC, average speed, minimum distance, lateral distance, and the maximum trajectory curvature benchmark the objective safety. Likert scale post-interaction surveys assess subjective safety by marking comfort, smoothness, distance appropriateness, and speed suitability. We confirm that PTTC integration improves safety metrics. The prediction contribution is limited and occasionally visible in some of the sub-metrics. Some participants perceive smoother movements and safer speed behavior with predictive methods, but Mann-Whitney tests reveal no significant differences in subjective ratings. Therefore, PTTC-based navigation enhances safety, whereas the formulated prediction offers limited additional benefits in single-pedestrian scenarios.",
+  "keywords": [
+   "social force model",
+   "pedestrian safety",
+   "predictive navigation",
+   "subjective comfort",
+   "time-to-collision"
+  ],
+  "relevance": "Yes",
+  "why": "Directly studies physical safety of mobile robots navigating among pedestrians, measuring both objective collision metrics and subjective human comfort/safety in HRI scenarios.",
+  "citation_count": 0,
+  "screened_date": "2026-07-14"
+ },
+ {
   "title": "Input-Constrained Spatiotemporal Tubes for Safe Navigation of Unknown Euler-Lagrange Systems in Dynamic Environments",
   "url": "https://arxiv.org/abs/2607.08189",
   "authors": "Siddhartha Upadhyay, Ratnangshu Das, Pushpak Jagtap",
