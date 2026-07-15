@@ -1,5 +1,49 @@
 [
  {
+  "title": "TrustVLA: Mechanism-Guided Inference-Time Defense Against Vision-Language-Action Backdoors",
+  "url": "https://arxiv.org/abs/2607.12571",
+  "authors": "Pinhan Fu et al",
+  "venue": "arXiv 2607.12571",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Robot Control",
+  "arxiv_id": "2607.12571",
+  "abstract": "Vision-Language-Action (VLA) models are deployed through pipelines that end users cannot audit, and a poisoned VLA can behave normally on clean observations while a small visual trigger redirects a long-horizon robot policy before any failure becomes observable. Existing vision or language defenses rarely explain what a triggered VLA representation looks like or how to recover behavior without retraining. We study this gap through two independently proposed VLA attacks from groups with distinct injection strategies, BadVLA and INFUSE; the latter persists after downstream clean adaptation. Across the evaluated poisoned models, we identify a recurring internal mechanism: a \\emph{compact causal footprint}, namely a small visual support that is attention-seeded, spatially compact, and \\emph{causal} in a precise sense -- masking it returns a clean-calibrated evidence-evolution score to the normal operating region. This footprint motivates TrustVLA, a mechanism-guided inference-time defense that adapts the Dirichlet evidence framework from trusted classification to monitor per-token, per-layer epistemic uncertainty in VLA policies. With only a small clean calibration set, TrustVLA (i)~detects abnormal evidence evolution, (ii)~localizes the compact support by counterfactual mechanism-score drop, and (iii)~recovers the observation by localized inpainting. Across OpenVLA/LIBERO and $π_{0.5}$ transfer evaluations, TrustVLA reduces attack success while preserving clean-task performance, providing a retraining-free, mechanism-guided defense for visual-triggered VLA backdoors.",
+  "keywords": [
+   "VLA backdoor defense",
+   "inference-time defense",
+   "visual trigger detection",
+   "epistemic uncertainty monitoring",
+   "mechanism-guided localization"
+  ],
+  "relevance": "Yes",
+  "why": "Directly addresses backdoor attacks and defenses on VLA robot policies, with evaluation on robot manipulation tasks and transfer to visuomotor policies.",
+  "citation_count": 0,
+  "screened_date": "2026-07-15"
+ },
+ {
+  "title": "Isolation as a First-Class Principle for LLM-Agent System Safety: Concepts, Taxonomy, Challenges and Future Directions",
+  "url": "https://arxiv.org/abs/2607.12406",
+  "authors": "Huihao Jing et al",
+  "venue": "arXiv 2607.12406",
+  "year": "2026",
+  "layer": "Agentic",
+  "subcat": "Tool Use and Skill",
+  "arxiv_id": "2607.12406",
+  "abstract": "The capability of LLM agents to function as the ``brain'' of a system fundamentally expands the scope of analysis beyond a standalone model. Consequently, safety is no longer only about input--output content alignment. It also concerns system behavior and real-world execution outcomes. However, the current literature is fragmented across attack types, applications, and benchmarks. This makes it hard to explain why failures such as prompt injection, tool misuse, and memory poisoning often share the same structural cause, and how they spread through an agent workflow. In this survey, we treat isolation as a first-class principle for LLM-agent system safety. By isolation, we refer to the separation of user inputs, tool access, execution channels, inter-agent communication, and environment-originated context. We organize the literature with a boundary-centric taxonomy of five boundaries: user-agent, agent-tool, agent-execution, agent-agent, and system-environment. This view helps identify where the loss of isolation first occurs, how compromise propagates across boundaries, and which defenses are most relevant at each interface. We also summarize cross-boundary failure paths, discuss open challenges, and outline a research agenda for isolation-by-construction in future agent systems.",
+  "keywords": [
+   "isolation principle",
+   "boundary-centric taxonomy",
+   "cross-boundary failure propagation",
+   "agent system defense",
+   "prompt injection defense"
+  ],
+  "relevance": "Yes",
+  "why": "Directly surveys safety of LLM agents with embodied characteristics (tool use, execution, multi-agent interaction) and proposes isolation as a defense principle across agent boundaries, highly relevant to embodied AI safety taxonomy.",
+  "citation_count": null,
+  "screened_date": "2026-07-15"
+ },
+ {
   "title": "AutoPath: Learning Transferable Goal-Conditioned Stochastic Path Prior for Safe Navigation Without Human Demonstrations",
   "url": "https://arxiv.org/abs/2607.11739",
   "authors": "Ziyang Zhang et al",
