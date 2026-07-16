@@ -1,5 +1,49 @@
 [
  {
+  "title": "Agent Skill Security: Threat Models, Attacks, Defenses, and Evaluation",
+  "url": "https://arxiv.org/abs/2607.13987",
+  "authors": "Sanket Badhe, Priyanka Tiwari",
+  "venue": "arXiv 2607.13987",
+  "year": "2026",
+  "layer": "Agentic",
+  "subcat": "Tool Use and Skill",
+  "arxiv_id": "2607.13987",
+  "abstract": "Reusable skills are becoming a fundamental building block of Large Language Model (LLM) agents, enabling capabilities to be packaged, shared, and reused across diverse applications. However, existing security research primarily focuses on prompt injection and runtime execution, leaving security risks throughout the broader skill lifecycle largely unexplored. In this paper, we present SkillSec-Eval, a lifecycle-aware framework for systematically evaluating the security of reusable agent skills. We first characterize the skill lifecycle and develop a threat taxonomy spanning repository admission, semantic retrieval, planner selection, execution, and skill evolution. We then instantiate this taxonomy in SkillSec-Eval and conduct a comprehensive empirical evaluation using a repository of 327 real-world skills. Our study demonstrates that vulnerabilities arise at multiple lifecycle stages beyond execution, highlighting the need for lifecycle-aware security analysis of reusable agent skills.",
+  "keywords": [
+   "skill lifecycle security",
+   "reusable agent skills",
+   "threat taxonomy",
+   "SkillSec-Eval",
+   "repository admission attacks"
+  ],
+  "relevance": "Yes",
+  "why": "Directly addresses security of reusable agent skills across their full lifecycle, which is a core embodied AI safety concern for tool-using agents and skill supply chains.",
+  "citation_count": null,
+  "screened_date": "2026-07-16"
+ },
+ {
+  "title": "Learning Robust Execution in Robotic Manipulation with Agentic Reinforcement Learning",
+  "url": "https://arxiv.org/abs/2607.13818",
+  "authors": "Xiaopeng Zhang et al",
+  "venue": "arXiv 2607.13818",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Robot Control",
+  "arxiv_id": "2607.13818",
+  "abstract": "Robotic manipulation poses fundamental challenges due to uncertainty, long-horizon execution, and compounding errors, which can easily destabilize execution and lead to task failure. Although recent vision-language-action (VLA) models exhibit strong generalization, they typically lack explicit mechanisms to assess execution stability and to recover when execution deviates from its nominal behavior. In this paper, we propose: (1) two complementary metrics to assess execution quality at runtime, and (2) an agentic reinforcement learning framework that learns to restore effective execution through high-level decision-making rather than directly learning low-level actions. In this framework, an agentic policy reasons over recent execution history and selects among a small set of execution modes to regulate the execution process. Under execution degradation, it triggers appropriate recovery mechanisms to restore the robot to previously visited nominal states, enabling the task to continue. We evaluate the proposed method on the LIBERO benchmark, achieving up to a 13.7% improvement in success rate under standard settings and up to a 39.2% improvement under disturbance settings, demonstrating substantially enhanced execution robustness.",
+  "keywords": [
+   "agentic reinforcement learning",
+   "execution robustness",
+   "recovery mechanisms",
+   "robotic manipulation",
+   "compounding errors"
+  ],
+  "relevance": "Yes",
+  "why": "The paper directly addresses safety in embodied AI by proposing recovery mechanisms and robust execution for robotic manipulation under disturbances, improving resilience against compounding errors and execution degradation.",
+  "citation_count": null,
+  "screened_date": "2026-07-16"
+ },
+ {
   "title": "TrustVLA: Mechanism-Guided Inference-Time Defense Against Vision-Language-Action Backdoors",
   "url": "https://arxiv.org/abs/2607.12571",
   "authors": "Pinhan Fu et al",
