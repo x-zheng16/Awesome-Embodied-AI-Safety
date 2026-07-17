@@ -1,0 +1,144 @@
+{
+ "span": {
+  "from": "2026-06-24",
+  "to": "2026-07-16"
+ },
+ "cycles": 15,
+ "totals": {
+  "harvest": 33638,
+  "recent": 31312,
+  "prefilter": 2611,
+  "scored": 1220,
+  "selected": 264
+ },
+ "daily": [
+  {
+   "date": "2026-06-24",
+   "harvest": 3804,
+   "recent": 3499,
+   "prefilter": 314,
+   "scored": 150,
+   "selected": 38
+  },
+  {
+   "date": "2026-06-27",
+   "harvest": 1592,
+   "recent": 1493,
+   "prefilter": 150,
+   "scored": 150,
+   "selected": 25
+  },
+  {
+   "date": "2026-06-28",
+   "harvest": 806,
+   "recent": 750,
+   "prefilter": 77,
+   "scored": 0,
+   "selected": 0
+  },
+  {
+   "date": "2026-07-03",
+   "harvest": 4998,
+   "recent": 4713,
+   "prefilter": 402,
+   "scored": 388,
+   "selected": 79
+  },
+  {
+   "date": "2026-07-04",
+   "harvest": 1756,
+   "recent": 1644,
+   "prefilter": 137,
+   "scored": 0,
+   "selected": 0
+  },
+  {
+   "date": "2026-07-06",
+   "harvest": 0,
+   "recent": 0,
+   "prefilter": 0,
+   "scored": 0,
+   "selected": 0
+  },
+  {
+   "date": "2026-07-07",
+   "harvest": 2137,
+   "recent": 2017,
+   "prefilter": 148,
+   "scored": 136,
+   "selected": 34
+  },
+  {
+   "date": "2026-07-08",
+   "harvest": 2878,
+   "recent": 2698,
+   "prefilter": 197,
+   "scored": 43,
+   "selected": 10
+  },
+  {
+   "date": "2026-07-09",
+   "harvest": 3550,
+   "recent": 3326,
+   "prefilter": 252,
+   "scored": 53,
+   "selected": 14
+  },
+  {
+   "date": "2026-07-10",
+   "harvest": 2144,
+   "recent": 2011,
+   "prefilter": 155,
+   "scored": 47,
+   "selected": 12
+  },
+  {
+   "date": "2026-07-11",
+   "harvest": 1389,
+   "recent": 1305,
+   "prefilter": 104,
+   "scored": 0,
+   "selected": 0
+  },
+  {
+   "date": "2026-07-12",
+   "harvest": 689,
+   "recent": 649,
+   "prefilter": 50,
+   "scored": 0,
+   "selected": 0
+  },
+  {
+   "date": "2026-07-13",
+   "harvest": 529,
+   "recent": 488,
+   "prefilter": 33,
+   "scored": 32,
+   "selected": 5
+  },
+  {
+   "date": "2026-07-14",
+   "harvest": 1960,
+   "recent": 1786,
+   "prefilter": 149,
+   "scored": 111,
+   "selected": 28
+  },
+  {
+   "date": "2026-07-15",
+   "harvest": 2649,
+   "recent": 2415,
+   "prefilter": 207,
+   "scored": 54,
+   "selected": 9
+  },
+  {
+   "date": "2026-07-16",
+   "harvest": 2757,
+   "recent": 2518,
+   "prefilter": 236,
+   "scored": 56,
+   "selected": 10
+  }
+ ]
+}
