@@ -1,5 +1,93 @@
 [
  {
+  "title": "Boosting Robustness for All-Weather Self-Supervised Depth Estimation in Autonomous Driving",
+  "url": "https://arxiv.org/abs/2607.21526",
+  "authors": "Mengshi Qi et al",
+  "venue": "arXiv 2607.21526",
+  "year": "2026",
+  "layer": "Perception",
+  "subcat": "Spatial Perception: depth estimation attacks, LiDAR spoofing",
+  "arxiv_id": "2607.21526",
+  "abstract": "Self-supervised depth estimation is challenging for safe autonomous driving under various adverse weather conditions due to sensor perception degradation. These challenges arise from two main aspects. Firstly, adverse conditions can distort pixel correspondences and violate the assumptions embedded in the self-supervised loss function, leading to erroneous depth predictions. Secondly, while radar is a widely adopted sensor in adverse weather conditions, the sparse distribution of radar points in the Point of View (POV) poses challenges for self-supervised fusion. To address these issues, we introduce a novel self-training pipeline using unpaired real all-weather data through multi-teacher distillation and robust radar fusion. We propose the Uncertainty-Aware Multi-Teacher Distillation method to generate diverse teacher models with different adverse condition inputs, and then employ uncertainty modeling to weigh the knowledge distillation loss. Additionally, we design the POV-BEV Radar Fusion approach, which leverages camera-pixel ray constraints to establish connections between the camera's Point of View (POV) and the radar's Bird's-Eye View (BEV). This approach enables the utilization of denser radar points, effectively capturing the complementary perspectives of both POV and BEV. Extensive quantitative and qualitative experiments demonstrate the robustness of our proposed method on all-weather datasets, achieving state-of-the-art performance. Our code and models are available at https://github.com/MICLAB-BUPT/RobustDepth.",
+  "keywords": [
+   "self-supervised depth estimation",
+   "adverse weather robustness",
+   "radar-camera fusion",
+   "multi-teacher distillation",
+   "autonomous driving perception"
+  ],
+  "relevance": "Yes",
+  "why": "Directly addresses robustness of depth estimation in autonomous driving under adverse weather, which is a safety-critical perception problem for embodied agents; while framed as defense/robustness rather than attack, it fits the survey's scope of perception risks and defenses in embodied AI.",
+  "citation_count": null,
+  "screened_date": "2026-07-25"
+ },
+ {
+  "title": "Safety-oriented sidewalk and road segmentation for smartphone-based assistive navigation",
+  "url": "https://arxiv.org/abs/2607.21137",
+  "authors": "Hakan Calim et al",
+  "venue": "arXiv 2607.21137",
+  "year": "2026",
+  "layer": "Perception",
+  "subcat": "Visual Perception",
+  "arxiv_id": "2607.21137",
+  "abstract": "Independent sidewalk mobility is essential for blind and visually impaired pedestrians (BVIPs), yet smartphone-based assistive navigation requires perception models that distinguish walkable sidewalks from adjacent unsafe regions. This study presents a safety-oriented semantic segmentation framework for future mobile guidance. We introduce SENSATION-DS, a chest-height pedestrian-view dataset with 2,752 image-mask pairs and nine-class navigation-relevant taxonomy. External urban and sidewalk datasets were harmonized to this label space, and five segmentation architectures were evaluated using staged target-domain adaptation with mask-conditioned synthetic images and Segment Anything Model 2 (SAM2) pseudo-labels. Models were assessed using mean Intersection over Union (mIoU), road- and sidewalk-specific metrics, Road-as-Sidewalk Error Rate as a proxy false-safe measure, and Android Open Neural Network Exchange benchmarking. Synthetic augmentation generally improved segmentation accuracy, whereas SAM2 pseudo-labels more consistently reduced Road-as-Sidewalk errors. UPerNet-MobileNetV3 achieved the highest offline mIoU (0.715 +/- 0.006), while DeepLabV3Plus-MobileNetV3 achieved the lowest Road-as-Sidewalk Error Rate (0.079) and highest Android runtime at 512x384 (7.383 FPS). These results show that assistive sidewalk perception should be evaluated jointly by segmentation accuracy, proxy false-safe behavior, and smartphone deployment feasibility, while real-world benefit requires validation with BVIP users. This evaluation supports selecting models that balance accurate perception, conservative error behavior, and practical runtime.",
+  "keywords": [
+   "semantic segmentation",
+   "assistive navigation",
+   "sidewalk safety",
+   "mobile deployment",
+   "false-safe evaluation"
+  ],
+  "relevance": "Yes",
+  "why": "This paper directly addresses safety-oriented visual perception for embodied navigation (smartphone-based assistive navigation for blind pedestrians), including adversarial-like error analysis (Road-as-Sidewalk Error Rate as a false-safe measure) and perception robustness evaluation for safe embodied mobility.",
+  "citation_count": null,
+  "screened_date": "2026-07-25"
+ },
+ {
+  "title": "GuidedAttention: Interpretable and Correctable Visual Attention for OOD-Robust Robot Manipulation via Imitation Learning",
+  "url": "https://arxiv.org/abs/2607.21049",
+  "authors": "Masaki Murooka et al",
+  "venue": "arXiv 2607.21049",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Robot Control",
+  "arxiv_id": "2607.21049",
+  "abstract": "End-to-end visuomotor policies provide little opportunity for humans to understand or correct the policy's visual attention. We propose GuidedAttention, a visuomotor imitation learning framework that introduces interpretable and correctable visual attention as an explicit intermediate representation. Task-relevant attention keypoints are predicted from camera images and condition a diffusion-based action policy. Users can inspect and optionally correct selected keypoints once at rollout initialization, after which the corrected attention is automatically propagated throughout execution by a tracking module. Experiments in simulation and the real world demonstrate that GuidedAttention consistently improves robot manipulation performance, particularly under positional and appearance out-of-distribution (OOD) conditions.",
+  "keywords": [
+   "interpretable attention",
+   "human-in-the-loop correction",
+   "visuomotor imitation learning",
+   "out-of-distribution robustness",
+   "diffusion policy"
+  ],
+  "relevance": "Yes",
+  "why": "Directly addresses safety and robustness of visuomotor robot manipulation policies, introducing human oversight and correction mechanisms for visual attention to improve OOD robustness.",
+  "citation_count": 0,
+  "screened_date": "2026-07-25"
+ },
+ {
+  "title": "Safe and Scalable Multi-Drone Payload Transport via CBF-based Reinforcement Learning with Zero-Shot Sim-to-Real Transfer",
+  "url": "https://arxiv.org/abs/2607.20665",
+  "authors": "Jaeyoun Choi et al",
+  "venue": "arXiv 2607.20665",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Robot Control",
+  "arxiv_id": "2607.20665",
+  "abstract": "Multi-drone payload transportation has emerged as a promising research paradigm with potential applications in construction, logistics, and disaster response. However, the complex coupled dynamics among drones, cables, and payloads pose significant challenges, and existing approaches remain limited in safety and scalability, particularly in dynamic and unstructured environments. In this work, we propose a learning-based framework for safe and scalable multi-drone cooperative payload transport. We introduce a minimal 2D abstraction that preserves the task-relevant drone-payload coupling required for coordination and safety, while remaining computationally efficient for large-scale learning. Using domain randomization over team size and physical parameters, we train a fully distributed policy via Discrete Graph Control Barrier Function Proximal Policy Optimization (DGPPO), enabling robust zero-shot sim-to-real transfer without fine-tuning. Extensive real-world evaluations demonstrate that a single learned policy generalizes across varying team sizes and task scenarios. Furthermore, multi-group hardware experiments show that the same policy can safely operate in dynamic environments, where other drone teams act as moving obstacles. These results indicate that the proposed framework enables efficient, safe, and scalable multi-drone payload transportation with strong generalization to complex real-world conditions.",
+  "keywords": [
+   "multi-robot coordination",
+   "control barrier functions",
+   "sim-to-real transfer",
+   "distributed policy learning",
+   "payload transportation"
+  ],
+  "relevance": "Yes",
+  "why": "Proposes a safety-oriented learning-based control framework for multi-drone payload transport using CBF-based RL, directly addressing safe robot control with real-world validation and obstacle avoidance.",
+  "citation_count": 0,
+  "screened_date": "2026-07-25"
+ },
+ {
   "title": "Distributed Motion Planning with Safety Guarantees for Self-Reconfiguring Robotic Boats",
   "url": "https://arxiv.org/abs/2607.20352",
   "authors": "Alejandro Gonzalez-Garcia et al",
