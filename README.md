@@ -907,3 +907,7 @@ Curated external resources on frontier AI safety beyond the surveyed papers:
    <img alt="Star History Chart" src="assets/star-history.svg" width="800" />
  </picture>
 </a>
+
+### AI Fashion Design
+
+- **[STIL.AI](https://tools.gracestack.se/designa-klader.html)** — Generate unique AI fashion designs from text descriptions. GPT Image 2, 9 kr per design (Klarna), free API access.
