@@ -1041,26 +1041,115 @@
   <div class="stat-item" id="visitorStat" hidden><span class="stat-num" id="visitorNum">&mdash;</span><span class="stat-label">Visitors</span></div>
 </div>
 
-<!-- LIVE SCREENING FUNNEL (data: screening_stats.json, refreshed daily) -->
+<!-- LIVE SCREENING (data: screening_stats.json, refreshed daily)
+     Hand-drawn HTML/CSS only — echarts deferred-paint gotcha on tiny JSON.
+     Daily history inspired by ccheatmap calendar cells + daily burn bars. -->
 <style>
-  #screening .funnel-card { max-width: 760px; margin: 22px auto 0; padding-top: 20px; padding-bottom: 16px; }
-  #screening .funnel { display: flex; flex-direction: column; gap: 13px; padding: 6px 6px 2px; }
+  #screening .funnel-card { max-width: 860px; margin: 22px auto 0; padding: 18px 18px 14px; }
+  #screening .funnel { display: flex; flex-direction: column; gap: 11px; padding: 2px 2px 0; }
   #screening .fn-row { display: grid; grid-template-columns: 116px 1fr auto; align-items: center; gap: 14px; }
   #screening .fn-label { font-family: 'Space Grotesk', system-ui, sans-serif; font-weight: 600; font-size: 13px; text-align: right; }
-  #screening .fn-track { height: 30px; border-radius: 7px; background: rgba(127,127,127,0.13); overflow: hidden; }
+  #screening .fn-track { height: 28px; border-radius: 7px; background: rgba(127,127,127,0.13); overflow: hidden; }
   #screening .fn-bar { height: 100%; border-radius: 7px; min-width: 4px; transition: width .7s cubic-bezier(.16,1,.3,1); }
   #screening .fn-val { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; white-space: nowrap; }
   #screening .fn-pct { opacity: 0.58; margin-left: 7px; }
   #screening .funnel-cap { text-align: center; color: var(--text-muted); font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.01em; margin: 12px 4px 0; }
-  @media (max-width: 620px) { #screening .fn-row { grid-template-columns: 84px 1fr auto; gap: 9px; } #screening .fn-label, #screening .fn-val { font-size: 12px; } }
+  #screening .hist-block { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--border); }
+  #screening .hist-head {
+    display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px;
+    margin: 0 2px 12px;
+  }
+  #screening .hist-title {
+    font-family: 'Space Grotesk', system-ui, sans-serif; font-weight: 600; font-size: 0.95rem; color: var(--text); margin: 0;
+  }
+  #screening .hist-sub {
+    font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: var(--text-muted); margin: 0;
+  }
+  #screening .cal-wrap { overflow-x: auto; padding: 2px 0 4px; }
+  #screening .cal {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(7, 12px);
+    grid-auto-columns: 12px;
+    gap: 3px;
+    width: max-content;
+    margin: 0 auto;
+  }
+  #screening .cal-cell {
+    width: 12px; height: 12px; border-radius: 2px;
+    background: rgba(127,127,127,0.12);
+    box-sizing: border-box;
+  }
+  #screening .cal-cell.has {
+    background: color-mix(in srgb, var(--sc-color, #2563EB) calc(var(--sc-level, 1) * 22%), rgba(127,127,127,0.14));
+  }
+  #screening .cal-cell.is-latest { outline: 1px solid var(--accent); outline-offset: 1px; }
+  #screening .cal-cell.is-empty { background: rgba(127,127,127,0.08); }
+  #screening .cal-legend {
+    display: flex; align-items: center; justify-content: flex-end; gap: 5px;
+    margin: 10px 2px 0; font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 10px; color: var(--text-muted);
+  }
+  #screening .cal-legend i {
+    display: inline-block; width: 11px; height: 11px; border-radius: 2px;
+    background: color-mix(in srgb, #2563EB calc(var(--lv, 1) * 22%), rgba(127,127,127,0.14));
+  }
+  #screening .daily-bars {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(18px, 1fr));
+    align-items: end; gap: 3px; height: 92px; margin-top: 16px; padding: 0 2px;
+  }
+  #screening .db {
+    position: relative; height: 100%; display: flex; flex-direction: column; justify-content: flex-end;
+    min-width: 0;
+  }
+  #screening .db-bar {
+    width: 100%; border-radius: 3px 3px 1px 1px; min-height: 2px;
+    background: #2563EB;
+    transition: height .5s cubic-bezier(.16,1,.3,1), background .2s;
+  }
+  #screening .db.is-zero .db-bar { background: rgba(127,127,127,0.22); min-height: 2px; height: 2px !important; }
+  #screening .db.is-latest .db-bar { background: #60A5FA; box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 55%, transparent); }
+  #screening .db-tip {
+    position: absolute; left: 50%; bottom: calc(100% + 6px); transform: translateX(-50%);
+    white-space: nowrap; pointer-events: none;
+    background: var(--bg-card); color: var(--text);
+    border: 1px solid var(--border); border-radius: 6px;
+    padding: 4px 7px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px;
+    opacity: 0; z-index: 5; box-shadow: 0 6px 18px rgba(0,0,0,0.14);
+  }
+  #screening .db:hover .db-tip { opacity: 1; }
+  #screening .hist-x {
+    display: flex; justify-content: space-between; margin: 6px 2px 0;
+    font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; color: var(--text-muted);
+  }
+  @media (max-width: 620px) {
+    #screening .fn-row { grid-template-columns: 84px 1fr auto; gap: 9px; }
+    #screening .fn-label, #screening .fn-val { font-size: 12px; }
+    #screening .daily-bars { height: 78px; grid-template-columns: repeat(auto-fill, minmax(14px, 1fr)); }
+  }
 </style>
 <section id="screening">
   <div class="inner">
     <h2 class="sh">Live Screening</h2>
-    <p class="scope-lead">This is a <strong>living</strong> survey. Every day an automated pipeline harvests the day's new arXiv papers and funnels them down to the few that are genuinely about embodied-AI safety &mdash; feeding the <a href="screened.html">Screened</a> tier. Below is the most recent daily run.</p>
+    <p class="scope-lead">This is a <strong>living</strong> survey. Every day an automated pipeline harvests the day's new arXiv papers and funnels them down to the few that are genuinely about embodied-AI safety &mdash; feeding the <a href="screened.html">Screened</a> tier. Below: the latest funnel, plus every daily run since the pipeline started.</p>
     <div class="viz-card funnel-card">
       <div id="funnelBars" class="funnel"></div>
       <p class="funnel-cap" id="funnelCap">&mdash;</p>
+      <div class="hist-block">
+        <div class="hist-head">
+          <h3 class="hist-title">Daily history</h3>
+          <p class="hist-sub" id="histSub">selected papers per day</p>
+        </div>
+        <div class="cal-wrap"><div id="screenCal" class="cal" aria-label="Screening calendar heatmap"></div></div>
+        <div class="cal-legend" aria-hidden="true">
+          <span>less</span>
+          <i style="--lv:0;background:rgba(127,127,127,0.12)"></i>
+          <i style="--lv:1"></i><i style="--lv:2"></i><i style="--lv:3"></i><i style="--lv:4"></i>
+          <span>more</span>
+        </div>
+        <div id="dailyBars" class="daily-bars" aria-label="Selected papers per day"></div>
+        <div class="hist-x"><span id="histFrom"></span><span id="histTo"></span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -2605,9 +2694,9 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 <script>
-/* Live-screening funnel -- data from screening_stats.json (the daily pipeline's
-   funnel counts). Hand-drawn HTML/CSS bars: no chart lib, pure DOM, so it always
-   paints regardless of load timing, and inherits page theme. */
+/* Live-screening: funnel for the latest full run + full daily history.
+   Hand-drawn HTML/CSS only (no echarts) — small JSON would hit deferred-paint blank.
+   Daily calendar + bars pattern borrowed from ccheatmap's calendar/burn views. */
 window.addEventListener('load', function () {
   var box = document.getElementById('funnelBars');
   if (!box) return;
@@ -2619,19 +2708,36 @@ window.addEventListener('load', function () {
   ];
   function fmt(n) { return (n || 0).toLocaleString('en-US'); }
   function esc(s) { return String(s).replace(/[&<>]/g, function (ch) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[ch]; }); }
-  function latestFullRun(s) {
-    var d = (s && s.daily) || [];
-    for (var i = d.length - 1; i >= 0; i--) { if (d[i].scored > 0) return d[i]; }
-    for (var j = d.length - 1; j >= 0; j--) { if (d[j].harvest > 0) return d[j]; }
-    return d[d.length - 1] || null;
+  function parseDay(iso) {
+    var p = (iso || '').split('-');
+    return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2]));
   }
-  fetch('screening_stats.json').then(function (r) { return r.json(); }).then(function (s) {
-    var day = latestFullRun(s);
-    if (!day) throw new Error('no data');
+  function isoDay(d) {
+    return d.getUTCFullYear() + '-' + String(d.getUTCMonth() + 1).padStart(2, '0') + '-' + String(d.getUTCDate()).padStart(2, '0');
+  }
+  function addDays(d, n) {
+    var x = new Date(d.getTime());
+    x.setUTCDate(x.getUTCDate() + n);
+    return x;
+  }
+  function latestFullRun(rows) {
+    for (var i = rows.length - 1; i >= 0; i--) { if (rows[i].scored > 0) return rows[i]; }
+    for (var j = rows.length - 1; j >= 0; j--) { if (rows[j].harvest > 0) return rows[j]; }
+    return rows[rows.length - 1] || null;
+  }
+  function levelOf(v, max) {
+    if (!(v > 0) || !(max > 0)) return 0;
+    var r = v / max;
+    if (r <= 0.25) return 1;
+    if (r <= 0.5) return 2;
+    if (r <= 0.75) return 3;
+    return 4;
+  }
+  function paintFunnel(day) {
     var top = day.harvest || 1;
     box.innerHTML = STAGES.map(function (st) {
       var v = day[st.key] || 0, pct = 100 * v / top;
-      var w = Math.max(pct, 1.4);   // floor so the tiny Selected bar stays visible
+      var w = Math.max(pct, 1.4);
       var ps = pct >= 10 ? Math.round(pct) + '%' : pct.toFixed(1) + '%';
       return '<div class="fn-row">'
         + '<div class="fn-label">' + esc(st.name) + '</div>'
@@ -2639,10 +2745,75 @@ window.addEventListener('load', function () {
         + '<div class="fn-val">' + fmt(v) + '<span class="fn-pct">' + ps + '</span></div>'
         + '</div>';
     }).join('');
+  }
+  function paintHistory(rows, latestDate) {
+    var cal = document.getElementById('screenCal');
+    var bars = document.getElementById('dailyBars');
+    if (!cal || !bars || !rows.length) return;
+    var byDate = {};
+    rows.forEach(function (r) { byDate[r.date] = r; });
+    var first = rows[0].date, last = rows[rows.length - 1].date;
+    var maxSel = 0;
+    rows.forEach(function (r) { if ((r.selected || 0) > maxSel) maxSel = r.selected; });
+    if (maxSel < 1) maxSel = 1;
+
+    // GitHub-style calendar: columns = weeks, rows = Sun..Sat (UTC).
+    var start = parseDay(first);
+    start = addDays(start, -start.getUTCDay());
+    var end = parseDay(last);
+    end = addDays(end, 6 - end.getUTCDay());
+    var cells = [];
+    for (var d = start; d <= end; d = addDays(d, 1)) {
+      var key = isoDay(d);
+      var row = byDate[key];
+      var inSpan = key >= first && key <= last;
+      var sel = row ? (row.selected || 0) : 0;
+      var lv = row ? levelOf(sel, maxSel) : 0;
+      var title = inSpan
+        ? (row
+            ? key + ': harvest ' + fmt(row.harvest || 0) + ' → selected ' + fmt(sel)
+            : key + ': no run')
+        : key;
+      var cls = 'cal-cell' + (inSpan ? (row ? ' has' : ' is-empty') : '') + (key === latestDate ? ' is-latest' : '');
+      var style = row && sel > 0 ? ' style="--sc-level:' + lv + ';--sc-color:#2563EB"' : '';
+      cells.push('<div class="' + cls + '"' + style + ' title="' + esc(title) + '"></div>');
+    }
+    cal.innerHTML = cells.join('');
+
+    // Daily selected bars across every recorded run day (zeros stay as ticks).
+    bars.innerHTML = rows.map(function (r) {
+      var sel = r.selected || 0;
+      var h = Math.max(2, Math.round(100 * sel / maxSel));
+      var tip = r.date + ' · selected ' + fmt(sel)
+        + ' · harvest ' + fmt(r.harvest || 0)
+        + ' · judged ' + fmt(r.scored || 0);
+      var cls = 'db' + (sel === 0 ? ' is-zero' : '') + (r.date === latestDate ? ' is-latest' : '');
+      return '<div class="' + cls + '" title="' + esc(tip) + '">'
+        + '<span class="db-tip">' + esc(r.date.slice(5) + ' · ' + fmt(sel) + ' sel') + '</span>'
+        + '<div class="db-bar" style="height:' + h + '%"></div>'
+        + '</div>';
+    }).join('');
+
+    var hf = document.getElementById('histFrom');
+    var ht = document.getElementById('histTo');
+    var hs = document.getElementById('histSub');
+    if (hf) hf.textContent = first;
+    if (ht) ht.textContent = last;
+    if (hs) hs.textContent = rows.length + ' days · peak selected ' + fmt(maxSel) + '/day';
+  }
+
+  fetch('screening_stats.json').then(function (r) { return r.json(); }).then(function (s) {
+    var rows = (s && s.daily) || [];
+    if (!rows.length) throw new Error('no data');
+    var day = latestFullRun(rows);
+    if (!day) throw new Error('no data');
+    paintFunnel(day);
+    paintHistory(rows, day.date);
     var t = s.totals || {}, sp = s.span || {};
     var cap = document.getElementById('funnelCap');
     if (cap) cap.textContent = 'latest full run ' + day.date + ': ' + fmt(day.harvest) + ' → ' + fmt(day.selected)
-      + '  ·  since ' + (sp.from || '?') + ': ' + s.cycles + ' cycles, ' + fmt(t.harvest) + ' screened → ' + fmt(t.selected) + ' selected';
+      + '  ·  since ' + (sp.from || rows[0].date) + ': ' + (s.cycles || rows.length) + ' cycles, '
+      + fmt(t.harvest || 0) + ' screened → ' + fmt(t.selected || 0) + ' selected';
   }).catch(function () {
     var sec = document.getElementById('screening'); if (sec) sec.style.display = 'none';
   });
