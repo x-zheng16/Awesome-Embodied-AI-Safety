@@ -1,5 +1,49 @@
 [
  {
+  "title": "SafeFlow: Semantic Information-Flow Control for Blocking Malicious Propagation in Multi-Agent Systems",
+  "url": "https://arxiv.org/abs/2607.25255",
+  "authors": "Haowen Dai et al",
+  "venue": "arXiv 2607.25255",
+  "year": "2026",
+  "layer": "Agentic",
+  "subcat": "Tool Use and Skill",
+  "arxiv_id": "2607.25255",
+  "abstract": "Multi-agent systems improve capability through task decomposition and role specialization, but these same mechanisms introduce an important safety blind spot: a harmful objective can be fragmented into locally plausible subtasks, allowing malicious intent to evade detection by any single agent. This is a growing social-impact challenge: systems handling sensitive information or consequential tools can turn routine delegation into unauthorized disclosure or unsafe action. We argue that this failure mode is better understood as a semantic information-flow problem than as a single-turn prompt classification task. To address this, we propose SafeFlow, a defense framework for multi-agent systems that formalizes malicious cross-agent propagation as a semantic information-flow problem. SafeFlow attaches structured semantic taints to root requests, propagates them through a dynamic collaboration graph, and performs workflow-level validation to reconstruct the global risk context before irreversible actions are committed. Evaluated on four benchmarks spanning prompt injection, jailbreak-based unsafe tool use, risky code execution, and harmful web-agent behavior, SafeFlow reduces attack success rates compared to undefended baselines and external defenses while retaining high benign task completion and a high paired safe--harm success rate. Our findings show that multi-agent systems still lack mechanisms for preserving risk semantics across delegation boundaries. This gap can turn routine delegation into privacy harms or unsafe actions that affect people and organizations. SafeFlow keeps this risk visible throughout the workflow, before it results in harm.",
+  "keywords": [
+   "information-flow control",
+   "semantic taint tracking",
+   "multi-agent delegation",
+   "cross-agent propagation",
+   "workflow-level validation"
+  ],
+  "relevance": "Yes",
+  "why": "Proposes a defense framework specifically for multi-agent systems that blocks malicious propagation across agents, evaluated on prompt injection, jailbreak-based unsafe tool use, and harmful web-agent behavior—directly addressing embodied AI safety in autonomous tool-using agents.",
+  "citation_count": 0,
+  "screened_date": "2026-07-29"
+ },
+ {
+  "title": "CycleVLA: Proactive Self-Correcting Vision-Language-Action Models via Subtask Backtracking and Minimum Bayes Risk Decoding",
+  "url": "https://arxiv.org/abs/2601.02295",
+  "authors": "Chenyang Ma et al",
+  "venue": "arXiv 2601.02295",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Robot Control",
+  "arxiv_id": "2601.02295",
+  "abstract": "Current work on robot failure detection and correction typically operates in a post hoc manner, analyzing errors and applying corrections only after failures occur. This work introduces CycleVLA, a system that equips Vision-Language-Action models (VLAs) with proactive self-correction, the capability to anticipate incipient failures and recover before they fully manifest during execution. CycleVLA achieves this by integrating a progress-aware VLA that flags critical subtask transition points where failures most frequently occur, a VLM-based failure predictor and planner that triggers subtask backtracking upon predicted failure, and a test-time scaling strategy based on Minimum Bayes Risk (MBR) decoding to improve retry success after backtracking. Extensive experiments on the LIBERO and LIBERO-Plus simulation benchmarks show that CycleVLA surpasses the state-of-the-art VLA π0.5, improves success rates by correcting execution failures across VLAs of varying capability, from under-trained ones to fully converged policies, and that MBR serves as an effective zero-shot test-time scaling strategy for VLAs. On a real robot, CycleVLA reaches a 91% average success rate on one precise and two long-horizon manipulation tasks. We further conduct stress tests with multiple manually injected perturbations (e.g., swapping in a distractor at the expected location while relocating the true target object mid-execution), where CycleVLA corrects ~80% of injected failures and maintains success rates comparable to unperturbed execution. Project Page: https://dannymcy.github.io/cyclevla/",
+  "keywords": [
+   "proactive self-correction",
+   "subtask backtracking",
+   "Minimum Bayes Risk decoding",
+   "vision-language-action models",
+   "failure prediction"
+  ],
+  "relevance": "Yes",
+  "why": "Directly addresses safety and robustness of visuomotor VLA policies in embodied robots by proactively detecting and correcting failures during execution, including under adversarial perturbations (distractor injection, object relocation).",
+  "citation_count": 7,
+  "screened_date": "2026-07-29"
+ },
+ {
   "title": "MulRobBench: A Decision-Level Benchmark for Safe and Security-Policy-Compliant Multimodal UAV Agents",
   "url": "https://arxiv.org/abs/2607.23870",
   "authors": "Belal S. Alsinglawi et al",
