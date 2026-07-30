@@ -1,5 +1,50 @@
 [
  {
+  "title": "MemSecBench: Tracking Agent Memory Poisoning from Persistence to Consequence and Repair",
+  "url": "https://arxiv.org/abs/2607.27080",
+  "authors": "Xuanze Chen et al",
+  "venue": "arXiv 2607.27080",
+  "year": "2026",
+  "layer": "Agentic",
+  "subcat": "Memory",
+  "arxiv_id": "2607.27080",
+  "abstract": "Memory systems allow agents to retain and reuse information from past interactions, but they can also let malicious content persist. A malicious instruction crafted by an attacker may be stored in long-term memory, recalled much later, and quietly shape a real action. Recent benchmarks increasingly examine agent memory security, yet few trace the same malicious semantics across persistence, downstream consequences, and selective repair under diverse memory-backend comparisons. To address this gap, we introduce MemSecBench, a task-grounded benchmark for the lifecycle security of agent memory systems. It contains 310 cases drawn from 48 realistic contexts across code and science, daily life, and office work. Each case follows a controlled Write--Execute--Forget protocol in an isolated runtime under an exact agent configuration, defined by an agent harness, a memory backend, and an LLM backend. Evidence-based adjudication combines a deterministic write check, checkpoint-specific judge-model evaluations, and programmatic gates across seven lifecycle checkpoints. The experimental design spans a 24-configuration matrix of two agent harnesses, four memory backends, and three LLM backends. Across all 24 configurations, malicious memory persists in 84.2% of all cases, and the full Write--Execute chain succeeds in 50.3%. Among successfully poisoned cases, 59.6% complete the full Execute chain, while 56.1% achieve selective repair.Compared with matched Native configurations, the largest absolute differences are 16.1 percentage points for end-to-end attack success and 41.3 percentage points for selective repair. These descriptive contrasts indicate that the evaluated memory system stacks differ in lifecycle security, both in the propagation of malicious memory and in selective repair after successful memory poisoning.",
+  "keywords": [
+   "memory poisoning",
+   "benchmark",
+   "lifecycle security",
+   "persistence",
+   "selective repair",
+   "Write-Execute-Forget"
+  ],
+  "relevance": "Yes",
+  "why": "Directly studies memory poisoning attacks against autonomous agents, measuring persistence, downstream consequences, and repair across agent configurations—core embodied AI safety at the memory layer.",
+  "citation_count": 0,
+  "screened_date": "2026-07-30"
+ },
+ {
+  "title": "Functional Cache Grafting: Robust and Rapid Code-Policy Synthesis for Embodied Agents",
+  "url": "https://arxiv.org/abs/2606.13097",
+  "authors": "Saehun Chun et al",
+  "venue": "arXiv 2606.13097",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Robot Control",
+  "arxiv_id": "2606.13097",
+  "abstract": "Code-writing large language models (CodeLLMs) generate executable code policies for embodied agents by translating natural language goals and environmental constraints into structured control programs. However, policy generation in open-domain embodied environments suffers from two fundamental limitations: (i) delayed decoding caused by repetitive prefill computation over long prompts, and (ii) limited robustness due to fully generative decoding, which often produces API mismatches, missing safety guards, and unstable control logic. To address these limitations, we present FCGraft, a Functional Cache Grafting framework. FCGraft maintains a library of function-level validated code skeletons and their associated prompt-level Transformer key-value (KV) caches, and synthesizes new policies by retrieving relevant functions and grafting their KV caches when a new task is provided. Given retrieved function caches, FCGraft performs cache grafting via stitching, which composes cached function segments into a composite policy, and patching, which locally adapts only the necessary code regions to satisfy task-specific parameters and constraints with minimal additional decoding. By eliminating redundant prefill computation, this approach reduces generation latency, while reusing validated control structures improves robustness over prompt-level caching methods RAGCache, achieving 18.31% higher task success rate and 2.3x faster policy synthesis.",
+  "keywords": [
+   "code-policy synthesis",
+   "KV cache reuse",
+   "embodied agent control",
+   "latency reduction",
+   "API safety guards"
+  ],
+  "relevance": "Yes",
+  "why": "Directly addresses safety and robustness of code-generated control policies for embodied agents, tackling API mismatches, missing safety guards, and unstable control logic in visuomotor/code-as-policy settings.",
+  "citation_count": 0,
+  "screened_date": "2026-07-30"
+ },
+ {
   "title": "SafeFlow: Semantic Information-Flow Control for Blocking Malicious Propagation in Multi-Agent Systems",
   "url": "https://arxiv.org/abs/2607.25255",
   "authors": "Haowen Dai et al",
