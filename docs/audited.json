@@ -1,5 +1,71 @@
 [
  {
+  "title": "SpikingNav: Robust Embodied Navigation with Spiking Neural Policies",
+  "url": "https://arxiv.org/abs/2608.05078",
+  "authors": "Jiahong Zhang et al",
+  "venue": "arXiv 2608.05078",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Robot Control",
+  "arxiv_id": "2608.05078",
+  "abstract": "Embodied navigation requires an agent to make sequential decisions from egocentric observations in a physical environment. Existing Artificial Neural Network (ANN)-based navigation models have achieved strong performance, yet they often rely on dense computation and may degrade under visual corruptions. Spiking neural networks (SNNs) provide event-driven computation and intrinsic temporal dynamics, which are promising for compact and robust navigation on resource-constrained platforms. However, whether spike-based sensing and policy dynamics can improve robustness in visually rich embodied navigation remains an open problem. This paper proposes SpikingNav, a spiking framework for robust indoor embodied navigation. It contains a Spiking Sensing Encoder (SSE) and a Spiking Policy Network (SPN). The SSE extracts task-conditioned visual features with a spike-based backbone. The SPN maintains a recurrent policy state through membrane integration, thresholding, and spike-triggered reset. In this way, SpikingNav exploits the dynamic properties and spike activations of SNNs to improve navigation performance and robustness. We evaluate SpikingNav on PointNav and ObjectNav under clean observations and visual corruptions. SpikingNav achieves competitive clean performance and stronger robustness with fewer parameters and lower per-step computation than a matched ANN baseline. For instance, SpikingNav improves ObjectNav success from 31.05% to 34.12%, and raises the average success under visual corruptions from 8.45% to 13.71%, demonstrating the benefits of spike-based sensing and policy dynamics. We further validate the deployability of our spike-based sensing method on the Thruster-V2 neuromorphic chip. This physical hardware validation shows that SpikingNav can be instantiated on a real neuromorphic substrate for cyber-physical systems.",
+  "keywords": [
+   "spiking neural networks",
+   "neuromorphic computing",
+   "visual robustness",
+   "embodied navigation",
+   "resource-constrained deployment"
+  ],
+  "relevance": "Yes",
+  "why": "Directly addresses robustness of embodied navigation policies under visual corruptions in physical environments, with hardware validation on neuromorphic chips for cyber-physical systems.",
+  "citation_count": 0,
+  "screened_date": "2026-08-06"
+ },
+ {
+  "title": "LoginTrap: Uncovering Task-Agnostic Phishing-Style Indirect Prompt Injection Attacks against LLM-based Web Agents",
+  "url": "https://arxiv.org/abs/2608.04741",
+  "authors": "Longtao Guo et al",
+  "venue": "arXiv 2608.04741",
+  "year": "2026",
+  "layer": "Agentic",
+  "subcat": "Tool Use and Skill",
+  "arxiv_id": "2608.04741",
+  "abstract": "LLM-based web agents automate user tasks by observing webpages and executing browser actions on behalf of users. As these agents operate on real web services, login becomes a sensitive authentication boundary because it involves credentials and sensitive information. Existing work shows that malicious webpage content can manipulate web agent actions, but it has not fully examined whether such content can induce login and cause end-to-end private data leakage. We study this attack surface and present LoginTrap, a task-agnostic login-inducing attack against LLM-based web agents. LoginTrap assumes a black box attacker that controls the webpage context and the induced login flow without knowing the user task or web agent internals. Under this threat model, LoginTrap uses webpage context to generate page-specific indirect injections through a fuzzing-inspired process, making login appear as a plausible prerequisite for continuing the task and guiding the agent to a controlled login page. We conduct a comprehensive analysis of LoginTrap across realistic web agent executions. The results show that LoginTrap reaches 86\\% average end-to-end attack success across LLM backbones and remains effective across agent architectures and defenses. These findings identify login inducement as a systematic authentication boundary risk and motivate further research on authentication-aware defenses for web agents.",
+  "keywords": [
+   "indirect prompt injection",
+   "web agent security",
+   "authentication boundary attack",
+   "login inducement",
+   "phishing-style attack"
+  ],
+  "relevance": "Yes",
+  "why": "LoginTrap attacks LLM-based web agents (embodied tool-using agents that interact with real web services) by inducing credential submission via malicious webpage content, constituting a concrete attack on autonomous agent tool use with direct safety implications for embodied AI.",
+  "citation_count": null,
+  "screened_date": "2026-08-06"
+ },
+ {
+  "title": "SAFECAST: Robust Failure Detection for VLA Policies with Contrast-Set Training and Calibration",
+  "url": "https://arxiv.org/abs/2608.04246",
+  "authors": "Harshitha Rajaprakash et al",
+  "venue": "arXiv 2608.04246",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Robot Control",
+  "arxiv_id": "2608.04246",
+  "abstract": "Vision-language-action policies often fail under deployment-time distribution shifts such as clutter, distractor objects, lighting changes, novel objects, altered initial states, and reworded instructions. Hidden-state-based risk probes combined with functional conformal prediction can detect rollout failures, but their reliability depends on calibration data matching deployment conditions. We introduce SAFECAST, which leverages contrast set perturbations to improve hidden-state probe training and calibration for deployment time shift. SAFECAST statistically significantly improves failure detection ROC-AUC scores over a state of the art baseline in both real-world DROID and LIBERO simulation experiments across multiple VLM backbones. We further find that SAFECAST benefits most when both visual and language contrast set perturbations are used to augment data, and that with contrast set perturbations, sim-to-real calibration leads to better probes than using real rollout data only.",
+  "keywords": [
+   "failure detection",
+   "VLA policies",
+   "contrast set training",
+   "calibration",
+   "distribution shift"
+  ],
+  "relevance": "Yes",
+  "why": "Directly addresses safety of vision-language-action (VLA) robot policies by detecting rollout failures under deployment-time distribution shifts, with real-world robot experiments.",
+  "citation_count": 0,
+  "screened_date": "2026-08-06"
+ },
+ {
   "title": "When Efficiency Becomes Fragility: Exploiting Dynamic Routing Vulnerabilities in Adaptive UAV Tracking",
   "url": "https://arxiv.org/abs/2608.03902",
   "authors": "Shaofeng Liang et al",
