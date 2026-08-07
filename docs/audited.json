@@ -1,5 +1,49 @@
 [
  {
+  "title": "DreamGuard: Efficient Runtime Guardrail for LLM Agents via Risk-Aware World Model",
+  "url": "https://arxiv.org/abs/2608.05695",
+  "authors": "Wenhao Lin et al",
+  "venue": "arXiv 2608.05695",
+  "year": "2026",
+  "layer": "Agentic",
+  "subcat": "Tool Use and Skill",
+  "arxiv_id": "2608.05695",
+  "abstract": "As large language model (LLM) agents increasingly invoke external tools and interact with real-world systems, unsafe actions may cause irreversible consequences on external states, user data, and downstream services. Recent runtime guardrails mitigate such risks by checking proposed actions before execution, but many remain reactive: they primarily assess the apparent safety of the current action, lacking an explicit model of how risk evolves across the trajectory. This limitation creates a critical blind spot for long-horizon risks, where individually benign-looking actions can gradually drift the agent toward hazardous states. In response, we propose DreamGuard, a proactive guardrail for LLM agents built around a risk-aware world model. The world model maintains a compact recurrent latent state over the trajectory and predicts future latent states from which DreamGuard derives immediate-hazard and prefix-risk evidence. It then fuses these multi-horizon signals into intervention decisions before execution. Experiments across four benchmarks and an online guardrail evaluation show that DreamGuard outperforms generic, reactive, and proactive guardrail baselines, achieves the best safety-utility trade-off among evaluated guardrails, and maintains an average end-to-end latency of 25 ms per call.",
+  "keywords": [
+   "runtime guardrail",
+   "world model",
+   "long-horizon risk",
+   "proactive safety",
+   "agent intervention"
+  ],
+  "relevance": "Yes",
+  "why": "Proposes a proactive runtime guardrail for LLM agents that invoke external tools, explicitly modeling future risks to prevent unsafe actions—directly addresses embodied AI safety for autonomous tool-using agents.",
+  "citation_count": null,
+  "screened_date": "2026-08-07"
+ },
+ {
+  "title": "PromptShield Home: Ambient Multimodal Prompt Injection Defense for Smart-Home Agents",
+  "url": "https://arxiv.org/abs/2608.05495",
+  "authors": "He Zhang et al",
+  "venue": "arXiv 2608.05495",
+  "year": "2026",
+  "layer": "Cognition",
+  "subcat": "Instruction Understanding",
+  "arxiv_id": "2608.05495",
+  "abstract": "Smart-home assistants increasingly use multimodal large language models (MLLMs) that perceive video and audio directly. This raises a safety question specific to the home: can the agent tell a genuine user command from ambient or externally-sourced content, television speech, on-screen text, or an overheard conversation, that merely looks like a command? We introduce PromptShield-Home, a pilot benchmark of realistic smart-home scenarios spanning addressee ambiguity, screen/audio injection, health-monitor false triggers, mixed occupancy, and a legitimate-command floor, and use it to compare three abstraction layers: traditional detectors (L0), a single MLLM agent (L1; vision, vision+ASR, and audio-visual), and multi-agent mediation (L2; voting, role specialists, cross-model arbitration). Because the label distribution is skewed toward inaction, aggregate accuracy is misleading, a constant always-block predictor scores 82%, so we report unsafe-execution and safe-completion rates separately. The two paradigms fail in opposite ways: detectors act on everything, while every MLLM configuration over-refuses, completing almost no genuine command and missing a true fall in every case. Crucially, their correct sets are disjoint: an oracle that always picks the right layer reaches 94.1%, against 76.5% for the best single layer. We report this as an upper bound, not a system - no router is implemented - and argue that home-agent safety is best served by learned routing and sensor fusion, not by replacing detectors with an MLLM.",
+  "keywords": [
+   "multimodal prompt injection",
+   "smart-home safety",
+   "addressee disambiguation",
+   "MLLM over-refusal",
+   "sensor fusion routing"
+  ],
+  "relevance": "Yes",
+  "why": "Directly studies prompt injection attacks and defenses on multimodal embodied home agents that perceive video/audio, with a benchmark for distinguishing genuine user commands from ambient injected content.",
+  "citation_count": 0,
+  "screened_date": "2026-08-07"
+ },
+ {
   "title": "SpikingNav: Robust Embodied Navigation with Spiking Neural Policies",
   "url": "https://arxiv.org/abs/2608.05078",
   "authors": "Jiahong Zhang et al",
