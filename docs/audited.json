@@ -1,5 +1,93 @@
 [
  {
+  "title": "Do Not Forget the Obvious - RISC: A Risk-Informed Slice-Coverage Protocol for Safe Autonomous Driving",
+  "url": "https://arxiv.org/abs/2608.12051",
+  "authors": "Fabian Hüger",
+  "venue": "arXiv 2608.12051",
+  "year": "2026",
+  "layer": "Perception",
+  "subcat": "Visual Perception",
+  "arxiv_id": "2608.12051",
+  "abstract": "Aggregate metrics may not fully reflect performance in insufficiently examined high-risk driving conditions. We propose RISC (Risk-Informed Slice Coverage), a practical protocol for risk-guided stress testing and coverage-qualified evaluation. Risk-guided stress testing directs a finite audit budget toward risk-relevant sub-datasets, called risk slices, while coverage-qualified evaluation reports results together with explicit statements about which slices are sufficiently or insufficiently covered. The protocol translates safety concerns into machine-readable risk slices, uses lightweight signals to tag candidate data, selects a compact audit set by risk, and qualifies the results using coverage evidence. An LLM can optionally support this process by surfacing relevant but potentially overlooked conditions during test planning, thereby helping engineers not to forget the obvious. RISC is model-agnostic and can be applied to perception modules, driving models, and other autonomous-driving subsystems. We instantiate the protocol for monocular pedestrian perception using 1,000 frames from the Zenseact Open Dataset, image statistics, and a YOLO-based detector proxy. In this proof-of-concept study, risk-guided selection increases critical failure discovery from 34.0% under random sampling to 98.5%. RISC provides a lightweight, assurance-oriented evaluation layer that complements scenario categorization, coverage assessment, and broader testing-and-verification workflows.",
+  "keywords": [
+   "risk-guided testing",
+   "slice coverage",
+   "autonomous driving evaluation",
+   "stress testing",
+   "failure discovery"
+  ],
+  "relevance": "Yes",
+  "why": "Proposes a risk-guided testing and evaluation protocol specifically for autonomous driving perception modules (monocular pedestrian detection), directly addressing safety evaluation of embodied visual perception systems.",
+  "citation_count": 0,
+  "screened_date": "2026-08-13"
+ },
+ {
+  "title": "ToolHazard: Scaling Adversarial Environments for Security Evaluation and Alignment of LLM-based Agents",
+  "url": "https://arxiv.org/abs/2608.11878",
+  "authors": "Yutao Mou et al",
+  "venue": "arXiv 2608.11878",
+  "year": "2026",
+  "layer": "Agentic",
+  "subcat": "Tool Use and Skill",
+  "arxiv_id": "2608.11878",
+  "abstract": "Large language model (LLM) agents integrated with external tools are vulnerable to indirect prompt injections embedded in environmental states. However, existing studies largely rely on manually implemented or reused environments, stochastic LLM-based tool simulation, and predefined injection locations, limiting scalable security research across broader domains. To bridge this gap, we propose **ToolHazard**, a scalable adversarial environment synthesis framework that reduces human engineering and supports expansion with additional seed domains and compute. Through an Environment Simulator, an Attacker Agent, and a User Simulator, ToolHazard synthesizes executable stateful environments, discovers viable injection points and generates environment-specific payloads, and constructs state-grounded long-horizon tasks. Based on ToolHazard, we build **ToolHazard-Bench** for stress-testing agents under complex workflows and diverse environmental attacks. Experiments reveal substantial agent vulnerabilities and show that injection timing and placement affect attack effectiveness. Moreover, ToolHazard-generated alignment data improves security on both ToolHazard-Bench and AgentDojo while preserving benign task utility.",
+  "keywords": [
+   "adversarial environment synthesis",
+   "indirect prompt injection",
+   "agent security evaluation",
+   "tool-use alignment",
+   "scalable red-teaming"
+  ],
+  "relevance": "Yes",
+  "why": "Directly studies adversarial attacks (indirect prompt injections) on LLM-based agents using external tools, proposes scalable attack environments and defenses (alignment data), fitting the Tool Use and Skill subcategory under Agentic.",
+  "citation_count": 0,
+  "screened_date": "2026-08-13"
+ },
+ {
+  "title": "Herding End-to-End Autonomous Driving via Neuro-Symbolic Safety Guards",
+  "url": "https://arxiv.org/abs/2608.11451",
+  "authors": "Simón Patiño Idarraga et al",
+  "venue": "arXiv 2608.11451",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Robot Control",
+  "arxiv_id": "2608.11451",
+  "abstract": "Modern end-to-end driving agents can achieve high average performance yet still violate basic traffic rules that a human driver would never miss. The reason is structural: they learn statistical patterns rather than the physical conditions that guarantee safe driving, leaving their decision-making process opaque and safety constraints unenforced. We introduce a neuro-symbolic safety guard, a lightweight module that attaches to the final command interface of an already-trained agent. Immediately before a command reaches the vehicle, it checks the command against explicit safety rules and, only when necessary, replaces it with the nearest safe alternative. Each intervention is directly executable and traceable to the rule that triggered it, while the guard itself requires no retraining and adds no learned component. Evaluated on the long-tail benchmarks Fail2Drive and Bench2Drive using the state-of-the-art TransFuser v6 (TFv6) as a case study, the guard improves Success Rate by 15% and reduces safety-critical collisions by up to 53%, while preserving the original Driving Score.",
+  "keywords": [
+   "neuro-symbolic safety guard",
+   "end-to-end autonomous driving",
+   "rule-based intervention",
+   "traffic rule enforcement",
+   "safety-critical collision reduction"
+  ],
+  "relevance": "Yes",
+  "why": "Proposes a safety mechanism that intervenes on the final control commands of an end-to-end autonomous driving agent to enforce traffic rules and prevent collisions, directly addressing embodied AI safety in robot control.",
+  "citation_count": 0,
+  "screened_date": "2026-08-13"
+ },
+ {
+  "title": "Agent Safety Should Be a Runtime Contract",
+  "url": "https://arxiv.org/abs/2608.11274",
+  "authors": "Albus W. Ng et al",
+  "venue": "arXiv 2608.11274",
+  "year": "2026",
+  "layer": "Agentic",
+  "subcat": "Tool Use and Skill",
+  "arxiv_id": "2608.11274",
+  "abstract": "The dominant paradigm treats AI safety as a property to be instilled during model training via RLHF, DPO, or Constitutional AI. We argue this is structurally insufficient for autonomous agents that execute code, mutate files, send messages, and modify databases. Agent safety should be a runtime contract enforced by the harness, and the contract has two complementary faces. The preventive face blocks dangerous actions before they happen via sandboxes, permission gates, output filters, and trajectory monitors. The evidential face requires verifiable proof that good actions actually happened, gating task submission on hard evidence such as test runs, log captures, file diffs, and citation grounding. We ground the position in four lines of public evidence, with row-level protocols and data released in the supplementary JSON files: a survey of 52 documented AI-agent and LLM safety incidents, a false-completion audit with 31 non-contested core cases plus one disputed illustrative case, a trajectory-schema audit of 12 public agent systems and harnesses, and a title-level audit of all 28,560 papers accepted at NeurIPS, ICML, and ICLR 2023-2025 showing a pooled 8-12x imbalance between training-time and deployment-time publication. Two prior communities that needed to enforce safety, computer security and the experimental sciences, converged on runtime contracts with both preventive and evidential elements; agentic AI is now under the same pressure. We formalize an Agent Trajectory Schema and Evidence Chain, state a compositional gating proposition based on standard monitor composition, and outline a research agenda. The right unit of safety in agentic AI is the trajectory-with-checkable-evidence, not the model.",
+  "keywords": [
+   "runtime safety",
+   "trajectory monitoring",
+   "sandboxing",
+   "evidence-based verification",
+   "preventive-evidential duality"
+  ],
+  "relevance": "Yes",
+  "why": "Directly addresses safety of autonomous agents that execute code, mutate files, and use tools; proposes runtime preventive and evidential contracts for agent trajectories, which is central to embodied AI safety at the agentic layer.",
+  "citation_count": 0,
+  "screened_date": "2026-08-13"
+ },
+ {
   "title": "Risk-Aware Kinodynamic Motion Planning Under Uncertainty For Safe Navigation on Planetary Environments",
   "url": "https://arxiv.org/abs/2608.11175",
   "authors": "Sachin Sunil Kelkar, Tanmay Dokania, Yashwanth Kumar Nakka",
