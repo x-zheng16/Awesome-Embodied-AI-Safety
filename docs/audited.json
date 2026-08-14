@@ -1,5 +1,93 @@
 [
  {
+  "title": "Safety-Critical Control for Quadrotor UAVs via Decentralized Navigation Functions",
+  "url": "https://arxiv.org/abs/2608.13507",
+  "authors": "Omayra Yago Nieto, Alexandre Anahory Simoes, Leonardo Colombo",
+  "venue": "arXiv 2608.13507",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Robot Control",
+  "arxiv_id": "2608.13507",
+  "abstract": "We study safety-critical control for teams of quadrotor UAVs driven by decentralized navigation functions under learned model uncertainty. These functions generate fully actuated translational reference forces, while quadrotors can only produce thrust along their body-fixed vertical axes. We construct a thrust-attitude implementation of the induced navigation forces and quantify its error with respect to the fully actuated reference dynamics. An aggregated robust HOCBF-QP safety filter minimally modifies the nominal thrusts while guaranteeing pairwise collision avoidance with high probability.",
+  "keywords": [
+   "decentralized navigation functions",
+   "robust HOCBF-QP",
+   "thrust-attitude implementation",
+   "pairwise collision avoidance",
+   "learned model uncertainty"
+  ],
+  "relevance": "Yes",
+  "why": "The paper develops safety-critical control methods for quadrotor UAVs with collision avoidance guarantees, directly addressing physical safety of embodied robotic systems under model uncertainty.",
+  "citation_count": 0,
+  "screened_date": "2026-08-14"
+ },
+ {
+  "title": "UniTexture: Cross-Task Universal Adversarial Textures for Vision-Language-Action Models",
+  "url": "https://arxiv.org/abs/2608.13453",
+  "authors": "Yukun Dai et al",
+  "venue": "arXiv 2608.13453",
+  "year": "2026",
+  "layer": "Perception",
+  "subcat": "Visual Perception: adversarial patches, object detection attacks, camera spoofing",
+  "arxiv_id": "2608.13453",
+  "abstract": "Vision-Language-Action (VLA) models have emerged as generalist robotic policies capable of following diverse language instructions and performing a wide range of manipulation tasks. However, their direct control over embodied agents also exposes them to adversarial interference that may cause unsafe physical behaviors. Existing attacks on robotic policies are typically optimized for a single task or instruction, leaving the cross-task vulnerabilities of multitask VLAs largely unexplored. We introduce UniTexture, a cross-task universal adversarial texture attack that uses a single textured 3D object to induce targeted deviations in VLA action predictions across multiple tasks. UniTexture backpropagates gradients from the policy's action outputs to surface texture parameters through a differentiable renderer. It jointly optimizes the shared texture over a distribution of tasks, instructions, states, and viewpoints using a targeted action-space objective, steering predicted actions toward attacker-defined targets without optimizing a separate texture for each task. We evaluate UniTexture on OpenVLA and $π_{0.5}$ across diverse manipulation tasks and multiple evaluation settings. UniTexture reduces the mean task success rate from 90.0% under benign conditions to 48.4% under attack, induces target-aligned action shifts, and further exhibits cross-suite and cross-model transfer without re-optimization. Together, these findings reveal shared cross-task vulnerabilities in multitask VLAs that can be systematically exploited through a single adversarial surface texture.",
+  "keywords": [
+   "adversarial texture",
+   "cross-task attack",
+   "vision-language-action models",
+   "physical-world attack",
+   "targeted action manipulation"
+  ],
+  "relevance": "Yes",
+  "why": "Proposes a physical adversarial texture attack on Vision-Language-Action (VLA) robotic policies that induces unsafe action deviations across multiple manipulation tasks, directly addressing embodied AI safety.",
+  "citation_count": 0,
+  "screened_date": "2026-08-14"
+ },
+ {
+  "title": "Predictive Relative-Velocity Steering for Safe Robotic Manipulator Teleoperation in Dynamic Environments",
+  "url": "https://arxiv.org/abs/2608.13284",
+  "authors": "Changhao Hu et al",
+  "venue": "arXiv 2608.13284",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Robot Control",
+  "arxiv_id": "2608.13284",
+  "abstract": "Recent advances in teleoperation have enabled robotic manipulators to perform dexterous, human-arm-like motions. However, human operators may fail to avoid suddenly appearing obstacles promptly and effectively, particularly under network latency or limited attention, thereby creating safety risks. To address this issue, we propose a lightweight and modular framework for proactive collision avoidance, operating directly at the end-effector velocity-command level. After preprocessing the point cloud, the framework first predicts potential collisions based on time-to-collision (TTC) with integrated overshoot protection, and subsequently rotates the relative-velocity vector using Rodrigues' rotation formula. The deflection changes only the direction of the relative velocity while preserving its magnitude, thereby mitigating the deadlock problem commonly encountered by conventional artificial potential field (APF) methods. The prediction module compensates for point-cloud processing latency introduced by complex teleoperation pipelines, while the lightweight design enables the high-frequency control required for teleoperation. Simulations across diverse scenarios show that the proposed method achieves a higher end-effector collision avoidance rate than the baseline methods. Experiments on a physical robotic system further validate its collision-avoidance effectiveness.",
+  "keywords": [
+   "teleoperation safety",
+   "proactive collision avoidance",
+   "time-to-collision prediction",
+   "artificial potential fields",
+   "dynamic obstacle avoidance"
+  ],
+  "relevance": "Yes",
+  "why": "Proposes a proactive collision-avoidance framework for teleoperated robotic manipulators that directly modifies end-effector velocity commands to prevent collisions in dynamic environments, directly addressing safety of embodied robot control.",
+  "citation_count": 0,
+  "screened_date": "2026-08-14"
+ },
+ {
+  "title": "Can Vision-Language Models Assess Proxemic Risk from Egocentric Robot Images?",
+  "url": "https://arxiv.org/abs/2608.12515",
+  "authors": "Vladyslava Rudas, Dmytro Kuzmenko",
+  "venue": "arXiv 2608.12515",
+  "year": "2026",
+  "layer": "Perception",
+  "subcat": "Visual Perception",
+  "arxiv_id": "2608.12515",
+  "abstract": "Assessing proxemic danger from a robot's egocentric perspective is critical for safe embodied navigation in human environments and requires both visual and contextual reasoning. We evaluate three opensource vision-language models (VLMs) (\\textit{InternVL}, \\textit{Qwen-VL}, and \\textit{SmolVLM}) on the classification of egocentric robot images into four danger levels, comparing three prompting strategies and two rounds of QLoRA fine-tuning against a stratified random baseline. Without fine-tuning, all models perform near the baseline, while fine-tuning yields only modest overall improvements. However, \\textit{Qwen-VL} with an advanced prompt achieves substantially higher recall for high-danger cases than the other models. An analysis of person localization further shows that correct danger classification does not correspond to better spatial grounding, indicating that a model may produce a useful safety label without attending to the relevant region of the scene. These results show that current VLMs remain limited in fine-grained proxemic reasoning and spatial grounding, although targeted prompting and fine-tuning can improve high-danger detection in selected models.",
+  "keywords": [
+   "proxemic risk assessment",
+   "egocentric perception",
+   "vision-language models",
+   "spatial grounding",
+   "danger classification"
+  ],
+  "relevance": "Yes",
+  "why": "Evaluates VLMs for embodied safety-critical perception (proxemic danger classification from robot egocentric images), directly relevant to visual perception robustness in embodied navigation.",
+  "citation_count": 0,
+  "screened_date": "2026-08-14"
+ },
+ {
   "title": "Do Not Forget the Obvious - RISC: A Risk-Informed Slice-Coverage Protocol for Safe Autonomous Driving",
   "url": "https://arxiv.org/abs/2608.12051",
   "authors": "Fabian Hüger",
