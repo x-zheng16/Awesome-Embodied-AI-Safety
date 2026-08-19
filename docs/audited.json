@@ -1,5 +1,116 @@
 [
  {
+  "title": "MobileWorldSafety: Benchmarking GUI Agent Safety Against Environmental Injection Attacks in Android Apps",
+  "url": "https://arxiv.org/abs/2608.17659",
+  "authors": "Sujin Chen et al",
+  "venue": "arXiv 2608.17659",
+  "year": "2026",
+  "layer": "Agentic",
+  "subcat": "Tool Use and Skill",
+  "arxiv_id": "2608.17659",
+  "abstract": "LLM-powered GUI agents that autonomously operate smartphones are rapidly transitioning from research prototypes to early real-world deployment. However, because these agents routinely process untrusted environmental content, they are highly vulnerable to environmental injection attacks, which include indirect prompt injections and adversarial instructions. Such attacks can manipulate the behavior of agents without user awareness through diverse channels encountered in everyday mobile use. Despite these risks, existing benchmarks often fail to capture everyday user scenarios, lacking a systematic evaluation of GUI agents under environmental injection attacks on mobile devices. To address this gap, we introduce MobileWorldSafety, a benchmark of 142 risk tasks built on real Android applications. For each task, we define a programmatically verifiable risk indicator over the final system state and evaluate outcomes with a two-stage pipeline: rule-based verification handles unambiguous cases, while an LLM judge adjudicates ambiguous ones. This distinguishes safety failures from capability failures and enables objective and reproducible assessment. Evaluations on six agents, including both general agents and specialized GUI agents, demonstrate that all agents remain highly vulnerable, with attack success rates ranging from 40.4% to 66.9%. These findings indicate that current agents often fail to maintain safety alignment when adversarial content is presented as ordinary mobile context. MobileWorldSafety provides a foundation for quantifying these vulnerabilities and advancing research on robust mobile GUI agents.",
+  "keywords": [
+   "environmental injection",
+   "mobile GUI agents",
+   "Android safety benchmark",
+   "adversarial smartphone operation",
+   "indirect prompt injection"
+  ],
+  "relevance": "Yes",
+  "why": "Directly addresses safety of embodied GUI agents (smartphone agents) against environmental injection attacks, with a benchmark for evaluating adversarial manipulation of autonomous mobile agents operating real Android apps.",
+  "citation_count": null,
+  "screened_date": "2026-08-19"
+ },
+ {
+  "title": "LIBERO-VIFO: Benchmarking the Capability and Safety of Visual Cue Following in Vision-Language-Action Models",
+  "url": "https://arxiv.org/abs/2608.17600",
+  "authors": "Zhengyan Qian et al",
+  "venue": "arXiv 2608.17600",
+  "year": "2026",
+  "layer": "Perception",
+  "subcat": "Visual Perception: adversarial patches, object detection attacks, camera spoofing",
+  "arxiv_id": "2608.17600",
+  "abstract": "Visual cues are increasingly adopted to guide robot learning, but whether Vision-Language-Action (VLA) models can reliably follow authorized cues while disregarding unauthorized ones remains unclear. Existing work covers only a narrow range of cue forms and focuses on final task success, providing only a coarse assessment of cue-following capability. Treating all visual cues as authorized also leaves safety risks of unauthorized following unexplored. To address these gaps, we introduce LIBERO-VIFO, a benchmark to evaluate both the capability and safety of visual cue following in VLA models. LIBERO-VIFO defines eight visual cue families spanning diverse forms. A total of four protocols in two parts are defined: Part I tests cue understanding and authorized following, while Part II evaluates unauthorized visual cue following under language-cue conflict and empty language conditions. Evaluating seven VLA models reveals that although visual cue understanding does not reliably translate into execution, current VLAs are able to execute cue-indicated tasks without language instruction, exposing an emerging risk of unauthorized visual cue following. Extended experiments on scene-instantiated cues, safety-critical settings, and real-robot deployment corroborate these findings. LIBERO-VIFO brings both the capability and safety of visual cue following into systematic evaluation, establishing visual-centric safety as a new perspective for the VLA community.",
+  "keywords": [
+   "visual cue following",
+   "unauthorized cue following",
+   "VLA safety benchmark",
+   "language-cue conflict",
+   "visual-centric safety"
+  ],
+  "relevance": "Yes",
+  "why": "Directly studies safety of Vision-Language-Action models for robots, specifically unauthorized visual cue following as a perception-level attack vector on embodied agents.",
+  "citation_count": null,
+  "screened_date": "2026-08-19"
+ },
+ {
+  "title": "HarnessRisk: A Lifecycle-Oriented Benchmark for Agent Harness Safety",
+  "url": "https://arxiv.org/abs/2608.17597",
+  "authors": "Yajing Bai et al",
+  "venue": "arXiv 2608.17597",
+  "year": "2026",
+  "layer": "Agentic",
+  "subcat": "Tool Use and Skill",
+  "arxiv_id": "2608.17597",
+  "abstract": "Large language models are increasingly deployed through agent harnesses that manage tools, extensions, persistent state, permissions, and external actions. Existing safety benchmarks mainly target individual attack mechanisms or a limited subset of operational settings, making it difficult to compare how safety failures emerge across different harness responsibilities. We present HarnessRisk, a lifecycle oriented benchmark that organizes agent harness safety into six operational phases including Harness Configuration, Capability Extension, Runtime Operation, State Persistence, Action Control, and Incident Recovery. HarnessRisk contains 128 sandboxed cases, each pairing a benign user objective with an adversarial instruction embedded in an untrusted workflow artifact. We evaluate each trajectory using Utility, Attack Success Rate, Persistence, and Detection. Across three harnesses, six language models, and 14 model and harness configurations, attack success ranges from 12.6% to 80.9%, while Utility remains between 75.0% and 97.6%. Harness Configuration is the most vulnerable phase across all three harnesses, showing that attacks can succeed by altering security sensitive parameters within otherwise authorized workflows. We also find that explicit risk recognition does not reliably lead to safe action, as some configurations detect risks in more than 90% of runs while retaining substantial attack success. These results highlight the need to evaluate agent safety across multiple harness responsibilities and at the level of the deployed model and harness configuration.",
+  "keywords": [
+   "agent harness",
+   "lifecycle benchmark",
+   "sandboxed evaluation",
+   "attack success rate",
+   "risk detection gap",
+   "configuration vulnerability"
+  ],
+  "relevance": "Yes",
+  "why": "Directly evaluates safety of agent harnesses managing tools, external actions, and persistent state—core to embodied/tool-using agent safety; attacks on workflow artifacts map to tool poisoning and malicious action control in deployed agents.",
+  "citation_count": null,
+  "screened_date": "2026-08-19"
+ },
+ {
+  "title": "Calibrated Predictive Safety for Heterogeneous Robots: An Action-Conditioned JEPA Framework with Model-Based Safety Shields",
+  "url": "https://arxiv.org/abs/2608.17496",
+  "authors": "Kaiming Zhong, Tianhua Liu, Yue Wang",
+  "venue": "arXiv 2608.17496",
+  "year": "2026",
+  "layer": "Cognition",
+  "subcat": "World Model",
+  "arxiv_id": "2608.17496",
+  "abstract": "Vision-language-action policies generalize broadly but provide no execution-time guarantees; classical model-based planners respect kinematic and geometric constraints but generalize poorly. We study whether an action-conditioned Joint-Embedding Predictive Architecture (JEPA) world model can predict, before execution, both task progress and physical risk for candidate action chunks, and whether coupling these predictions to an embodiment-specific model-based safety shield yields a deployable pipeline for heterogeneous robots. We propose a receding-horizon decision pipeline: (1) a proposer produces K candidate action chunks; (2) an action-conditioned JEPA rolls each candidate forward in a frozen-encoder latent space conditioned on an embodiment embedding; (3) calibrated risk and progress heads score each rollout and report uncertainty; (4) a deterministic per-embodiment safety shield filters inadmissible candidates; (5) a fallback ladder handles empty-admissible-set cases. The learned ranking only reorders admissible candidates; enforcement guarantees come from the deterministic shield and fallback ladder. We evaluate with a pre-registered protocol in simulation (LIBERO-Long). In 600-episode configurations the full framework improved success over a shield-only baseline and reduced collision false negatives at matched recall. Deployment-efficiency measurements on target on-robot and edge accelerators are included. Real-robot experiments and an offline reranking significance test remain future work; see the paper for disclosures.",
+  "keywords": [
+   "world model",
+   "safety shield",
+   "calibrated prediction",
+   "JEPA",
+   "heterogeneous robots"
+  ],
+  "relevance": "Yes",
+  "why": "Proposes an action-conditioned JEPA world model to predict physical risk and task progress for robot action chunks, coupled with model-based safety shields—directly addresses safety of embodied agents via world-model robustness and risk prediction before execution.",
+  "citation_count": 0,
+  "screened_date": "2026-08-19"
+ },
+ {
+  "title": "MANIGUARD: A Benchmark and Data Suite for Specification-Grounded Safety Evaluation and Improvement of Robotic Manipulation",
+  "url": "https://arxiv.org/abs/2608.17386",
+  "authors": "Yiyan Peng et al",
+  "venue": "arXiv 2608.17386",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Robot Control",
+  "arxiv_id": "2608.17386",
+  "abstract": "Foundation-model policies for robotic manipulation are advancing rapidly on task success, but rigorous evaluation of whether they succeed safely is still lacking. We introduce ManiGuard, a specification-grounded framework for evaluating and improving the safety of foundation-model manipulation, comprising the ManiGuard-Bench task suite and a paired safety-annotated trajectory-generation pipeline. ManiGuard-Bench organizes six contact-rich household task families into 200 locked base tasks along a skill $\\times$ constraint taxonomy, with safety specified independently of task success. Each task is evaluated under one in-distribution and four single-axis out-of-distribution perturbations that hold the safety specification fixed, giving 1,000 locked scenarios. Every rollout is runtime-checked by LTL$_f$-grounded automaton monitors over physics-grounded predicates rather than learned classifiers or LLM judges, in simulation and on a physical Franka platform. The pipeline pairs an automated motion-planning generator with human teleoperation, annotated by the same per-step monitor, and directly supports safety-aware fine-tuning; we release 8,000 safety-annotated demonstrations, 40 per base task. Benchmarking zero-shot and fine-tuned VLAs across more than 23,000 rollouts, we find: (i) safety must be evaluated independently of task success, as 6-21% of successful rollouts violate the specification; (ii) fine-tuning on our suite raises safe task completion from near zero to 7.5-29.8% and engaged-and-safe behavior from 16-40% to 51-72%; but (iii) a gap remains that scaling demonstrations does not close, with 21-42% of engaged rollouts still violating, two of six families below 2% safe success for every policy, and these failures persisting under distribution shift and on hardware.",
+  "keywords": [
+   "safety benchmark",
+   "specification-grounded evaluation",
+   "LTLf monitoring",
+   "robotic manipulation",
+   "safety-aware fine-tuning"
+  ],
+  "relevance": "Yes",
+  "why": "Directly evaluates and improves safety of VLA/visuomotor manipulation policies via specification-grounded monitors, physical rollouts on a Franka robot, and safety-aware fine-tuning, making it core embodied AI safety research.",
+  "citation_count": 0,
+  "screened_date": "2026-08-19"
+ },
+ {
   "title": "Security of Foundation-Model-Powered Embodied Agents: Attack Surfaces, Attacks, Defenses, and Evaluation",
   "url": "https://arxiv.org/abs/2608.16843",
   "authors": "Jiawei Liu et al",
