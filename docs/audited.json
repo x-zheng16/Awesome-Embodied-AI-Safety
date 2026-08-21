@@ -1,5 +1,49 @@
 [
  {
+  "title": "SafeBranch: Branch-Pair Safety Alignment for Embodied Agents",
+  "url": "https://arxiv.org/abs/2608.19729",
+  "authors": "Hyunse Lee et al",
+  "venue": "arXiv 2608.19729",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Robot Control",
+  "arxiv_id": "2608.19729",
+  "abstract": "Vision-language-model-based embodied agents can complete instructed tasks but often violate safety constraints in the process, a problem recently framed as interactive safety. Training such agents to act safely is difficult, since safety and task success are distinct objectives, and safety arises only at a small number of safety-critical steps within a trajectory. Standard supervision is insufficient: imitating safe trajectories teaches behavior without explaining why it is safe, and contrasting arbitrary safe and unsafe trajectories mixes the safety signal with unrelated differences. We propose SafeBranch, a framework that aligns an embodied actor on safety through branch pairs constructed from the actor's own unsafe rollouts via environment rollback. SafeBranch rolls each unsafe rollout back to the safety-critical step that caused the violation, queries the actor for a safe alternative, and pairs the original action with the alternative so that the two branches differ only at that step. The trained actor acts safely at deployment with no critic in the loop. On IS-Bench, SafetyALFRED, and out-of-distribution variants with unseen tasks and objects, it handles safety reliably without sacrificing task success, achieving roughly ten times more safe successes than the untrained baseline on the unseen-object variant.",
+  "keywords": [
+   "branch-pair alignment",
+   "interactive safety",
+   "safety-critical steps",
+   "environment rollback",
+   "safe action alternatives"
+  ],
+  "relevance": "Yes",
+  "why": "Directly addresses safety alignment for VLM-based embodied agents, proposing a training method to prevent safety violations in robot task execution without sacrificing task success.",
+  "citation_count": null,
+  "screened_date": "2026-08-21"
+ },
+ {
+  "title": "Robust Cross-Modal Foundation Model Perception for Underwater Robots under Degraded Visual Conditions",
+  "url": "https://arxiv.org/abs/2608.19710",
+  "authors": "Mohammad Arif Ul Alam",
+  "venue": "arXiv 2608.19710",
+  "year": "2026",
+  "layer": "Perception",
+  "subcat": "Cross-Modal Perception",
+  "arxiv_id": "2608.19710",
+  "abstract": "Reliable underwater robotic perception remains difficult because optical imagery degrades under turbidity, wavelength-dependent attenuation, low illumination, scattering, and blur. Although sonar provides complementary information that is less affected by optical visibility, prior visual-sonar research has largely focused on feature alignment and nominal detection performance. We investigate cross-modal robustness as visual reliability deteriorates and assess whether pretrained visual foundation-model representations can be complemented by sonar under severe degradation. We use frozen DINOv2 as the visual encoder and construct a controlled five-level benchmark ranging from clean to extreme visual conditions. We compare conventional visual detection, frozen foundation-model representations, sonar context, fixed multimodal fusion, clean-trained adaptive gating, and degradation-aware gated fusion. Our method trains the fusion mechanism across the full range of degradation while keeping the visual and sonar encoders frozen, allowing modality contributions to adapt without fine-tuning the pretrained backbone. Under extreme combined degradation, the DINOv2 baseline achieves 0.4610 balanced accuracy, while degradation-aware visual-sonar fusion reaches 0.6152, a 33.5% relative improvement. The learned sonar contribution increases from 14.2% under clean conditions to 41.3% under extreme degradation, demonstrating adaptive redistribution of cross-modal reliance. Fusion provides the largest gains under severe turbidity and blur, whereas color attenuation alone yields little additional benefit. These results show that foundation-model representations remain valuable but insufficient under severe information loss, and that explicitly adapting fusion to modality reliability can improve robust underwater multimodal perception.",
+  "keywords": [
+   "cross-modal fusion",
+   "underwater robotics",
+   "foundation models",
+   "adaptive gating",
+   "degradation-aware perception"
+  ],
+  "relevance": "Yes",
+  "why": "Directly addresses embodied AI safety by studying robustness of cross-modal perception (visual + sonar) for underwater robots under adversarial-like degraded conditions, with adaptive fusion to maintain reliable perception when one modality fails.",
+  "citation_count": null,
+  "screened_date": "2026-08-21"
+ },
+ {
   "title": "MobileWorldSafety: Benchmarking GUI Agent Safety Against Environmental Injection Attacks in Android Apps",
   "url": "https://arxiv.org/abs/2608.17659",
   "authors": "Sujin Chen et al",
