@@ -1,5 +1,49 @@
 [
  {
+  "title": "Reassembling Distributed Risk: Trajectory-Conditioned Action Generation for Multi-Turn Agent Safety",
+  "url": "https://arxiv.org/abs/2608.25711",
+  "authors": "Yanbo Dai et al",
+  "venue": "arXiv 2608.25711",
+  "year": "2026",
+  "layer": "Agentic",
+  "subcat": "Tool Use and Skill",
+  "arxiv_id": "2608.25711",
+  "abstract": "Tool-using LLM agents extend security risks beyond generated text to actions that affect external systems. Under multi-turn decomposition attacks, a harmful objective can be distributed across individually plausible requests and tool calls, becoming apparent only from the accumulated trajectory. Existing defenses either rely on auxiliary online reasoning to recover long-horizon security evidence or assess actions after generation, often incurring additional inference cost or depending on runtime-specific action representations. We propose \\emph{Reassembling Distributed Risk} (ReDiR), a generation-time defense that conditions action generation on trajectory-level security evidence. Before each action, ReDiR compresses the current trajectory into a compact latent safety representation and injects it into the frozen base model. The representation is learned through same-model, cross-view supervision, where safe behavior from an explicit task view provides supervision for recovering distributed safety evidence from the original multi-turn trajectory. This design enables ReDiR to integrate cross-turn security information directly within the generation process without relying on a separate action-level safety module. We evaluate ReDiR on two agent-safety benchmarks across three model families and eight held-out tool domains. ReDiR reduces attack success rates to below 8\\%, transfers to unseen tool domains, and preserves benign fidelity with low computational overhead.",
+  "keywords": [
+   "distributed attack",
+   "trajectory conditioning",
+   "generation-time defense",
+   "multi-turn safety",
+   "latent safety representation"
+  ],
+  "relevance": "Yes",
+  "why": "Directly addresses safety of tool-using LLM agents under multi-turn decomposition attacks, proposing a generation-time defense that conditions action generation on trajectory-level security evidence to prevent malicious tool calls.",
+  "citation_count": null,
+  "screened_date": "2026-08-27"
+ },
+ {
+  "title": "Scalable Tube-Tightened Multi-Agent Safety via Certified Constraint Reduction",
+  "url": "https://arxiv.org/abs/2608.25323",
+  "authors": "Armel Koulong",
+  "venue": "arXiv 2608.25323",
+  "year": "2026",
+  "layer": "Planning",
+  "subcat": "Multi-Agent Planning",
+  "arxiv_id": "2608.25323",
+  "abstract": "This paper develops a certified constraint-reduction method for distributed model predictive control with tube-tightened exponential control barrier functions (eCBFs) in multi-agent systems. At each prediction stage, pairwise agent--agent and agent--obstacle eCBF conditions define halfspaces in the local control space. Rather than enforcing all such halfspaces, a geometry-adaptive subset is retained and a Farkas certificate verifies that the reduced admissible set is contained in the full tightened set. For planar inputs, cone coverage is characterized through the largest angular gap: two extreme directions suffice in the strict half-plane regime, while other geometries initialize with three retained constraints and escalate only when certification fails. Conic multipliers and nominal-aware offsets are obtained in closed form, without an auxiliary optimization, and the resulting construction preserves any nominal control already admissible for the full tightened set. Consequently, the reduced controller inherits the robust safety guarantee of the underlying tube-eCBF formulation. In a ten-follower, four-obstacle study, the method retained fewer safety constraints on average, reproduced the full filter's nominal accept/reject decisions with no true safety violations, and achieved increasing computational gains as the constraint count and prediction horizon grew.",
+  "keywords": [
+   "distributed model predictive control",
+   "exponential control barrier functions",
+   "constraint reduction",
+   "Farkas certificate",
+   "multi-agent safety"
+  ],
+  "relevance": "Yes",
+  "why": "This paper develops certified safety methods for multi-agent distributed control, directly addressing safety guarantees in embodied multi-agent systems through constraint reduction and control barrier functions, which is core to multi-agent planning safety in embodied AI.",
+  "citation_count": 0,
+  "screened_date": "2026-08-27"
+ },
+ {
   "title": "RePolicy: Reinforcement Learning for Safety-Policy Invocation in Agent Safeguards",
   "url": "https://arxiv.org/abs/2608.24275",
   "authors": "Houcheng Jiang et al",
