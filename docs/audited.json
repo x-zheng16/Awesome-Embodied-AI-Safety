@@ -1,5 +1,72 @@
 [
  {
+  "title": "The Framing Gap: Indirect Prompt-Injection Exfiltration Defeats Surface-Level Defenses in Tool-Using Agents",
+  "url": "https://arxiv.org/abs/2608.27092",
+  "authors": "Md Habibur Rahman, Jaeho Kim",
+  "venue": "arXiv 2608.27092",
+  "year": "2026",
+  "layer": "Agentic",
+  "subcat": "Tool Use and Skill",
+  "arxiv_id": "2608.27092",
+  "abstract": "A tool-using LLM agent that reads attacker-controlled web content while holding a secret faces indirect prompt injection: the content may make it exfiltrate the secret. In a safe synthetic lab (canary secret, mock tools, matched clean-vs-poisoned metric) we report the framing gap: across six models, ten overt injection classes are refused (gpt-4o 0%), but reframing the identical leak as a mandatory integrity signature, config field, or look-alike \"trusted\" host drives gpt-4o 0% to 100%. The attack is cheap, and its cost is three-level: paraphrasing a known mechanism is trivial (96% at 3 wordings), swapping the field inside a known-effective template is also cheap (up to 60%), while authoring a fresh page around a new mechanism is hard (0/130) -- the reusable asset is the template, not the mechanism. An ablation shows the mechanism is instruction/data confusion, not defeated alignment: removing the confidentiality policy leaves base attacks at 0% and moves reframing only 31.9% to 38.1%. What closes the gap is payload-blind checks: a destination allow-list (0%, when destinations are closed) and a capability-isolating planner/reader split (0%). A broad \"in any form\" policy clause also closes it at the acting model (to 0%) but is brittle (dropping the catch-all reopens it to 48.8%). A published fine-tuning defense (SecAlign, CCS 2025) does not close it on a tool agent (32.5%, positive-control-validated), nor does channel separation (38.8%); an output-normalizing guard loses to a held-out encoding (ROT13, 100%). Robustness comes from constraining the destination or isolating the capability, not from the acting model recognizing the attack.",
+  "keywords": [
+   "indirect prompt injection",
+   "tool-using agents",
+   "data exfiltration",
+   "framing attack",
+   "capability isolation",
+   "destination allow-list"
+  ],
+  "relevance": "Yes",
+  "why": "Directly studies indirect prompt injection attacks against tool-using LLM agents that read web content, with systematic evaluation of exfiltration defenses—core embodied AI safety at the agentic layer.",
+  "citation_count": null,
+  "screened_date": "2026-08-28"
+ },
+ {
+  "title": "Towards Safe Reinforcement Learning with Reduced Conservativeness: A Case Study on Drone Flight Control",
+  "url": "https://arxiv.org/abs/2608.26852",
+  "authors": "Loizos Hadjiloizou et al",
+  "venue": "arXiv 2608.26852",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Robot Control",
+  "arxiv_id": "2608.26852",
+  "abstract": "Incorporating formal methods into reinforcement learning (RL) has the potential to result in the best of both worlds, combining the robustness of formal guarantees with the adaptability and learning capabilities of RL, though careful design is needed to balance safety and exploration. In this work, we propose a framework to mitigate this loss of exploration while still allowing for the safety of the system to be ensured. Specifically, we introduce a less restrictive method that can reduce the conservativeness of formal methods by refining a disturbance model using online collected data and it evaluates the safety of a learning-based controller, using computationally efficient zonotopic reachability analysis for the safety analysis to facilitate a real-time implementation. We validate the framework in a real-world drone flight through a canyon, where the drone is subjected to unknown external disturbances and the framework is tasked with learning those disturbances online and adjusting the safety guarantees accordingly. The results show that the framework enables a less restrictive online training of learning-based controllers without compromising the safety of the system.",
+  "keywords": [
+   "zonotopic reachability analysis",
+   "disturbance model refinement",
+   "real-time safety verification",
+   "conservative safety bounds",
+   "learning-based controller evaluation"
+  ],
+  "relevance": "Yes",
+  "why": "Directly addresses safety of a learning-based robot controller (drone) with formal safety guarantees and real-world flight experiments, fitting embodied AI safety at the control layer.",
+  "citation_count": 0,
+  "screened_date": "2026-08-28"
+ },
+ {
+  "title": "Energy as a Concealable State in Adversarial UAV Patrolling: Formulation, an Energy-Security Threshold, and the Limits of Self-Play",
+  "url": "https://arxiv.org/abs/2608.26518",
+  "authors": "Sai Krishna Reddy Mareddy",
+  "venue": "arXiv 2608.26518",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Robot Control",
+  "arxiv_id": "2608.26518",
+  "abstract": "We study energy-constrained adversarial patrolling on a graph, in which a battery-limited UAV defends a cluster of high-value targets against a strategic attacker who chooses when and where to strike. Unlike prior adversarial patrolling, the patroller must periodically return to a base to recharge; unlike prior energy-aware patrolling, it faces a self-interested adversary. Our central observation is that the remaining energy is a hidden state: the attacker never observes the battery directly, but observes the patroller's trajectory and can infer when a recharge excursion, and thus a vulnerability window, is imminent. We formalize the interaction as a zero-sum partially observable stochastic game and report a negative result on the solver side: neither independent deep Q-learning nor Neural Fictitious Self-Play reaches a stable equilibrium at this scale; each improves transiently and then collapses, with the co-trained thwart rate falling from about 0.25 to about 0.09 over training. Using a structural analysis independent of the learning dynamics, we show that achievable security rises monotonically with the energy budget, from zero below a threshold to about 0.7 when the budget is ample, establishing the energy budget as the primary determinant of defensibility. We set out the program the model is built to answer: whether an inference-capable attacker concentrates its successful strikes in the recharge window, and whether the defender can learn deceptive recharge timing to keep that window closed.",
+  "keywords": [
+   "adversarial patrolling",
+   "partially observable stochastic game",
+   "energy-constrained UAV",
+   "deceptive timing",
+   "multi-agent learning collapse"
+  ],
+  "relevance": "Yes",
+  "why": "The paper studies adversarial attacks against a battery-limited UAV defender and strategic attacker dynamics, directly addressing physical security and adversarial robustness of an embodied autonomous system (UAV patrolling). The focus on deceptive recharge timing, vulnerability windows, and attack-defender game formulation fits embodied AI safety at the action/interaction layer, even though the solution is game-theoretic rather than deep-learning-based.",
+  "citation_count": null,
+  "screened_date": "2026-08-28"
+ },
+ {
   "title": "Reassembling Distributed Risk: Trajectory-Conditioned Action Generation for Multi-Turn Agent Safety",
   "url": "https://arxiv.org/abs/2608.25711",
   "authors": "Yanbo Dai et al",
