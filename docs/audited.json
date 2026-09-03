@@ -1,5 +1,93 @@
 [
  {
+  "title": "SafeEvolve: Harness-Policy Co-Evolution from Agent Experience for Safety Alignment",
+  "url": "https://arxiv.org/abs/2609.02786",
+  "authors": "Qinghua Mao et al",
+  "venue": "arXiv 2609.02786",
+  "year": "2026",
+  "layer": "Agentic",
+  "subcat": "Self-Evolving",
+  "arxiv_id": "2609.02786",
+  "abstract": "The performance of LLM-based agents is jointly shaped by the base model and the harness used when interacting with the environment. This exposes them to safety risks in both harmful final responses and multi-step execution trajectories. Existing safety alignment mechanisms often rely on either external harness updates or policy optimization, yet applying either paradigm in isolation fails to bridge runtime control with intrinsic safety. We propose SafeEvolve, an experience-driven self-evolving framework for agent safety alignment. SafeEvolve leverages safety experience from completed on-policy trajectories to drive a continual loop of harness-policy co-evolution. On the harness side, SafeEvolve converts trajectory-level safety evidence into bounded, component-level updates across safety prompt and hierarchical skills, yielding auditable and reversible harness artifacts. On the policy side, SafeEvolve follows a two-stage SFT-RL paradigm, where harness-use SFT bootstraps the policy to actively leverage evolved harness artifacts, and harness-augmented RL further shapes autonomous safety behaviors during multi-step exploration via verifier-decomposed rewards. Through harness-policy co-evolution, SafeEvolve converts safety experience into an evolved runtime harness and improved policy behavior. Experiments on agentic safety benchmarks show that SafeEvolve achieves a stronger safety-utility tradeoff than existing baselines. For Qwen3.5-4B, SafeEvolve achieves a $3\\times$ ASR reduction on AgentDojo while improving benign utility from 59.79% to 61.86%.",
+  "keywords": [
+   "harness-policy co-evolution",
+   "self-evolving safety alignment",
+   "trajectory-level safety",
+   "verifier-decomposed rewards",
+   "runtime harness update"
+  ],
+  "relevance": "Yes",
+  "why": "Proposes a self-evolving safety alignment framework for LLM-based agents that co-evolves runtime harnesses and policies from multi-step execution trajectories, directly addressing embodied agent safety through experience-driven adaptation.",
+  "citation_count": null,
+  "screened_date": "2026-09-03"
+ },
+ {
+  "title": "Humanoid Safe Stop via Learned Stoppability Value",
+  "url": "https://arxiv.org/abs/2609.02358",
+  "authors": "Junfeng Long et al",
+  "venue": "arXiv 2609.02358",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Robot Control",
+  "arxiv_id": "2609.02358",
+  "abstract": "Humanoid robots responding to emergency stop commands typically execute a fixed maneuver, without reasoning about whether a safe stop is actually feasible from the current state. We cast emergency stopping as a reach-avoid problem and propose Safe-Stop, a task-agnostic framework that pairs a learned stop policy with learned stoppability estimators. The estimators are complementary: a stop-probability estimator supervised by the actual outcomes of the fixed stop policy, and a reach-avoidance estimator supervised by a Hamilton-Jacobi backup over physical state. The first captures emergent stopping behavior of the learned controller; the second provides a complementary recoverability signal. Because the stop policy and estimators do not depend on the behavior policy that preceded the stop command, they transfer across diverse upstream tasks without retraining. At deployment, the two estimates are combined: Safe-Stop commits to the stop only when both estimators indicate that stopping remains feasible, otherwise it hands off to a fall policy, instantiated as a damping fallback. This agreement check yields decisions that are robust without sacrificing reactivity.",
+  "keywords": [
+   "emergency stop",
+   "reach-avoid",
+   "stoppability estimation",
+   "humanoid safety",
+   "fallback control"
+  ],
+  "relevance": "Yes",
+  "why": "Directly addresses physical safety of humanoid robots through a learned emergency-stop framework with stoppability estimation and fallback damping policies, constituting a defense mechanism in embodied robot control.",
+  "citation_count": null,
+  "screened_date": "2026-09-03"
+ },
+ {
+  "title": "CAPTURE: Disentangling Preference Drift from Memory Poisoning in Personalized LLM Agents",
+  "url": "https://arxiv.org/abs/2609.02265",
+  "authors": "S M Asif Hossain, Ruksat Khan Shayoni, Md Kishor Morol",
+  "venue": "arXiv 2609.02265",
+  "year": "2026",
+  "layer": "Agentic",
+  "subcat": "Memory",
+  "arxiv_id": "2609.02265",
+  "abstract": "Personalized language agents use persistent memory to adapt to users over time, but the same mechanism creates an attack surface. When new information conflicts with stored preferences, an agent must distinguish genuine preference drift from temporary context shifts, ambiguity, or adversarial memory poisoning. We formulate this problem as a continuous-time partially observable decision process over a latent user state and show why rules based only on recency and provenance are insufficient. CAPTURE addresses this ambiguity with a neural differential-equation belief tracker, a multi-timescale memory ledger, uncertainty-triggered clarification, and counterfactual auditing of cited memories. On 480 held-out episodes from 96 users, CAPTURE achieves a 71.5% win rate, compared with 69.3% for an identically supervised baseline and 66.1% for the strongest heuristic baseline. It limits fixed-policy poisoning success to 11.5% while accepting 83.5% of genuine preference updates. Under an adaptive attacker with access to the released weights, attack success rises to 24.7%, exposing a real adaptation-security tradeoff. We further evaluate the frozen system zero-shot on an independently constructed benchmark and replay longitudinal interaction histories from 40 users collected over two to three weeks. These results suggest that modeling preference authenticity explicitly can improve both personalization and robustness in memory-augmented LLM agents.",
+  "keywords": [
+   "memory poisoning",
+   "preference drift",
+   "belief tracking",
+   "personalized agents",
+   "counterfactual auditing"
+  ],
+  "relevance": "Yes",
+  "why": "The paper directly addresses memory poisoning attacks on LLM agents with persistent memory, formulating the problem as a POMDP and proposing defenses (belief tracker, counterfactual auditing) to distinguish genuine preference drift from adversarial memory manipulation. This is squarely about embodied AI safety at the memory layer of agentic systems.",
+  "citation_count": null,
+  "screened_date": "2026-09-03"
+ },
+ {
+  "title": "DiDrive: A Risk-Aware Hierarchical Diffusion Framework for Safe Offline Reinforcement Learning in Autonomous Driving",
+  "url": "https://arxiv.org/abs/2609.01609",
+  "authors": "Qisong Guo et al",
+  "venue": "arXiv 2609.01609",
+  "year": "2026",
+  "layer": "Planning",
+  "subcat": "Trajectory Planning",
+  "arxiv_id": "2609.01609",
+  "abstract": "While diffusion models effectively capture multimodal behavioral priors for autonomous driving, offline reinforcement learning (RL) policies remain susceptible to distribution shift, heavy-tailed risk signals, out-of-distribution (OOD) action generation, and high-dimensional state redundancy. To address these challenges, we propose DiDrive, a distribution-guided offline diffusion framework featuring two synergistic components: the Risk-Aware Hierarchical Diffusion (RHDif) architecture and the 3DICE policy optimization paradigm. In the state space, RHDif utilizes a low-level risk-gated encoder and a high-level contextual modulator to filter environmental redundancy and focus on safety-critical threats. In the action space, 3DICE mitigates OOD overestimation and gradient oscillation through in-sample calibrated guidance, spatiotemporal optimization, and ensemble-based candidate ranking. Evaluations on the CARLA benchmark demonstrate DiDrive's superiority over baselines like IQL, CQL, and Diffusion-QL, particularly in complex, high-density traffic scenarios with 60 vehicles, where it achieves an 85% success rate and a 4295.68 average reward, providing a robust pathway for safe autonomous driving decision-making.",
+  "keywords": [
+   "offline reinforcement learning",
+   "diffusion policy",
+   "risk-aware planning",
+   "distribution shift mitigation",
+   "autonomous driving safety"
+  ],
+  "relevance": "Yes",
+  "why": "Proposes a risk-aware hierarchical diffusion framework for safe offline RL in autonomous driving, directly addressing safety-critical decision-making and trajectory planning under distribution shift and OOD action risks in embodied agents.",
+  "citation_count": 0,
+  "screened_date": "2026-09-03"
+ },
+ {
   "title": "Provably Safe Sim-to-Real Transfer",
   "url": "https://arxiv.org/abs/2609.01418",
   "authors": "Tingting Ni, Maryam Kamgarpour",
