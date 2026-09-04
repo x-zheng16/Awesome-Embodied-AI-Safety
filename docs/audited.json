@@ -1,5 +1,50 @@
 [
  {
+  "title": "Rethinking World Models for Safety-Critical Embodied Systems",
+  "url": "https://arxiv.org/abs/2609.03774",
+  "authors": "Kailang Ma et al",
+  "venue": "arXiv 2609.03774",
+  "year": "2026",
+  "layer": "Cognition",
+  "subcat": "World Model",
+  "arxiv_id": "2609.03774",
+  "abstract": "World models have progressed from compact latent dynamics to generative, controllable, and interactive simulators of embodied environments. However, high predictive likelihood and visual fidelity do not necessarily ensure that a model preserves the evidence required for safe decision-making. This perspective identifies three structural mismatches in current world modeling: likelihood versus risk, prediction versus intervention, and finite-horizon prediction versus accumulated consequences. We propose the Risk-Informed World Model (RIWM) as a decision-centric research direction for safety-critical embodied systems. RIWM organizes world modeling around consequences, intervention, epistemic uncertainty, and recoverability, and integrates four interdependent capabilities: decision-relevant representation, counterfactual reasoning, safety-critical episodic memory, and runtime safety assurance. It distinguishes physical, social, and operational consequences while using epistemic uncertainty to qualify the evidence supporting action. We further discuss open challenges in identifying consequential futures, validating counterfactual reasoning, maintaining revisable safety memories, translating learned consequences into executable constraints, and determining when evidence is sufficient to act. This perspective argues that future world models should move beyond predicting likely futures toward identifying which futures matter, revising judgments through experience, and recognizing when to act, revise, sense, defer, or abstain.",
+  "keywords": [
+   "world models",
+   "risk-informed prediction",
+   "counterfactual reasoning",
+   "epistemic uncertainty",
+   "runtime safety assurance"
+  ],
+  "relevance": "Yes",
+  "why": "Directly addresses safety of world models in embodied systems, proposing a risk-informed framework that restructures world modeling around consequences, intervention, and uncertainty for safe decision-making in embodied agents.",
+  "citation_count": null,
+  "screened_date": "2026-09-04"
+ },
+ {
+  "title": "Sensing Which Modality Matters: Evidence-Gated Regularization for Robust VLA Policies",
+  "url": "https://arxiv.org/abs/2609.03142",
+  "authors": "Yue Yang et al",
+  "venue": "arXiv 2609.03142",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Robot Control",
+  "arxiv_id": "2609.03142",
+  "abstract": "Vision-Language-Action (VLA) policies fuse multimodal sensory inputs, but training on limited and homogeneous robot demonstrations encourages spurious inter-sensor correlations rather than task-relevant signal, a failure we term modality entanglement. Under real-world occlusions and distractors, this manifests as nuisance sensitivity to corruption of uninformative sensors and single-modality insufficiency when only one informative sensor remains intact. We propose Evidence-Gated Regularization (EGR), a modality-agnostic training objective that introduces zero inference-time overhead. EGR derives a per-frame and per-sensor task-relevance signal to gate two state-conditional consistency objectives: invariance on low-evidence sensors, and single-sensor sufficiency on high-evidence ones. We introduce a benchmark based on BEHAVIOR-1K, comprising a fast inference-only diagnostic suite and 47 rollout-based skills targeting modality entanglement. We validate EGR on this benchmark and on two real-robot setups with fundamentally different embodiments: a bi-manual setup with two Kinova arms and three RGB cameras, and a single-arm MELFA ASSISTA setup combining vision and GelSight tactile sensors. EGR improves simulation success rates (SR) from 12.5% to 16.4% under full modalities (+31%), from 9.4% to 16.5% under uninformative-sensor corruption (+75%), and from 2.8% to 6.1% under single-sensor fallback (+120%). Under physical-object distractors, EGR boosts SR from 30% to 85% on the bi-manual setup (+183%) and from 55% to 70% on the tactile setup (+27%).",
+  "keywords": [
+   "modality entanglement",
+   "multimodal robustness",
+   "evidence-gated regularization",
+   "VLA policies",
+   "sensor corruption",
+   "real robot evaluation"
+  ],
+  "relevance": "Yes",
+  "why": "Directly addresses safety/robustness of VLA (Vision-Language-Action) robot policies under sensor corruption, occlusion, and distractors, with real-robot validation on manipulation tasks—core embodied AI safety concern.",
+  "citation_count": 0,
+  "screened_date": "2026-09-04"
+ },
+ {
   "title": "SafeEvolve: Harness-Policy Co-Evolution from Agent Experience for Safety Alignment",
   "url": "https://arxiv.org/abs/2609.02786",
   "authors": "Qinghua Mao et al",
