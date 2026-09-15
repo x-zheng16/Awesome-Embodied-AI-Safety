@@ -1,15 +1,15 @@
 {
  "span": {
   "from": "2026-06-24",
-  "to": "2026-09-09"
+  "to": "2026-09-15"
  },
- "cycles": 58,
+ "cycles": 59,
  "totals": {
-  "harvest": 127478,
-  "recent": 106854,
-  "prefilter": 7900,
-  "scored": 3088,
-  "selected": 752
+  "harvest": 130065,
+  "recent": 108623,
+  "prefilter": 8028,
+  "scored": 3208,
+  "selected": 774
  },
  "daily": [
   {
@@ -539,6 +539,14 @@
    "prefilter": 0,
    "scored": 0,
    "selected": 0
+  },
+  {
+   "date": "2026-09-15",
+   "harvest": 2587,
+   "recent": 1769,
+   "prefilter": 128,
+   "scored": 120,
+   "selected": 22
   }
  ]
 }

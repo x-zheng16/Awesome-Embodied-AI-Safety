@@ -1,5 +1,160 @@
 [
  {
+  "title": "Beyond Single-Axis Testing: Paired Evaluation of Compound Robustness in Vision-Language-Action Policies",
+  "url": "https://arxiv.org/abs/2609.15940",
+  "authors": "Hiroki Sawada, Shunichi Kasahara",
+  "venue": "arXiv 2609.15940",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Robot Control",
+  "arxiv_id": "2609.15940",
+  "abstract": "Vision-language-action policies are typically evaluated one perturbation at a time, providing a useful diagnosis of their sensitivity to individual distribution shifts. Real-world deployment, however, may involve several shifts simultaneously, and it remains unclear how these individual robustness measurements compose. We ask whether compound robustness can be inferred from single-axis evaluations. We introduce LIBERO-CTRL, a six-axis benchmark that pairs each initial state across single-axis conditions and a matched simultaneous condition. This design reveals two opposing outcome changes that aggregate success rates cannot distinguish: emergent failures, where all single-axis rollouts succeed but the simultaneous rollout fails, and compensated successes, where at least one single-axis rollout fails but the simultaneous rollout succeeds. Because one transition decreases compound success while the other increases it, they can cancel, making aggregate compound performance appear consistent with single-axis measurements even when individual outcomes differ substantially. These opposing transitions can largely cancel in aggregate: even when the difference between the two transition rates is not statistically distinguishable from zero, as many as 29.0% of matched initial states still change outcome. Across six policies and three severity levels, such outcome changes reach 34.5% in the most affected condition. The relative prevalence of the two transitions varies across policies and severities, while the transition rates remain similar under independent re-evaluation of stochastic policies. Compound robustness therefore cannot be characterized from aggregate single-axis success rates alone; matched per-instance evaluation is needed to reveal how joint perturbations alter behavior.",
+  "keywords": [
+   "compound robustness",
+   "vision-language-action policies",
+   "benchmark evaluation",
+   "distribution shift",
+   "LIBERO-CTRL"
+  ],
+  "relevance": "Yes",
+  "why": "Introduces a benchmark evaluating robustness of vision-language-action robot policies under simultaneous compound perturbations, revealing emergent failures invisible to single-axis testing—directly relevant to evaluating safety and robustness of embodied control policies.",
+  "citation_count": null,
+  "screened_date": "2026-09-15"
+ },
+ {
+  "title": "Exact Feasibility Certification and Optimal Responsibility Allocation for Multi-Robot CBF Safety Filters",
+  "url": "https://arxiv.org/abs/2609.14935",
+  "authors": "Chandan Kumar Sah, Jishnu Keshavan",
+  "venue": "arXiv 2609.14935",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Multi-Agent Collaboration",
+  "arxiv_id": "2609.14935",
+  "abstract": "Multi-robot Control Barrier Function (CBF) safety filters can become infeasible, but a failed quadratic program (QP) does not indicate why the conflict occurred or how to resolve it. To address this, we develop an exact feasibility certificate for multi-agent CBF filters with heterogeneous control-affine dynamics and convex input sets. The certificate quantifies a feasibility reserve by separating the demand imposed by safety constraints from the available actuator supply. This decomposition shows when CBF gain tuning or increased actuation can and cannot resolve infeasibility, and identifies the agents and interactions responsible for the conflict. We further propose an algorithm to optimally allocate shared safety constraints by maximizing the worst local feasibility margin, yielding a linear program for polyhedral input sets. In $320$ paired closed-loop simulations, the proposed allocation reduces infeasible control steps from roughly $50\\%$ to $6.2\\%$, and reduces safety-violating runs from $118/160$ to $24/160$. In addition, across $52$ infeasibility events, the certificate identifies an interaction whose relaxation restores feasibility in $94\\%$ of cases.",
+  "keywords": [
+   "control barrier functions",
+   "multi-robot safety",
+   "feasibility certification",
+   "responsibility allocation",
+   "infeasibility diagnosis"
+  ],
+  "relevance": "Yes",
+  "why": "Develops exact feasibility certification and optimal constraint allocation for multi-robot CBF safety filters, directly addressing safety assurance and conflict resolution in collaborative embodied agents.",
+  "citation_count": null,
+  "screened_date": "2026-09-15"
+ },
+ {
+  "title": "When Malicious Instructions Persist: Persistent Memory Poisoning Attack on Harness-Based Agents",
+  "url": "https://arxiv.org/abs/2609.13889",
+  "authors": "Shuhuai Huang, Jingfeng Zhang, Hong Jia",
+  "venue": "arXiv 2609.13889",
+  "year": "2026",
+  "layer": "Agentic",
+  "subcat": "Memory: memory poisoning, retrieval manipulation",
+  "arxiv_id": "2609.13889",
+  "abstract": "Harness design has transformed the development of LLM-based agents by integrating memory, tool use, and runtime control. However, this design also introduces security and privacy risks because malicious instructions from external sources may be written into persistent memory and persist across sessions. To study this risk, we propose PMPA, a Persistent Memory Poisoning Attack against harness-based agents. PMPA embeds malicious instructions into benign external sources and induces the victim agent to write them into persistent memory without directly accessing to the agent framework. Once stored, the poisoned memory can be retrieved in later sessions, triggering additional malicious actions and causing privacy leakage. We evaluate PMPA on OpenClaw and Claude Code across different backbone LLMs, input modalities, and trigger scenarios. Across all settings, PMPA achieves average Injection Success Rate (ISR) and Cross-session Attack Success Rate (C-ASR) of 73.7%/ 55.5% on OpenClaw and 66.9%/ 81.7% on Claude Code, while preserving benign task performance on both systems. We further evaluate a targeted prompt-level defense and find that it can reduce memory injection in many settings, but provides limited protection once the persistent memory has been poisoned.",
+  "keywords": [
+   "persistent memory poisoning",
+   "cross-session attacks",
+   "harness-based agents",
+   "indirect prompt injection",
+   "memory retrieval manipulation"
+  ],
+  "relevance": "Yes",
+  "why": "Directly addresses persistent memory poisoning attacks on harness-based LLM agents (e.g., Claude Code), a core Agentic-layer memory safety risk for autonomous tool-using agents.",
+  "citation_count": 0,
+  "screened_date": "2026-09-15"
+ },
+ {
+  "title": "ShieldVLA: Feasibility-Aware Safety Alignment for Vision-Language-Action Models",
+  "url": "https://arxiv.org/abs/2609.13231",
+  "authors": "Manan Tayal, Akshay Nambi",
+  "venue": "arXiv 2609.13231",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Robot Control",
+  "arxiv_id": "2609.13231",
+  "abstract": "Vision-Language-Action (VLA) models demonstrate strong generalization in robotic manipulation and navigation, but existing fine-tuning methods provide limited safety guarantees. Current approaches primarily rely on Lagrangian optimization that enforces safety through soft penalties on expected cumulative cost, often resulting in residual constraint violations or overly conservative behavior. Moreover, learning safety in visual domains is challenging due to the absence of dense per-step safety annotations. We propose ShieldVLA, a safety-aligned fine-tuning framework for VLA models based on Hamilton-Jacobi (HJ) reachability. ShieldVLA learns a model-free approximation of the HJ reachability value function directly from visual observations to estimate the safe operating region. The learned safety critic gates policy optimization by separating reward maximization within feasible regions from recovery near unsafe states, avoiding persistent reward-cost trade-offs. To enable scalable supervision in visual environments, we introduce rubric-based VLM safety scores that convert semantic safety feedback into structured critic targets without requiring manual cost labels. Across five navigation and manipulation benchmarks spanning multiple VLA backbones, ShieldVLA reduces cumulative safety cost by 57% on average and improves task success rate by +0.13 over SafeVLA.",
+  "keywords": [
+   "VLA safety alignment",
+   "Hamilton-Jacobi reachability",
+   "safe fine-tuning",
+   "robot manipulation",
+   "navigation safety"
+  ],
+  "relevance": "Yes",
+  "why": "Proposes a safety-aligned fine-tuning defense for VLA robot policies using HJ reachability to guarantee safe control in manipulation and navigation, directly addressing embodied AI safety.",
+  "citation_count": 0,
+  "screened_date": "2026-09-15"
+ },
+ {
+  "title": "READ: Learning Risk-Informed Fields for End-to-End Autonomous Driving",
+  "url": "https://arxiv.org/abs/2609.12371",
+  "authors": "Zhiyuan Liu et al",
+  "venue": "arXiv 2609.12371",
+  "year": "2026",
+  "layer": "Planning",
+  "subcat": "Trajectory Planning",
+  "arxiv_id": "2609.12371",
+  "abstract": "Autonomous driving requires more than recognizing what is present in a scene: a planner must determine how road structure, surrounding agents, and their motion states should influence a future maneuver. Existing learning-based planners can capture these influences through latent scene features and trajectory decoders, but the relationship between environmental factors and candidate actions often remains implicit. This limits the ability to inspect, diagnose, or refine how scene context affects the safety of a predicted trajectory. Classical safety fields provide an explicit spatial representation of this relationship, but their risk shapes and relative weights are prescribed in advance and do not adapt to each scene. We introduce READ, a framework that learns an explicit, planning-aligned risk representation from complementary geometric and behavioral constraints. READ instantiates this representation as a continuous spatiotemporal field, enabling differentiable queries along candidate trajectories. The learned field connects scene understanding with action selection by encouraging predicted trajectories to align with low-risk regions, while retaining a differentiable interface for trajectory evaluation and refinement. READ integrates with both end-to-end planners and Vision-Language-Action models. Experiments on NAVSIM show consistent gains across matched end-to-end backbones and strong performance in a VLA setting; READ also achieves competitive results on NAVSIM v2. These results establish learned spatial risk as an explicit, adaptable representation for safe planning.",
+  "keywords": [
+   "risk fields",
+   "trajectory planning",
+   "end-to-end autonomous driving",
+   "differentiable safety",
+   "vision-language-action models"
+  ],
+  "relevance": "Yes",
+  "why": "Introduces a learned spatiotemporal risk field that explicitly guides trajectory planning toward low-risk regions in autonomous driving, including integration with VLA planners.",
+  "citation_count": 0,
+  "screened_date": "2026-09-15"
+ },
+ {
+  "title": "ChemMat-AgentSafetyBench: Evaluating Long-Horizon Attacks and Defenses in Chemistry and Materials Agents",
+  "url": "https://arxiv.org/abs/2609.11952",
+  "authors": "Zhan'ao Yao et al",
+  "venue": "arXiv 2609.11952",
+  "year": "2026",
+  "layer": "Agentic",
+  "subcat": "Tool Use and Skill",
+  "arxiv_id": "2609.11952",
+  "abstract": "Chemistry and materials agents integrate literature retrieval, candidate generation, property prediction, and protocol planning into continuous discovery workflows. Consequently, the relevant safety question is shifting from whether a model answers a hazardous question to whether an agent releases a hazardous protocol through a tool-mediated workflow. We introduce \\bench, a benchmark that evaluates whether chemistry and materials agents can be steered toward hazardous endpoints through user input, tool observations, or persistent memory. The benchmark contains 432 fixed harmful case specifications spanning eight hazard classes, three scenario shells, four tool-and-memory environments, a single-turn direct-attack baseline, and five online long-horizon attacks: intent hijacking, tool chaining, objective drifting, task injection, and memory poisoning. The concrete language of each online attack is generated from the evolving trajectory at runtime and is therefore not counted in the static benchmark size. In the four-model main experiment with a fixed attacker, agents release complete hazardous synthesis or preparation procedures in 25.6\\% of runs. Replacing the attacker model yields mean success rates from 18.4\\% to 26.5\\%, indicating that the risk is not an artifact of a single attacker. Input- and state-level defenses adapted from general-purpose agent safety, as well as candidate checks designed for chemistry and materials, reduce some failures but still leave complete-path release rates between 9.2\\% and 22.5\\%. Existing defenses therefore do not simultaneously cover multi-entry contamination, tool state, and the final artifact boundary. These results highlight a widening gap between the rapid development of scientific agents and the safety evaluation and defenses available to the chemistry and materials community.",
+  "keywords": [
+   "chemistry and materials agents",
+   "long-horizon attacks",
+   "tool-mediated hazardous protocols",
+   "memory poisoning and task injection",
+   "defense evaluation"
+  ],
+  "relevance": "Yes",
+  "why": "Benchmarks long-horizon attacks (intent hijacking, tool chaining, memory poisoning) and defenses on autonomous chemistry/materials tool-using agents, directly fitting the Agentic layer's tool-use and memory attack surface.",
+  "citation_count": 0,
+  "screened_date": "2026-09-15"
+ },
+ {
+  "title": "Mitigating Degradation Attacks in Cooperative Autonomous Driving via Intention Sharing: A Vehicle-in-the-Loop Study",
+  "url": "https://arxiv.org/abs/2609.10232",
+  "authors": "Prakhar Gupta et al",
+  "venue": "arXiv 2609.10232",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Multi-Agent Collaboration",
+  "arxiv_id": "2609.10232",
+  "abstract": "Communication delays induced by cyber attacks present a critical challenge to the safe operation of connected autonomous driving. This study investigates the use of intention sharing communication strategy to enhance the resilience of model predictive controllers under Denial-of-Service attacks. We employ a vehicle-in-the-loop testbed integrating a real drive-by-wire vehicle with a microscopic traffic simulator and vehicle-to-X communication infrastructure. We emulate Denial-of-service attacks that induce communication delays of up to two seconds. We evaluate three controller variants: baseline status-sharing, intention-sharing, and delay-aware intention-sharing control. Experimental results reveal that while baseline control suffers significant performance degradation and frequent collisions under adversarial delay, intention sharing eliminates collisions and maintains behavior near nominal levels for the tested scenarios. These findings demonstrate the practical potential of intention-sharing architectures for safeguarding connected vehicles against network-layer degradation.",
+  "keywords": [
+   "cooperative autonomous driving",
+   "denial-of-service attacks",
+   "intention sharing",
+   "model predictive control",
+   "vehicle-in-the-loop",
+   "communication delay resilience"
+  ],
+  "relevance": "Yes",
+  "why": "Directly addresses safety of connected autonomous vehicles under DoS-induced communication delays, proposing intention-sharing control as a defense to prevent collisions in cooperative driving.",
+  "citation_count": 0,
+  "screened_date": "2026-09-15"
+ },
+ {
   "title": "Graph-Based Safe Reinforcement Learning for Multi-Agent Systems with Time-Varying Topology",
   "url": "https://arxiv.org/abs/2609.08802",
   "authors": "Xiao Sizhe et al",
@@ -3897,49 +4052,5 @@
   "why": "Survey of HITL methods for safe and ethical AVs covering perception, planning, control, and real-time human intervention, directly addressing safety in embodied autonomous systems.",
   "citation_count": 21,
   "screened_date": "2026-07-17"
- },
- {
-  "title": "Agent Skill Security: Threat Models, Attacks, Defenses, and Evaluation",
-  "url": "https://arxiv.org/abs/2607.13987",
-  "authors": "Sanket Badhe, Priyanka Tiwari",
-  "venue": "arXiv 2607.13987",
-  "year": "2026",
-  "layer": "Agentic",
-  "subcat": "Tool Use and Skill",
-  "arxiv_id": "2607.13987",
-  "abstract": "Reusable skills are becoming a fundamental building block of Large Language Model (LLM) agents, enabling capabilities to be packaged, shared, and reused across diverse applications. However, existing security research primarily focuses on prompt injection and runtime execution, leaving security risks throughout the broader skill lifecycle largely unexplored. In this paper, we present SkillSec-Eval, a lifecycle-aware framework for systematically evaluating the security of reusable agent skills. We first characterize the skill lifecycle and develop a threat taxonomy spanning repository admission, semantic retrieval, planner selection, execution, and skill evolution. We then instantiate this taxonomy in SkillSec-Eval and conduct a comprehensive empirical evaluation using a repository of 327 real-world skills. Our study demonstrates that vulnerabilities arise at multiple lifecycle stages beyond execution, highlighting the need for lifecycle-aware security analysis of reusable agent skills.",
-  "keywords": [
-   "skill lifecycle security",
-   "reusable agent skills",
-   "threat taxonomy",
-   "SkillSec-Eval",
-   "repository admission attacks"
-  ],
-  "relevance": "Yes",
-  "why": "Directly addresses security of reusable agent skills across their full lifecycle, which is a core embodied AI safety concern for tool-using agents and skill supply chains.",
-  "citation_count": null,
-  "screened_date": "2026-07-16"
- },
- {
-  "title": "Learning Robust Execution in Robotic Manipulation with Agentic Reinforcement Learning",
-  "url": "https://arxiv.org/abs/2607.13818",
-  "authors": "Xiaopeng Zhang et al",
-  "venue": "arXiv 2607.13818",
-  "year": "2026",
-  "layer": "Action and Interaction",
-  "subcat": "Robot Control",
-  "arxiv_id": "2607.13818",
-  "abstract": "Robotic manipulation poses fundamental challenges due to uncertainty, long-horizon execution, and compounding errors, which can easily destabilize execution and lead to task failure. Although recent vision-language-action (VLA) models exhibit strong generalization, they typically lack explicit mechanisms to assess execution stability and to recover when execution deviates from its nominal behavior. In this paper, we propose: (1) two complementary metrics to assess execution quality at runtime, and (2) an agentic reinforcement learning framework that learns to restore effective execution through high-level decision-making rather than directly learning low-level actions. In this framework, an agentic policy reasons over recent execution history and selects among a small set of execution modes to regulate the execution process. Under execution degradation, it triggers appropriate recovery mechanisms to restore the robot to previously visited nominal states, enabling the task to continue. We evaluate the proposed method on the LIBERO benchmark, achieving up to a 13.7% improvement in success rate under standard settings and up to a 39.2% improvement under disturbance settings, demonstrating substantially enhanced execution robustness.",
-  "keywords": [
-   "agentic reinforcement learning",
-   "execution robustness",
-   "recovery mechanisms",
-   "robotic manipulation",
-   "compounding errors"
-  ],
-  "relevance": "Yes",
-  "why": "The paper directly addresses safety in embodied AI by proposing recovery mechanisms and robust execution for robotic manipulation under disturbances, improving resilience against compounding errors and execution degradation.",
-  "citation_count": null,
-  "screened_date": "2026-07-16"
  }
 ]
