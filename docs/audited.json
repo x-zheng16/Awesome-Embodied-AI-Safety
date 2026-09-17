@@ -1,5 +1,74 @@
 [
  {
+  "title": "Context-Aware Operational Security for Autonomous Drones",
+  "url": "https://arxiv.org/abs/2609.19021",
+  "authors": "Burak Tufekci, Cihan Tunc",
+  "venue": "arXiv 2609.19021",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Robot Control: physical adversarial attacks, control policy backdoors",
+  "arxiv_id": "2609.19021",
+  "abstract": "Autonomous drone-based services have been gaining significant interest across various application domains due to their mobility, flexibility, cost-effectiveness, and capability to integrate various sensors and actuators. However, operational failures or cyberattacks targeting drone systems can lead to severe economic impacts and safety concerns. Hence, ensuring secure and reliable autonomous drone operations is essential for the safe deployment of drone-enabled services. Nevertheless, the traditional security measures fall short due to drones' limited computational resources and power budget (battery), as well as the temporal and sequential behavior of drone operations due to drones' mobile nature. In this paper, we address this gap by utilizing Recurrent Neural Networks (RNNs), specifically focusing on Long Short-Term Memory (LSTM) networks, for autonomous drone operation security and reliability due to their temporal and sequential analysis capabilities. We leverage these capabilities for anomaly detection in autonomous drone sensor data and operation commands, which we refer to as Denial of Usage Detection Engine IDS (DUDE-IDS). We integrated the proposed DUDE-IDS into the drone mission computer (i.e., operating directly on drones rather than an edge node or ground control stations) to monitor data flows and to detect potential threats in real-time. Extensive experimental results demonstrate the effectiveness of this approach in identifying anomalies associated with GPS spoofing, Man-in-the-Middle (MITM), replay, and Denial-of-Service (DoS) attacks with 98% accuracy. We also evaluate our resource utilization and power consumption under different configurations, demonstrating the applicability of our approach in active drone operations in real-time.",
+  "keywords": [
+   "autonomous drones",
+   "intrusion detection",
+   "GPS spoofing",
+   "anomaly detection",
+   "LSTM",
+   "real-time monitoring"
+  ],
+  "relevance": "Yes",
+  "why": "Proposes an onboard LSTM-based intrusion detection system defending autonomous drones against GPS spoofing, MITM, replay, and DoS attacks on sensor data and operation commands, directly addressing embodied agent security.",
+  "citation_count": null,
+  "screened_date": "2026-09-17"
+ },
+ {
+  "title": "The Verifiable Action Card: Trustworthy Human-in-the-Loop Control for Secure Autonomous Agents",
+  "url": "https://arxiv.org/abs/2609.18411",
+  "authors": "Hasnain Irshad et al",
+  "venue": "arXiv 2609.18411",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Human-Agent Interaction",
+  "arxiv_id": "2609.18411",
+  "abstract": "Agentic browsers can execute security-sensitive actions under a user's authenticated session, making indirect prompt injection and deceptive confirmation interfaces a direct threat to action integrity. Existing human-in-the-loop (HITL) safeguards are insufficient when the approval prompt itself can be influenced by untrusted page content or model-generated text. We present the \\emph{Verifiable Action Card} (VAC), an architectural defence that reconstructs approval information from the ground-truth pending browser action and trusted intent provenance, renders it out-of-band in the trusted browser chrome, and binds approval to the exact action re-verified at dispatch. VAC combines provenance fencing, a ground-truth action descriptor, default-deny confirmation, provenance-aware risk gating, and execution binding. We implement VAC in a complete agentic browser and evaluate it on a 24-scenario benchmark covering confused-deputy attacks, Lies-in-the-Loop dialog forging, indirect prompt injection, adaptive action substitution, provenance evasion, and legitimate tasks. Across the evaluated LLMs, attack success without VAC ranges from $68\\%$ to $100\\%$, whereas VAC reduces attack success to $0\\%$ on every model, with $78\\%$ legitimate-task completion and a $0\\%$ false-block rate. These results show that grounding approval in the action that will actually execute provides architectural protection against security failures that prompt-level defences and conventional HITL confirmation cannot reliably prevent.",
+  "keywords": [
+   "verifiable action card",
+   "human-in-the-loop control",
+   "indirect prompt injection",
+   "provenance fencing",
+   "execution binding",
+   "agentic browser security"
+  ],
+  "relevance": "Yes",
+  "why": "Presents an architectural defense for agentic browsers that grounds user approval in the actual pending action, protecting action integrity against prompt injection and deceptive confirmation interfaces—directly addressing HRI safety and trust manipulation in autonomous agents.",
+  "citation_count": null,
+  "screened_date": "2026-09-17"
+ },
+ {
+  "title": "\"Your Robot Was Trained on a Lie\": Collision Mesh Poisoning Attacks on Robotic Manipulation",
+  "url": "https://arxiv.org/abs/2609.18122",
+  "authors": "Gengyang Xu et al",
+  "venue": "arXiv 2609.18122",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Robot Control",
+  "arxiv_id": "2609.18122",
+  "abstract": "Learning-enabled robotic manipulation increasingly relies on robot simulators for policy training and evaluation before real-world deployment. Inside a simulator, a 3D asset contains two separate geometries: a visual mesh used for rendering and a collision mesh used for physical interaction. For computational efficiency, the collision mesh is deliberately a coarse approximation that need not have the same geometry as the visual mesh, a legitimate and pervasive discrepancy we call the Visual--Collision Gap (V--C Gap). We show that the V--C Gap opens a new and practical attack surface, and propose Collision Mesh Poisoning (CMP), the first poisoning attack against robotic manipulation delivered through the 3D asset supply chain. An attacker modifies only the collision mesh of a 3D asset, leaving the visual mesh and all other components unchanged. A policy trained and evaluated with the poisoned asset behaves normally throughout simulation, yet degrades, fails, or creates physical safety risks once deployed in the real world. Since current asset review practices cover malware, copyright, and format compliance, but not visual--collision consistency, poisoned assets can be distributed through legitimate supply chain channels. We evaluate several defenses and our results show that they are insufficient to defend against CMP, highlighting the need for new defenses.",
+  "keywords": [
+   "collision mesh poisoning",
+   "3D asset supply chain",
+   "visual–collision gap",
+   "sim-to-real safety",
+   "poisoning attack",
+   "robotic manipulation"
+  ],
+  "relevance": "Yes",
+  "why": "Introduces Collision Mesh Poisoning, a supply-chain attack on robotic manipulation where tampered collision meshes cause policies trained in simulation to fail or create physical safety hazards upon real-world deployment.",
+  "citation_count": null,
+  "screened_date": "2026-09-17"
+ },
+ {
   "title": "Emergence World: Adversarial Stress-Testing of Long-Horizon Multi-Agent Systems",
   "url": "https://arxiv.org/abs/2609.17320",
   "authors": "Deepak Akkil et al",
