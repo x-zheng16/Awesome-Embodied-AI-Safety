@@ -1,5 +1,73 @@
 [
  {
+  "title": "Self-Adaptive VLA for Robust Robot Deployment",
+  "url": "https://arxiv.org/abs/2609.30092",
+  "authors": "Hongxin Zhang et al",
+  "venue": "arXiv 2609.30092",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Robot Control",
+  "arxiv_id": "2609.30092",
+  "abstract": "While Vision-Language-Action (VLA) models demonstrate impressive capabilities in robotic manipulation, their memoryless nature renders them brittle to test-time environment shifts, particularly hardware shifts caused by wear or imperfect calibration. Enabling these models to self-adapt during deployment without requiring continuous on-site recalibration remains a critical bottleneck for real-world scalability. In this work, we introduce Self-Adaptive VLA, a novel post-training recipe that enables the policy to iteratively adapt to deployment-time hardware shifts leveraging its own rollouts as context. To do so, we first collect policy rollouts under deliberately injected hardware shifts. We then transform the base policy's training data into shift-conditioned expert demonstrations by pre-compensating the expert actions for these known shifts. Next, we introduce a lightweight, plug-in context encoder that compresses the context, including visual observation, proprioception, and actions in the shifted environment, into a latent context token. This token modulates the policy through adaptive layer normalization (AdaLN). Furthermore, we find that context tokens can be ensembled, allowing the policy to iteratively self-correct and mitigate failures step by step. Extensive experiments across four precision-critical bi-manual and dexterous manipulation tasks show that Self-Adaptive VLA recovers over 80% of the base policy's performance under hardware shifts, such as actuation bias and joint encoder offsets. Moreover, Self-Adaptive VLA enables more robust deployment to new workstations compared to the base policy. Our approach provides a pathway for robust large-scale real-world robot deployments and easier maintenance. See videos at https://icefoxzhx.github.io/self-adaptive-vla.",
+  "keywords": [
+   "vision-language-action models",
+   "self-adaptation",
+   "hardware shift robustness",
+   "context tokens",
+   "robot deployment",
+   "adaptive layer normalization"
+  ],
+  "relevance": "Yes",
+  "why": "Introduces a post-training defense enabling VLA robot policies to self-adapt to hardware shifts (actuation bias, encoder offsets), directly addressing robustness/safety of deployed robot control policies under real-world perturbations.",
+  "citation_count": null,
+  "screened_date": "2026-09-25"
+ },
+ {
+  "title": "Safe Learning-Based Adaptive Augmentation Control for Fixed-Wing UAV under Uncertainty",
+  "url": "https://arxiv.org/abs/2609.29319",
+  "authors": "Leon Raguse et al",
+  "venue": "arXiv 2609.29319",
+  "year": "2026",
+  "layer": "Action and Interaction",
+  "subcat": "Robot Control",
+  "arxiv_id": "2609.29319",
+  "abstract": "This paper presents a learning-based adaptive augmentation control concept inspired by the adaptation mechanisms of conventional adaptive control, while not being restricted to their specific parametric adaptation structures. In contrast to augmenting a reinforcement learning (RL) baseline controller with classical adaptive control to account for the simulation-to-reality gap, the proposed approach uses RL-based adaptive augmentation to address the limitations of conventional adaptive control. Domain randomization combined with observation stacking is employed to train the RL-based augmentation to compensate for matched uncertainties in a fixed-wing aircraft system. To ensure constraint satisfaction during operation, a safety filter is incorporated into the control architecture. Based on the concept of pseudo control hedging (PCH), we propose a modified reference model that avoids undesirable interactions between the RL-based augmentation and the safety filter. To reduce the conservatism of the safety filter, we additionally incorporate a disturbance observer. The proposed approach is evaluated on a fixed-wing aircraft model subject to uncertainties.",
+  "keywords": [
+   "adaptive augmentation control",
+   "reinforcement learning",
+   "safety filter",
+   "pseudo control hedging",
+   "fixed-wing UAV",
+   "disturbance observer"
+  ],
+  "relevance": "Yes",
+  "why": "Presents a safety-filtered RL-based adaptive augmentation control architecture ensuring constraint satisfaction for a fixed-wing UAV under uncertainty, directly addressing robust safe robot control.",
+  "citation_count": null,
+  "screened_date": "2026-09-25"
+ },
+ {
+  "title": "Poster: FedWM-Guard: Thwarting Imagination Poisoning in Federated World Model-based Autonomous Driving",
+  "url": "https://arxiv.org/abs/2609.29178",
+  "authors": "Sheng Liu, Panos Papadimitratos",
+  "venue": "arXiv 2609.29178",
+  "year": "2026",
+  "layer": "Cognition",
+  "subcat": "World Model",
+  "arxiv_id": "2609.29178",
+  "abstract": "Federated learning (FL) can improve world model (WM)-based autonomous driving (AD) without centralizing raw private vehicle data, but it also turns model aggregation into a safety-critical integrity boundary. We introduce a new threat in federated WM-AD, namely \\emph{imagination poisoning}: compromised vehicles submit bounded WM updates that preserve benign short-horizon predictions yet corrupt long-horizon rollouts (e.g., trigger-conditioned) during training, thereby misleading a downstream planner. We present \\emph{FedWM-Guard}, to the best of our knowledge, the first defense to characterize planner-facing rollouts in federated WM-AD, screen authenticated updates in hidden-canary scenarios, audit predicted futures against later observations, and invoke a WM-independent safety shield when persistent inconsistency is detected. Unlike parameter-space defenses, it scores what an update makes the model \\emph{imagine}, not only how the update looks. We also outline how we plan to evaluate it under non-IID (not independent and identically distributed) data, adaptive attacks, and benign distribution shift. This work highlights an unexplored domain, federated WM-AD, and its threat surface and potential countermeasures.",
+  "keywords": [
+   "federated learning",
+   "world model poisoning",
+   "autonomous driving safety",
+   "imagination poisoning defense",
+   "planner-facing rollout verification"
+  ],
+  "relevance": "Yes",
+  "why": "Introduces and defends against imagination poisoning of federated world models in autonomous driving, where corrupted long-horizon rollouts mislead the planner—a direct safety attack on the cognition layer of an embodied agent.",
+  "citation_count": 0,
+  "screened_date": "2026-09-25"
+ },
+ {
   "title": "Security and Privacy in Large-Model-Driven Embodied Agents: Attacks, Defenses, and Future Directions",
   "url": "https://arxiv.org/abs/2609.27847",
   "authors": "Lele Zheng et al",
