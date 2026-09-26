@@ -1,5 +1,28 @@
 [
  {
+  "title": "Temporal Gradient Inversion for Private Trajectory Reconstruction in Embodied Reinforcement Learning",
+  "url": "https://arxiv.org/abs/2609.30258",
+  "authors": "Sudip Bhujel et al",
+  "venue": "arXiv 2609.30258",
+  "year": "2026",
+  "layer": "Agentic",
+  "subcat": "Self-Evolving",
+  "arxiv_id": "2609.30258",
+  "abstract": "Distributed learning in embodied reinforcement-learning agents offers a degree of privacy by retaining raw sensor data on-device and transmitting only policy gradients to the server. Yet temporal structure can amplify this leakage beyond single-frame attacks. We introduce Temporal Reconstruction Attack on Consecutive Encodings (TRACE), an amortized temporal gradient-inversion attack that autoregressively reconstructs the sequence of private observation-action trajectories from per-step policy-learning gradients. The attack exploits two structural signals ignored by prior single-frame methods: (i) cross-time correlation between successive embodied gradients, which we formalize via a conditional mutual-information bound, and (ii) closed-form action recovery from policy-head gradient structure, which we prove exact when standard entropy regularization is sufficiently small. On held-out embodied scenes, TRACE reaches $18.8$ dB PSNR with near-perfect action recovery at $3$-$4.5$ ms per reconstructed frame, dominating the learning-based baseline across all reconstruction metrics and exceeding optimization attacks while running orders of magnitude faster. Further evaluation demonstrates TRACE's broader applicability across recurrent, residual, and compact transformer victim architectures, multi-modal inputs, and larger discrete action spaces. Defense experiments suggest that protecting temporal gradient streams may require sequence-aware privacy mechanisms.",
+  "keywords": [
+   "gradient inversion attack",
+   "temporal privacy leakage",
+   "trajectory reconstruction",
+   "distributed embodied RL",
+   "policy gradient privacy",
+   "amortized sequence decoding"
+  ],
+  "relevance": "Yes",
+  "why": "Introduces a temporal gradient-inversion attack that reconstructs private observation-action trajectories of embodied RL agents from transmitted policy gradients, a privacy/safety threat to distributed embodied learning, with defense implications.",
+  "citation_count": 0,
+  "screened_date": "2026-09-26"
+ },
+ {
   "title": "Coding Agents for Generalized Task and Motion Planning Problems",
   "url": "https://arxiv.org/abs/2609.30233",
   "authors": "Matteo Merler et al",
