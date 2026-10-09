@@ -791,7 +791,7 @@ We review **526** papers across five capability layers of embodied AI. The taxon
 
 ## Other Related Works
 
-33 cited works beyond the five-layer attack and defense taxonomy, grouped by type.
+34 cited works beyond the five-layer attack and defense taxonomy, grouped by type.
 
 <details open>
 <summary><b>Surveys & Reviews</b> (13)</summary>
@@ -816,6 +816,12 @@ We review **526** papers across five capability layers of embodied AI. The taxon
 
 - [Vision-and-Language Navigation: Interpreting Visually-Grounded Navigation Instructions in Real Environments](https://scholar.google.com/scholar?q=Vision-and-Language+Navigation%3A+Interpreting+Visually-Grounded+Navigation+Instructions+in+Real+Environments). Anderson et al. *In CVPR*, 2018.
 - [VizWiz Grand Challenge: Answering Visual Questions from Blind People](https://scholar.google.com/scholar?q=VizWiz+Grand+Challenge%3A+Answering+Visual+Questions+from+Blind+People). Gurari et al. *In CVPR*, 2018.
+</details>
+
+<details open>
+<summary><b>Open-Source Red-Team Tooling & Reproducible Harnesses</b> (1)</summary>
+
+- [Provael](https://github.com/provael/provael). Red-team harness for VLA policies. Apache-2.0, 15 attack families, reports ASR against a matched benign control arm with a 95% Wilson CI. *Software*, 2026.
 </details>
 
 <details open>
