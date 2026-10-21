@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Deterministic paper-list sync.
 
 `docs/papers.json` is the SINGLE SOURCE OF TRUTH for every paper entry and every
@@ -35,24 +34,21 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-HERE = Path(__file__).resolve().parent          # docs/
-ROOT = HERE.parent                              # repo root
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent
 README = ROOT / "README.md"
 INDEX = HERE / "index.html"
 LLMS = ROOT / "llms.txt"
 
-# layer display order + the emoji/name the README table + accordions use.
 TAXONOMY = ["Perception", "Cognition", "Planning", "Action and Interaction", "Agentic"]
 ORW = "Other Related Works"
-# llms.txt taxonomy table + headline: papers.json layer -> the name llms.txt prints
-# (note "Agentic" -> "Agentic System"); all 6 rows incl. ORW, headline = grand total.
-LLMS_DISPLAY = [
-    ("Perception", "Perception"),
-    ("Cognition", "Cognition"),
-    ("Planning", "Planning"),
-    ("Action and Interaction", "Action and Interaction"),
-    ("Agentic", "Agentic System"),
-    ("Other Related Works", "Other Related Works"),
+LAYERS = [
+    ("perception", "Perception", "Perception"),
+    ("cognition", "Cognition", "Cognition"),
+    ("planning", "Planning", "Planning"),
+    ("action", "Action and Interaction", "Action and Interaction"),
+    ("agentic", "Agentic", "Agentic System"),
+    ("orw", "Other Related Works", "Other Related Works"),
 ]
 
 
@@ -87,7 +83,8 @@ def gen_li(p, cfg, warnings):
     a = f'<a href="{p["url"]}" target="_blank" rel="noopener">{esc_html(p["title"])}</a>'
     tail = cfg["html_edge"].get(str(p["id"]))
     if tail is None:
-        tail = f'. {p["authors"]}. <em>{venue_disp(p["venue"], cfg["venue_map"], warnings)}</em>, {p["year"]}.'
+        auth = p["authors"].rstrip(".")
+        tail = f'. {auth}. <em>{venue_disp(p["venue"], cfg["venue_map"], warnings)}</em>, {p["year"]}.'
     return f"<li>{a}{tail}</li>"
 
 
@@ -95,16 +92,63 @@ def gen_md(p, cfg, warnings):
     """One README `- [...]` line (raw, no HTML escaping)."""
     tail = cfg["md_edge"].get(str(p["id"]))
     if tail is None:
-        tail = f'. {p["authors"]}. *{venue_disp(p["venue"], cfg["venue_map"], warnings)}*, {p["year"]}.'
+        auth = p["authors"].rstrip(".")
+        end = "." if p["id"] <= 559 else ""
+        tail = f'. {auth}. *{venue_disp(p["venue"], cfg["venue_map"], warnings)}*, {p["year"]}{end}'
     return f'- [{p["title"]}]({p["url"]}){tail}'
 
 
-def render_index(text, groups, cfg, warnings):
+def render_index(text, all_papers, groups, cfg, warnings, check=False):
     """Replace each cat-summary count + its <ul class="paper-list"> inner li list."""
+    layer_ct = defaultdict(int)
+    for p in all_papers:
+        layer_ct[p["layer"]] += 1
+    total = len(all_papers)
+
+    text = re.sub(
+        r'(stat-num">)\d+(</span><span class="stat-label">Papers Surveyed)',
+        rf"\g<1>{total}\g<2>",
+        text,
+    )
+    text = re.sub(
+        r'(id="searchStats">)\d+(\s*papers)',
+        rf"\g<1>{total}\g<2>",
+        text,
+    )
+    text = re.sub(
+        r'(data-layer="all"[^>]*>All \()\d+(\))',
+        rf"\g<1>{total}\g<2>",
+        text,
+    )
+    text = re.sub(
+        r'(<span class="total-count">)\d+(</span>)',
+        rf"\g<1>{total}\g<2>",
+        text,
+    )
+    for lid, name, scope_name in LAYERS:
+        cnt = layer_ct[name]
+        text = re.sub(
+            r'(<div class="lname">' + re.escape(scope_name) + r'</div>.*?<span class="cnt">)\d+(</span>)',
+            rf"\g<1>{cnt}\g<2>",
+            text,
+            flags=re.DOTALL,
+        )
+        text = re.sub(
+            r'(href="#layer-' + re.escape(lid) + r'"[^>]*>[^<]*<em>\()\d+(\))',
+            rf"\g<1>{cnt}\g<2>",
+            text,
+        )
+        text = re.sub(
+            r'(id="layer-' + re.escape(lid) + r'"[^>]*>\s*<summary class="layer-summary">.*?<span class="layer-cnt">)\d+( papers</span>)',
+            rf"\g<1>{cnt}\g<2>",
+            text,
+            flags=re.DOTALL,
+        )
+
     pat = re.compile(
         r'(<summary class="cat-summary">)(.*?)( <span class="cat-cnt">\()(\d+)(\)</span></summary>\s*'
         r'<ul class="paper-list">)(.*?)(</ul>)',
-        re.S,
+        re.DOTALL,
     )
 
     def repl(m):
@@ -112,10 +156,9 @@ def render_index(text, groups, cfg, warnings):
         if name not in groups:
             sys.exit(f"FATAL: index.html cat-summary {name!r} has no papers in papers.json")
         papers = groups[name]
-        # membership guard: never silently add/drop a paper.
-        cur = {html.unescape(t) for t in re.findall(r"<a [^>]*>(.*?)</a>", m.group(6), re.S)}
+        cur = {html.unescape(t) for t in re.findall(r"<a [^>]*>(.*?)</a>", m.group(6), re.DOTALL)}
         want = {p["title"] for p in papers}
-        if cur != want:
+        if (check and cur != want) or (cur - want):
             sys.exit(f"FATAL [index.html/{name}]: membership drift\n  +{want - cur}\n  -{cur - want}")
         inner = "\n" + "\n".join("            " + gen_li(p, cfg, warnings) for p in papers) + "\n          "
         return f"{m.group(1)}{m.group(2)}{m.group(3)}{len(papers)}{m.group(5)}{inner}{m.group(7)}"
@@ -126,27 +169,22 @@ def render_index(text, groups, cfg, warnings):
     return new
 
 
-def render_readme(text, papers, groups, cfg, warnings):
+def render_readme(text, papers, groups, cfg, warnings, check=False):
     layer_ct = defaultdict(int)
     for p in papers:
         layer_ct[p["layer"]] += 1
     tax_total = sum(layer_ct[l] for l in TAXONOMY)
 
-    # 1. prose headline
     text = re.sub(r"We review \*\*\d+\*\* papers", f"We review **{tax_total}** papers", text)
 
-    # 2. Survey-Scope table: rewrite the trailing count cell of each layer row.
-    #    The layer-name cell is space-padded for column alignment (`**Perception**   |`),
-    #    so allow 1+ spaces before the closing pipe -- a single `\*\* \|` only matches the
-    #    longest name (Action and Interaction) and silently skips the rest.
     for layer in TAXONOMY:
+        cnt_cell = f"| {layer_ct[layer]:>6} |"
         text = re.sub(
             r"(\| \*\*" + re.escape(layer) + r"\*\* +\|.*?)\|\s*\d+\s*\|",
-            lambda m: f"{m.group(1)}| {layer_ct[layer]:>6} |",
+            lambda m, cell=cnt_cell: f"{m.group(1)}{cell}",
             text,
         )
 
-    # 3. layer-accordion "(N papers)" counts
     for layer in TAXONOMY:
         text = re.sub(
             r"(<summary>[^<]*<b>" + re.escape(layer) + r"</b> \()\d+( papers\)</summary>)",
@@ -154,10 +192,9 @@ def render_readme(text, papers, groups, cfg, warnings):
             text,
         )
 
-    # 4. per-subcategory: rewrite the (n) count + the `- [...]` paper lines.
     subcat_pat = re.compile(
         r"(<summary>(?:<b>)?)([^<(]+?)((?:</b>)? \()(\d+)(\)</summary>\n\n)(.*?)(\n</details>)",
-        re.S,
+        re.DOTALL,
     )
 
     def repl(m):
@@ -165,9 +202,9 @@ def render_readme(text, papers, groups, cfg, warnings):
         if name not in groups:
             sys.exit(f"FATAL: README subcategory {name!r} has no papers in papers.json")
         papers_sub = groups[name]
-        cur = set(re.findall(r"^- \[(.*?)\]\(", m.group(6), re.M))
+        cur = set(re.findall(r"^- \[(.*?)\]\(", m.group(6), re.MULTILINE))
         want = {p["title"] for p in papers_sub}
-        if cur != want:
+        if (check and cur != want) or (cur - want):
             sys.exit(f"FATAL [README/{name}]: membership drift\n  +{want - cur}\n  -{cur - want}")
         lines = "\n".join(gen_md(p, cfg, warnings) for p in papers_sub)
         return f"{m.group(1)}{m.group(2)}{m.group(3)}{len(papers_sub)}{m.group(5)}{lines}{m.group(7)}"
@@ -186,10 +223,11 @@ def render_llms(text, papers):
     for p in papers:
         layer_ct[p["layer"]] += 1
     text = re.sub(r"covering \d+ papers", f"covering {len(papers)} papers", text)
-    for layer, disp in LLMS_DISPLAY:
+    for _lid, layer, disp in LAYERS:
+        cnt_cell = f"| {layer_ct[layer]:>6} |"
         text = re.sub(
             r"(\| " + re.escape(disp) + r" +\|.*?)\|\s*\d+\s*\|",
-            lambda m: f"{m.group(1)}| {layer_ct[layer]:>6} |",
+            lambda m, cell=cnt_cell: f"{m.group(1)}{cell}",
             text,
         )
     return text
@@ -202,8 +240,8 @@ def main() -> int:
     warnings = set()
 
     targets = [
-        (INDEX, render_index(INDEX.read_text(), groups, cfg, warnings)),
-        (README, render_readme(README.read_text(), papers, groups, cfg, warnings)),
+        (INDEX, render_index(INDEX.read_text(), papers, groups, cfg, warnings, check=check)),
+        (README, render_readme(README.read_text(), papers, groups, cfg, warnings, check=check)),
         (LLMS, render_llms(LLMS.read_text(), papers)),
     ]
 

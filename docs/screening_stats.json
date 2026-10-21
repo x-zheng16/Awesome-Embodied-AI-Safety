@@ -1,15 +1,15 @@
 {
  "span": {
   "from": "2026-06-24",
-  "to": "2026-09-30"
+  "to": "2026-10-21"
  },
- "cycles": 68,
+ "cycles": 89,
  "totals": {
-  "harvest": 161269,
-  "recent": 131278,
-  "prefilter": 9701,
-  "scored": 3868,
-  "selected": 909
+  "harvest": 226251,
+  "recent": 177010,
+  "prefilter": 12490,
+  "scored": 4791,
+  "selected": 1112
  },
  "daily": [
   {
@@ -619,6 +619,174 @@
    "prefilter": 271,
    "scored": 95,
    "selected": 23
+  },
+  {
+   "date": "2026-10-01",
+   "harvest": 6299,
+   "recent": 4569,
+   "prefilter": 260,
+   "scored": 71,
+   "selected": 19
+  },
+  {
+   "date": "2026-10-02",
+   "harvest": 4395,
+   "recent": 3314,
+   "prefilter": 197,
+   "scored": 53,
+   "selected": 6
+  },
+  {
+   "date": "2026-10-03",
+   "harvest": 2752,
+   "recent": 2069,
+   "prefilter": 123,
+   "scored": 0,
+   "selected": 0
+  },
+  {
+   "date": "2026-10-04",
+   "harvest": 1331,
+   "recent": 1008,
+   "prefilter": 56,
+   "scored": 0,
+   "selected": 0
+  },
+  {
+   "date": "2026-10-05",
+   "harvest": 1021,
+   "recent": 741,
+   "prefilter": 48,
+   "scored": 46,
+   "selected": 13
+  },
+  {
+   "date": "2026-10-06",
+   "harvest": 3205,
+   "recent": 2253,
+   "prefilter": 149,
+   "scored": 99,
+   "selected": 25
+  },
+  {
+   "date": "2026-10-07",
+   "harvest": 4453,
+   "recent": 3197,
+   "prefilter": 210,
+   "scored": 61,
+   "selected": 14
+  },
+  {
+   "date": "2026-10-08",
+   "harvest": 4609,
+   "recent": 3340,
+   "prefilter": 216,
+   "scored": 56,
+   "selected": 15
+  },
+  {
+   "date": "2026-10-09",
+   "harvest": 3605,
+   "recent": 2724,
+   "prefilter": 170,
+   "scored": 53,
+   "selected": 7
+  },
+  {
+   "date": "2026-10-10",
+   "harvest": 2357,
+   "recent": 1661,
+   "prefilter": 108,
+   "scored": 0,
+   "selected": 0
+  },
+  {
+   "date": "2026-10-11",
+   "harvest": 1182,
+   "recent": 836,
+   "prefilter": 51,
+   "scored": 0,
+   "selected": 0
+  },
+  {
+   "date": "2026-10-12",
+   "harvest": 1008,
+   "recent": 677,
+   "prefilter": 45,
+   "scored": 46,
+   "selected": 8
+  },
+  {
+   "date": "2026-10-13",
+   "harvest": 1012,
+   "recent": 678,
+   "prefilter": 45,
+   "scored": 0,
+   "selected": 0
+  },
+  {
+   "date": "2026-10-14",
+   "harvest": 4435,
+   "recent": 2924,
+   "prefilter": 197,
+   "scored": 158,
+   "selected": 38
+  },
+  {
+   "date": "2026-10-15",
+   "harvest": 4660,
+   "recent": 3079,
+   "prefilter": 201,
+   "scored": 55,
+   "selected": 12
+  },
+  {
+   "date": "2026-10-16",
+   "harvest": 5884,
+   "recent": 3903,
+   "prefilter": 243,
+   "scored": 1,
+   "selected": 0
+  },
+  {
+   "date": "2026-10-17",
+   "harvest": 2461,
+   "recent": 1662,
+   "prefilter": 96,
+   "scored": 0,
+   "selected": 0
+  },
+  {
+   "date": "2026-10-18",
+   "harvest": 1313,
+   "recent": 906,
+   "prefilter": 53,
+   "scored": 53,
+   "selected": 10
+  },
+  {
+   "date": "2026-10-19",
+   "harvest": 1066,
+   "recent": 720,
+   "prefilter": 37,
+   "scored": 3,
+   "selected": 1
+  },
+  {
+   "date": "2026-10-20",
+   "harvest": 3387,
+   "recent": 2320,
+   "prefilter": 116,
+   "scored": 111,
+   "selected": 19
+  },
+  {
+   "date": "2026-10-21",
+   "harvest": 4547,
+   "recent": 3151,
+   "prefilter": 168,
+   "scored": 57,
+   "selected": 16
   }
  ]
 }
