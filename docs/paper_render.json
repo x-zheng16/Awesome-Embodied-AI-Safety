@@ -1,6 +1,7 @@
 {
  "_doc": "Render config for sync_papers.py: venue display map (In-prefix etc) + verbatim tails for non-standard entries. Derived from the human-verified site 2026-07-08.",
  "venue_map": {
+  "arXiv 2611.14115": "arXiv 2611.14115",
   "arXiv 2506.15988": "arXiv 2506.15988",
   "arXiv 2404.00540": "arXiv 2404.00540",
   "arXiv 2605.04675": "arXiv 2605.04675",

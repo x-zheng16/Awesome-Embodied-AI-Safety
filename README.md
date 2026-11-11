@@ -130,13 +130,13 @@ As these systems gain autonomy and enter domains such as autonomous driving, hea
 
 ## Surveyed Papers
 
-We review **561** papers across five capability layers of embodied AI. The taxonomy below organizes the core attack and defense literature; the remaining cited works (background and capability models, datasets, simulators, and related surveys) are collected under [Other Related Works](#other-related-works).
+We review **562** papers across five capability layers of embodied AI. The taxonomy below organizes the core attack and defense literature; the remaining cited works (background and capability models, datasets, simulators, and related surveys) are collected under [Other Related Works](#other-related-works).
 
 |     | Layer                      | Subcategories                                                    | Papers |
 |:---:|----------------------------|------------------------------------------------------------------|-------:|
 | 👁️ | **Perception**             | Visual, Auditory, Spatial, Motion, Cross-Modal                   |    207 |
 | 🧠 | **Cognition**              | Instruction Understanding, World Model, Reasoning                |     46 |
-| 🗺️ | **Planning**               | Task, Trajectory, Multi-Agent                                    |     86 |
+| 🗺️ | **Planning**               | Task, Trajectory, Multi-Agent                                    |     87 |
 | 🤖 | **Action and Interaction** | Robot Control, Human-Agent, Multi-Agent Collaboration             |    119 |
 | ⚡  | **Agentic**                | Tool Use and Skill, Memory, Self-Evolving, Cascading Risks       |    103 |
 
@@ -448,10 +448,10 @@ We review **561** papers across five capability layers of embodied AI. The taxon
 ---
 
 <details open>
-<summary>🗺️ <b>Planning</b> (86 papers)</summary>
+<summary>🗺️ <b>Planning</b> (87 papers)</summary>
 
 <details open>
-<summary>Task Planning (37)</summary>
+<summary>Task Planning (38)</summary>
 
 - [VestaBench: An Embodied Benchmark for Safe Long-Horizon Planning Under Multi-Constraint and Adversarial Settings](https://scholar.google.com/scholar?q=VestaBench%3A+An+Embodied+Benchmark+for+Safe+Long-Horizon+Planning). Sadhu et al. *In EMNLP*, 2025.
 - [Using Large Language Models for Embodied Planning Introduces Systematic Safety Risks](https://arxiv.org/abs/2604.18463). Zhang et al. *arXiv 2604.18463*, 2026.
@@ -490,6 +490,7 @@ We review **561** papers across five capability layers of embodied AI. The taxon
 - [Mind the Refinement Gap: When Safe High-Level Robot Plans Produce Unsafe Executions](https://arxiv.org/abs/2610.02662). Das, Stabak et al. *arXiv 2610.02662*, 2026
 - [Refuse the Harm, Complete the Task via Graph-of-Rules Planning for LLM-Enabled Robots](https://arxiv.org/abs/2610.24603). Taheri, Ali et al. *arXiv 2610.24603*, 2026
 - [CAPSafe: A Benchmark for Contextual Action and Plan Safety Reasoning in Embodied Agents](https://arxiv.org/abs/2610.28381). Farag, Youmna et al. *arXiv 2610.28381*, 2026
+- [LEASH: Stay Safe in Agentic Robotics](https://arxiv.org/abs/2611.14115). Zhu, Qinfeng et al. *arXiv 2611.14115*, 2026
 </details>
 
 <details open>
